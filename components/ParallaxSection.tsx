@@ -1,4 +1,4 @@
-
+//components/ParallaxSection.tsx
 
 'use client';
 

@@ -1,4 +1,4 @@
-
+//components/TrendService.tsx
 import { useState, useEffect, useRef, FC } from "react";
 import { motion } from "framer-motion";
 import * as THREE from "three";
