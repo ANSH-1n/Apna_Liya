@@ -419,7 +419,8 @@ export default function Home(): React.ReactElement {
 
 Recognized as one of the best software development companies in Bangalore, our team of experienced software developers, UI/UX designers, and digital strategists turns ideas into powerful digital products. We specialize in modern web development, mobile app development, business automation, and social media marketing, helping brands build a strong online presence and connect with the right audience.
 
-Our result-driven approach improves operational efficiency,.......... boosts customer engagement, and supports long-term business growth. Let’s build innovative software and digital marketing solutions that move your business forward.
+Our result-driven approach improves operational efficiency, boosts customer engagement, and supports long-term business growth. Let’s build innovative software and digital marketing solutions that move your business forward.
+Hello please llllllllllllll
                     </p>
                   </div>
 

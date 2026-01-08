@@ -468,7 +468,7 @@ const AIAgentsLandingPage: React.FC = () => {
                     <div className="font-bold">Automated Activity</div>
                   </div>
                   <p className="text-sm mb-4">
-                    Automated 0 out of 0 interactions
+                    Automated 0 out of 0 interactions.Check this
                   </p>
                 </div>
               </div>
