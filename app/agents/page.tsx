@@ -465,10 +465,10 @@ const AIAgentsLandingPage: React.FC = () => {
                         />
                       </svg>
                     </div>
-                    <div className="font-bold">Automated Activity</div>
+                    <div className="font-bold">Automated Activity.You can check here</div>
                   </div>
                   <p className="text-sm mb-4">
-                    Automated 0 out of 0 interactions.Check this
+                    Automated 0 out of 0 interactions
                   </p>
                 </div>
               </div>
