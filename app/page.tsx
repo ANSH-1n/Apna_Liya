@@ -415,17 +415,11 @@ export default function Home(): React.ReactElement {
                     <p
                       className={`text-base md:text-lg lg:text-xl mb-5 text-center lg:text-left max-w-3xl`}
                     >
-                      We&apos;re a software company that helps businesses grow
-                      with smart digital solutions. At SniperCoders, we create
-                      custom websites, mobile apps, and powerful backend systems
-                      that are easy to use and designed to fit your goals.
-                      Whether you&apos;re just starting out or running a large
-                      company, our team of skilled developers, designers, and
-                      strategists is here to bring your ideas to life. We focus
-                      on building smooth, modern experiences that boost your
-                      online presence, improve efficiency, and keep your
-                      customers coming back. Let&apos;s build something great
-                      together!
+                      We are a leading software development company in India, helping businesses grow with smart, reliable digital solutions. At SniperCoders, we design and develop custom websites, mobile applications, and scalable backend systems that are secure, high-performance, and easy to use. We are proud to be a recommended technology partner for startups, small businesses, and enterprises across India.
+
+Recognized as one of the best software development companies in Bangalore, our team of experienced software developers, UI/UX designers, and digital strategists turns ideas into powerful digital products. We specialize in modern web development, mobile app development, business automation, and social media marketing, helping brands build a strong online presence and connect with the right audience.
+
+Our result-driven approach improves operational efficiency,.......... boosts customer engagement, and supports long-term business growth. Let’s build innovative software and digital marketing solutions that move your business forward.
                     </p>
                   </div>
 
