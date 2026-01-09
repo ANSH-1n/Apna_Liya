@@ -1,4 +1,4 @@
-
+//app/about/page.tsx
 "use client";
 
 import { useState, useEffect, useRef } from "react";
@@ -459,11 +459,14 @@ export default function SniperCodersWebsite() {
                 viewport={{ once: true }}
                 className="mb-6 text-gray-300"
               >
-                SniperCoders Global Technologies Private Limited was born from a
-                vision to transform how businesses leverage technology in
-                today’s digital landscape. Our company emerged from a
-                recognition that many businesses were struggling to harness the
-                full potential of digital technologies.
+              <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
+SniperCoders was founded in 2025 with a vision to 
+transform how businesses leverage technology in today&apos;s digital landscape. 
+We recognized that many businesses were struggling to harness the full 
+potential of digital technologies, and our mission is to bridge this gap 
+with innovative.
+
+</p>
               </motion.p>
               <motion.p
                 variants={textVariants}
@@ -641,7 +644,7 @@ export default function SniperCodersWebsite() {
                 transition={{ delay: 0.2 }}
                 className="text-gray-300 mb-8"
               >
-                SniperCoders Global Technologies is a full-service technology
+                SniperCoders  is a full-service technology
                 firm providing innovative digital solutions to help businesses
                 thrive in today’s competitive landscape. From web development
                 and mobile applications to digital marketing and IoT

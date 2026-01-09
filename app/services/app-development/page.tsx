@@ -1,14 +1,11 @@
-
+//app/services/app-development/page.tsx
 
 'use client';
 
 import { motion } from 'framer-motion';
-import ServiceCard from '../../../components/ServiceCard'; // Assuming ServiceCardProps is defined here
+import ServiceCard from '../../../components/ServiceCard'; 
 
-// It's good practice to define the type for 'service' if it's more complex
-// or if ServiceCardProps is directly usable here.
-// For now, we'll infer based on usage, but ideally, you'd import ServiceCardProps
-// or a relevant part of it.
+
 
 interface AppDevelopmentService {
   title: string;

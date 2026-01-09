@@ -15,19 +15,7 @@ export function generateTimeOptions(date: string, time: string) {
     return [];
   }
 
-  // const timezones = [
-  //   { name: 'Pacific Time (PT)', offset: -7 },
-  //   { name: 'Eastern Time (ET)', offset: -4 },
-  //   { name: 'Central European Time (CET)', offset: 2 },
-  //   { name: 'India Standard Time (IST)', offset: 5.5 },
-  //   { name: 'Japan Standard Time (JST)', offset: 9 },
-  // ];
-
-
-
-
-
-
+ 
 const timezones = [
   // USA & Canada
   { name: 'Pacific Time (PT)', offset: -7 },

@@ -1,8 +1,8 @@
-
+//app/showcase/page.tsx
 "use client"
 
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
-import Image from 'next/image'; // Import Next.js Image component
+import Image from 'next/image';
 import { ExternalLink } from 'lucide-react';
 import * as THREE from 'three';
 import { motion, Variants } from 'framer-motion';
@@ -21,7 +21,7 @@ interface Project {
   image: string;
   categories: string[];
   description: string;
-  href : string;
+  href: string;
   tags: string[];
 }
 
@@ -29,12 +29,10 @@ interface BubbleProps {
   count: number;
 }
 
-
-  const textVariants: Variants = {
-    initial: { opacity: 0, y: 30 },
-    animate: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
-  };
-
+const textVariants: Variants = {
+  initial: { opacity: 0, y: 30 },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
+};
 
 // 3D Particle Background Component
 const ThreeJSBackground: React.FC = () => {
@@ -194,7 +192,6 @@ const useIntersectionObserver = (options: IntersectionObserverInit = {}) => {
     threshold: options.threshold,
   }), [options.root, options.rootMargin, options.threshold]);
 
-
   useEffect(() => {
     if (observerRef.current) {
         observerRef.current.disconnect();
@@ -227,7 +224,6 @@ const useIntersectionObserver = (options: IntersectionObserverInit = {}) => {
     }
   }, []);
 
-
   return [observeElement, unobserveElement, entries] as const;
 };
 
@@ -256,7 +252,7 @@ const AnimatedText: React.FC<{ text: string }> = ({ text }) => {
   }, [text]);
 
   return (
-    <p className="text-gray-300 text-center max-w-3xl mx-auto mb-12">
+    <p className="text-gray-300 text-center max-w-3xl mx-auto mb-12 px-4">
       {displayedText}
       {!isComplete && <span className="animate-pulse">|</span>}
     </p>
@@ -282,7 +278,6 @@ const SniperCodersPortfolio: React.FC = () => {
   const categories: ProjectCategory[] = useMemo(() => [
     { id: "all", name: "All", color: "from-cyan-500 to-blue-600", hoverColor: "from-cyan-600 to-blue-700" },
     { id: "academy-website", name: "Academy Website", color: "from-purple-500 to-indigo-600", hoverColor: "from-purple-600 to-indigo-700" },
-    // { id: "agency-website", name: "Agency Website", color: "from-amber-500 to-orange-600", hoverColor: "from-amber-600 to-orange-700" },
     { id: "articles-website", name: "Articles Website", color: "from-emerald-500 to-teal-600", hoverColor: "from-emerald-600 to-teal-700" },
     { id: "blog-website", name: "Blog Website", color: "from-rose-500 to-pink-600", hoverColor: "from-rose-600 to-pink-700" },
     { id: "business-portfolio-website", name: "Business Portfolio Website", color: "from-violet-500 to-fuchsia-600", hoverColor: "from-violet-600 to-fuchsia-700" },
@@ -301,13 +296,41 @@ const SniperCodersPortfolio: React.FC = () => {
  const projects = useMemo((): Project[] => [
     {
       id: "UIUX",
-      title: "UIUX",
+      title: "Torke Hub",
       image: "/images/image.png", 
       categories: ["CRM  Automation", "UIUX"],
       description: "Aim to be the go-to platform for businesses seeking seamless management, automation, and innovation",
       tags: ["CRM  Automation", "UI-UX Design"],
       href: "https://www.torkehub.com/"
     },
+     {
+      id: "travel-quench",
+      title: "Travel Quench",
+      image: "/images/travelQuench.png", 
+      categories: ["traveling-website", "web-application"],
+      description: "Travel e-commerce platform partnered with Yatra.com for seamless booking experiences.",
+      tags: ["Traveling Website", "Web Application", "E-commerce"],
+      href: "https://www.travelquench.in/"
+    },
+    {
+      id: "travel-manikanta",
+      title: "Travel With Manikanta",
+      image: "/images/travelManikanta.png", 
+      categories: ["traveling-website", "website"],
+      description: "Complete travel solution website offering tour packages and travel services.",
+      tags: ["Traveling Website", "Website", "Tour Packages"],
+      href: "http://travelwithmanikanta.com/"
+    },
+    {
+      id: "jai-mata-di-travel",
+      title: "Jai Mata Di Tour & Travel",
+      image: "/images/jaiMataDITravel.png", 
+      categories: ["traveling-website", "web-application"],
+      description: "Professional tour and travel services website with comprehensive travel solutions.",
+      tags: ["Traveling Website", "Web Application", "Tour Services"],
+      href: "https://jaimataditourandtravel.com/"
+    },
+    
     {
       id: "brg-finery",
       title: "BRG Finery",
@@ -364,42 +387,24 @@ const SniperCodersPortfolio: React.FC = () => {
     },
  
     {
-      id: "your-project-code",
-      title: "Your Project Code",
-      image: "/images/your[1].png", 
-      categories: ["articles-website", "blog-website"],
-      description: "Science Adventures: Unleashing The Power Of Data.",
-      tags: ["Articles Website", "Blog Website"],
-      href: "https://www.yourprojectcode.com/"
-    },
-    {
       id: "omniminds-consulting",
       title: "Omniminds Consulting",
       image: "/images/awif1vuvznvfnkikwl03[1].png", 
-      categories: ["agency-website", "web-application"],
+      categories: ["portfolio-website", "web-application"],
       description: "We promise to bring the best solution for your business.",
-      tags: ["Agency Website", "Web Application"],
+      tags: ["Portfolio Website", "Web Application"],
       href: "https://omnimindsconsulting.com/"
     },
-    {
-      id: "renuka-world",
-      title: "Renuka World",
-      image: "/images/renuk[1].png", 
-      categories: ["traveling-website", "web-application"],
-      description: "Discover Goa: Your Ultimate Travel Destination.",
-      tags: ["Traveling Website", "Web Application"],
-      href: "https://www.renukaworld.com/"
-    },
+   
     {
       id: "jain-jaivik",
       title: "Jain Jaivik",
       image: "/images/jj[1].png", 
-      categories: ["portfolio-website", "agency-website"],
+      categories: ["portfolio-website", "web-application"],
       description: "A New Way to Invest in Agriculture.",
-      tags: ["Portfolio Website", "Agency Website"],
+      tags: ["Portfolio Website", "Web Application"],
       href: "https://www.jainjaivik.com/"
     },
-   
     {
       id: "shakthi-nakshatra",
       title: "Shakthi Nakshatra-Book",
@@ -422,13 +427,13 @@ const SniperCodersPortfolio: React.FC = () => {
       id: "adflux-agency",
       title: "Adflux Agency",
       image: "/images/adfkux[1].png", 
-      categories: ["agency-website", "web-application"],
+      categories: ["portfolio-website", "web-application"],
       description: "Unleash the Power of Digital Marketing.",
-      tags: ["Agency Website", "Web Application"],
+      tags: ["Portfolio Website", "Web Application"],
       href: "https://adfluxagency.com/"
     },
+   
   ], []);
-
 
   useEffect(() => {
     setFilteredProjects(projects);
@@ -544,7 +549,6 @@ const SniperCodersPortfolio: React.FC = () => {
     });
   }, [observedEntries]);
 
-
   const applyMouseEffect = (e: React.MouseEvent<HTMLDivElement>, id: string) => {
     if (hoveredProject !== id) return;
     const card = e.currentTarget.querySelector('.glass-card') as HTMLElement;
@@ -581,7 +585,7 @@ const SniperCodersPortfolio: React.FC = () => {
         ref={headerRef}
         className="relative z-10 container mx-auto px-4 pt-24 pb-12 animate-on-mount opacity-0 transform translate-y-8"
       >
-        <h2 ref={titleRef} className="text-6xl font-bold text-center mb-4 glow-text split-text animate-on-mount opacity-0 transform translate-y-8">
+        <h2 ref={titleRef} className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-4 glow-text split-text animate-on-mount opacity-0 transform translate-y-8 px-2">
           <span className="text-gradient">Case Studies</span>
         </h2>
         <div className="mt-6">
@@ -590,12 +594,12 @@ const SniperCodersPortfolio: React.FC = () => {
           />
         </div>
 
-        <div className="flex flex-wrap justify-center gap-3 mb-16 filter-container animate-on-mount opacity-0 transform translate-y-8 delay-300"> 
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12 md:mb-16 filter-container animate-on-mount opacity-0 transform translate-y-8 delay-300 px-2"> 
           {categories.map((category, index) => (
             <button
               key={category.id}
               onClick={() => setActiveCategory(category.id)}
-              className={`px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-500 filter-btn ${
+              className={`px-3 py-2 md:px-4 md:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-500 filter-btn ${
                 activeCategory === category.id
                   ? `bg-gradient-to-r ${category.color} text-white shadow-lg`
                   : "bg-gray-800/50 text-gray-300 hover:bg-gray-700/70"
@@ -604,23 +608,13 @@ const SniperCodersPortfolio: React.FC = () => {
                 transitionDelay: `${index * 50}ms`,
                 transform: activeCategory === category.id ? 'translateY(-2px)' : 'none',
               }}
-               onMouseEnter={() => { // Changed e to _event as it's not used
-                 if (activeCategory !== category.id) {
-                   // If e.currentTarget was needed, it would be _event.currentTarget
-                 }
-               }}
-               onMouseLeave={(e) => { // e is used here
-                 if (activeCategory !== category.id) {
-                   e.currentTarget.style.backgroundImage = ''; 
-                 }
-               }}
             >
               <span className="relative z-10">{category.name}</span>
             </button>
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-2 sm:px-0">
           {filteredProjects.map((project, index) => (
             <div
               key={project.id}
@@ -634,14 +628,18 @@ const SniperCodersPortfolio: React.FC = () => {
               }}
             >
               <div className="glass-card bg-opacity-10 backdrop-filter backdrop-blur-md rounded-lg overflow-hidden group/card cursor-pointer relative h-full flex flex-col border border-white/10 shadow-xl hover:shadow-cyan-500/20 transition-all duration-500">
-                <div className="relative overflow-hidden h-60 group/image"> 
+                <div className="relative overflow-hidden h-48 sm:h-56 md:h-60 group/image"> 
                   <Image
                     src={project.image}
                     alt={project.title}
-                    layout="fill"
-                    objectFit="cover"
-                    className="transition-transform duration-700 ease-out group-hover/image:scale-110"
-                    priority={index < 3} 
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="transition-transform duration-700 ease-out group-hover/image:scale-110 object-cover"
+                    priority={index < 3}
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = '/images/placeholder.jpg';
+                    }}
                   />
                   <div
                     className={`absolute inset-0 bg-gradient-to-t from-cyan-600/90 via-blue-800/70 to-transparent transition-all duration-500 flex items-end justify-center pb-6 ${
@@ -649,24 +647,24 @@ const SniperCodersPortfolio: React.FC = () => {
                     }`}
                   >
                     <a href={project.href} target="_blank" rel="noopener noreferrer"
-                       className="px-6 py-3 bg-white bg-opacity-15 backdrop-blur-sm rounded-lg text-white border border-white border-opacity-30 flex items-center text-sm hover:bg-opacity-25 transition-all duration-300 hover:scale-105 transform group/btn">
+                       className="px-4 py-2 sm:px-6 sm:py-3 bg-white bg-opacity-15 backdrop-blur-sm rounded-lg text-white border border-white border-opacity-30 flex items-center text-xs sm:text-sm hover:bg-opacity-25 transition-all duration-300 hover:scale-105 transform group/btn">
                       View Details 
-                      <ExternalLink className="ml-2 transition-transform duration-300 group-hover/btn:translate-x-1" size={16} />
+                      <ExternalLink className="ml-2 transition-transform duration-300 group-hover/btn:translate-x-1" size={14} />
                     </a>
                   </div>
                 </div>
-                <div className="p-6 flex flex-col flex-grow"> 
-                  <h3 className="text-xl font-semibold mb-2 text-white group-hover/card:text-cyan-400 transition-colors duration-500">
+                <div className="p-4 sm:p-6 flex flex-col flex-grow"> 
+                  <h3 className="text-lg sm:text-xl font-semibold mb-2 text-white group-hover/card:text-cyan-400 transition-colors duration-500 line-clamp-1">
                     {project.title}
                   </h3>
-                  <p className="text-gray-300 text-sm mb-4 line-clamp-2 flex-grow"> 
+                  <p className="text-gray-300 text-xs sm:text-sm mb-4 line-clamp-2 flex-grow"> 
                       {project.description}
                   </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4">
                     {project.tags.slice(0, 3).map((tag, tagIndex) => (
                       <span
                         key={tagIndex}
-                        className="text-xs text-gray-300 bg-gray-700/50 border border-gray-600/30 px-2.5 py-1 rounded-full transform transition-all duration-300 hover:scale-105 hover:border-cyan-500/50"
+                        className="text-[10px] xs:text-xs text-gray-300 bg-gray-700/50 border border-gray-600/30 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full transform transition-all duration-300 hover:scale-105 hover:border-cyan-500/50"
                         style={{ transitionDelay: `${tagIndex * 50}ms` }}
                       >
                         {tag}
@@ -675,7 +673,7 @@ const SniperCodersPortfolio: React.FC = () => {
                   </div>
                   <div className="mt-auto pt-2">
                     <a href={project.href} target="_blank" rel="noopener noreferrer"
-                       className="text-sm font-medium flex items-center text-cyan-400 transition-all duration-500 group-hover/card:text-white"
+                       className="text-xs sm:text-sm font-medium flex items-center text-cyan-400 transition-all duration-500 group-hover/card:text-white"
                     >
                       Know More <span className="ml-1 transition-transform duration-300 group-hover/card:translate-x-2">→</span>
                     </a>
@@ -685,13 +683,13 @@ const SniperCodersPortfolio: React.FC = () => {
             </div>
           ))}
           {filteredProjects.length === 0 && activeCategory !== "all" && (
-            <div className="col-span-full py-12 text-center"> 
-              <div className="bg-gray-800/50 backdrop-filter backdrop-blur-md rounded-lg border border-gray-700/50 p-8 mx-auto max-w-lg">
-                <h3 className="text-xl font-medium mb-2 text-gray-200">No projects found</h3>
-                <p className="text-gray-400 mb-4">No projects match the selected category. Please try a different filter.</p>
+            <div className="col-span-full py-12 text-center px-4"> 
+              <div className="bg-gray-800/50 backdrop-filter backdrop-blur-md rounded-lg border border-gray-700/50 p-6 sm:p-8 mx-auto max-w-lg">
+                <h3 className="text-lg sm:text-xl font-medium mb-2 text-gray-200">No projects found</h3>
+                <p className="text-gray-400 text-sm sm:text-base mb-4">No projects match the selected category. Please try a different filter.</p>
                 <button
                   onClick={() => setActiveCategory("all")}
-                  className="px-6 py-2.5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-medium hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 focus:ring-2 focus:ring-cyan-400 focus:ring-opacity-50"
+                  className="px-4 py-2 sm:px-6 sm:py-2.5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-medium hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 focus:ring-2 focus:ring-cyan-400 focus:ring-opacity-50 text-sm sm:text-base"
                 >
                   View All Projects
                 </button>
@@ -703,132 +701,131 @@ const SniperCodersPortfolio: React.FC = () => {
 
       <div 
         ref={statsRef} 
-        className="container mx-auto px-4 py-16 relative z-10 opacity-0 transform translate-y-8" 
+        className="container mx-auto px-4 py-12 sm:py-16 relative z-10 opacity-0 transform translate-y-8" 
       >
-        <div className="bg-gray-800/30 backdrop-filter backdrop-blur-lg rounded-xl border border-white/10 p-8 shadow-2xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            <div className="stats-item p-4">
-              <h3 className="counter text-4xl font-bold mb-2 text-cyan-400" data-target="100">0+</h3>
-              <p className="text-gray-300">Satisfied Clients</p>
+        <div className="bg-gray-800/30 backdrop-filter backdrop-blur-lg rounded-xl border border-white/10 p-6 sm:p-8 shadow-2xl mx-2 sm:mx-0">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 text-center">
+            <div className="stats-item p-3 sm:p-4">
+              <h3 className="counter text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2 text-cyan-400" data-target="100">0+</h3>
+              <p className="text-gray-300 text-xs sm:text-sm">Satisfied Clients</p>
             </div>
-            <div className="stats-item p-4">
-              <h3 className="counter text-4xl font-bold mb-2 text-blue-400" data-target="250">0+</h3>
-              <p className="text-gray-300">Projects Completed</p>
+            <div className="stats-item p-3 sm:p-4">
+              <h3 className="counter text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2 text-blue-400" data-target="250">0+</h3>
+              <p className="text-gray-300 text-xs sm:text-sm">Projects Completed</p>
             </div>
-            <div className="stats-item p-4">
-              <h3 className="counter text-4xl font-bold mb-2 text-purple-400" data-target="5.0">0.0</h3>
-              <p className="text-gray-300">Average Rating</p>
+            <div className="stats-item p-3 sm:p-4">
+              <h3 className="counter text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2 text-purple-400" data-target="5.0">0.0</h3>
+              <p className="text-gray-300 text-xs sm:text-sm">Average Rating</p>
             </div>
-            <div className="stats-item p-4">
-              <h3 className="counter text-4xl font-bold mb-2 text-indigo-400" data-target="7">0+</h3>
-              <p className="text-gray-300">Years of Experience</p>
+            <div className="stats-item p-3 sm:p-4">
+              <h3 className="counter text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2 text-indigo-400" data-target="7">0+</h3>
+              <p className="text-gray-300 text-xs sm:text-sm">Years of Experience</p>
             </div>
           </div>
         </div>
       </div>
 
-    <footer className="relative z-20 bg-gray-950/70 backdrop-blur-lg border-t border-gray-800/50 text-white py-16 mt-20">
-              <div className="container mx-auto px-6">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-                  <motion.div
-                    variants={textVariants}
-                    initial="initial"
-                    whileInView="animate" 
-                    viewport={{ once: true, amount: 0.2 }}
-                  >
-                    <div className="flex items-center mb-6">
-                      <div className="text-3xl font-extrabold">
-                        <span className="bg-clip-text bg-gradient-to-r text-white animate-gradient">
-                          SniperCoders
-                        </span>
-                      </div>
-                    </div>
-                    <p className="text-gray-300 text-sm leading-relaxed">
-                      We specialize in turning visionary ideas into reality. Our
-                      expertise helps businesses transform aspirations into tangible
-                      solutions, paving the way for future growth.
-                    </p>
-                  </motion.div>
-    
-                  {[
-                    {
-                      title: "Our Services",
-                      items: [
-                        {
-                          label: "Custom Software Dev",
-                          href: "/services/custom-software-development",
-                        },
-                        {
-                          label: "Website Development",
-                          href: "/services/web-development",
-                        },
-                        {
-                          label: "Mobile App Development",
-                          href: "/services/mobile-development",
-                        },
-    
-                        { label: "IT Consulting", href: "/services/it-consulting" }, 
-                      ],
-                    },
-                    {
-                      title: "Useful Links",
-                      items: [
-                        { label: "Terms of Service", href: "/terms" },
-                        { label: "Privacy Policy", href: "/privacy" },
-                        { label: "Refund Policy", href: "/refund" },
-                      ],
-                    },
-                    {
-                      title: "Get In Touch",
-                      items: [
-                        { label: "About Us", href: "/about" },
-                        { label: "Contact Us", href: "/contact" },
-                        { label: "FAQs", href: "/faqs" },
-                        { label: "Testimonials", href: "/showcase" },
-                      ],
-                    },
-                  ].map((section, idx) => (
-                    <motion.div
-                      key={idx}
-                      variants={textVariants}
-                      initial="initial"
-                      whileInView="animate"
-                      viewport={{ once: true, amount: 0.2 }}
-                    >
-                      <h3 className="text-lg font-semibold mb-6 text-gray-200">
-                        {section.title}
-                      </h3>
-                      <ul className="space-y-3">
-                        {section.items.map((item, i) => (
-                          <motion.li
-                            key={i}
-                            whileHover={{ x: 8 }}
-                            transition={{ duration: 0.3 }}
-                          >
-                            <a
-                              href={item.href}
-                              className="text-gray-300 hover:text-cyan-400 transition-colors text-sm"
-                            >
-                              {item.label}
-                            </a>
-                          </motion.li>
-                        ))}
-                      </ul>
-                    </motion.div>
-                  ))}
+      <footer className="relative z-20 bg-gray-950/70 backdrop-blur-lg border-t border-gray-800/50 text-white py-12 sm:py-16 mt-12 sm:mt-20">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 md:gap-12">
+            <motion.div
+              variants={textVariants}
+              initial="initial"
+              whileInView="animate" 
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              <div className="flex items-center mb-4 sm:mb-6">
+                <div className="text-2xl sm:text-3xl font-extrabold">
+                  <span className="bg-clip-text bg-gradient-to-r text-white animate-gradient">
+                    SniperCoders
+                  </span>
                 </div>
-                <motion.div
-                  className="mt-12 pt-10 border-t border-gray-800/50 text-center text-gray-400 text-sm"
-                  variants={textVariants}
-                  initial="initial"
-                  whileInView="animate"
-                  viewport={{ once: true, amount: 0.2 }}
-                >
-                  © {new Date().getFullYear()} SniperCoders Global Technologies. All
-                  rights reserved.
-                </motion.div>
               </div>
-            </footer>
+              <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
+                We specialize in turning visionary ideas into reality. Our
+                expertise helps businesses transform aspirations into tangible
+                solutions, paving the way for future growth.
+              </p>
+            </motion.div>
+
+            {[
+              {
+                title: "Our Services",
+                items: [
+                  {
+                    label: "Custom Software Dev",
+                    href: "/services/custom-software-development",
+                  },
+                  {
+                    label: "Website Development",
+                    href: "/services/web-development",
+                  },
+                  {
+                    label: "Mobile App Development",
+                    href: "/services/mobile-development",
+                  },
+                  { label: "IT Consulting", href: "/services/it-consulting" },
+                ],
+              },
+              {
+                title: "Useful Links",
+                items: [
+                  { label: "Terms of Service", href: "/terms" },
+                  { label: "Privacy Policy", href: "/privacy" },
+                  { label: "Refund Policy", href: "/refund" },
+                ],
+              },
+              {
+                title: "Get In Touch",
+                items: [
+                  { label: "About Us", href: "/about" },
+                  { label: "Contact Us", href: "/contact" },
+                  { label: "FAQs", href: "/faqs" },
+                  { label: "Testimonials", href: "/showcase" },
+                ],
+              },
+            ].map((section, idx) => (
+              <motion.div
+                key={idx}
+                variants={textVariants}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true, amount: 0.2 }}
+              >
+                <h3 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6 text-gray-200">
+                  {section.title}
+                </h3>
+                <ul className="space-y-2 sm:space-y-3">
+                  {section.items.map((item, i) => (
+                    <motion.li
+                      key={i}
+                      whileHover={{ x: 8 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <a
+                        href={item.href}
+                        className="text-gray-300 hover:text-cyan-400 transition-colors text-xs sm:text-sm"
+                      >
+                        {item.label}
+                      </a>
+                    </motion.li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+          <motion.div
+            className="mt-8 sm:mt-12 pt-8 sm:pt-10 border-t border-gray-800/50 text-center text-gray-400 text-xs sm:text-sm"
+            variants={textVariants}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            © {new Date().getFullYear()} SniperCoders Global Technologies. All
+            rights reserved.
+          </motion.div>
+        </div>
+      </footer>
             
       <style jsx>{`
         .text-gradient {
@@ -955,6 +952,26 @@ const SniperCodersPortfolio: React.FC = () => {
         .split-text {
           display: inline-block;
           overflow: hidden;
+        }
+        
+        /* Responsive breakpoints */
+        @media (max-width: 640px) {
+          .project-card .glass-card {
+            min-height: 320px;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .filter-btn {
+            padding: 6px 12px;
+            font-size: 11px;
+          }
+        }
+        
+        @media (min-width: 1536px) {
+          .container {
+            max-width: 1280px;
+          }
         }
       `}</style>
     </div>

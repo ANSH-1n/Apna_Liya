@@ -958,7 +958,7 @@ const RefundPolicy: React.FC = () => {
                   <strong>Initial Consultation:</strong> Free of charge
                 </p>
                 <p className="mb-6 text-gray-300">
-                  Deposit: 50% non-refundable deposit required before project
+                  Deposit: 30% non-refundable deposit required before project
                   commencement
                 </p>
 
@@ -1082,7 +1082,7 @@ const RefundPolicy: React.FC = () => {
                   3.1 Submission of Refund Request
                 </h3>
                 <p className="mb-6 text-gray-300">
-                  Submit requests in writing to support@snipercoders.com
+                  Submit requests in writing to snipercoders25@gmail.com   
                 </p>
                 <p className="mb-3 text-gray-300">
                   <strong>Include:</strong>
@@ -1206,7 +1206,7 @@ const RefundPolicy: React.FC = () => {
                     href="mailto:support@snipercoders.com"
                     className="text-blue-400 hover:text-blue-300 transition-colors"
                   >
-                    support@snipercoders.com
+                    snipercoders25@gmail.com
                   </a>
                 </p>
                 <p className="text-gray-300">
