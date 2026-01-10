@@ -55,7 +55,7 @@ export default function VideoSection() {
                 playsInline
                 poster="https://via.placeholder.com/1280x720/1e293b/8b5cf6?text=SniperCoders+Showreel"
               >
-                <source src="https://res.cloudinary.com/dzoxwk1jc/video/upload/v1767727211/WhatsApp_Video_2026-01-07_at_00.10.33_yyqvcs.mp4" type="video/mp4" />
+                <source src="https://res.cloudinary.com/dzoxwk1jc/video/upload/v1768070466/sniper_video_section_r1kcfs.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
               

@@ -1,65 +1,491 @@
-//components/Creative.tsx
+
+// // //components/Creative.tsx
+
+
+// 'use client';
+// import { useState, useRef, useEffect } from 'react';
+// import { Code2, Zap, ShieldCheck, Sparkles, Video, Image as ImageIcon, Calendar, Target } from 'lucide-react';
+
+// interface Offer {
+//   id: number;
+//   title: string;
+//   description: string;
+//   image: string;
+//   originalPrice: string;
+//   discountedPrice: string;
+//   discount: string;
+//   features: string[];
+// }
+
+// const offers: Offer[] = [
+//   {
+//     id: 1,
+//     title: 'Premium Website Bundle',
+//     description: 'Complete website development with SEO optimization and 1-year maintenance',
+//     image: '/images/ad_1.jpeg',
+//     originalPrice: '₹40,000',
+//     discountedPrice: '₹25,000',
+//     discount: '37% OFF',
+//     features: ['Custom Design', 'SEO Ready', 'Mobile Responsive', '1 Year Hosting']
+//   },
+//   {
+//     id: 2,
+//     title: 'E-Commerce Pro',
+//     description: 'Full-featured online store with payment integration and inventory management',
+//     image: '/images/ad_2.jpeg',
+//     originalPrice: '₹60,000',
+//     discountedPrice: '₹35,000',
+//     discount: '42% OFF',
+//     features: ['Payment Gateway', 'Product Management', 'Admin Panel', 'Analytics Dashboard']
+//   },
+//   {
+//     id: 3,
+//     title: 'Content Creation Package',
+//     description: 'Monthly content creation including videos, graphics, and social media posts',
+//     image: '/images/ad_3.jpeg',
+//     originalPrice: '₹30,000',
+//     discountedPrice: '₹20,000',
+//     discount: '33% OFF',
+//     features: ['10 Reels/Month', '20 Graphics', 'Content Strategy', 'Performance Analytics']
+//   },
+//   {
+//     id: 4,
+//     title: 'SEO Boost Package',
+//     description: 'Complete SEO optimization with monthly reporting and performance tracking',
+//     image: '/images/ad_4.jpeg',
+//     originalPrice: '₹25,000',
+//     discountedPrice: '₹15,000',
+//     discount: '40% OFF',
+//     features: ['Keyword Research', 'On-Page SEO', 'Technical Audit', 'Monthly Reports']
+//   },
+//   {
+//     id: 5,
+//     title: 'Brand Identity Suite',
+//     description: 'Complete branding package including logo, guidelines, and marketing materials',
+//     image: '/images/ad_5.jpeg',
+//     originalPrice: '₹35,000',
+//     discountedPrice: '₹22,000',
+//     discount: '37% OFF',
+//     features: ['Logo Design', 'Brand Guidelines', 'Business Cards', 'Social Media Kit']
+//   },
+//   {
+//     id: 6,
+//     title: 'Maintenance Pro',
+//     description: 'Year-round website maintenance, updates, and security monitoring',
+//     image: '/images/ad_6.jpeg',
+//     originalPrice: '₹18,000',
+//     discountedPrice: '₹12,000',
+//     discount: '33% OFF',
+//     features: ['24/7 Monitoring', 'Weekly Backups', 'Security Updates', 'Performance Optimization']
+//   },
+
+// ];
+
+// export default function Creative() {
+//   const [isPaused, setIsPaused] = useState(false);
+//   const scrollRef = useRef<HTMLDivElement>(null);
+//   const animationFrameRef = useRef<number | null>(null);
+//   const [scrollSpeed, setScrollSpeed] = useState(1.2);
   
+//   // Adjust scroll speed based on screen size
+//   useEffect(() => {
+//     const checkScreenSize = () => {
+//       if (window.innerWidth < 640) {
+//         setScrollSpeed(0.6);
+//       } else if (window.innerWidth < 1024) {
+//         setScrollSpeed(0.9);
+//       } else {
+//         setScrollSpeed(1.2);
+//       }
+//     };
+    
+//     checkScreenSize();
+//     window.addEventListener('resize', checkScreenSize);
+//     return () => window.removeEventListener('resize', checkScreenSize);
+//   }, []);
+  
+//   const animateScroll = () => {
+//     if (!scrollRef.current || isPaused) return;
+//     const scroller = scrollRef.current;
+//     const maxScrollLeft = scroller.scrollWidth - scroller.clientWidth;
+    
+//     if (scroller.scrollLeft >= maxScrollLeft - 1) {
+//       scroller.scrollLeft = 0;
+//     } else {
+//       scroller.scrollLeft += scrollSpeed;
+//     }
+//     animationFrameRef.current = requestAnimationFrame(animateScroll);
+//   };
+
+//   useEffect(() => {
+//     if (!scrollRef.current) return;
+    
+//     animationFrameRef.current = requestAnimationFrame(animateScroll);
+    
+//     return () => {
+//       if (animationFrameRef.current) {
+//         cancelAnimationFrame(animationFrameRef.current);
+//       }
+//     };
+//   }, [isPaused, scrollSpeed]);
+
+//   const duplicatedOffers = [...offers, ...offers];
+
+//   return (
+//     <section className="relative py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-b from-black via-gray-900 to-black overflow-hidden">
+//       {/* Background Elements */}
+//       <div className="absolute inset-0">
+//         {/* Grid Pattern */}
+//         <div className="absolute inset-0 opacity-10">
+//           <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f12_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f12_1px,transparent_1px)] bg-[size:24px_24px]" />
+//         </div>
+      
+//         {/* Glowing Orbs - Responsive sizing */}
+//         <div className="absolute top-1/4 left-5 sm:left-10 w-48 sm:w-64 md:w-72 h-48 sm:h-64 md:h-72 bg-orange-500/20 rounded-full blur-3xl animate-pulse" />
+//         <div className="absolute bottom-1/4 right-5 sm:right-10 w-56 sm:w-72 md:w-96 h-56 sm:h-72 md:h-96 bg-cyan-500/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1000ms' }} />
+//         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 sm:w-52 md:w-64 h-40 sm:h-52 md:h-64 bg-purple-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '500ms' }} />
+//       </div>
+      
+//       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
+//         {/* Header */}
+//         <div className="text-center mb-8 sm:mb-12 md:mb-16">
+//           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6">
+//             <span className="text-white">Exclusive</span>
+//             <br />
+//             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-cyan-400 to-purple-400">
+//               Offers & Services
+//             </span>
+//           </h1>
+        
+//           <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto px-4">
+//             Premium web development and content creation services designed to drive results
+//           </p>
+//         </div>
+        
+//         {/* Offers Carousel Section */}
+//         <div className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 relative z-10">
+//           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-6 sm:mb-8 md:mb-12 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-purple-400 px-4">
+//             Hot Deals & Packages
+//           </h2>
+          
+//           {/* Offers Carousel Container */}
+//           <div
+//             ref={scrollRef}
+//             className="flex overflow-x-hidden scrollbar-thin scrollbar-thumb-cyan-500/30 scrollbar-track-transparent space-x-3 sm:space-x-4 md:space-x-6 lg:space-x-8 py-4 px-2 sm:px-4 md:px-0"
+//             onMouseEnter={() => setIsPaused(true)}
+//             onMouseLeave={() => setIsPaused(false)}
+//             onTouchStart={() => setIsPaused(true)}
+//             onTouchEnd={() => setTimeout(() => setIsPaused(false), 1000)}
+//           >
+//             {duplicatedOffers.map((offer, index) => (
+//               <div
+//                 key={`${offer.id}-${index}`}
+//                 className="flex-shrink-0 w-[260px] sm:w-[300px] md:w-[340px] lg:w-[380px] bg-gradient-to-br from-gray-900/90 to-black/90 backdrop-blur-lg border border-orange-500/20 rounded-xl md:rounded-2xl overflow-hidden shadow-xl hover:shadow-orange-500/60 transition-all duration-300 snap-start relative z-20 hover:scale-105 hover:-translate-y-2"
+//               >
+//                 <div className="relative h-36 sm:h-44 md:h-52 lg:h-56 overflow-hidden">
+//                   <img
+//                     src={offer.image}
+//                     alt={offer.title}
+//                     className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+//                     loading={index < 3 ? "eager" : "lazy"}
+//                   />
+//                   <div className="absolute top-3 sm:top-4 right-3 sm:right-4">
+//                     <span className="px-2 sm:px-3 py-1 bg-gradient-to-r from-red-500 to-orange-500 text-white text-xs font-bold rounded-full animate-pulse">
+//                       {offer.discount}
+//                     </span>
+//                   </div>
+//                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+//                 </div>
+                
+//                 <div className="p-4 sm:p-5 md:p-6 lg:p-7">
+//                   <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white mb-2 sm:mb-3 line-clamp-1">
+//                     {offer.title}
+//                   </h3>
+//                   <p className="text-gray-300 text-xs sm:text-sm md:text-base mb-3 sm:mb-4 md:mb-6 leading-relaxed line-clamp-2">
+//                     {offer.description}
+//                   </p>
+                  
+//                   <div className="flex items-center gap-2 sm:gap-3 md:gap-4 mb-3 sm:mb-4">
+//                     <span className="text-gray-400 text-xs sm:text-sm md:text-base line-through">
+//                       {offer.originalPrice}
+//                     </span>
+//                     <span className="text-lg sm:text-xl md:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-cyan-400">
+//                       {offer.discountedPrice}
+//                     </span>
+//                   </div>
+                  
+//                   <div className="grid grid-cols-2 gap-1.5 sm:gap-2 mb-4 sm:mb-5 md:mb-6">
+//                     {offer.features.slice(0, 4).map((feature, idx) => (
+//                       <div key={idx} className="flex items-center gap-1">
+//                         <div className="w-1 h-1 rounded-full bg-orange-400 flex-shrink-0" />
+//                         <span className="text-xs sm:text-sm text-gray-300 truncate">{feature}</span>
+//                       </div>
+//                     ))}
+//                   </div>
+                  
+//                   <button className="inline-flex items-center justify-center w-full px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 bg-gradient-to-r from-orange-600 to-purple-700 text-white font-medium rounded-full hover:from-orange-500 hover:to-purple-600 transition-all shadow-md hover:shadow-lg cursor-pointer text-xs sm:text-sm md:text-base active:scale-95">
+//                     Get This Offer
+//                     <svg className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+//                     </svg>
+//                   </button>
+//                 </div>
+//               </div>
+//             ))}
+//           </div>
+          
+//           {/* Manual navigation buttons */}
+//           <div className="flex justify-center mt-6 sm:mt-8 md:mt-10 lg:mt-12 space-x-3 sm:space-x-4 md:space-x-6">
+//             <button
+//               onClick={() => scrollRef.current?.scrollBy({ left: -400, behavior: 'smooth' })}
+//               className="p-2 sm:p-3 md:p-4 bg-white/10 rounded-full hover:bg-white/20 backdrop-blur transition-all active:scale-95 cursor-pointer"
+//               aria-label="Scroll left"
+//             >
+//               <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+//               </svg>
+//             </button>
+//             <button
+//               onClick={() => scrollRef.current?.scrollBy({ left: 400, behavior: 'smooth' })}
+//               className="p-2 sm:p-3 md:p-4 bg-white/10 rounded-full hover:bg-white/20 backdrop-blur transition-all active:scale-95 cursor-pointer"
+//               aria-label="Scroll right"
+//             >
+//               <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+//               </svg>
+//             </button>
+//           </div>
+//         </div>
+
+//         {/* Floating Elements - Hidden on mobile */}
+//         <div className="absolute bottom-20 left-1/4 hidden lg:block">
+//           <div
+//             className="w-4 h-4 rounded-full bg-gradient-to-r from-blue-400 to-cyan-400"
+//             style={{
+//               animation: 'float1 4s ease-in-out infinite'
+//             }}
+//           />
+//         </div>
+//         <div className="absolute top-20 right-1/4 hidden lg:block">
+//           <div
+//             className="w-3 h-3 rounded-full bg-gradient-to-r from-orange-400 to-pink-400"
+//             style={{
+//               animation: 'float2 3s ease-in-out infinite'
+//             }}
+//           />
+//         </div>
+//       </div>
+      
+//       <style jsx>{`
+//         @keyframes float1 {
+//           0%, 100% { transform: translateY(0); }
+//           50% { transform: translateY(-20px); }
+//         }
+        
+//         @keyframes float2 {
+//           0%, 100% { transform: translateY(0); }
+//           50% { transform: translateY(20px); }
+//         }
+        
+//         /* Custom scrollbar styling */
+//         .scrollbar-thin::-webkit-scrollbar {
+//           height: 4px;
+//         }
+        
+//         @media (min-width: 640px) {
+//           .scrollbar-thin::-webkit-scrollbar {
+//             height: 6px;
+//           }
+//         }
+        
+//         .scrollbar-thin::-webkit-scrollbar-track {
+//           background: transparent;
+//         }
+        
+//         .scrollbar-thin::-webkit-scrollbar-thumb {
+//           background-color: rgba(6, 182, 212, 0.3);
+//           border-radius: 3px;
+//         }
+        
+//         .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+//           background-color: rgba(6, 182, 212, 0.5);
+//         }
+        
+//         /* Line clamping for text */
+//         .line-clamp-1 {
+//           overflow: hidden;
+//           display: -webkit-box;
+//           -webkit-box-orient: vertical;
+//           -webkit-line-clamp: 1;
+//         }
+        
+//         .line-clamp-2 {
+//           overflow: hidden;
+//           display: -webkit-box;
+//           -webkit-box-orient: vertical;
+//           -webkit-line-clamp: 2;
+//         }
+        
+//         /* Hide scrollbar for mobile touch */
+//         @media (max-width: 768px) {
+//           .overflow-x-hidden {
+//             -ms-overflow-style: none;
+//             scrollbar-width: none;
+//           }
+          
+//           .overflow-x-hidden::-webkit-scrollbar {
+//             display: none;
+//           }
+//         }
+//       `}</style>
+//     </section>
+//   );
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 'use client';
-import { motion } from 'framer-motion';
-import { Code2, Zap, ShieldCheck, Sparkles, Video, Image, Calendar, Target } from 'lucide-react';
+import { useState, useRef, useEffect, useCallback } from 'react';
+import Image from 'next/image';
+
+interface Offer {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  originalPrice: string;
+  discountedPrice: string;
+  discount: string;
+  features: string[];
+}
+
+const offers: Offer[] = [
+  {
+    id: 1,
+    title: 'Premium Website Bundle',
+    description: 'Complete website development with SEO optimization and 1-year maintenance',
+    image: '/images/ad_1.jpeg',
+    originalPrice: '₹40,000',
+    discountedPrice: '₹25,000',
+    discount: '37% OFF',
+    features: ['Custom Design', 'SEO Ready', 'Mobile Responsive', '1 Year Hosting']
+  },
+  {
+    id: 2,
+    title: 'E-Commerce Pro',
+    description: 'Full-featured online store with payment integration and inventory management',
+    image: '/images/ad_2.jpeg',
+    originalPrice: '₹60,000',
+    discountedPrice: '₹35,000',
+    discount: '42% OFF',
+    features: ['Payment Gateway', 'Product Management', 'Admin Panel', 'Analytics Dashboard']
+  },
+  {
+    id: 3,
+    title: 'Content Creation Package',
+    description: 'Monthly content creation including videos, graphics, and social media posts',
+    image: '/images/ad_3.jpeg',
+    originalPrice: '₹30,000',
+    discountedPrice: '₹20,000',
+    discount: '33% OFF',
+    features: ['10 Reels/Month', '20 Graphics', 'Content Strategy', 'Performance Analytics']
+  },
+  {
+    id: 4,
+    title: 'SEO Boost Package',
+    description: 'Complete SEO optimization with monthly reporting and performance tracking',
+    image: '/images/ad_4.jpeg',
+    originalPrice: '₹25,000',
+    discountedPrice: '₹15,000',
+    discount: '40% OFF',
+    features: ['Keyword Research', 'On-Page SEO', 'Technical Audit', 'Monthly Reports']
+  },
+  {
+    id: 5,
+    title: 'Brand Identity Suite',
+    description: 'Complete branding package including logo, guidelines, and marketing materials',
+    image: '/images/ad_5.jpeg',
+    originalPrice: '₹35,000',
+    discountedPrice: '₹22,000',
+    discount: '37% OFF',
+    features: ['Logo Design', 'Brand Guidelines', 'Business Cards', 'Social Media Kit']
+  },
+  {
+    id: 6,
+    title: 'Maintenance Pro',
+    description: 'Year-round website maintenance, updates, and security monitoring',
+    image: '/images/ad_6.jpeg',
+    originalPrice: '₹18,000',
+    discountedPrice: '₹12,000',
+    discount: '33% OFF',
+    features: ['24/7 Monitoring', 'Weekly Backups', 'Security Updates', 'Performance Optimization']
+  },
+];
 
 export default function Creative() {
-  const websiteFeatures = [
-    {
-      icon: <Code2 className="w-5 h-5" />,
-      title: 'Custom Coded',
-      desc: 'No templates, pure custom development'
-    },
-    {
-      icon: <Zap className="w-5 h-5" />,
-      title: 'Lightning Fast',
-      desc: '90+ PageSpeed scores guaranteed'
-    },
-    {
-      icon: <ShieldCheck className="w-5 h-5" />,
-      title: 'SEO Optimized',
-      desc: 'Rank higher on Google search'
-    },
-    {
-      icon: <Sparkles className="w-5 h-5" />,
-      title: 'Premium Design',
-      desc: 'Award-winning UI/UX'
-    }
-  ];
+  const [isPaused, setIsPaused] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const animationFrameRef = useRef<number | null>(null);
+  const [scrollSpeed, setScrollSpeed] = useState(1.2);
   
-  const contentFeatures = [
-    {
-      icon: <Video className="w-5 h-5" />,
-      title: '10 Reels',
-      desc: 'High-quality video content'
-    },
-    {
-      icon: <Image className="w-5 h-5" />,
-      title: '4 Image Posts',
-      desc: 'Visually stunning graphics'
-    },
-    {
-      icon: <Calendar className="w-5 h-5" />,
-      title: 'Complete Package',
-      desc: 'Shooting + Editing included'
-    },
-    {
-      icon: <Target className="w-5 h-5" />,
-      title: 'Strategy Based',
-      desc: 'Designed for engagement'
-    }
-  ];
+  // Adjust scroll speed based on screen size
+  useEffect(() => {
+    const checkScreenSize = () => {
+      if (window.innerWidth < 640) {
+        setScrollSpeed(0.6);
+      } else if (window.innerWidth < 1024) {
+        setScrollSpeed(0.9);
+      } else {
+        setScrollSpeed(1.2);
+      }
+    };
+    
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
   
-  const testimonials = [
-    { name: 'URBANCRAFT', quote: '300% ROI in first month', service: 'Website' },
-    { name: 'TravelQuench', quote: '2x faster loading time', service: 'Website' },
-    { name: 'TorkeHub', quote: '150+ leads monthly', service: 'Website' }
-  ];
+  const animateScroll = useCallback(() => {
+    if (!scrollRef.current || isPaused) return;
+    const scroller = scrollRef.current;
+    const maxScrollLeft = scroller.scrollWidth - scroller.clientWidth;
+    
+    if (scroller.scrollLeft >= maxScrollLeft - 1) {
+      scroller.scrollLeft = 0;
+    } else {
+      scroller.scrollLeft += scrollSpeed;
+    }
+    animationFrameRef.current = requestAnimationFrame(animateScroll);
+  }, [isPaused, scrollSpeed]);
+
+  useEffect(() => {
+    if (!scrollRef.current) return;
+    
+    animationFrameRef.current = requestAnimationFrame(animateScroll);
+    
+    return () => {
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+    };
+  }, [animateScroll]);
+
+  const duplicatedOffers = [...offers, ...offers];
 
   return (
-    <section className="relative py-24 bg-gradient-to-b from-black via-gray-900 to-black overflow-hidden">
+    <section className="relative py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-b from-black via-gray-900 to-black overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         {/* Grid Pattern */}
@@ -67,289 +493,206 @@ export default function Creative() {
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f12_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f12_1px,transparent_1px)] bg-[size:24px_24px]" />
         </div>
       
-        {/* Glowing Orbs */}
-        <div className="absolute top-1/4 left-10 w-72 h-72 bg-orange-500/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-cyan-500/30 rounded-full blur-3xl animate-pulse delay-1000" />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-500" />
+        {/* Glowing Orbs - Responsive sizing */}
+        <div className="absolute top-1/4 left-5 sm:left-10 w-48 sm:w-64 md:w-72 h-48 sm:h-64 md:h-72 bg-orange-500/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-5 sm:right-10 w-56 sm:w-72 md:w-96 h-56 sm:h-72 md:h-96 bg-cyan-500/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1000ms' }} />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 sm:w-52 md:w-64 h-40 sm:h-52 md:h-64 bg-purple-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '500ms' }} />
       </div>
       
-      <div className="relative container mx-auto px-6">
+      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h1 className="text-5xl lg:text-7xl font-bold mb-6">
-            <span className="text-white">Boost Your</span>
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6">
+            <span className="text-white">Exclusive</span>
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-cyan-400 to-purple-400">
-              Digital Presence
+              Offers & Services
             </span>
           </h1>
         
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto px-4">
             Premium web development and content creation services designed to drive results
           </p>
-        </motion.div>
-        
-        {/* Main Cards Container */}
-        <div className="max-w-7xl mx-auto relative">
-          {/* Floating Cards */}
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 relative z-10">
-            {/* Website Development Card */}
-            <motion.div
-              initial={{ opacity: 0, y: 40, rotateY: -15 }}
-              whileInView={{ opacity: 1, y: 0, rotateY: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              animate={{
-                y: [0, -8, 0],
-                transition: {
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: [0.45, 0.05, 0.55, 0.95]
-                }
-              }}
-              whileHover={{
-                scale: 0.97,
-                transition: { duration: 0.5, ease: "easeOut" }
-              }}
-              className="relative group"
-            >
-              <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 via-cyan-500/20 to-purple-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            
-              <div className="relative h-full bg-gradient-to-br from-gray-900/90 via-black/90 to-gray-900/90 backdrop-blur-xl rounded-3xl border border-gray-700/50 overflow-hidden shadow-2xl">
-                {/* Animated Border */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-500/10 to-transparent -skew-x-12 animate-shimmer" />
-                <div className="relative p-8 lg:p-10">
-                  {/* Card Header */}
-                  <div className="text-center mb-8">
-                    <div className="inline-flex items-center gap-3 mb-6">
-                      <Code2 className="w-8 h-8 text-blue-400" />
-                      <h2 className="text-3xl font-bold text-white">CODED WEBSITE</h2>
-                    </div>
-                  
-                    <div className="flex items-center justify-center gap-4 mb-8">
-                      <span className="text-2xl text-gray-400 line-through">₹30,000</span>
-                      <span className="px-4 py-1 bg-gradient-to-r from-red-500 to-orange-500 text-white font-bold rounded-full animate-pulse">
-                        SAVE ₹5,000
-                      </span>
-                    </div>
-                  
-                    <div className="mb-8">
-                      <div className="text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-cyan-500 to-purple-500">
-                        ₹25,000
-                      </div>
-                      <p className="text-gray-400 text-lg mt-2">One-time payment</p>
-                    </div>
-                  </div>
-                  
-                  {/* Features */}
-                  <div className="grid grid-cols-2 gap-4 mb-10">
-                    {websiteFeatures.map((feature, index) => (
-                      <motion.div
-                        key={index}
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: index * 0.1 }}
-                        className="bg-gradient-to-br from-gray-800/50 to-black/50 backdrop-blur rounded-xl p-4 border border-gray-700/50 group-hover:border-blue-500/30 transition-all"
-                      >
-                        <div className="flex items-center gap-3 mb-2">
-                          <div className="text-blue-400">{feature.icon}</div>
-                          <h3 className="text-sm font-bold text-white">{feature.title}</h3>
-                        </div>
-                        <p className="text-gray-400 text-xs">{feature.desc}</p>
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-            
-            {/* Content Creation Card */}
-            <motion.div
-              initial={{ opacity: 0, y: 40, rotateY: 15 }}
-              whileInView={{ opacity: 1, y: 0, rotateY: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              animate={{
-                y: [0, -10, 0],
-                transition: {
-                  duration: 7,
-                  repeat: Infinity,
-                  ease: [0.45, 0.05, 0.55, 0.95],
-                  delay: 1
-                }
-              }}
-              whileHover={{
-                scale: 0.97,
-                transition: { duration: 0.5, ease: "easeOut" }
-              }}
-              className="relative group"
-            >
-              <div className="absolute -inset-4 bg-gradient-to-r from-orange-500/20 via-pink-500/20 to-purple-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            
-              <div className="relative h-full bg-gradient-to-br from-gray-900/90 via-black/90 to-gray-900/90 backdrop-blur-xl rounded-3xl border border-gray-700/50 overflow-hidden shadow-2xl">
-                {/* Animated Border */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-orange-500/10 to-transparent -skew-x-12 animate-shimmer delay-2000" />
-                <div className="relative p-8 lg:p-10">
-                  {/* Card Header */}
-                  <div className="text-center mb-8">
-                    <div className="inline-flex items-center gap-3 mb-6">
-                      <Video className="w-8 h-8 text-orange-400" />
-                      <h2 className="text-3xl font-bold text-white">CONTENT CREATION</h2>
-                    </div>
-                  
-                    <div className="flex items-center justify-center gap-4 mb-8">
-                      <span className="text-2xl text-gray-400 line-through">₹25,000</span>
-                      <span className="px-4 py-1 bg-gradient-to-r from-orange-500 to-pink-500 text-white font-bold rounded-full animate-pulse">
-                        SAVE ₹5,000
-                      </span>
-                    </div>
-                  
-                    <div className="mb-8">
-                      <div className="text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500">
-                        ₹20,000
-                      </div>
-                      <p className="text-gray-400 text-lg mt-2">Complete package</p>
-                    </div>
-                  </div>
-                  
-                  {/* Features */}
-                  <div className="grid grid-cols-2 gap-4 mb-10">
-                    {contentFeatures.map((feature, index) => (
-                      <motion.div
-                        key={index}
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: index * 0.1 + 0.2 }}
-                        className="bg-gradient-to-br from-gray-800/50 to-black/50 backdrop-blur rounded-xl p-4 border border-gray-700/50 group-hover:border-orange-500/30 transition-all"
-                      >
-                        <div className="flex items-center gap-3 mb-2">
-                          <div className="text-orange-400">{feature.icon}</div>
-                          <h3 className="text-sm font-bold text-white">{feature.title}</h3>
-                        </div>
-                        <p className="text-gray-400 text-xs">{feature.desc}</p>
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-          
-          {/* Testimonials Section */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="mt-24 pt-16 border-t border-gray-800/50"
-          >
-            <div className="text-center mb-12">
-              <h3 className="text-3xl font-bold text-white mb-4">Trusted by Brands</h3>
-              <p className="text-gray-400">See what our clients are saying</p>
-            </div>
-          
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {testimonials.map((testimonial, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ y: -5 }}
-                  className={`bg-gradient-to-br ${
-                    testimonial.service === 'Website'
-                      ? 'from-blue-500/20 to-blue-500/10'
-                      : 'from-orange-500/20 to-orange-500/10'
-                  } backdrop-blur rounded-2xl p-6 border border-gray-700/50 hover:shadow-xl transition-all`}
-                >
-                  <div className="flex justify-between items-start mb-4">
-                    <div className="text-2xl font-bold text-white">{testimonial.name}</div>
-                    <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                      testimonial.service === 'Website'
-                        ? 'bg-blue-500/30 text-blue-300'
-                        : 'bg-orange-500/30 text-orange-300'
-                    }`}>
-                      {testimonial.service}
-                    </span>
-                  </div>
-                  <p className="text-gray-300 mb-4">{testimonial.quote}</p>
-                  <div className="flex gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} filled={true} />
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-          
-          {/* Contact Info */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mt-16 text-center"
-          >
-            <div className="inline-flex flex-col sm:flex-row items-center gap-4 sm:gap-8 bg-gray-900/50 backdrop-blur rounded-2xl px-8 py-6 border border-gray-700/50">
-              <div className="text-left">
-                <span className="text-gray-400 text-sm">Ready to transform your business?</span>
-                <div className="text-white font-bold text-lg">Contact us today</div>
-              </div>
-              <a
-                href="mailto:snipercoders25@gmail.com"
-                className="px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl text-white font-semibold hover:shadow-lg transition-shadow"
-              >
-                snipercoders25@gmail.com
-              </a>
-            </div>
-          </motion.div>
         </div>
         
-        {/* Floating Elements */}
+        {/* Offers Carousel Section */}
+        <div className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 relative z-10">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-6 sm:mb-8 md:mb-12 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-purple-400 px-4">
+            Hot Deals & Packages
+          </h2>
+          
+          {/* Offers Carousel Container */}
+          <div
+            ref={scrollRef}
+            className="flex overflow-x-hidden scrollbar-thin scrollbar-thumb-cyan-500/30 scrollbar-track-transparent space-x-3 sm:space-x-4 md:space-x-6 lg:space-x-8 py-4 px-2 sm:px-4 md:px-0"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+            onTouchStart={() => setIsPaused(true)}
+            onTouchEnd={() => setTimeout(() => setIsPaused(false), 1000)}
+          >
+            {duplicatedOffers.map((offer, index) => (
+              <div
+                key={`${offer.id}-${index}`}
+                className="flex-shrink-0 w-[260px] sm:w-[300px] md:w-[340px] lg:w-[380px] bg-gradient-to-br from-gray-900/90 to-black/90 backdrop-blur-lg border border-orange-500/20 rounded-xl md:rounded-2xl overflow-hidden shadow-xl hover:shadow-orange-500/60 transition-all duration-300 snap-start relative z-20 hover:scale-105 hover:-translate-y-2"
+              >
+                <div className="relative h-36 sm:h-44 md:h-52 lg:h-56 overflow-hidden bg-gray-800">
+                  <Image
+                    src={offer.image}
+                    alt={offer.title}
+                    fill
+                    className="object-contain transition-transform duration-700 hover:scale-105 p-2"
+                    priority={index < 3}
+                    sizes="(max-width: 640px) 260px, (max-width: 768px) 300px, (max-width: 1024px) 340px, 380px"
+                  />
+                  <div className="absolute top-3 sm:top-4 right-3 sm:right-4 z-10">
+                    <span className="px-2 sm:px-3 py-1 bg-gradient-to-r from-red-500 to-orange-500 text-white text-xs font-bold rounded-full animate-pulse shadow-lg">
+                      {offer.discount}
+                    </span>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
+                </div>
+                
+                <div className="p-4 sm:p-5 md:p-6 lg:p-7">
+                  <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white mb-2 sm:mb-3 line-clamp-1">
+                    {offer.title}
+                  </h3>
+                  <p className="text-gray-300 text-xs sm:text-sm md:text-base mb-3 sm:mb-4 md:mb-6 leading-relaxed line-clamp-2">
+                    {offer.description}
+                  </p>
+                  
+                  <div className="flex items-center gap-2 sm:gap-3 md:gap-4 mb-3 sm:mb-4">
+                    <span className="text-gray-400 text-xs sm:text-sm md:text-base line-through">
+                      {offer.originalPrice}
+                    </span>
+                    <span className="text-lg sm:text-xl md:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-cyan-400">
+                      {offer.discountedPrice}
+                    </span>
+                  </div>
+                  
+                  <div className="grid grid-cols-2 gap-1.5 sm:gap-2 mb-4 sm:mb-5 md:mb-6">
+                    {offer.features.slice(0, 4).map((feature, idx) => (
+                      <div key={idx} className="flex items-center gap-1">
+                        <div className="w-1 h-1 rounded-full bg-orange-400 flex-shrink-0" />
+                        <span className="text-xs sm:text-sm text-gray-300 truncate">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <button className="inline-flex items-center justify-center w-full px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 bg-gradient-to-r from-orange-600 to-purple-700 text-white font-medium rounded-full hover:from-orange-500 hover:to-purple-600 transition-all shadow-md hover:shadow-lg cursor-pointer text-xs sm:text-sm md:text-base active:scale-95">
+                    Get This Offer
+                    <svg className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          {/* Manual navigation buttons */}
+          <div className="flex justify-center mt-6 sm:mt-8 md:mt-10 lg:mt-12 space-x-3 sm:space-x-4 md:space-x-6">
+            <button
+              onClick={() => scrollRef.current?.scrollBy({ left: -400, behavior: 'smooth' })}
+              className="p-2 sm:p-3 md:p-4 bg-white/10 rounded-full hover:bg-white/20 backdrop-blur transition-all active:scale-95 cursor-pointer"
+              aria-label="Scroll left"
+            >
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button
+              onClick={() => scrollRef.current?.scrollBy({ left: 400, behavior: 'smooth' })}
+              className="p-2 sm:p-3 md:p-4 bg-white/10 rounded-full hover:bg-white/20 backdrop-blur transition-all active:scale-95 cursor-pointer"
+              aria-label="Scroll right"
+            >
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        {/* Floating Elements - Hidden on mobile */}
         <div className="absolute bottom-20 left-1/4 hidden lg:block">
-          <motion.div
-            animate={{ y: [0, -20, 0] }}
-            transition={{ duration: 4, repeat: Infinity }}
+          <div
             className="w-4 h-4 rounded-full bg-gradient-to-r from-blue-400 to-cyan-400"
+            style={{
+              animation: 'float1 4s ease-in-out infinite'
+            }}
           />
         </div>
         <div className="absolute top-20 right-1/4 hidden lg:block">
-          <motion.div
-            animate={{ y: [0, 20, 0] }}
-            transition={{ duration: 3, repeat: Infinity, delay: 1 }}
+          <div
             className="w-3 h-3 rounded-full bg-gradient-to-r from-orange-400 to-pink-400"
+            style={{
+              animation: 'float2 3s ease-in-out infinite'
+            }}
           />
         </div>
       </div>
       
       <style jsx>{`
-        @keyframes shimmer {
-          0% { transform: translateX(-100%) skewX(-12deg); }
-          100% { transform: translateX(200%) skewX(-12deg); }
+        @keyframes float1 {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-20px); }
         }
-        .animate-shimmer {
-          animation: shimmer 8s infinite;
+        
+        @keyframes float2 {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(20px); }
         }
-        .animate-shimmer.delay-2000 {
-          animation-delay: 2s;
+        
+        /* Custom scrollbar styling */
+        .scrollbar-thin::-webkit-scrollbar {
+          height: 4px;
+        }
+        
+        @media (min-width: 640px) {
+          .scrollbar-thin::-webkit-scrollbar {
+            height: 6px;
+          }
+        }
+        
+        .scrollbar-thin::-webkit-scrollbar-track {
+          background: transparent;
+        }
+        
+        .scrollbar-thin::-webkit-scrollbar-thumb {
+          background-color: rgba(6, 182, 212, 0.3);
+          border-radius: 3px;
+        }
+        
+        .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+          background-color: rgba(6, 182, 212, 0.5);
+        }
+        
+        /* Line clamping for text */
+        .line-clamp-1 {
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 1;
+        }
+        
+        .line-clamp-2 {
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+        }
+        
+        /* Hide scrollbar for mobile touch */
+        @media (max-width: 768px) {
+          .overflow-x-hidden {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
+          
+          .overflow-x-hidden::-webkit-scrollbar {
+            display: none;
+          }
         }
       `}</style>
     </section>
-  );
-}
-
-// Star component for ratings
-function Star({ filled }: { filled: boolean }) {
-  return (
-    <svg className={`w-4 h-4 ${filled ? 'text-yellow-400' : 'text-gray-600'}`} fill="currentColor" viewBox="0 0 20 20">
-      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-    </svg>
   );
 }
