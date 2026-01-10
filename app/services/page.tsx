@@ -291,8 +291,7 @@ export default function ServicesPage() {
             initial="initial"
             animate="animate"
           >
-            © {new Date().getFullYear()} SniperCoders Global Technologies. All
-            rights reserved.
+            © {new Date().getFullYear()}SniperCoders. All rights reserved.
           </motion.div>
         </div>
       </footer>

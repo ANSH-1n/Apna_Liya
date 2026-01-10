@@ -590,7 +590,8 @@ const SniperCodersPortfolio: React.FC = () => {
         </h2>
         <div className="mt-6">
           <AnimatedText
-            text="At SniperCoders Global Technologies, we're proud of the digital solutions we've created. Explore our expertise in web development, mobile applications, and cutting-edge IoT integrations."
+            text="At SniperCoders 
+            , we're proud of the digital solutions we've created. Explore our expertise in web development, mobile applications, and cutting-edge IoT integrations."
           />
         </div>
 
@@ -706,11 +707,11 @@ const SniperCodersPortfolio: React.FC = () => {
         <div className="bg-gray-800/30 backdrop-filter backdrop-blur-lg rounded-xl border border-white/10 p-6 sm:p-8 shadow-2xl mx-2 sm:mx-0">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 text-center">
             <div className="stats-item p-3 sm:p-4">
-              <h3 className="counter text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2 text-cyan-400" data-target="100">0+</h3>
+              <h3 className="counter text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2 text-cyan-400" data-target="20">0+</h3>
               <p className="text-gray-300 text-xs sm:text-sm">Satisfied Clients</p>
             </div>
             <div className="stats-item p-3 sm:p-4">
-              <h3 className="counter text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2 text-blue-400" data-target="250">0+</h3>
+              <h3 className="counter text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2 text-blue-400" data-target="40">0+</h3>
               <p className="text-gray-300 text-xs sm:text-sm">Projects Completed</p>
             </div>
             <div className="stats-item p-3 sm:p-4">
@@ -718,7 +719,7 @@ const SniperCodersPortfolio: React.FC = () => {
               <p className="text-gray-300 text-xs sm:text-sm">Average Rating</p>
             </div>
             <div className="stats-item p-3 sm:p-4">
-              <h3 className="counter text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2 text-indigo-400" data-target="7">0+</h3>
+              <h3 className="counter text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2 text-indigo-400" data-target="1">0+</h3>
               <p className="text-gray-300 text-xs sm:text-sm">Years of Experience</p>
             </div>
           </div>
@@ -821,8 +822,8 @@ const SniperCodersPortfolio: React.FC = () => {
             whileInView="animate"
             viewport={{ once: true, amount: 0.2 }}
           >
-            © {new Date().getFullYear()} SniperCoders Global Technologies. All
-            rights reserved.
+            © {new Date().getFullYear()} SniperCoders. All rights reserved.
+         
           </motion.div>
         </div>
       </footer>

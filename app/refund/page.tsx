@@ -1343,8 +1343,7 @@ const RefundPolicy: React.FC = () => {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            © {new Date().getFullYear()} SniperCoders Global Technologies. All
-            rights reserved.
+            © {new Date().getFullYear()} SniperCoders. All rights reserved.
           </motion.div>
         </div>
       </motion.footer>

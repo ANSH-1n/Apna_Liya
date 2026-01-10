@@ -24,9 +24,9 @@ const FAQsPage = () => {
   // State for FAQs
   const [generalQuestions, setGeneralQuestions] = useState<FAQ[]>([
     {
-      question: "What is SniperCoders Global Technologies?",
+      question: "What is SniperCoders ?",
       answer:
-        "SniperCoders Global Technologies is a technology firm specializing in web design and development, mobile application development, digital marketing, and IoT integration services",
+        "SniperCoders  is a technology firm specializing in web design and development, mobile application development, digital marketing, and IoT integration services",
       isOpen: true,
     },
     {
@@ -845,8 +845,7 @@ const FAQsPage = () => {
             initial="initial"
             animate="animate"
           >
-            © {new Date().getFullYear()} SniperCoders Global Technologies. All
-            rights reserved.
+            © {new Date().getFullYear()} SniperCoders. All rights reserved.
           </motion.div>
         </div>
       </footer>
