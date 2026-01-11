@@ -105,22 +105,6 @@ const offers: Offer[] = [
   discount: 'SAVE ₹5,000',
   features: ['Custom Design', 'Responsive & Fast', 'SEO Optimized', 'Mobile Friendly']
 },
-{
-  id: 7,
-  title: 'Content Creation',
-  description:
-    'Limited time content creation package including professional shooting and editing with reels and image posts to boost your brand visibility on Instagram and Facebook.',
-  image: '/images/ad_7.jpeg',
-  originalPrice: '₹25,000',
-  discountedPrice: '₹20,000',
-  discount: 'LIMITED TIME OFFER',
-  features: [
-    '10 Reels',
-    '4 Image Posts',
-    'Shooting Included',
-    'Editing Included'
-  ]
-}
 
 ,
 ];
