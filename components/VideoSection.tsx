@@ -35,7 +35,8 @@ export default function VideoSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           whileHover={{ scale: 1.02 }}
-          className="relative w-full"
+        className="relative w-full max-w-5xl mx-auto"
+
         >
           {/* Glow effect behind video - Smaller on mobile */}
           <div className="absolute -inset-2 md:-inset-3 lg:-inset-4 bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600 rounded-2xl blur-xl opacity-50"></div>
