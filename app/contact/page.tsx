@@ -1030,22 +1030,19 @@
 
 
 
-
-
-
 "use client";
-import { motion } from "framer-motion";
-import React, { useState, useEffect } from "react";
-import { FaPhone, FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
-import {
-  AiOutlineInstagram,
-  AiOutlineLinkedin,
-  AiOutlineWhatsApp,
-  AiOutlineYoutube,
-} from "react-icons/ai";
+import React, { useState } from "react";
+import { AiOutlineWhatsApp } from "react-icons/ai";
+
+interface FormData {
+  fullName: string;
+  email: string;
+  phone: string;
+  message: string;
+}
 
 const ContactPage: React.FC = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     fullName: "",
     email: "",
     phone: "",
@@ -1053,13 +1050,15 @@ const ContactPage: React.FC = () => {
   });
 
   const [loading, setLoading] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<any>(null);
+  const [submitStatus, setSubmitStatus] = useState<string | null>(null);
 
-  const handleChange = (e: any) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
 
@@ -1075,8 +1074,11 @@ const ContactPage: React.FC = () => {
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
     // ================= META LEAD EVENT =================
-    if (typeof window !== "undefined" && (window as any).fbq) {
-      (window as any).fbq("track", "Lead");
+    if (typeof window !== "undefined") {
+      const fbq = (window as { fbq?: (action: string, event: string) => void }).fbq;
+      if (fbq) {
+        fbq("track", "Lead");
+      }
     }
     // ==================================================
 
@@ -1096,19 +1098,15 @@ const ContactPage: React.FC = () => {
 
   return (
     <div className="bg-gray-900 text-white min-h-screen p-10">
-
-      <h1 className="text-4xl font-bold mb-6 text-center">
-        Contact Us
-      </h1>
+      <h1 className="text-4xl font-bold mb-6 text-center">Contact Us</h1>
 
       {submitStatus && (
         <div className="text-green-400 text-center mb-4">
-          Redirecting to WhatsApp…
+          Redirecting to WhatsApp...
         </div>
       )}
 
       <form onSubmit={handleSubmit} className="max-w-xl mx-auto">
-
         <input
           name="fullName"
           required
@@ -1120,6 +1118,7 @@ const ContactPage: React.FC = () => {
 
         <input
           name="email"
+          type="email"
           required
           placeholder="Email"
           onChange={handleChange}
@@ -1129,6 +1128,7 @@ const ContactPage: React.FC = () => {
 
         <input
           name="phone"
+          type="tel"
           placeholder="Phone"
           onChange={handleChange}
           value={formData.phone}
@@ -1142,16 +1142,17 @@ const ContactPage: React.FC = () => {
           onChange={handleChange}
           value={formData.message}
           className="w-full p-3 mb-4 rounded bg-gray-700"
+          rows={5}
         />
 
         <button
+          type="submit"
           disabled={loading}
-          className="w-full bg-green-500 p-4 rounded font-bold flex justify-center items-center gap-2"
+          className="w-full bg-green-500 p-4 rounded font-bold flex justify-center items-center gap-2 hover:bg-green-600 transition-colors disabled:opacity-50"
         >
-          <AiOutlineWhatsApp size={22}/>
-          Send via WhatsApp
+          <AiOutlineWhatsApp size={22} />
+          {loading ? "Sending..." : "Send via WhatsApp"}
         </button>
-
       </form>
     </div>
   );
