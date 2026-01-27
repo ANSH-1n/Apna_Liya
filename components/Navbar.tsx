@@ -184,11 +184,11 @@ export default function Navbar() {
         className={`py-4 fixed top-0 w-full z-20 shadow-md transition-all duration-300 
                    ${scrolled ? 'bg-black/70' : 'bg-black/40'} backdrop-blur-md`}
       >
-        <div className="container mx-auto flex justify-between items-center px-4">
-          <div className="flex items-center z-20">
+        <div className="container mx-auto flex justify-between items-center px-8">
+          <div className="flex items-center z-500">
             <Link href="/" className="flex items-center">
               <Image 
-                src="/images/logo.png" 
+                src="/images/logo_sniper.ico" 
                 alt="SniperCoders Technologies" 
                 width={45} 
                 height={45} 
