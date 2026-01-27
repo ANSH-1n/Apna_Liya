@@ -1062,7 +1062,7 @@ const ContactPage: React.FC = () => {
     e.preventDefault();
     setLoading(true);
 
-    const whatsappNumber = "917006377796";
+    const whatsappNumber = "916006254188"; // Replace with your WhatsApp number
 
     const whatsappMessage =
       `*New Lead From Website*%0A%0A` +
