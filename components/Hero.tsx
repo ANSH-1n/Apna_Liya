@@ -421,7 +421,7 @@ export default function Hero() {
         >
           We craft <span className="text-cyan-400 font-semibold">powerful digital experiences</span> to boost your brand&apos;s{' '}
           <span className="text-orange-400 font-semibold">visibility</span> and{' '}
-          <span className="text-purple-400 font-semibold">engagement.</span>
+          <span className="text-purple-400 font-semibold">engagements..</span>
         </motion.p>
 
         {/* Enhanced CTA Buttons */}
