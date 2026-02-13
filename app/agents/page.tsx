@@ -1,3 +1,4 @@
+//app/agents/page.tsx
 
 "use client";
 
@@ -5,8 +6,9 @@ import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { motion, Variants } from "framer-motion";
+
 import { useRouter } from "next/navigation";
+import Footer from "@/components/Footer";
 
 // Define component
 const AIAgentsLandingPage: React.FC = () => {
@@ -109,21 +111,11 @@ const AIAgentsLandingPage: React.FC = () => {
     };
   }, []);
 
-  const textVariants: Variants = {
-    initial: { opacity: 0, y: 20 },
-    animate: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
-    },
-  };
+
 
   return (
   
-    <div className="relative bg-[#0a0a2e] text-white min-h-screen overflow-x-hidden">
+    <div className="relative bg-gradient-to-br from-[#0a0a2e] via-[#1a1a4a] to-[#0a0a2e] text-white min-h-screen overflow-x-hidden">
         
       {/* Three.js Canvas for background effect */}
       <canvas
@@ -135,47 +127,62 @@ const AIAgentsLandingPage: React.FC = () => {
       <section className="relative z-10 pt-20 mt-8 pb-20">
         <div className="container mx-auto px-4 md:px-10 flex flex-col lg:flex-row items-center">
           <div className="w-full lg:w-1/2 lg:pr-8" data-aos="fade-right">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
-              The Future of AI Agent Management: Intelligent & Unified.
+            <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
+              AI Agents & Automation Solutions
             </h1>
-            <p className="text-xl mb-8">
-              Stop juggling multiple AI tools. Manage, automate, and grow your
-              AI workflows from one intuitive platform.
+            <p className="text-xl md:text-2xl text-purple-300 font-semibold mb-4">
+              SniperCoders - Best Software and IT Company in India
+            </p>
+            <p className="text-lg md:text-xl mb-8 text-gray-300 leading-relaxed">
+              As the <span className="text-cyan-400 font-semibold">best app development agency near me in India</span>, we create custom-built AI agents that automate tasks, engage users, and boost efficiency. From <span className="text-purple-400 font-semibold">lead generation</span> to <span className="text-blue-400 font-semibold">customer support automation</span>, our intelligent AI solutions transform your business operations.
             </p>
             <div className="flex flex-wrap gap-4">
               <button
                 onClick={() => router.push("/contact")}
-                className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full transition duration-300"
+                className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
               >
-                Get Started
+                Get Started with AI Agents
               </button>
 
               <button
-                onClick={() => router.push("/learn-more")}
-                className="border border-purple-500 hover:bg-purple-800/20 text-white font-bold py-3 px-8 rounded-full transition duration-300"
+                onClick={() => router.push("/showcase")}
+                className="border-2 border-purple-500 hover:bg-purple-800/30 text-white font-bold py-3 px-8 rounded-full transition duration-300"
               >
-                Learn More
+                View Our Portfolio
               </button>
+            </div>
+            
+            {/* Keywords badges */}
+            <div className="mt-6 flex flex-wrap gap-2">
+              <span className="text-xs px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full border border-purple-500/30">
+                AI Automation
+              </span>
+              <span className="text-xs px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full border border-blue-500/30">
+                Chatbot Development
+              </span>
+              <span className="text-xs px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full border border-cyan-500/30">
+                Process Automation
+              </span>
             </div>
           </div>
           <div className="w-full lg:w-1/2 mt-10 lg:mt-0" data-aos="fade-left">
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 shadow-lg">
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 shadow-2xl border border-purple-500/30">
               <div className="flex items-center mb-4">
-                <div className="text-xl font-bold">Hello, OP!</div>
+                <div className="text-xl font-bold">AI Automation Dashboard</div>
                 <div className="ml-auto flex items-center text-sm">
                   <span>1 connected channel</span>
                   <span className="mx-2">•</span>
                   <span>2 contacts</span>
-                  <span className="ml-2 text-blue-400 cursor-pointer">
+                  <span className="ml-2 text-blue-400 cursor-pointer hover:text-blue-300">
                     See Insights
                   </span>
                 </div>
               </div>
 
               <div className="mb-6">
-                <h3 className="font-bold mb-2">Start Here</h3>
-                <div className="bg-white/5 p-4 rounded-md mb-4">
-                  <p className="text-sm">Auto-DM links from comments</p>
+                <h3 className="font-bold mb-2">Quick Start</h3>
+                <div className="bg-white/5 p-4 rounded-md mb-4 hover:bg-white/10 transition-colors">
+                  <p className="text-sm font-semibold">Auto-DM links from comments</p>
                   <p className="text-xs text-gray-300">
                     Send a link when people comment on a post or reel
                   </p>
@@ -184,7 +191,7 @@ const AIAgentsLandingPage: React.FC = () => {
                 <div className="flex justify-between items-center">
                   <div className="flex items-center gap-2">
                     <svg
-                      className="w-5 h-5"
+                      className="w-5 h-5 text-purple-400"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -199,7 +206,7 @@ const AIAgentsLandingPage: React.FC = () => {
                     </svg>
                     <span>Quick Actions</span>
                   </div>
-                  <span className="bg-purple-600 text-xs px-2 py-1 rounded">
+                  <span className="bg-gradient-to-r from-purple-600 to-blue-600 text-xs px-3 py-1 rounded-full">
                     AUTOMATED
                   </span>
                 </div>
@@ -207,7 +214,7 @@ const AIAgentsLandingPage: React.FC = () => {
 
               <div>
                 <div className="flex items-center mb-3">
-                  <div className="w-6 h-6 flex items-center justify-center bg-gradient-to-br from-pink-500 to-red-500 rounded-md mr-2">
+                  <div className="w-6 h-6 flex items-center justify-center bg-gradient-to-br from-pink-500 to-purple-600 rounded-md mr-2">
                     <svg
                       className="w-4 h-4"
                       fill="none"
@@ -230,20 +237,20 @@ const AIAgentsLandingPage: React.FC = () => {
                 </p>
 
                 <div className="grid grid-cols-4 gap-2 text-xs text-center">
-                  <div>
-                    <div className="font-bold mb-1">Comments</div>
+                  <div className="bg-purple-500/10 p-2 rounded">
+                    <div className="font-bold mb-1 text-purple-400">Comments</div>
                     <div>Out of 0</div>
                   </div>
-                  <div>
-                    <div className="font-bold mb-1">Story Replies</div>
+                  <div className="bg-blue-500/10 p-2 rounded">
+                    <div className="font-bold mb-1 text-blue-400">Story Replies</div>
                     <div>Out of 0</div>
                   </div>
-                  <div>
-                    <div className="font-bold mb-1">DMs</div>
+                  <div className="bg-cyan-500/10 p-2 rounded">
+                    <div className="font-bold mb-1 text-cyan-400">DMs</div>
                     <div>Out of 0</div>
                   </div>
-                  <div>
-                    <div className="font-bold mb-1">Story Mentions</div>
+                  <div className="bg-pink-500/10 p-2 rounded">
+                    <div className="font-bold mb-1 text-pink-400">Story Mentions</div>
                     <div>Out of 0</div>
                   </div>
                 </div>
@@ -253,646 +260,342 @@ const AIAgentsLandingPage: React.FC = () => {
         </div>
       </section>
 
+      {/* Features Section */}
       <section className="relative z-10 py-20 bg-gradient-to-b from-[#0a0a2e]/0 to-[#1a1a4a]/30">
         <div className="container mx-auto px-4 md:px-10">
           <h2
-            className="text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500"
+            className="text-4xl md:text-5xl font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500"
             data-aos="fade-up"
           >
-            The Future of AI Agent Management: AI-Powered & Unified.
+            AI-Powered Solutions by Best IT Company in India
           </h2>
+          <p className="text-center text-gray-300 mb-12 max-w-3xl mx-auto text-lg" data-aos="fade-up">
+            SniperCoders delivers <span className="text-purple-400 font-semibold">custom software development</span> and <span className="text-cyan-400 font-semibold">AI automation services</span> that transform your business operations and customer engagement.
+          </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div
-              className="bg-white/10 backdrop-blur-sm p-6 rounded-lg shadow-lg hover:transform hover:scale-105 transition duration-300"
+              className="bg-gradient-to-br from-purple-900/30 to-blue-900/30 backdrop-blur-sm p-6 rounded-lg shadow-lg hover:transform hover:scale-105 transition duration-300 border border-purple-500/30"
               data-aos="fade-up"
               data-aos-delay="100"
             >
-              <h3 className="text-xl font-bold mb-3">
-                Agent Automation, Seamlessly Integrated:
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-purple-300">
+                Agent Automation, Seamlessly Integrated
               </h3>
-              <p>
-                Engage your audience effortlessly with automated agent
-                interactions across all your connected platforms, all within a
-                unified inbox.
+              <p className="text-gray-300">
+                Engage your audience effortlessly with automated AI agent interactions across all your connected platforms, all within a unified inbox.
               </p>
             </div>
 
             <div
-              className="bg-white/10 backdrop-blur-sm p-6 rounded-lg shadow-lg hover:transform hover:scale-105 transition duration-300"
+              className="bg-gradient-to-br from-blue-900/30 to-cyan-900/30 backdrop-blur-sm p-6 rounded-lg shadow-lg hover:transform hover:scale-105 transition duration-300 border border-blue-500/30"
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              <h3 className="text-xl font-bold mb-3">
-                One-Click Cross-Platform Deployment:
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-blue-300">
+                One-Click Cross-Platform Deployment
               </h3>
-              <p>
-                Deploy your AI agents instantly across all platforms. Set up
-                your agents once and let them work simultaneously across all
-                your connected accounts.
+              <p className="text-gray-300">
+                Deploy your AI agents instantly across all platforms. Set up your agents once and let them work simultaneously across all your connected accounts.
               </p>
             </div>
 
             <div
-              className="bg-white/10 backdrop-blur-sm p-6 rounded-lg shadow-lg hover:transform hover:scale-105 transition duration-300"
+              className="bg-gradient-to-br from-cyan-900/30 to-teal-900/30 backdrop-blur-sm p-6 rounded-lg shadow-lg hover:transform hover:scale-105 transition duration-300 border border-cyan-500/30"
               data-aos="fade-up"
               data-aos-delay="300"
             >
-              <h3 className="text-xl font-bold mb-3">
-                Captivating Responses, AI-Crafted:
+              <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-teal-500 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-cyan-300">
+                Captivating Responses, AI-Crafted
               </h3>
-              <p>
-                Enhance your customer interactions with engaging and relevant
-                responses generated by our advanced AI, tailored to your brand
-                voice.
+              <p className="text-gray-300">
+                Enhance your customer interactions with engaging and relevant responses generated by our advanced AI, tailored to your brand voice.
               </p>
             </div>
 
             <div
-              className="bg-white/10 backdrop-blur-sm p-6 rounded-lg shadow-lg hover:transform hover:scale-105 transition duration-300"
+              className="bg-gradient-to-br from-pink-900/30 to-purple-900/30 backdrop-blur-sm p-6 rounded-lg shadow-lg hover:transform hover:scale-105 transition duration-300 border border-pink-500/30"
               data-aos="fade-up"
               data-aos-delay="400"
             >
-              <h3 className="text-xl font-bold mb-3">
-                AI-Powered Content Generation:
+              <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-500 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-pink-300">
+                AI-Powered Content Generation
               </h3>
-              <p>
-                Break writer’s block and create compelling content effortlessly
-                with our intelligent AI content generator tailored for your
-                audience.
+              <p className="text-gray-300">
+                Break writer&apos;s block and create compelling content effortlessly with our intelligent AI content generator tailored for your audience.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="relative z-10 py-24">
+      {/* Stats Section */}
+      <section className="relative z-10 py-16">
         <div className="container mx-auto px-4 md:px-10">
-          <div className="flex flex-col-reverse lg:flex-row items-center">
-            <div
-              className="w-full lg:w-1/2 mt-10 lg:mt-0"
-              data-aos="fade-right"
-            >
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 shadow-lg">
-                <div className="flex items-center mb-4">
-                  <div className="text-xl font-bold">Hello, OP!</div>
-                  <div className="ml-auto flex items-center text-sm">
-                    <span>1 connected channel</span>
-                    <span className="mx-2">•</span>
-                    <span>2 contacts</span>
-                    <span className="ml-2 text-blue-400 cursor-pointer">
-                      See Insights
-                    </span>
-                  </div>
-                </div>
-
-                <div className="mb-6">
-                  <h3 className="font-bold mb-2">Start Here</h3>
-                  <div className="bg-white/5 p-4 rounded-md mb-4">
-                    <p className="text-sm">Auto-DM links from comments</p>
-                    <p className="text-xs text-gray-300">
-                      Send a link when people comment on a post or reel
-                    </p>
-                  </div>
-
-                  <div className="flex justify-between items-center">
-                    <div className="flex items-center gap-2">
-                      <svg
-                        className="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M13 10V3L4 14h7v7l9-11h-7z"
-                        />
-                      </svg>
-                      <span>Quick Actions</span>
-                    </div>
-                    <span className="bg-purple-600 text-xs px-2 py-1 rounded">
-                      AUTOMATED
-                    </span>
-                  </div>
-                </div>
+          <div className="bg-gradient-to-r from-purple-900/40 to-blue-900/40 backdrop-blur-md rounded-2xl p-8 border border-purple-500/30" data-aos="fade-up">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+              <div>
+                <div className="text-4xl font-bold text-purple-400 mb-2">30+</div>
+                <div className="text-gray-400 text-sm">AI Projects Delivered</div>
+              </div>
+              <div>
+                <div className="text-4xl font-bold text-blue-400 mb-2">100%</div>
+                <div className="text-gray-400 text-sm">Client Satisfaction</div>
+              </div>
+              <div>
+                <div className="text-4xl font-bold text-cyan-400 mb-2">24/7</div>
+                <div className="text-gray-400 text-sm">AI Support Available</div>
+              </div>
+              <div>
+                <div className="text-4xl font-bold text-pink-400 mb-2">5x</div>
+                <div className="text-gray-400 text-sm">Efficiency Boost</div>
               </div>
             </div>
-            <div className="w-full lg:w-1/2 lg:pl-8" data-aos="fade-left">
-              <h2 className="text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Sections with alternating layouts */}
+      <section className="relative z-10 py-24">
+        <div className="container mx-auto px-4 md:px-10 space-y-32">
+          
+          {/* Benefit 1 */}
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+            <div className="w-full lg:w-1/2" data-aos="fade-right">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
                 Scale Your Social Presence
               </h2>
-              <p className="text-xl mb-8">
-                Effortlessly manage and grow your presence across multiple
-                platforms.
+              <p className="text-xl mb-6 text-gray-300">
+                Effortlessly manage and grow your presence across multiple platforms with our <span className="text-purple-400 font-semibold">best-in-class AI automation solutions</span>.
               </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Features Sections */}
-      <section className="relative z-10 py-24">
-        <div className="container mx-auto px-4 md:px-10">
-          <div className="flex flex-col-reverse lg:flex-row items-center mb-32">
-            <div
-              className="w-full lg:w-1/2 mt-10 lg:mt-0"
-              data-aos="fade-right"
-            >
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 shadow-lg">
-                <div className="flex items-center mb-4">
-                  <div className="text-xl font-bold">Hello, OP!</div>
-                  <div className="ml-auto flex items-center text-sm">
-                    <span>1 connected channel</span>
-                    <span className="mx-2">•</span>
-                    <span>2 contacts</span>
-                    <span className="ml-2 text-blue-400 cursor-pointer">
-                      See Insights
-                    </span>
-                  </div>
-                </div>
-
-                <div className="mb-6">
-                  <h3 className="font-bold mb-2">Start Here</h3>
-                  <div className="bg-white/5 p-4 rounded-md mb-4">
-                    <p className="text-sm">Auto-DM links from comments</p>
-                    <p className="text-xs text-gray-300">
-                      Send a link when people comment on a post or reel
-                    </p>
-                  </div>
-
-                  <div className="flex justify-between items-center">
-                    <div className="flex items-center gap-2">
-                      <svg
-                        className="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M13 10V3L4 14h7v7l9-11h-7z"
-                        />
-                      </svg>
-                      <span>Quick Actions</span>
-                    </div>
-                    <span className="bg-purple-600 text-xs px-2 py-1 rounded">
-                      AUTOMATED
-                    </span>
-                  </div>
-                </div>
-
-                <div>
-                  <div className="flex items-center mb-3">
-                    <div className="w-6 h-6 flex items-center justify-center bg-gradient-to-br from-pink-500 to-red-500 rounded-md mr-2">
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 12h14M12 5l7 7-7 7"
-                        />
-                      </svg>
-                    </div>
-                    <div className="font-bold">Automated Activity.</div>
-                  </div>
-                  <p className="text-sm mb-4">
-                    Automated 0 out of 0 interactions
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="w-full lg:w-1/2 lg:pl-8" data-aos="fade-left">
-              <h2 className="text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
-                Increase Efficiency
-              </h2>
-              <p className="text-xl mb-6">
-                Streamline your AI agent workflow for maximum productivity.
-              </p>
-              <button
-                onClick={() => router.push("/learn-more")}
-                className="border border-purple-500 hover:bg-purple-800/20 text-white font-bold py-3 px-8 rounded-full transition duration-300"
-              >
-                Learn More
-              </button>
-            </div>
-          </div>
-
-          <div className="flex flex-col lg:flex-row items-center mb-32">
-            <div className="w-full lg:w-1/2 lg:pr-8" data-aos="fade-right">
-              <h2 className="text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
-                Boost Engagement
-              </h2>
-              <p className="text-xl mb-6">
-                Deliver consistent and engaging content across all your
-                channels.
-              </p>
-              <button
-                onClick={() => router.push("/learn-more")}
-                className="border border-purple-500 hover:bg-purple-800/20 text-white font-bold py-3 px-8 rounded-full transition duration-300"
-              >
-                Learn More
-              </button>
-            </div>
-            <div className="w-full lg:w-1/2 mt-10 lg:mt-0" data-aos="fade-left">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 shadow-lg">
-                <div className="flex items-center mb-4">
-                  <div className="text-xl font-bold">Hello, OP!</div>
-                  <div className="ml-auto flex items-center text-sm">
-                    <span>1 connected channel</span>
-                    <span className="mx-2">•</span>
-                    <span>2 contacts</span>
-                    <span className="ml-2 text-blue-400 cursor-pointer">
-                      See Insights
-                    </span>
-                  </div>
-                </div>
-
-                <div className="mb-6">
-                  <h3 className="font-bold mb-2">Start Here</h3>
-                  <div className="bg-white/5 p-4 rounded-md mb-4">
-                    <p className="text-sm">Auto-DM links from comments</p>
-                    <p className="text-xs text-gray-300">
-                      Send a link when people comment on a post or reel
-                    </p>
-                  </div>
-                </div>
-
-                <div>
-                  <div className="flex items-center mb-3">
-                    <div className="w-6 h-6 flex items-center justify-center bg-gradient-to-br from-pink-500 to-red-500 rounded-md mr-2">
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 12h14M12 5l7 7-7 7"
-                        />
-                      </svg>
-                    </div>
-                    <div className="font-bold">Automated Activity</div>
-                  </div>
-                  <p className="text-sm mb-4">
-                    Automated 0 out of 0 interactions
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-col-reverse lg:flex-row items-center">
-            <div
-              className="w-full lg:w-1/2 mt-10 lg:mt-0"
-              data-aos="fade-right"
-            >
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 shadow-lg">
-                <div className="flex items-center mb-4">
-                  <div className="text-xl font-bold">Hello, OP!</div>
-                  <div className="ml-auto flex items-center text-sm">
-                    <span>1 connected channel</span>
-                    <span className="mx-2">•</span>
-                    <span>2 contacts</span>
-                    <span className="ml-2 text-blue-400 cursor-pointer">
-                      See Insights
-                    </span>
-                  </div>
-                </div>
-
-                <div className="mb-6">
-                  <h3 className="font-bold mb-2">Start Here</h3>
-                  <div className="bg-white/5 p-4 rounded-md mb-4">
-                    <p className="text-sm">Auto-DM links from comments</p>
-                    <p className="text-xs text-gray-300">
-                      Send a link when people comment on a post or reel
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="w-full lg:w-1/2 lg:pl-8" data-aos="fade-left">
-              <h2 className="text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
-                Save Valuable Time
-              </h2>
-              <p className="text-xl mb-6">
-                Automate repetitive tasks and manage everything from one central
-                hub.
-              </p>
-              <button
-                onClick={() => router.push("/learn-more")}
-                className="border border-purple-500 hover:bg-purple-800/20 text-white font-bold py-3 px-8 rounded-full transition duration-300"
-              >
-                Learn More
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* New Section: Maintain Brand Consistency */}
-      <section className="relative z-10 py-24">
-        <div className="container mx-auto px-4 md:px-10">
-          <div className="flex flex-col lg:flex-row items-center">
-            <div className="w-full lg:w-1/2 lg:pr-8" data-aos="fade-right">
-              <h2 className="text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
-                Maintain Brand Consistency
-              </h2>
-              <p className="text-xl mb-8">
-                Ensure a unified voice and message across all your profiles.
-              </p>
-              <button
-                onClick={() => router.push("/learn-more")}
-                className="border border-purple-500 hover:bg-purple-800/20 text-white font-bold py-3 px-8 rounded-full transition duration-300"
-              >
-                Learn More
-              </button>
-            </div>
-            <div className="w-full lg:w-1/2 mt-10 lg:mt-0" data-aos="fade-left">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 shadow-lg">
-                <div className="flex items-center mb-4">
-                  <div className="text-xl font-bold">Hello, OP!</div>
-                  <div className="ml-auto flex items-center text-sm">
-                    <span>1 connected channel</span>
-                    <span className="mx-2">•</span>
-                    <span>2 contacts</span>
-                    <span className="ml-2 text-blue-400 cursor-pointer">
-                      See Insights
-                    </span>
-                  </div>
-                </div>
-
-                <div className="mb-6">
-                  <h3 className="font-bold mb-2">Start Here</h3>
-                  <div className="bg-white/5 p-4 rounded-md mb-4">
-                    <p className="text-sm">Auto-DM links from comments</p>
-                    <p className="text-xs text-gray-300">
-                      Send a link when people comment on a post or reel
-                    </p>
-                  </div>
-
-                  <div className="flex justify-between items-center">
-                    <div className="flex items-center gap-2">
-                      <svg
-                        className="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M13 10V3L4 14h7v7l9-11h-7z"
-                        />
-                      </svg>
-                      <span>Quick Actions</span>
-                    </div>
-                    <span className="bg-purple-600 text-xs px-2 py-1 rounded">
-                      AUTOMATED
-                    </span>
-                  </div>
-                </div>
-
-                <div>
-                  <div className="flex items-center mb-3">
-                    <div className="w-6 h-6 flex items-center justify-center bg-gradient-to-br from-pink-500 to-red-500 rounded-md mr-2">
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 12h14M12 5l7 7-7 7"
-                        />
-                      </svg>
-                    </div>
-                    <div className="font-bold">Automated Activity</div>
-                  </div>
-                  <p className="text-sm mb-4">
-                    Automated 0 out of 0 interactions
-                  </p>
-
-                  <div className="grid grid-cols-4 gap-2 text-xs text-center">
-                    <div>
-                      <div className="font-bold mb-1">Comments</div>
-                      <div>Out of 0</div>
-                    </div>
-                    <div>
-                      <div className="font-bold mb-1">Story Replies</div>
-                      <div>Out of 0</div>
-                    </div>
-                    <div>
-                      <div className="font-bold mb-1">DMs</div>
-                      <div>Out of 0</div>
-                    </div>
-                    <div>
-                      <div className="font-bold mb-1">Story Mentions</div>
-                      <div>Out of 0</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="relative z-10 py-24 bg-gradient-to-b from-[#1a1a4a]/30 to-[#0a0a2e]/0">
-        <div className="container mx-auto px-4 md:px-10">
-          <div className="flex flex-col lg:flex-row items-center">
-            <div className="w-full lg:w-1/2 lg:pr-8" data-aos="fade-right">
-              <h2 className="text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
-                Unify Your AI Presence. Effortlessly.
-              </h2>
-              <p className="text-xl mb-8">
-                Stop juggling multiple tools. Manage, automate, and grow all
-                your AI agents from one intuitive platform.
+              <p className="text-gray-400 mb-6">
+                As the <span className="text-cyan-400 font-semibold">best website development company near me</span>, we integrate AI agents seamlessly into your existing digital ecosystem.
               </p>
               <button
                 onClick={() => router.push("/contact")}
-                className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full transition duration-300"
+                className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300"
               >
-                Get Started for Free
+                Get Started Now
               </button>
             </div>
-            <div className="w-full lg:w-1/2 mt-10 lg:mt-0" data-aos="fade-left">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 shadow-lg">
-                <div className="flex items-center mb-6">
-                  <div className="bg-purple-600/20 p-3 rounded-md mr-4">
-                    <div className="text-lg font-bold">DM Automation</div>
+            <div className="w-full lg:w-1/2" data-aos="fade-left">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 shadow-2xl border border-purple-500/20">
+                {/* Dashboard Preview */}
+                <div className="space-y-4">
+                  <div className="bg-purple-500/20 p-4 rounded-lg">
+                    <p className="text-sm font-semibold">Multi-Platform Integration</p>
+                    <p className="text-xs text-gray-300 mt-1">Connected: Instagram, Facebook, Twitter</p>
                   </div>
-                </div>
-
-                <div className="flex items-center mb-4">
-                  <div className="text-xl font-bold">Hello, OP!</div>
-                  <div className="ml-auto flex items-center text-sm">
-                    <span>1 connected channel</span>
-                    <span className="mx-2">•</span>
-                    <span>2 contacts</span>
-                    <span className="ml-2 text-blue-400 cursor-pointer">
-                      See Insights
-                    </span>
-                  </div>
-                </div>
-
-                <div className="mb-6">
-                  <h3 className="font-bold mb-2">Start Here</h3>
-                  <div className="bg-white/5 p-4 rounded-md mb-4">
-                    <p className="text-sm">Auto-DM links from comments</p>
-                    <p className="text-xs text-gray-300">
-                      Send a link when people comment on a post or reel
-                    </p>
-                  </div>
-
-                  <div className="flex justify-between items-center">
-                    <div className="flex items-center gap-2">
-                      <svg
-                        className="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M13 10V3L4 14h7v7l9-11h-7z"
-                        />
-                      </svg>
-                      <span>Quick Actions</span>
-                    </div>
-                    <span className="bg-purple-600 text-xs px-2 py-1 rounded">
-                      AUTOMATED
-                    </span>
-                  </div>
-                </div>
-
-                <div>
-                  <div className="flex items-center mb-3">
-                    <div className="w-6 h-6 flex items-center justify-center bg-gradient-to-br from-pink-500 to-red-500 rounded-md mr-2">
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 12h14M12 5l7 7-7 7"
-                        />
-                      </svg>
-                    </div>
-                    <div className="font-bold">Automated Activity</div>
+                  <div className="bg-blue-500/20 p-4 rounded-lg">
+                    <p className="text-sm font-semibold">Real-time Analytics</p>
+                    <p className="text-xs text-gray-300 mt-1">Track engagement across all channels</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+          {/* Benefit 2 */}
+          <div className="flex flex-col-reverse lg:flex-row items-center gap-12">
+            <div className="w-full lg:w-1/2" data-aos="fade-right">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 shadow-2xl border border-blue-500/20">
+                <div className="space-y-4">
+                  <div className="bg-blue-500/20 p-4 rounded-lg">
+                    <p className="text-sm font-semibold">Automated Workflows</p>
+                    <p className="text-xs text-gray-300 mt-1">Save 20+ hours per week</p>
+                  </div>
+                  <div className="bg-cyan-500/20 p-4 rounded-lg">
+                    <p className="text-sm font-semibold">Smart Scheduling</p>
+                    <p className="text-xs text-gray-300 mt-1">AI-optimized posting times</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="w-full lg:w-1/2" data-aos="fade-left">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-500">
+                Increase Efficiency
+              </h2>
+              <p className="text-xl mb-6 text-gray-300">
+                Streamline your AI agent workflow for maximum productivity with <span className="text-blue-400 font-semibold">custom software development</span> by SniperCoders.
+              </p>
+              <p className="text-gray-400 mb-6">
+                Our <span className="text-cyan-400 font-semibold">AI automation services</span> reduce manual work and boost your team&apos;s  efficiency by up to 5x.
+              </p>
+              <button
+                onClick={() => router.push("/contact")}
+                className="border-2 border-blue-500 hover:bg-blue-500/20 text-white font-bold py-3 px-8 rounded-full transition duration-300"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+
+          {/* Benefit 3 */}
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+            <div className="w-full lg:w-1/2" data-aos="fade-right">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-teal-500">
+                Boost Engagement
+              </h2>
+              <p className="text-xl mb-6 text-gray-300">
+                Deliver consistent and engaging content across all your channels with <span className="text-cyan-400 font-semibold">AI-powered content generation</span>.
+              </p>
+              <p className="text-gray-400 mb-6">
+                Combine our <span className="text-purple-400 font-semibold">digital marketing services</span> with AI automation for unparalleled results.
+              </p>
+              <button
+                onClick={() => router.push("/services/digital-marketing")}
+                className="bg-gradient-to-r from-cyan-600 to-teal-600 hover:from-cyan-700 hover:to-teal-700 text-white font-bold py-3 px-8 rounded-full transition duration-300"
+              >
+                Explore Digital Marketing
+              </button>
+            </div>
+            <div className="w-full lg:w-1/2" data-aos="fade-left">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 shadow-2xl border border-cyan-500/20">
+                <div className="space-y-4">
+                  <div className="bg-cyan-500/20 p-4 rounded-lg">
+                    <p className="text-sm font-semibold">Engagement Rate</p>
+                    <p className="text-xs text-gray-300 mt-1">+150% average increase</p>
+                  </div>
+                  <div className="bg-teal-500/20 p-4 rounded-lg">
+                    <p className="text-sm font-semibold">Response Time</p>
+                    <p className="text-xs text-gray-300 mt-1">Under 1 minute with AI</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 
-      <section className="relative z-10 py-24">
+      {/* CTA Section */}
+      <section className="relative z-10 py-24 bg-gradient-to-b from-[#1a1a4a]/30 to-[#0a0a2e]/0">
         <div className="container mx-auto px-4 md:px-10">
-          <h2
-            className="text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500"
-            data-aos="fade-up"
-          >
-            How Clients Partner With SniperCoders for Social Media Success
-          </h2>
-          <ol className="space-y-6 max-w-3xl mx-auto">
-            <li className="text-xl" data-aos="fade-up" data-aos-delay="100">
-              <span className="font-bold text-purple-400">
-                1. Share Your Goals:
-              </span>{" "}
-              Our journey starts with understanding your brand, audience, and growth vision.
-            </li>
-            <li className="text-xl" data-aos="fade-up" data-aos-delay="200">
-              <span className="font-bold text-purple-400">
-                2. We Strategize & Build:
-              </span>{" "}
-              The SniperCoders team designs AI-powered workflows, custom automation, and content systems tailored to your needs.
-            </li>
-            <li className="text-xl" data-aos="fade-up" data-aos-delay="300">
-              <span className="font-bold text-purple-400">
-                3. We Launch & Execute:
-              </span>{" "}
-              From scheduling to smart engagement — we deploy everything, fine-tuned for results across your social platforms.
-            </li>
-            <li className="text-xl" data-aos="fade-up" data-aos-delay="400">
-              <span className="font-bold text-purple-400">
-                4. You Grow, We Optimize:
-              </span>{" "}
-              As performance data comes in, we adjust, optimize, and scale your strategy together.
-            </li>
-          </ol>
-          <div
-            className="text-center mt-10"
-            data-aos="fade-up"
-            data-aos-delay="500"
-          >
-            <button
-              onClick={() => router.push("/contact")}
-              className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full transition duration-300"
-            >
-              Get Started
-            </button>
+          <div className="bg-gradient-to-r from-purple-900/60 to-blue-900/60 backdrop-blur-md rounded-2xl p-8 md:p-12 border border-purple-500/30 text-center" data-aos="fade-up">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
+              Ready to Transform Your Business with AI?
+            </h2>
+            <p className="text-xl mb-8 max-w-3xl mx-auto text-gray-300">
+              Join <span className="text-purple-400 font-semibold">30+ successful businesses</span> that trust SniperCoders, the <span className="text-cyan-400 font-semibold">best software and IT company in India</span>, for their AI automation needs.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button
+                onClick={() => router.push("/contact")}
+                className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-bold py-4 px-10 rounded-full transition duration-300 shadow-xl transform hover:scale-105"
+              >
+                Schedule Free Consultation
+              </button>
+              <button
+                onClick={() => router.push("/showcase")}
+                className="border-2 border-purple-500 hover:bg-purple-500/20 text-white font-bold py-4 px-10 rounded-full transition duration-300"
+              >
+                View Case Studies
+              </button>
+            </div>
           </div>
         </div>
       </section>
 
+      {/* How It Works */}
       <section className="relative z-10 py-24">
         <div className="container mx-auto px-4 md:px-10">
           <h2
-            className="text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500"
+            className="text-4xl md:text-5xl font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500"
             data-aos="fade-up"
           >
-            What We’ve Delivered for Our Clients — In Their Own Words
+            How SniperCoders Delivers AI Solutions
           </h2>
+          <p className="text-center text-gray-300 mb-12 max-w-2xl mx-auto" data-aos="fade-up">
+            Our proven process for implementing <span className="text-purple-400 font-semibold">AI automation</span> and <span className="text-blue-400 font-semibold">custom software development</span>
+          </p>
+          <ol className="space-y-6 max-w-3xl mx-auto">
+            <li className="text-lg bg-purple-900/20 backdrop-blur-sm p-6 rounded-lg border border-purple-500/30" data-aos="fade-up" data-aos-delay="100">
+              <span className="font-bold text-purple-400 text-xl">
+                1. Discovery & Strategy:
+              </span>{" "}
+              <p className="mt-2 text-gray-300">
+                We understand your brand, audience, and business goals to create a tailored AI strategy.
+              </p>
+            </li>
+            <li className="text-lg bg-blue-900/20 backdrop-blur-sm p-6 rounded-lg border border-blue-500/30" data-aos="fade-up" data-aos-delay="200">
+              <span className="font-bold text-blue-400 text-xl">
+                2. Custom Development:
+              </span>{" "}
+              <p className="mt-2 text-gray-300">
+                Our expert team designs AI-powered workflows and automation systems specifically for your needs.
+              </p>
+            </li>
+            <li className="text-lg bg-cyan-900/20 backdrop-blur-sm p-6 rounded-lg border border-cyan-500/30" data-aos="fade-up" data-aos-delay="300">
+              <span className="font-bold text-cyan-400 text-xl">
+                3. Deployment & Integration:
+              </span>{" "}
+              <p className="mt-2 text-gray-300">
+                Seamless implementation across your digital platforms with minimal disruption to your operations.
+              </p>
+            </li>
+            <li className="text-lg bg-pink-900/20 backdrop-blur-sm p-6 rounded-lg border border-pink-500/30" data-aos="fade-up" data-aos-delay="400">
+              <span className="font-bold text-pink-400 text-xl">
+                4. Optimization & Support:
+              </span>{" "}
+              <p className="mt-2 text-gray-300">
+                Continuous monitoring, optimization, and 24/7 support to ensure maximum ROI.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="relative z-10 py-24 bg-gradient-to-b from-[#0a0a2e]/0 to-[#1a1a4a]/30">
+        <div className="container mx-auto px-4 md:px-10">
+          <h2
+            className="text-4xl md:text-5xl font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500"
+            data-aos="fade-up"
+          >
+            Client Success Stories
+          </h2>
+          <p className="text-center text-gray-300 mb-12" data-aos="fade-up">
+            What our clients say about working with the <span className="text-purple-400 font-semibold">best IT company in India</span>
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
                 quote:
-                  "The custom AI workflows developed by the SniperCoders team fit perfectly into our internal systems. They were quick to understand our business logic and delivered exactly what we needed — fast and scalable solutions.",
+                  "SniperCoders delivered custom AI workflows that fit perfectly into our systems. Their expertise in custom software development is unmatched.",
                 name: "Maya Tran",
                 title: "CTO at SynthEdge AI",
                 delay: "100",
               },
               {
                 quote:
-                  "We approached SniperCoders with a vague idea and left with a fully deployed AI support system tailored to our use case. Their ability to turn vision into execution is unmatched.",
+                  "From concept to deployment, SniperCoders transformed our vision into reality. Best app development agency we've worked with!",
                 name: "Liam Okoro",
                 title: "Founder at Convertly.io",
                 delay: "200",
               },
               {
                 quote:
-                  "We needed a partner who could handle complex automation challenges, and SniperCoders delivered. From discovery to delivery, the process was seamless, and our internal team gained back dozens of hours weekly.",
+                  "The AI automation solutions saved our team 20+ hours weekly. Outstanding service from the best software company in India.",
                 name: "Sophia Mendes",
                 title: "COO at BrightForge",
                 delay: "300",
@@ -900,117 +603,43 @@ const AIAgentsLandingPage: React.FC = () => {
             ].map(({ quote, name, title, delay }, index: number) => (
               <div
                 key={index}
-                className="bg-white/10 backdrop-blur-sm p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105"
+                className="bg-white/10 backdrop-blur-sm p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 border border-purple-500/20"
                 data-aos="zoom-in"
                 data-aos-delay={delay}
               >
-                <p className="text-lg italic mb-4">{quote}</p>
-                <p className="font-bold">{name}</p>
-                <p className="text-sm text-gray-400">{title}</p>
+                <div className="mb-4">
+                  <svg className="w-8 h-8 text-purple-400" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                </div>
+                <p className="text-lg italic mb-4 text-gray-300">{quote}</p>
+                <div className="border-t border-purple-500/30 pt-4">
+                  <p className="font-bold text-purple-300">{name}</p>
+                  <p className="text-sm text-gray-400">{title}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="relative z-20 bg-gray-950/70 backdrop-blur-lg border-t border-gray-800/50 text-white py-16 mt-20">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-            <motion.div
-              variants={textVariants}
-              initial="initial"
-              animate="animate"
-            >
-              <div className="flex items-center mb-6">
-                <div className="text-3xl font-extrabold">
-                  <span className="bg-clip-text bg-gradient-to-r text-white animate-gradient">
-                    SniperCoders
-                  </span>
-                </div>
-              </div>
-              <p className="text-gray-300 text-sm leading-relaxed">
-                We specialize in turning visionary ideas into reality. Our
-                expertise helps businesses transform aspirations into tangible
-                solutions, paving the way for future growth.
-              </p>
-            </motion.div>
-
-            {[
-              {
-                title: "Our Services",
-                items: [
-                  {
-                    label: "Custom Software Dev",
-                    href: "/services/custom-software-development",
-                  },
-                  {
-                    label: "Website Development",
-                    href: "/services/web-development",
-                  },
-                  {
-                    label: "Mobile App Development",
-                    href: "/services/mobile-development",
-                  },
-                  { label: "IT Consulting", href: "/services/it-consulting" },
-                ],
-              },
-              {
-                title: "Useful Links",
-                items: [
-                  { label: "Terms of Service", href: "/terms" },
-                  { label: "Privacy Policy", href: "/privacy" },
-                  { label: "Refund Policy", href: "/refund" },
-                ],
-              },
-              {
-                title: "Get In Touch",
-                items: [
-                  { label: "About Us", href: "/about" },
-                  { label: "Contact Us", href: "/contact" },
-                  { label: "FAQs", href: "/faqs" },
-                  { label: "Testimonials", href: "/showcase" },
-                ],
-              },
-            ].map((section, idx: number) => (
-              <motion.div
-                key={idx}
-                variants={textVariants}
-                initial="initial"
-                animate="animate"
-              >
-                <h3 className="text-lg font-semibold mb-6 text-gray-200">
-                  {section.title}
-                </h3>
-                <ul className="space-y-3">
-                  {section.items.map((item, i: number) => (
-                    <motion.li
-                      key={i}
-                      whileHover={{ x: 8 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <a
-                        href={item.href}
-                        className="text-gray-300 hover:text-cyan-400 transition-colors text-sm"
-                      >
-                        {item.label}
-                      </a>
-                    </motion.li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
+      {/* SEO Footer Text */}
+      <section className="relative z-10 py-12">
+        <div className="container mx-auto px-4 md:px-10">
+          <div className="text-center text-gray-500 text-sm max-w-4xl mx-auto">
+            <p>
+              SniperCoders - Best Software and IT Company in India | Best App Development Agency Near Me | 
+              AI Automation Services | Custom Software Development | Chatbot Development | 
+              Process Automation | Lead Generation Automation | Customer Support AI | 
+              Best Website Development Company Near Me | Digital Marketing Services in Bangalore | 
+              AI-Powered Solutions | Business Process Automation
+            </p>
           </div>
-          <motion.div
-            className="mt-12 pt-10 border-t border-gray-800/50 text-center text-gray-400 text-sm"
-            variants={textVariants}
-            initial="initial"
-            animate="animate"
-          >
-            © {new Date().getFullYear()} SniperCoders. All rights reserved.
-          </motion.div>
         </div>
-      </footer>
+      </section>
+
+      {/* Footer */}
+     <Footer />
     </div>
   );
 };

@@ -1,5 +1,6 @@
 
-// // // //components/Creative.tsx
+// // // // //components/Creative.tsx
+
 
 
 // 'use client';
@@ -16,9 +17,6 @@
 //   discount: string;
 //   features: string[];
 // }
-
-
-
 
 // const offers: Offer[] = [
 //   {
@@ -104,14 +102,12 @@
 //   }
 // ];
 
-
 // export default function Creative() {
 //   const [isPaused, setIsPaused] = useState(false);
 //   const scrollRef = useRef<HTMLDivElement>(null);
 //   const animationFrameRef = useRef<number | null>(null);
 //   const [scrollSpeed, setScrollSpeed] = useState(1.2);
   
-//   // Adjust scroll speed based on screen size
 //   useEffect(() => {
 //     const checkScreenSize = () => {
 //       if (window.innerWidth < 640) {
@@ -156,22 +152,18 @@
 //   const duplicatedOffers = [...offers, ...offers];
 
 //   return (
-//     <section className="relative py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-b from-black via-gray-900 to-black overflow-hidden">
-//       {/* Background Elements */}
+//     <section id="offers" className="relative py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-b from-black via-gray-900 to-black overflow-hidden scroll-mt-20">
 //       <div className="absolute inset-0">
-//         {/* Grid Pattern */}
 //         <div className="absolute inset-0 opacity-10">
 //           <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f12_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f12_1px,transparent_1px)] bg-[size:24px_24px]" />
 //         </div>
       
-//         {/* Glowing Orbs - Responsive sizing */}
 //         <div className="absolute top-1/4 left-5 sm:left-10 w-48 sm:w-64 md:w-72 h-48 sm:h-64 md:h-72 bg-orange-500/20 rounded-full blur-3xl animate-pulse" />
 //         <div className="absolute bottom-1/4 right-5 sm:right-10 w-56 sm:w-72 md:w-96 h-56 sm:h-72 md:h-96 bg-cyan-500/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1000ms' }} />
 //         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 sm:w-52 md:w-64 h-40 sm:h-52 md:h-64 bg-purple-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '500ms' }} />
 //       </div>
       
 //       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
-//         {/* Header */}
 //         <div className="text-center mb-8 sm:mb-12 md:mb-16">
 //           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6">
 //             <span className="text-white">Exclusive</span>
@@ -186,13 +178,11 @@
 //           </p>
 //         </div>
         
-//         {/* Offers Carousel Section */}
 //         <div className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 relative z-10">
 //           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-6 sm:mb-8 md:mb-12 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-purple-400 px-4">
 //             Hot Deals & Packages
 //           </h2>
           
-//           {/* Offers Carousel Container */}
 //           <div
 //             ref={scrollRef}
 //             className="flex overflow-x-hidden scrollbar-thin scrollbar-thumb-cyan-500/30 scrollbar-track-transparent space-x-3 sm:space-x-4 md:space-x-6 lg:space-x-8 py-4 px-2 sm:px-4 md:px-0"
@@ -260,7 +250,6 @@
 //             ))}
 //           </div>
           
-//           {/* Manual navigation buttons */}
 //           <div className="flex justify-center mt-6 sm:mt-8 md:mt-10 lg:mt-12 space-x-3 sm:space-x-4 md:space-x-6">
 //             <button
 //               onClick={() => scrollRef.current?.scrollBy({ left: -400, behavior: 'smooth' })}
@@ -283,7 +272,6 @@
 //           </div>
 //         </div>
 
-//         {/* Floating Elements - Hidden on mobile */}
 //         <div className="absolute bottom-20 left-1/4 hidden lg:block">
 //           <div
 //             className="w-4 h-4 rounded-full bg-gradient-to-r from-blue-400 to-cyan-400"
@@ -313,7 +301,6 @@
 //           50% { transform: translateY(20px); }
 //         }
         
-//         /* Custom scrollbar styling */
 //         .scrollbar-thin::-webkit-scrollbar {
 //           height: 4px;
 //         }
@@ -337,7 +324,6 @@
 //           background-color: rgba(6, 182, 212, 0.5);
 //         }
         
-//         /* Line clamping for text */
 //         .line-clamp-1 {
 //           overflow: hidden;
 //           display: -webkit-box;
@@ -352,7 +338,6 @@
 //           -webkit-line-clamp: 2;
 //         }
         
-//         /* Hide scrollbar for mobile touch */
 //         @media (max-width: 768px) {
 //           .overflow-x-hidden {
 //             -ms-overflow-style: none;
@@ -382,8 +367,7 @@
 
 
 
-
-
+// components/Creative.tsx
 
 'use client';
 import { useState, useRef, useEffect, useCallback } from 'react';
@@ -403,9 +387,9 @@ interface Offer {
 const offers: Offer[] = [
   {
     id: 1,
-    title: 'Full Social Media Marketing',
+    title: 'Full Social Media Marketing Package',
     description:
-      'Targeted ads & expert social media management to grow your brand with better reach, engagement and performance tracking. (Without content creation)',
+      'Best social media marketing services near you - targeted Meta Ads, Google Ads, expert management to grow your brand with better reach, engagement and performance tracking. (Without content creation)',
     image: '/images/ad_1.jpeg',
     originalPrice: '₹20,000',
     discountedPrice: '₹10,000',
@@ -419,9 +403,9 @@ const offers: Offer[] = [
   },
   {
     id: 2,
-    title: 'Coded Website',
+    title: 'Custom Coded Business Website',
     description:
-      'Limited time offer for a professionally coded business website with modern design, fast performance and SEO-ready structure. Also available: social media content creation (reels, posts, etc.).',
+      'Limited time offer! Best custom coded website near you - professionally developed business website with modern design, fast performance and SEO-ready structure. Perfect for startups and businesses.',
     image: '/images/ad_2.jpeg',
     originalPrice: '₹30,000',
     discountedPrice: '₹25,000',
@@ -435,9 +419,9 @@ const offers: Offer[] = [
   },
   {
     id: 3,
-    title: 'Premium Content Package',
+    title: 'Premium Content Creation Package',
     description:
-      'Professional social media content creation including custom reels, graphics, and stories tailored to your brand identity and marketing goals.',
+      'Best content creation and video editing services near you - professional social media content including custom reels, graphics, and stories tailored to your brand identity and marketing goals.',
     image: '/images/ad_3.jpeg',
     originalPrice: '₹35,000',
     discountedPrice: '₹28,000',
@@ -451,9 +435,9 @@ const offers: Offer[] = [
   },
   {
     id: 4,
-    title: 'E-Commerce Website',
+    title: 'E-Commerce Website Development',
     description:
-      'Get a fully functional e-commerce website with a modern design, mobile-friendly UI, payment integration and SEO optimized setup to start selling online.',
+      'Best eCommerce website development near you - fully functional online store with modern design, mobile-friendly UI, secure payment integration and SEO optimized setup to start selling online today.',
     image: '/images/ad_4.jpeg',
     originalPrice: '₹89,999',
     discountedPrice: '₹59,999',
@@ -462,9 +446,9 @@ const offers: Offer[] = [
   },
   {
     id: 5,
-    title: 'Full Social Media Marketing',
+    title: 'Complete Digital Marketing Package',
     description:
-      'Complete social media marketing package including content creation, 20 reels, 20 graphics, daily stories and Meta Ads management to boost your brand growth.',
+      'Best digital marketing services in India - complete social media marketing with content creation, 20 reels, 20 graphics, daily stories and Meta Ads management to boost your brand growth.',
     image: '/images/ad_5.jpeg',
     originalPrice: '₹55,000',
     discountedPrice: '₹40,000',
@@ -473,9 +457,9 @@ const offers: Offer[] = [
   },
   {
     id: 6,
-    title: 'Business Website',
+    title: 'Professional Business Website',
     description:
-      'Get a professional business website with custom design, responsive layout, fast performance and SEO optimized setup to grow your business online.',
+      'Best website development company near you - professional business website with custom design, responsive layout, fast performance and SEO optimized setup to grow your business online.',
     image: '/images/ad_6.jpeg',
     originalPrice: '₹30,000',
     discountedPrice: '₹25,000',
@@ -548,21 +532,21 @@ export default function Creative() {
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 sm:mb-12 md:mb-16">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6">
-            <span className="text-white">Exclusive</span>
+            <span className="text-white">Exclusive Offers from</span>
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-cyan-400 to-purple-400">
-              Offers & Services
+              SniperCoders India
             </span>
           </h1>
         
-          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto px-4">
-            Premium web development and content creation services designed to drive results
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto px-4">
+            Best website development, app development, digital marketing, and content creation services in India - Premium solutions designed to drive real business results
           </p>
         </div>
         
         <div className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 relative z-10">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-6 sm:mb-8 md:mb-12 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-purple-400 px-4">
-            Hot Deals & Packages
+            Limited Time Deals & Service Packages
           </h2>
           
           <div
@@ -581,7 +565,7 @@ export default function Creative() {
                 <div className="relative h-36 sm:h-44 md:h-52 lg:h-56 overflow-hidden bg-gray-800">
                   <Image
                     src={offer.image}
-                    alt={offer.title}
+                    alt={`${offer.title} - SniperCoders Best IT Services in India`}
                     fill
                     className="object-contain transition-transform duration-700 hover:scale-105 p-2"
                     priority={index < 3}
@@ -622,7 +606,7 @@ export default function Creative() {
                   </div>
                   
                   <button className="inline-flex items-center justify-center w-full px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 bg-gradient-to-r from-orange-600 to-purple-700 text-white font-medium rounded-full hover:from-orange-500 hover:to-purple-600 transition-all shadow-md hover:shadow-lg cursor-pointer text-xs sm:text-sm md:text-base active:scale-95">
-                    Get This Offer
+                    Get This Offer Now
                     <svg className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
@@ -636,7 +620,7 @@ export default function Creative() {
             <button
               onClick={() => scrollRef.current?.scrollBy({ left: -400, behavior: 'smooth' })}
               className="p-2 sm:p-3 md:p-4 bg-white/10 rounded-full hover:bg-white/20 backdrop-blur transition-all active:scale-95 cursor-pointer"
-              aria-label="Scroll left"
+              aria-label="Scroll left to view more offers"
             >
               <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -645,13 +629,26 @@ export default function Creative() {
             <button
               onClick={() => scrollRef.current?.scrollBy({ left: 400, behavior: 'smooth' })}
               className="p-2 sm:p-3 md:p-4 bg-white/10 rounded-full hover:bg-white/20 backdrop-blur transition-all active:scale-95 cursor-pointer"
-              aria-label="Scroll right"
+              aria-label="Scroll right to view more offers"
             >
               <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
           </div>
+        </div>
+
+        {/* SEO-friendly text section */}
+        <div className="text-center max-w-4xl mx-auto mb-12">
+          <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
+            SniperCoders is the <span className="text-cyan-400 font-semibold">best software and IT company in India</span>, delivering exceptional 
+            <span className="text-orange-400 font-semibold"> website development</span>, 
+            <span className="text-purple-400 font-semibold"> app development</span>, 
+            <span className="text-pink-400 font-semibold"> digital marketing</span>, and 
+            <span className="text-blue-400 font-semibold"> IT consulting services</span>. With <span className="font-semibold">30+ successful projects</span> and 
+            <span className="font-semibold"> 100% customer satisfaction</span>, we specialize in custom coded websites, eCommerce development, 
+            SEO services, Google Ads, Meta Ads, social media marketing, content creation, and video editing services near you.
+          </p>
         </div>
 
         <div className="absolute bottom-20 left-1/4 hidden lg:block">

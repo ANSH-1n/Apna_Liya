@@ -6,7 +6,6 @@ import { motion } from 'framer-motion';
 import ServiceCard from '../../../components/ServiceCard'; 
 
 
-
 interface AppDevelopmentService {
   title: string;
   description: string;

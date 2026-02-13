@@ -1,3 +1,5 @@
+
+
 //app/showcase/page.tsx
 "use client"
 
@@ -5,7 +7,8 @@ import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import Image from 'next/image';
 import { ExternalLink } from 'lucide-react';
 import * as THREE from 'three';
-import { motion, Variants } from 'framer-motion';
+
+import Footer from '@/components/Footer';
 
 // Define TypeScript interfaces
 interface ProjectCategory {
@@ -29,10 +32,7 @@ interface BubbleProps {
   count: number;
 }
 
-const textVariants: Variants = {
-  initial: { opacity: 0, y: 30 },
-  animate: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
-};
+
 
 // 3D Particle Background Component
 const ThreeJSBackground: React.FC = () => {
@@ -252,7 +252,7 @@ const AnimatedText: React.FC<{ text: string }> = ({ text }) => {
   }, [text]);
 
   return (
-    <p className="text-gray-300 text-center max-w-3xl mx-auto mb-12 px-4">
+    <p className="text-gray-300 text-center max-w-3xl mx-auto mb-12 px-4 text-base md:text-lg leading-relaxed">
       {displayedText}
       {!isComplete && <span className="animate-pulse">|</span>}
     </p>
@@ -276,40 +276,40 @@ const SniperCodersPortfolio: React.FC = () => {
   });
   
   const categories: ProjectCategory[] = useMemo(() => [
-    { id: "all", name: "All", color: "from-cyan-500 to-blue-600", hoverColor: "from-cyan-600 to-blue-700" },
+    { id: "all", name: "All Projects", color: "from-cyan-500 to-blue-600", hoverColor: "from-cyan-600 to-blue-700" },
     { id: "academy-website", name: "Academy Website", color: "from-purple-500 to-indigo-600", hoverColor: "from-purple-600 to-indigo-700" },
     { id: "articles-website", name: "Articles Website", color: "from-emerald-500 to-teal-600", hoverColor: "from-emerald-600 to-teal-700" },
     { id: "blog-website", name: "Blog Website", color: "from-rose-500 to-pink-600", hoverColor: "from-rose-600 to-pink-700" },
-    { id: "business-portfolio-website", name: "Business Portfolio Website", color: "from-violet-500 to-fuchsia-600", hoverColor: "from-violet-600 to-fuchsia-700" },
-    { id: "clothing-brand", name: "Clothing Brand", color: "from-sky-500 to-cyan-600", hoverColor: "from-sky-600 to-cyan-700" },
-    { id: "dental-website", name: "Dental Website", color: "from-green-500 to-emerald-600", hoverColor: "from-green-600 to-emerald-700" },
-    { id: "driving-school", name: "Driving School", color: "from-yellow-500 to-amber-600", hoverColor: "from-yellow-600 to-amber-700" },
+    { id: "business-portfolio-website", name: "Business Portfolio", color: "from-violet-500 to-fuchsia-600", hoverColor: "from-violet-600 to-fuchsia-700" },
+    { id: "clothing-brand", name: "E-Commerce", color: "from-sky-500 to-cyan-600", hoverColor: "from-sky-600 to-cyan-700" },
+    { id: "dental-website", name: "Healthcare Website", color: "from-green-500 to-emerald-600", hoverColor: "from-green-600 to-emerald-700" },
+    { id: "driving-school", name: "Education Website", color: "from-yellow-500 to-amber-600", hoverColor: "from-yellow-600 to-amber-700" },
     { id: "ngo-website", name: "NGO Website", color: "from-red-500 to-orange-600", hoverColor: "from-red-600 to-orange-700" },
-    { id: "news-website", name: "News Website", color: "from-indigo-500 to-blue-600", hoverColor: "from-indigo-600 to-blue-700" },
+    { id: "news-website", name: "News Platform", color: "from-indigo-500 to-blue-600", hoverColor: "from-indigo-600 to-blue-700" },
     { id: "portfolio-website", name: "Portfolio Website", color: "from-pink-500 to-rose-600", hoverColor: "from-pink-600 to-rose-700" },
-    { id: "traveling-website", name: "Traveling Website", color: "from-blue-500 to-indigo-600", hoverColor: "from-blue-600 to-indigo-700" },
+    { id: "traveling-website", name: "Travel Website", color: "from-blue-500 to-indigo-600", hoverColor: "from-blue-600 to-indigo-700" },
     { id: "web-application", name: "Web Application", color: "from-teal-500 to-emerald-600", hoverColor: "from-teal-600 to-emerald-700" },
-    { id: "website", name: "Website", color: "from-orange-500 to-red-600", hoverColor: "from-orange-600 to-red-700" },
-    { id: "UIUX", name: "UIUX", color: "from-orange-500 to-red-600", hoverColor: "from-orange-600 to-red-700" },
+    { id: "website", name: "Business Website", color: "from-orange-500 to-red-600", hoverColor: "from-orange-600 to-red-700" },
+    { id: "UIUX", name: "UI/UX Design", color: "from-purple-500 to-pink-600", hoverColor: "from-purple-600 to-pink-700" },
   ], []);
 
  const projects = useMemo((): Project[] => [
     {
       id: "UIUX",
-      title: "Torke Hub",
+      title: "Torke Hub - CRM Platform",
       image: "/images/image.png", 
       categories: ["CRM  Automation", "UIUX"],
-      description: "Aim to be the go-to platform for businesses seeking seamless management, automation, and innovation",
-      tags: ["CRM  Automation", "UI-UX Design"],
+      description: "Best UI/UX design for CRM automation platform by SniperCoders - Top software company in India",
+      tags: ["CRM Automation", "UI-UX Design", "Web Application"],
       href: "https://www.torkehub.com/"
     },
      {
       id: "travel-quench",
-      title: "Travel Quench",
+      title: "Travel Quench - E-Commerce Platform",
       image: "/images/travelQuench.png", 
       categories: ["traveling-website", "web-application"],
-      description: "Travel e-commerce platform partnered with Yatra.com for seamless booking experiences.",
-      tags: ["Traveling Website", "Web Application", "E-commerce"],
+      description: "Best eCommerce website development by SniperCoders - Leading travel website development company near me",
+      tags: ["Travel E-commerce", "Web Development", "Yatra Integration"],
       href: "https://www.travelquench.in/"
     },
     {
@@ -317,8 +317,8 @@ const SniperCodersPortfolio: React.FC = () => {
       title: "Travel With Manikanta",
       image: "/images/travelManikanta.png", 
       categories: ["traveling-website", "website"],
-      description: "Complete travel solution website offering tour packages and travel services.",
-      tags: ["Traveling Website", "Website", "Tour Packages"],
+      description: "Professional travel website by best website development company near me in Bangalore",
+      tags: ["Travel Website", "Custom Website", "Tour Packages"],
       href: "http://travelwithmanikanta.com/"
     },
     {
@@ -326,18 +326,17 @@ const SniperCodersPortfolio: React.FC = () => {
       title: "Jai Mata Di Tour & Travel",
       image: "/images/jaiMataDITravel.png", 
       categories: ["traveling-website", "web-application"],
-      description: "Professional tour and travel services website with comprehensive travel solutions.",
-      tags: ["Traveling Website", "Web Application", "Tour Services"],
+      description: "Custom coded travel website by SniperCoders - Best IT company in India",
+      tags: ["Travel Portal", "Web Application", "Booking System"],
       href: "https://jaimataditourandtravel.com/"
     },
-    
     {
       id: "brg-finery",
-      title: "BRG Finery",
+      title: "BRG Finery - Fashion E-Commerce",
       image: "/images/frfr[1].png", 
       categories: ["clothing-brand", "web-application"],
-      description: "Fashion e-commerce platform with a modern design and seamless user experience.",
-      tags: ["Clothing Brand", "Web Application"],
+      description: "Best eCommerce website development near me for fashion brands - SniperCoders portfolio",
+      tags: ["E-Commerce", "Fashion Website", "Online Store"],
       href: "https://brgfinery.com/"
     },
     {
@@ -345,8 +344,8 @@ const SniperCodersPortfolio: React.FC = () => {
       title: "Karunadu Products",
       image: "/images/karunadu-products-kodekalp[1].png", 
       categories: ["website", "web-application"],
-      description: "Empowering communities and enriching lives through sustainable products.",
-      tags: ["Website", "Web Application"],
+      description: "Custom business website by best website development company in India",
+      tags: ["Business Website", "Product Showcase", "SEO Optimized"],
       href: "https://karunaduproducts.com/"
     },
     {
@@ -354,8 +353,8 @@ const SniperCodersPortfolio: React.FC = () => {
       title: "Dr. Sharad Dental Clinic",
       image: "/images/denta[1].png", 
       categories: ["dental-website", "website", "web-application"],
-      description: "Professional dental care website with appointment booking system.",
-      tags: ["Dental Website", "Website", "Web Application"],
+      description: "Professional healthcare website by SniperCoders - Best web design company near me",
+      tags: ["Healthcare Website", "Appointment System", "Medical Portal"],
       href: "https://drsharaddentalclinic.com/"
     },
     {
@@ -363,17 +362,17 @@ const SniperCodersPortfolio: React.FC = () => {
       title: "Ashirwad Driving School",
       image: "/images/ashirwaddrivingschool-kodekalp[1].png", 
       categories: ["driving-school", "website", "web-application"],
-      description: "Comprehensive driving school platform with course management.",
-      tags: ["Driving School", "Website", "Web Application"],
+      description: "Education website by best website development company near me in Bangalore",
+      tags: ["Education Website", "Driving School", "Course Management"],
       href: "https://ashirwaddrivingschool.com/"
     },
     {
       id: "chevox",
-      title: "Chevox",
+      title: "Chevox - Fashion Brand",
       image: "/images/cloflex-kodekalp[1].png", 
       categories: ["clothing-brand", "website", "web-application"],
-      description: "Crafted to seamlessly blend fashion with fashion.",
-      tags: ["Clothing Brand", "Website", "Web Application"],
+      description: "Custom coded eCommerce website by best software agency in India - SniperCoders",
+      tags: ["Fashion E-Commerce", "Custom Design", "Online Shopping"],
       href: "https://chevox.in/"
     },
     {
@@ -381,58 +380,55 @@ const SniperCodersPortfolio: React.FC = () => {
       title: "Airborn Aviation Academy",
       image: "/images/airborne-kodekalp[1].png", 
       categories: ["academy-website", "web-application"],
-      description: "Your gateway to a successful career in Aviation.",
-      tags: ["Academy Website", "Web Application"],
+      description: "Professional academy website by best web development company near me",
+      tags: ["Aviation Academy", "Education Portal", "Career Platform"],
       href: "https://www.airborne.org.in/"
     },
- 
     {
       id: "omniminds-consulting",
       title: "Omniminds Consulting",
       image: "/images/awif1vuvznvfnkikwl03[1].png", 
       categories: ["portfolio-website", "web-application"],
-      description: "We promise to bring the best solution for your business.",
-      tags: ["Portfolio Website", "Web Application"],
+      description: "Business portfolio by SniperCoders - Best IT solutions provider in India",
+      tags: ["Business Portfolio", "Consulting Website", "Corporate Design"],
       href: "https://omnimindsconsulting.com/"
     },
-   
     {
       id: "jain-jaivik",
-      title: "Jain Jaivik",
+      title: "Jain Jaivik - AgriTech Platform",
       image: "/images/jj[1].png", 
       categories: ["portfolio-website", "web-application"],
-      description: "A New Way to Invest in Agriculture.",
-      tags: ["Portfolio Website", "Web Application"],
+      description: "Innovative web application by best app development agency near me",
+      tags: ["AgriTech", "Investment Platform", "Web Application"],
       href: "https://www.jainjaivik.com/"
     },
     {
       id: "shakthi-nakshatra",
-      title: "Shakthi Nakshatra-Book",
+      title: "Shakthi Nakshatra - Author Portfolio",
       image: "/images/thelandschaft-kodekalp[1].png", 
       categories: ["portfolio-website", "web-application"],
-      description: "Literary portfolio showcasing author's work with online ordering.",
-      tags: ["Portfolio Website", "Web Application"],
+      description: "Creative portfolio website by best website design company in Bangalore",
+      tags: ["Author Portfolio", "Book Platform", "E-Commerce"],
       href: "https://www.udayashiva.in/"
     },
     {
       id: "super-women",
-      title: "Super Women",
+      title: "Super Women - News Portal",
       image: "/images/superwomen-kodekalp[1].png", 
       categories: ["news-website", "website", "web-application"],
-      description: "News platform dedicated to women's achievements and stories.",
-      tags: ["News Website", "Website", "Web Application"],
+      description: "Dynamic news website by SniperCoders - Leading web development agency",
+      tags: ["News Portal", "Content Platform", "Women Empowerment"],
       href: "https://superwomen.live/"
     },
     {
       id: "adflux-agency",
-      title: "Adflux Agency",
+      title: "Adflux Agency - Digital Marketing",
       image: "/images/adfkux[1].png", 
       categories: ["portfolio-website", "web-application"],
-      description: "Unleash the Power of Digital Marketing.",
-      tags: ["Portfolio Website", "Web Application"],
+      description: "Marketing agency website by best content creation and digital marketing company near me",
+      tags: ["Digital Marketing", "Agency Website", "SEO Services"],
       href: "https://adfluxagency.com/"
     },
-   
   ], []);
 
   useEffect(() => {
@@ -585,13 +581,15 @@ const SniperCodersPortfolio: React.FC = () => {
         ref={headerRef}
         className="relative z-10 container mx-auto px-4 pt-24 pb-12 animate-on-mount opacity-0 transform translate-y-8"
       >
-        <h2 ref={titleRef} className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-4 glow-text split-text animate-on-mount opacity-0 transform translate-y-8 px-2">
-          <span className="text-gradient">Case Studies</span>
-        </h2>
+        <h1 ref={titleRef} className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-4 glow-text split-text animate-on-mount opacity-0 transform translate-y-8 px-2">
+          <span className="text-gradient">Portfolio & Case Studies</span>
+        </h1>
+        <p className="text-center text-lg md:text-xl text-blue-300 mb-6">
+          Best Website Development Company Near Me in India - 30+ Projects Delivered
+        </p>
         <div className="mt-6">
           <AnimatedText
-            text="At SniperCoders 
-            , we're proud of the digital solutions we've created. Explore our expertise in web development, mobile applications, and cutting-edge IoT integrations."
+            text="At SniperCoders, the best software and IT company in India, we're proud of the digital solutions we've created. Explore our expertise in website development, mobile app development, eCommerce solutions, and cutting-edge digital marketing services. As the best web development company near me in Bangalore, we've delivered 30+ successful projects for businesses and startups across India."
           />
         </div>
 
@@ -632,7 +630,7 @@ const SniperCodersPortfolio: React.FC = () => {
                 <div className="relative overflow-hidden h-48 sm:h-56 md:h-60 group/image"> 
                   <Image
                     src={project.image}
-                    alt={project.title}
+                    alt={`${project.title} - Best website development by SniperCoders`}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="transition-transform duration-700 ease-out group-hover/image:scale-110 object-cover"
@@ -649,15 +647,15 @@ const SniperCodersPortfolio: React.FC = () => {
                   >
                     <a href={project.href} target="_blank" rel="noopener noreferrer"
                        className="px-4 py-2 sm:px-6 sm:py-3 bg-white bg-opacity-15 backdrop-blur-sm rounded-lg text-white border border-white border-opacity-30 flex items-center text-xs sm:text-sm hover:bg-opacity-25 transition-all duration-300 hover:scale-105 transform group/btn">
-                      View Details 
+                      View Live Project
                       <ExternalLink className="ml-2 transition-transform duration-300 group-hover/btn:translate-x-1" size={14} />
                     </a>
                   </div>
                 </div>
                 <div className="p-4 sm:p-6 flex flex-col flex-grow"> 
-                  <h3 className="text-lg sm:text-xl font-semibold mb-2 text-white group-hover/card:text-cyan-400 transition-colors duration-500 line-clamp-1">
+                  <h2 className="text-lg sm:text-xl font-semibold mb-2 text-white group-hover/card:text-cyan-400 transition-colors duration-500 line-clamp-1">
                     {project.title}
-                  </h3>
+                  </h2>
                   <p className="text-gray-300 text-xs sm:text-sm mb-4 line-clamp-2 flex-grow"> 
                       {project.description}
                   </p>
@@ -676,7 +674,7 @@ const SniperCodersPortfolio: React.FC = () => {
                     <a href={project.href} target="_blank" rel="noopener noreferrer"
                        className="text-xs sm:text-sm font-medium flex items-center text-cyan-400 transition-all duration-500 group-hover/card:text-white"
                     >
-                      Know More <span className="ml-1 transition-transform duration-300 group-hover/card:translate-x-2">→</span>
+                      View Project <span className="ml-1 transition-transform duration-300 group-hover/card:translate-x-2">→</span>
                     </a>
                   </div>
                 </div>
@@ -687,7 +685,7 @@ const SniperCodersPortfolio: React.FC = () => {
             <div className="col-span-full py-12 text-center px-4"> 
               <div className="bg-gray-800/50 backdrop-filter backdrop-blur-md rounded-lg border border-gray-700/50 p-6 sm:p-8 mx-auto max-w-lg">
                 <h3 className="text-lg sm:text-xl font-medium mb-2 text-gray-200">No projects found</h3>
-                <p className="text-gray-400 text-sm sm:text-base mb-4">No projects match the selected category. Please try a different filter.</p>
+                <p className="text-gray-400 text-sm sm:text-base mb-4">No projects match the selected category. Explore all our work by viewing all projects.</p>
                 <button
                   onClick={() => setActiveCategory("all")}
                   className="px-4 py-2 sm:px-6 sm:py-2.5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-medium hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 focus:ring-2 focus:ring-cyan-400 focus:ring-opacity-50 text-sm sm:text-base"
@@ -705,128 +703,34 @@ const SniperCodersPortfolio: React.FC = () => {
         className="container mx-auto px-4 py-12 sm:py-16 relative z-10 opacity-0 transform translate-y-8" 
       >
         <div className="bg-gray-800/30 backdrop-filter backdrop-blur-lg rounded-xl border border-white/10 p-6 sm:p-8 shadow-2xl mx-2 sm:mx-0">
+          <h3 className="text-2xl md:text-3xl font-bold text-center mb-8 text-gradient">
+            SniperCoders - Best Software and IT Company in India
+          </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 text-center">
             <div className="stats-item p-3 sm:p-4">
-              <h3 className="counter text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2 text-cyan-400" data-target="20">0+</h3>
+              <h4 className="counter text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2 text-cyan-400" data-target="30">0+</h4>
+              <p className="text-gray-300 text-xs sm:text-sm">Projects Delivered</p>
+            </div>
+            <div className="stats-item p-3 sm:p-4">
+              <h4 className="counter text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2 text-blue-400" data-target="40">0+</h4>
               <p className="text-gray-300 text-xs sm:text-sm">Satisfied Clients</p>
             </div>
             <div className="stats-item p-3 sm:p-4">
-              <h3 className="counter text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2 text-blue-400" data-target="40">0+</h3>
-              <p className="text-gray-300 text-xs sm:text-sm">Projects Completed</p>
+              <h4 className="counter text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2 text-purple-400" data-target="5.0">0.0</h4>
+              <p className="text-gray-300 text-xs sm:text-sm">Client Rating</p>
             </div>
             <div className="stats-item p-3 sm:p-4">
-              <h3 className="counter text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2 text-purple-400" data-target="5.0">0.0</h3>
-              <p className="text-gray-300 text-xs sm:text-sm">Average Rating</p>
-            </div>
-            <div className="stats-item p-3 sm:p-4">
-              <h3 className="counter text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2 text-indigo-400" data-target="1">0+</h3>
-              <p className="text-gray-300 text-xs sm:text-sm">Years of Experience</p>
+              <h4 className="counter text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2 text-indigo-400" data-target="100">0%</h4>
+              <p className="text-gray-300 text-xs sm:text-sm">Satisfaction Rate</p>
             </div>
           </div>
+          <p className="text-center text-gray-400 text-sm mt-8">
+            Best Website Development Company Near Me | Best App Development Agency Near Me | Digital Marketing Services in Bangalore
+          </p>
         </div>
       </div>
 
-      <footer className="relative z-20 bg-gray-950/70 backdrop-blur-lg border-t border-gray-800/50 text-white py-12 sm:py-16 mt-12 sm:mt-20">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 md:gap-12">
-            <motion.div
-              variants={textVariants}
-              initial="initial"
-              whileInView="animate" 
-              viewport={{ once: true, amount: 0.2 }}
-            >
-              <div className="flex items-center mb-4 sm:mb-6">
-                <div className="text-2xl sm:text-3xl font-extrabold">
-                  <span className="bg-clip-text bg-gradient-to-r text-white animate-gradient">
-                    SniperCoders
-                  </span>
-                </div>
-              </div>
-              <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
-                We specialize in turning visionary ideas into reality. Our
-                expertise helps businesses transform aspirations into tangible
-                solutions, paving the way for future growth.
-              </p>
-            </motion.div>
-
-            {[
-              {
-                title: "Our Services",
-                items: [
-                  {
-                    label: "Custom Software Dev",
-                    href: "/services/custom-software-development",
-                  },
-                  {
-                    label: "Website Development",
-                    href: "/services/web-development",
-                  },
-                  {
-                    label: "Mobile App Development",
-                    href: "/services/mobile-development",
-                  },
-                  { label: "IT Consulting", href: "/services/it-consulting" },
-                ],
-              },
-              {
-                title: "Useful Links",
-                items: [
-                  { label: "Terms of Service", href: "/terms" },
-                  { label: "Privacy Policy", href: "/privacy" },
-                  { label: "Refund Policy", href: "/refund" },
-                ],
-              },
-              {
-                title: "Get In Touch",
-                items: [
-                  { label: "About Us", href: "/about" },
-                  { label: "Contact Us", href: "/contact" },
-                  { label: "FAQs", href: "/faqs" },
-                  { label: "Testimonials", href: "/showcase" },
-                ],
-              },
-            ].map((section, idx) => (
-              <motion.div
-                key={idx}
-                variants={textVariants}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true, amount: 0.2 }}
-              >
-                <h3 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6 text-gray-200">
-                  {section.title}
-                </h3>
-                <ul className="space-y-2 sm:space-y-3">
-                  {section.items.map((item, i) => (
-                    <motion.li
-                      key={i}
-                      whileHover={{ x: 8 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <a
-                        href={item.href}
-                        className="text-gray-300 hover:text-cyan-400 transition-colors text-xs sm:text-sm"
-                      >
-                        {item.label}
-                      </a>
-                    </motion.li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
-          </div>
-          <motion.div
-            className="mt-8 sm:mt-12 pt-8 sm:pt-10 border-t border-gray-800/50 text-center text-gray-400 text-xs sm:text-sm"
-            variants={textVariants}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, amount: 0.2 }}
-          >
-            © {new Date().getFullYear()} SniperCoders. All rights reserved.
-         
-          </motion.div>
-        </div>
-      </footer>
+    <Footer />
             
       <style jsx>{`
         .text-gradient {
@@ -955,7 +859,6 @@ const SniperCodersPortfolio: React.FC = () => {
           overflow: hidden;
         }
         
-        /* Responsive breakpoints */
         @media (max-width: 640px) {
           .project-card .glass-card {
             min-height: 320px;
