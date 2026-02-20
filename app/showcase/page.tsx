@@ -585,7 +585,7 @@ const SniperCodersPortfolio: React.FC = () => {
           <span className="text-gradient">Portfolio & Case Studies</span>
         </h1>
         <p className="text-center text-lg md:text-xl text-blue-300 mb-6">
-          Best Website Development Company Near Me in India - 30+ Projects Delivered
+          Best Website Development Company Near Me in India and Seo Agency - 30+ Projects Delivered
         </p>
         <div className="mt-6">
           <AnimatedText
