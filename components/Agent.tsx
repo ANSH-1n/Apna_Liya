@@ -1035,7 +1035,7 @@ We look forward to discussing your web development, app development, digital mar
                       onClick={handleConfirmMeeting}
                       className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-3 rounded-full font-semibold hover:scale-105 transition duration-300 transform active:scale-95 outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50"
                     >
-                      Confirm Meeting
+                      Confirm Meeting Today
                     </button>
                     <button
                       onClick={handleCancel}

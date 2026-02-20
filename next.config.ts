@@ -1,15 +1,22 @@
+
 // import type { NextConfig } from "next";
 
 // const nextConfig: NextConfig = {
 //   eslint: {
-//     // ❌ Don't ignore ESLint errors — they help catch hydration issues early
 //     ignoreDuringBuilds: false,
 //   },
 //   typescript: {
-//     // ❌ Don't ignore TypeScript build errors — they can indicate SSR/client mismatches
 //     ignoreBuildErrors: false,
 //   },
-//   reactStrictMode: true, // ✅ Helps surface hydration mismatches early
+//   reactStrictMode: true,
+//   images: {
+//     remotePatterns: [
+//       {
+//         protocol: 'https',
+//         hostname: 'placehold.co',
+//       },
+//     ],
+//   },
 // };
 
 // export default nextConfig;
@@ -18,6 +25,8 @@
 
 
 
+
+// FILE PATH: next.config.ts
 
 import type { NextConfig } from "next";
 
@@ -36,6 +45,20 @@ const nextConfig: NextConfig = {
         hostname: 'placehold.co',
       },
     ],
+  },
+
+  // ✅ www → non-www redirect
+  // Ensures Google only ever indexes one version of your site
+  // Prevents duplicate content penalty
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.snipercoders.com' }],
+        destination: 'https://snipercoders.com/:path*',
+        permanent: true, // 301 redirect — tells Google non-www is the canonical
+      },
+    ]
   },
 };
 
