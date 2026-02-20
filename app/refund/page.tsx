@@ -1266,7 +1266,7 @@ const RefundPolicy: React.FC = () => {
               <p className="text-gray-300 text-sm leading-relaxed">
                 We specialize in turning visionary ideas into reality. Our
                 expertise helps businesses transform aspirations into tangible
-                solutions, paving the way for future growth.
+                solution, paving the way for future growth.
               </p>
             </motion.div>
 

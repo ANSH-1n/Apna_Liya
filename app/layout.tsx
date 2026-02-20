@@ -379,7 +379,7 @@
 
 
 
-"use client";
+
 
 // app/layout.tsx
 import './globals.css';
