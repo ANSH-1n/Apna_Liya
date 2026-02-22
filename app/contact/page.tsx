@@ -1,142 +1,3 @@
-// //app/contact/page.tsx
-// "use client";
-// import React, { useState } from "react";
-// import { AiOutlineWhatsApp } from "react-icons/ai";
-// import Footer from "@/components/Footer";
-// interface FormData {
-//   fullName: string;
-//   email: string;
-//   phone: string;
-//   message: string;
-// }
-
-// const ContactPage: React.FC = () => {
-//   const [formData, setFormData] = useState<FormData>({
-//     fullName: "",
-//     email: "",
-//     phone: "",
-//     message: "",
-//   });
-
-//   const [loading, setLoading] = useState(false);
-//   const [submitStatus, setSubmitStatus] = useState<string | null>(null);
-
-//   const handleChange = (
-//     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-//   ) => {
-//     setFormData({ ...formData, [e.target.name]: e.target.value });
-//   };
-
-//   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-//     e.preventDefault();
-//     setLoading(true);
-
-//     const whatsappNumber = "916006254188"; // Replace with your WhatsApp number
-
-//     const whatsappMessage =
-//       `*New Lead From Website*%0A%0A` +
-//       `Name: ${formData.fullName}%0A` +
-//       `Email: ${formData.email}%0A` +
-//       `Phone: ${formData.phone}%0A%0A` +
-//       `Message:%0A${formData.message}`;
-
-//     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
-
-//     // ================= META LEAD EVENT =================
-//     if (typeof window !== "undefined") {
-//       const fbq = (window as { fbq?: (action: string, event: string) => void }).fbq;
-//       if (fbq) {
-//         fbq("track", "Lead");
-//       }
-//     }
-//     // ==================================================
-
-//     window.open(whatsappUrl, "_blank");
-
-//     setSubmitStatus("success");
-
-//     setFormData({
-//       fullName: "",
-//       email: "",
-//       phone: "",
-//       message: "",
-//     });
-
-//     setLoading(false);
-//   };
-
-//   return (
-//     <div className="bg-gray-900 text-white min-h-screen p-10">
-//       <h1 className="text-4xl font-bold mb-6 text-center">Contact Us</h1>
-
-//       {submitStatus && (
-//         <div className="text-green-400 text-center mb-4">
-//           Redirecting to WhatsApp...
-//         </div>
-//       )}
-
-//       <form onSubmit={handleSubmit} className="max-w-xl mx-auto">
-//         <input
-//           name="fullName"
-//           required
-//           placeholder="Full Name"
-//           onChange={handleChange}
-//           value={formData.fullName}
-//           className="w-full p-3 mb-4 rounded bg-gray-700"
-//         />
-
-//         <input
-//           name="email"
-//           type="email"
-//           required
-//           placeholder="Email"
-//           onChange={handleChange}
-//           value={formData.email}
-//           className="w-full p-3 mb-4 rounded bg-gray-700"
-//         />
-
-//         <input
-//           name="phone"
-//           type="tel"
-//           placeholder="Phone"
-//           onChange={handleChange}
-//           value={formData.phone}
-//           className="w-full p-3 mb-4 rounded bg-gray-700"
-//         />
-
-//         <textarea
-//           name="message"
-//           required
-//           placeholder="Message"
-//           onChange={handleChange}
-//           value={formData.message}
-//           className="w-full p-3 mb-4 rounded bg-gray-700"
-//           rows={5}
-//         />
-
-//         <button
-//           type="submit"
-//           disabled={loading}
-//           className="w-full bg-green-500 p-4 rounded font-bold flex justify-center items-center gap-2 hover:bg-green-600 transition-colors disabled:opacity-50"
-//         >
-//           <AiOutlineWhatsApp size={22} />
-//           {loading ? "Sending..." : "Send via WhatsApp"}
-//         </button>
-//       </form>
-
-// <Footer />
-//     </div>
-//   );
-// };
-
-// export default ContactPage;
-
-
-
-
-
-
-
 
 
 
@@ -402,14 +263,14 @@ const ContactPage: React.FC = () => {
           <div className="bg-black/40 backdrop-blur-lg border border-cyan-500/20 rounded-xl p-6 text-center hover:border-cyan-500/40 transition-all">
             <div className="text-cyan-400 text-4xl mb-4">📧</div>
             <h3 className="text-xl font-bold mb-2">Email Us</h3>
-            <p className="text-gray-300">info@snipercoders.com</p>
+            <p className="text-gray-300">snipercoders25@gmail.com</p>
             <p className="text-sm text-gray-400 mt-2">Best IT company in India</p>
           </div>
 
           <div className="bg-black/40 backdrop-blur-lg border border-purple-500/20 rounded-xl p-6 text-center hover:border-purple-500/40 transition-all">
             <div className="text-purple-400 text-4xl mb-4">📱</div>
             <h3 className="text-xl font-bold mb-2">Call Us</h3>
-            <p className="text-gray-300">+91 600 625 4188</p>
+            <p className="text-gray-300">+91 7006377796</p>
             <p className="text-sm text-gray-400 mt-2">Website development near me</p>
           </div>
 
