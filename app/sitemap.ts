@@ -1,11 +1,12 @@
 // FILE PATH: app/sitemap.ts
-// Drop this file inside your /app folder — Next.js auto-generates /sitemap.xml from it
 
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://snipercoders.com'
+  // ✅ FIX 1: Changed to www — was causing canonical issues in GSC
+  const baseUrl = 'https://www.snipercoders.com'
 
+  // ✅ FIX 2: Added katra (was missing)
   const locationPages = [
     'best-software-agency-bangalore',
     'best-software-agency-udhampur',
@@ -17,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'best-software-agency-pune',
     'best-software-agency-chennai',
     'best-software-agency-chandigarh',
+    'best-software-agency-katra', // ✅ Added
   ]
 
   const servicePages = [
@@ -29,7 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ]
 
   return [
-    // Core pages — highest priority
+    // Core pages
     {
       url: baseUrl,
       lastModified: new Date(),
@@ -91,6 +93,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.3,
     },
 
+    // ✅ FIX 3: Removed /index.html and /Testimonials.html — were causing 404 errors in GSC
+
     // Service sub-pages
     ...servicePages.map(slug => ({
       url: `${baseUrl}/services/${slug}`,
@@ -99,7 +103,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     })),
 
-    // Location SEO pages — high priority, these are your ranking pages
+    // Location SEO pages
     ...locationPages.map(slug => ({
       url: `${baseUrl}/services/${slug}`,
       lastModified: new Date(),
