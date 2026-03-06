@@ -1,517 +1,3 @@
-
-
-// // // app/layout.tsx
-// // import './globals.css';
-// // import { Poppins } from 'next/font/google';
-// // import { ThemeProvider } from '../context/ThemeContext';
-// // import Navbar from '../components/Navbar';
-// // import { ToastContainer } from 'react-toastify';
-// // import 'react-toastify/dist/ReactToastify.css';
-// // import type { Metadata } from "next";
-// // import Script from 'next/script';
-
-// // // Load the Poppins font
-// // const poppins = Poppins({
-// // subsets: ['latin'],
-// // weight: ['400', '600', '700'],
-// // display: 'swap',
-// // });
-
-// // export const metadata: Metadata = {
-// // metadataBase: new URL(
-// // process.env.NODE_ENV === 'production'
-// // ? 'https://www.snipercoders.com' // ✅ IMPORTANT SEO FIX (www consistency)
-// // : 'http://localhost:3000'
-// // ),
-
-// // title: {
-// // default: 'SniperCoders - Best Software and IT Company in India | Website Development & App Development',
-// // template: '%s | SniperCoders - Best IT Company in India'
-// // },
-
-// // description:
-// // 'SniperCoders is the best software and IT company in India, delivering best website development near me, mobile app development, eCommerce solutions, and digital marketing services in Bangalore. 30+ projects delivered with 100% customer satisfaction.',
-
-// // keywords: [
-// // 'best software company in India',
-// // 'best IT company in India',
-// // 'best website development company near me',
-// // 'best website development company in India',
-// // 'website development near me',
-// // 'custom coded websites',
-// // 'business websites near me',
-// // 'eCommerce website development near me',
-// // 'best app development agency near me',
-// // 'mobile app development',
-// // 'digital marketing services',
-// // 'SEO services',
-// // 'Google Ads',
-// // 'Meta Ads',
-// // 'SniperCoders',
-// // 'IT company Bangalore',
-// // ],
-
-// // authors: [{ name: 'SniperCoders', url: 'https://www.snipercoders.com' }],
-// // creator: 'SniperCoders',
-// // publisher: 'SniperCoders',
-
-// // openGraph: {
-// // type: 'website',
-// // locale: 'en_IN',
-// // url: 'https://www.snipercoders.com',
-// // title: 'SniperCoders - Best Website Development Company Near Me in India',
-// // description:
-// // 'Best software and IT company in India offering custom coded websites, business websites, mobile app development, and digital marketing services.',
-// // siteName: 'SniperCoders',
-// // images: [
-// // {
-// // url: '/images/logo.png',
-// // width: 1200,
-// // height: 630,
-// // alt: 'SniperCoders - Best Software Company in India',
-// // },
-// // ],
-// // },
-
-// // twitter: {
-// // card: 'summary_large_image',
-// // title: 'SniperCoders - Best IT Company in India',
-// // description:
-// // 'Best website development, app development, and digital marketing services in Bangalore',
-// // images: ['/images/logo.png'],
-// // creator: '@snipercoders',
-// // },
-
-// // robots: {
-// // index: true,
-// // follow: true,
-// // googleBot: {
-// // index: true,
-// // follow: true,
-// // 'max-video-preview': -1,
-// // 'max-image-preview': 'large',
-// // 'max-snippet': -1,
-// // },
-// // },
-
-// // // 🔴 VERY IMPORTANT — PUT YOUR REAL GOOGLE CODE HERE
-// // verification: {
-// // google: 'PASTE_YOUR_REAL_GOOGLE_CODE_HERE',
-// // },
-
-// // category: 'technology',
-
-// // alternates: {
-// // canonical: 'https://www.snipercoders.com',
-// // },
-
-// // other: {
-// // 'geo.region': 'IN-KA',
-// // 'geo.placename': 'Bangalore',
-// // 'geo.position': '12.9716;77.5946',
-// // ICBM: '12.9716, 77.5946',
-// // },
-// // };
-
-// // export default function RootLayout({
-// // children,
-// // }: {
-// // children: React.ReactNode;
-// // }) {
-// // return ( <html lang="en"> <head> <link rel="icon" href="/images/logo_sniper.ico?v=2" sizes="any" /> <link rel="shortcut icon" href="/images/logo_sniper.ico?v=2" /> <link rel="apple-touch-icon" href="/images/logo_sniper.ico?v=2" />
-
-// // ```
-// //     <link rel="preconnect" href="https://fonts.googleapis.com" />
-// //     <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-
-// //     <meta name="theme-color" content="#0a0a2a" />
-// //     <meta name="mobile-web-app-capable" content="yes" />
-// //     <meta name="apple-mobile-web-app-capable" content="yes" />
-// //     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
-// //     {/* ================= LOCAL BUSINESS SCHEMA ================= */}
-// //     <script
-// //       type="application/ld+json"
-// //       dangerouslySetInnerHTML={{
-// //         __html: JSON.stringify({
-// //           '@context': 'https://schema.org',
-// //           '@type': 'LocalBusiness',
-// //           '@id': 'https://www.snipercoders.com',
-// //           name: 'SniperCoders',
-// //           alternateName: 'SniperCoders Global Technologies',
-// //           url: 'https://www.snipercoders.com',
-// //           telephone: '+91-60062-54188',
-// //           email: 'info@snipercoders.com',
-// //           priceRange: '₹₹',
-// //           image: 'https://www.snipercoders.com/images/logo.png',
-// //           logo: 'https://www.snipercoders.com/images/logo.png',
-// //           address: {
-// //             '@type': 'PostalAddress',
-// //             addressLocality: 'Bangalore',
-// //             addressRegion: 'Karnataka',
-// //             postalCode: '560001',
-// //             addressCountry: 'IN',
-// //           },
-// //           geo: {
-// //             '@type': 'GeoCoordinates',
-// //             latitude: '12.9716',
-// //             longitude: '77.5946',
-// //           },
-// //         }),
-// //       }}
-// //     />
-// //   </head>
-
-// //   <body className={poppins.className}>
-// //     {/* META PIXEL */}
-// //     <Script id="meta-pixel" strategy="afterInteractive">
-// //       {`
-// //         !function(f,b,e,v,n,t,s)
-// //         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-// //         n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-// //         if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-// //         n.queue=[];t=b.createElement(e);t.async=!0;
-// //         t.src=v;s=b.getElementsByTagName(e)[0];
-// //         s.parentNode.insertBefore(t,s)}
-// //         (window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
-// //         fbq('init', '1401332194988106');
-// //         fbq('track', 'PageView');
-// //       `}
-// //     </Script>
-
-// //     <Script
-// //       src="https://t.contentsquare.net/uxa/3a02599aa7215.js"
-// //       strategy="afterInteractive"
-// //     />
-
-// //     <ThemeProvider>
-// //       <Navbar />
-// //       <main className="pt-20">{children}</main>
-
-// //       {/* WhatsApp Button */}
-// //       <a
-// //         href="https://wa.me/916006254188"
-// //         target="_blank"
-// //         rel="noopener noreferrer"
-// //         className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg transition-all duration-300 hover:scale-110"
-// //       >
-// //         WhatsApp
-// //       </a>
-
-// //       <ToastContainer theme="dark" />
-// //     </ThemeProvider>
-// //   </body>
-// // </html>
-
-// // );
-// // }
-
-
-
-
-
-
-
-
-
-// // FILE PATH: app/layout.tsx
-
-// import './globals.css';
-// import { Poppins } from 'next/font/google';
-// import { ThemeProvider } from '../context/ThemeContext';
-// import Navbar from '../components/Navbar';
-// import { ToastContainer } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
-// import type { Metadata } from "next";
-// import Script from 'next/script';
-
-// const poppins = Poppins({
-//   subsets: ['latin'],
-//   weight: ['400', '600', '700'],
-//   display: 'swap',
-// });
-
-// export const metadata: Metadata = {
-//   metadataBase: new URL(
-//     process.env.NODE_ENV === 'production'
-//       ? 'https://www.snipercoders.com'
-//       : 'http://localhost:3000'
-//   ),
-
-//   title: {
-//     default: 'SniperCoders - Best Software and IT Company in India | Website Development & App Development',
-//     template: '%s | SniperCoders - Best IT Company in India',
-//   },
-
-//   description:
-//     'SniperCoders is the best software and IT company in India, delivering website development, mobile app development, eCommerce solutions, and digital marketing services across Bangalore, Delhi, Mumbai, Hyderabad, Pune, Chennai, Jammu, Kashmir and Chandigarh. 30+ projects delivered with 100% customer satisfaction.',
-
-//   keywords: [
-//     'best software company in India',
-//     'best IT company in India',
-//     'best software agency in Bangalore',
-//     'best software agency in Delhi',
-//     'best software agency in Mumbai',
-//     'best software agency in Hyderabad',
-//     'best software agency in Pune',
-//     'best software agency in Chennai',
-//     'best software agency in Chandigarh',
-//     'best software agency in Jammu',
-//     'best software agency in Kashmir',
-//     'best software agency in Udhampur',
-//     'best website development company near me',
-//     'best website development company in India',
-//     'website development near me',
-//     'custom coded websites',
-//     'business websites near me',
-//     'eCommerce website development near me',
-//     'best app development agency near me',
-//     'mobile app development',
-//     'digital marketing services',
-//     'SEO services',
-//     'Google Ads',
-//     'Meta Ads',
-//     'SniperCoders',
-//     'IT company Bangalore',
-//   ],
-
-//   authors: [{ name: 'SniperCoders', url: 'https://www.snipercoders.com' }],
-//   creator: 'SniperCoders',
-//   publisher: 'SniperCoders',
-
-//   openGraph: {
-//     type: 'website',
-//     locale: 'en_IN',
-//     url: 'https://www.snipercoders.com',
-//     title: 'SniperCoders - Best Software Agency in India | Website, App & Digital Marketing',
-//     description:
-//       'Best software and IT company in India — custom websites, mobile apps, and digital marketing across Bangalore, Delhi, Mumbai, Hyderabad, Pune, Chennai, Jammu & Kashmir.',
-//     siteName: 'SniperCoders',
-//     images: [
-//       {
-//         url: '/images/logo.png',
-//         width: 1200,
-//         height: 630,
-//         alt: 'SniperCoders - Best Software Company in India',
-//       },
-//     ],
-//   },
-
-//   twitter: {
-//     card: 'summary_large_image',
-//     title: 'SniperCoders - Best IT Company in India',
-//     description:
-//       'Best website development, app development, and digital marketing services across India',
-//     images: ['/images/logo.png'],
-//     creator: '@snipercoders',
-//   },
-
-//   robots: {
-//     index: true,
-//     follow: true,
-//     googleBot: {
-//       index: true,
-//       follow: true,
-//       'max-video-preview': -1,
-//       'max-image-preview': 'large',
-//       'max-snippet': -1,
-//     },
-//   },
-
-//   // ✅ FIXED — real verification code extracted from your HTML file
-//   verification: {
-//     google: '9844f48440cf8bec',
-//   },
-
-//   category: 'technology',
-
-//   alternates: {
-//     canonical: 'https://www.snipercoders.com',
-//   },
-
-//   other: {
-//     'geo.region': 'IN-KA',
-//     'geo.placename': 'Bangalore',
-//     'geo.position': '12.9716;77.5946',
-//     ICBM: '12.9716, 77.5946',
-//   },
-// };
-
-// export default function RootLayout({
-//   children,
-// }: {
-//   children: React.ReactNode;
-// }) {
-//   // ⚠️  IMPORTANT — Replace BOTH instances of YOUR_PRIMARY_PHONE below
-//   // with your ONE real primary number in format: 91XXXXXXXXXX
-//   // Your GBP shows 07006377796 → international format = 917006377796
-//   // Decide which number is primary and use it EVERYWHERE
-
-//   const PRIMARY_PHONE_DISPLAY = '+91-70063-77796'       // shown in schema
-//   const PRIMARY_PHONE_WA      = '917006377796'           // used in WhatsApp URL
-
-//   return (
-//     <html lang="en">
-//       <head>
-//         <link rel="icon" href="/images/logo_sniper.ico?v=2" sizes="any" />
-//         <link rel="shortcut icon" href="/images/logo_sniper.ico?v=2" />
-//         <link rel="apple-touch-icon" href="/images/logo_sniper.ico?v=2" />
-
-//         <link rel="preconnect" href="https://fonts.googleapis.com" />
-//         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-
-//         <meta name="theme-color" content="#0a0a2a" />
-//         <meta name="mobile-web-app-capable" content="yes" />
-//         <meta name="apple-mobile-web-app-capable" content="yes" />
-//         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
-//         {/* ── LOCAL BUSINESS SCHEMA ─────────────────────────────
-//             Tells Google exactly what your business is.
-//             ⚠️  Once your office address is confirmed, add:
-//                 streetAddress, postalCode fields below.
-//         ──────────────────────────────────────────────────────── */}
-//         <script
-//           type="application/ld+json"
-//           dangerouslySetInnerHTML={{
-//             __html: JSON.stringify({
-//               '@context': 'https://schema.org',
-//               '@type': 'ProfessionalService',
-//               '@id': 'https://www.snipercoders.com',
-//               name: 'SniperCoders',
-//               alternateName: 'SniperCoders Global Technologies',
-//               url: 'https://www.snipercoders.com',
-//               telephone: PRIMARY_PHONE_DISPLAY,
-//               email: 'info@snipercoders.com',
-//               priceRange: '₹₹',
-//               image: 'https://www.snipercoders.com/images/logo.png',
-//               logo: 'https://www.snipercoders.com/images/logo.png',
-//               description: 'Best software agency in India offering website development, mobile app development, custom software and digital marketing services.',
-//               foundingDate: '2025',
-//               areaServed: [
-//                 'Bangalore', 'Delhi', 'Mumbai', 'Hyderabad',
-//                 'Pune', 'Chennai', 'Chandigarh', 'Jammu',
-//                 'Kashmir', 'Udhampur', 'India'
-//               ],
-//               serviceType: [
-//                 'Website Development',
-//                 'Mobile App Development',
-//                 'Custom Software Development',
-//                 'Digital Marketing',
-//                 'SEO Services',
-//                 'IT Consulting',
-//                 'UI/UX Design',
-//               ],
-//               address: {
-//                 '@type': 'PostalAddress',
-//                 addressLocality: 'Bangalore',
-//                 addressRegion: 'Karnataka',
-//                 addressCountry: 'IN',
-//                 // ⚠️ Add postalCode and streetAddress once office confirmed
-//               },
-//               geo: {
-//                 '@type': 'GeoCoordinates',
-//                 latitude: '12.9716',
-//                 longitude: '77.5946',
-//               },
-//               sameAs: [
-//                 'https://www.linkedin.com/company/snipercoders',
-//                 'https://www.instagram.com/snipercoders',
-//                 'https://www.facebook.com/snipercoders',
-//                 'https://twitter.com/snipercoders',
-//               ],
-//               hasMap: 'https://maps.google.com/?q=SniperCoders+Bangalore',
-//               contactPoint: {
-//                 '@type': 'ContactPoint',
-//                 telephone: PRIMARY_PHONE_DISPLAY,
-//                 contactType: 'customer service',
-//                 areaServed: 'IN',
-//                 availableLanguage: ['English', 'Hindi', 'Kannada'],
-//               },
-//             }),
-//           }}
-//         />
-
-//         {/* ── WEBSITE SCHEMA — enables Google Sitelinks search ── */}
-//         <script
-//           type="application/ld+json"
-//           dangerouslySetInnerHTML={{
-//             __html: JSON.stringify({
-//               '@context': 'https://schema.org',
-//               '@type': 'WebSite',
-//               url: 'https://www.snipercoders.com',
-//               name: 'SniperCoders',
-//               description: 'Best Software Agency in India',
-//               potentialAction: {
-//                 '@type': 'SearchAction',
-//                 target: {
-//                   '@type': 'EntryPoint',
-//                   urlTemplate: 'https://www.snipercoders.com/search?q={search_term_string}',
-//                 },
-//                 'query-input': 'required name=search_term_string',
-//               },
-//             }),
-//           }}
-//         />
-//       </head>
-
-//       <body className={poppins.className}>
-//         {/* META PIXEL */}
-//         <Script id="meta-pixel" strategy="afterInteractive">
-//           {`
-//             !function(f,b,e,v,n,t,s)
-//             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-//             n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-//             if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-//             n.queue=[];t=b.createElement(e);t.async=!0;
-//             t.src=v;s=b.getElementsByTagName(e)[0];
-//             s.parentNode.insertBefore(t,s)}
-//             (window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
-//             fbq('init', '1401332194988106');
-//             fbq('track', 'PageView');
-//           `}
-//         </Script>
-
-//         <Script
-//           src="https://t.contentsquare.net/uxa/3a02599aa7215.js"
-//           strategy="afterInteractive"
-//         />
-
-//         <ThemeProvider>
-//           <Navbar />
-//           <main className="pt-20">{children}</main>
-
-//           {/* ✅ FIXED WhatsApp button — phone matches GBP number */}
-//           <a
-//             href={`https://wa.me/${PRIMARY_PHONE_WA}`}
-//             target="_blank"
-//             rel="noopener noreferrer"
-//             aria-label="Chat on WhatsApp"
-//             className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg transition-all duration-300 hover:scale-110"
-//           >
-//             WhatsApp Chat
-//           </a>
-
-//           <ToastContainer theme="dark" />
-//         </ThemeProvider>
-//       </body>
-//     </html>
-//   );
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // app/layout.tsx
 
 import './globals.css';
@@ -527,24 +13,19 @@ const poppins = Poppins({
   weight: ['400', '600', '700'],
 });
 
-// ✅ FIX: Full SEO metadata with canonical, keywords, OpenGraph
 export const metadata: Metadata = {
-  // ✅ Title with keyword
   title: {
     default: 'SniperCoders - Best Software Agency in India',
     template: '%s | SniperCoders - Best Software Agency in India',
   },
 
-  // ✅ Meta description with services + cities
   description:
     'SniperCoders is the best software and IT company in India offering custom website development, mobile app development, digital marketing, SEO, and IT consulting services across Bangalore, Jammu, Kashmir, Delhi, Mumbai, Hyderabad, Pune, Chennai, Chandigarh, Udhampur, and Katra.',
 
-  // ✅ Canonical URL — fixes the GSC "Alternative page with canonical tag" error
   alternates: {
     canonical: 'https://www.snipercoders.com',
   },
 
-  // ✅ Robots
   robots: {
     index: true,
     follow: true,
@@ -554,7 +35,6 @@ export const metadata: Metadata = {
     },
   },
 
-  // ✅ Keywords
   keywords: [
     'best software agency in India',
     'best IT company in India',
@@ -568,7 +48,6 @@ export const metadata: Metadata = {
     'SniperCoders',
   ],
 
-  // ✅ OpenGraph (for social sharing / Google rich results)
   openGraph: {
     type: 'website',
     url: 'https://www.snipercoders.com',
@@ -586,7 +65,6 @@ export const metadata: Metadata = {
     ],
   },
 
-  // ✅ Twitter card
   twitter: {
     card: 'summary_large_image',
     title: 'SniperCoders - Best Software Agency in India',
@@ -594,21 +72,79 @@ export const metadata: Metadata = {
       'Best software and IT company in India — custom website development, mobile app development, and digital marketing.',
   },
 
-  // ✅ Favicon
+  // ✅ Favicon — loads the .ico beside the browser tab title
   icons: {
-    icon: '/images/logo.ico',
+    icon: [
+      { url: '/images/logo.ico', type: 'image/x-icon' },
+    ],
+    shortcut: '/images/logo.ico',
+    apple: '/images/logo.ico',
   },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const whatsappNumber = '917006377796';
+  const whatsappMessage = encodeURIComponent('Hello SniperCoders! I would like to know more about your services.');
+
   return (
     <html lang="en">
+      <head>
+        {/* ✅ Explicit favicon link tag — ensures browser tab icon loads correctly */}
+        <link rel="icon" href="/images/logo.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="/images/logo.ico" type="image/x-icon" />
+      </head>
       <body className={`${poppins.className} transition-all duration-300`}>
         <ThemeProvider>
           <Navbar />
           <main className="pt-20">
             {children}
           </main>
+
+          {/* ✅ Floating WhatsApp Button — visible on every page */}
+          <a
+            href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Chat with SniperCoders on WhatsApp"
+            style={{
+              position: 'fixed',
+              bottom: '28px',
+              right: '28px',
+              zIndex: 9999,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '60px',
+              height: '60px',
+              borderRadius: '50%',
+              backgroundColor: '#25D366',
+              boxShadow: '0 4px 20px rgba(37, 211, 102, 0.5)',
+              cursor: 'pointer',
+              textDecoration: 'none',
+              animation: 'whatsapp-pulse 2.5s ease-in-out infinite',
+            }}
+          >
+            {/* WhatsApp SVG Icon */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 48 48"
+              width="32"
+              height="32"
+              fill="white"
+            >
+              <path d="M24 4C12.954 4 4 12.954 4 24c0 3.552.924 6.889 2.538 9.788L4 44l10.478-2.495A19.9 19.9 0 0 0 24 44c11.046 0 20-8.954 20-20S35.046 4 24 4zm0 36c-3.12 0-6.04-.832-8.56-2.284l-.612-.364-6.212 1.48 1.508-6.04-.4-.636A15.94 15.94 0 0 1 8 24c0-8.822 7.178-16 16-16s16 7.178 16 16-7.178 16-16 16zm8.406-11.846c-.46-.23-2.718-1.34-3.138-1.494-.42-.152-.726-.228-1.032.23-.306.458-1.184 1.494-1.452 1.8-.268.306-.536.344-.996.114-.46-.23-1.942-.716-3.7-2.284-1.368-1.22-2.292-2.726-2.56-3.186-.268-.46-.028-.708.2-.936.206-.204.46-.536.69-.804.23-.268.306-.46.46-.766.152-.306.076-.574-.038-.804-.114-.23-1.032-2.488-1.414-3.408-.372-.894-.75-.772-1.032-.786l-.88-.016c-.306 0-.804.114-1.224.574-.42.46-1.608 1.572-1.608 3.832s1.646 4.446 1.876 4.752c.23.306 3.24 4.946 7.848 6.938 1.096.474 1.952.756 2.618.968 1.1.35 2.102.3 2.894.182.882-.132 2.718-1.112 3.102-2.186.384-1.074.384-1.994.268-2.186-.114-.19-.42-.306-.88-.536z" />
+            </svg>
+          </a>
+
+          {/* ✅ Pulse animation for WhatsApp button */}
+          <style>{`
+            @keyframes whatsapp-pulse {
+              0%   { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+              50%  { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
+              100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+            }
+          `}</style>
+
           <ToastContainer
             position="top-right"
             autoClose={3000}

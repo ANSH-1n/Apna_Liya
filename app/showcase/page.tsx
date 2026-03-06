@@ -1,5 +1,7 @@
 
 
+
+
 //app/showcase/page.tsx
 "use client"
 
@@ -284,6 +286,8 @@ const SniperCodersPortfolio: React.FC = () => {
     { id: "clothing-brand", name: "E-Commerce", color: "from-sky-500 to-cyan-600", hoverColor: "from-sky-600 to-cyan-700" },
     { id: "dental-website", name: "Healthcare Website", color: "from-green-500 to-emerald-600", hoverColor: "from-green-600 to-emerald-700" },
     { id: "driving-school", name: "Education Website", color: "from-yellow-500 to-amber-600", hoverColor: "from-yellow-600 to-amber-700" },
+    // ✅ NEW CATEGORY: Fitness Website
+    { id: "fitness-website", name: "Fitness Website", color: "from-lime-500 to-green-600", hoverColor: "from-lime-600 to-green-700" },
     { id: "ngo-website", name: "NGO Website", color: "from-red-500 to-orange-600", hoverColor: "from-red-600 to-orange-700" },
     { id: "news-website", name: "News Platform", color: "from-indigo-500 to-blue-600", hoverColor: "from-indigo-600 to-blue-700" },
     { id: "portfolio-website", name: "Portfolio Website", color: "from-pink-500 to-rose-600", hoverColor: "from-pink-600 to-rose-700" },
@@ -293,8 +297,20 @@ const SniperCodersPortfolio: React.FC = () => {
     { id: "UIUX", name: "UI/UX Design", color: "from-purple-500 to-pink-600", hoverColor: "from-purple-600 to-pink-700" },
   ], []);
 
- const projects = useMemo((): Project[] => [
+  const projects = useMemo((): Project[] => [
+    
     {
+      id: "equinoxx-fitness",
+      title: "Equinoxx Fitness",
+      image: "/images/equinox_website_gym.png",
+      categories: ["fitness-website", "website", "web-application"],
+      description: "Professional fitness and gym website by SniperCoders - Best web development company in India",
+      tags: ["Fitness Website", "Gym Portal", "Health & Wellness"],
+      href: "https://equinoxxfitness.com/"
+    },
+    
+    {
+
       id: "UIUX",
       title: "Torke Hub - CRM Platform",
       image: "/images/image.png", 
@@ -303,7 +319,7 @@ const SniperCodersPortfolio: React.FC = () => {
       tags: ["CRM Automation", "UI-UX Design", "Web Application"],
       href: "https://www.torkehub.com/"
     },
-     {
+    {
       id: "travel-quench",
       title: "Travel Quench - E-Commerce Platform",
       image: "/images/travelQuench.png", 
@@ -366,14 +382,15 @@ const SniperCodersPortfolio: React.FC = () => {
       tags: ["Education Website", "Driving School", "Course Management"],
       href: "https://ashirwaddrivingschool.com/"
     },
-    {
-      id: "chevox",
-      title: "Chevox - Fashion Brand",
-      image: "/images/cloflex-kodekalp[1].png", 
+
+      {
+      id: "The Retail Therapy",
+      title: "Retail Therapy - Fashion Brand",
+      image: "/images/retail_therapy.png", 
       categories: ["clothing-brand", "website", "web-application"],
       description: "Custom coded eCommerce website by best software agency in India - SniperCoders",
       tags: ["Fashion E-Commerce", "Custom Design", "Online Shopping"],
-      href: "https://chevox.in/"
+      href: "https://the-retail-therapy.vercel.app/"
     },
     {
       id: "airborn-aviation",
@@ -429,6 +446,7 @@ const SniperCodersPortfolio: React.FC = () => {
       tags: ["Digital Marketing", "Agency Website", "SEO Services"],
       href: "https://adfluxagency.com/"
     },
+ 
   ], []);
 
   useEffect(() => {
