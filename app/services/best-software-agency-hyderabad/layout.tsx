@@ -17,12 +17,12 @@ export const metadata: Metadata = {
     'best website development hyderabad',
   ],
   alternates: {
-    canonical: 'https://snipercoders.com/services/best-software-agency-hyderabad',
+    canonical: 'https://snipercoders.in/services/best-software-agency-hyderabad',
   },
   openGraph: {
     title: 'Best Software Agency in Hyderabad | SniperCoders',
     description: 'Websites, apps & Telugu SEO for Hyderabad pharma, IT & real estate businesses. Serving HITEC City, Cyberabad & all of Hyderabad.',
-    url: 'https://snipercoders.com/services/best-software-agency-hyderabad',
+    url: 'https://snipercoders.in/services/best-software-agency-hyderabad',
     siteName: 'SniperCoders',
     locale: 'en_IN',
     type: 'website',

@@ -24,8 +24,8 @@
 //     return [
 //       {
 //         source: '/:path*',
-//         has: [{ type: 'host', value: 'snipercoders.com' }],
-//         destination: 'https://www.snipercoders.com/:path*',
+//         has: [{ type: 'host', value: 'snipercoders.in' }],
+//         destination: 'https://www.snipercoders.in/:path*',
 //         permanent: true, // 301 redirect — best for SEO
 //       },
 //     ];
@@ -66,8 +66,8 @@ const nextConfig: NextConfig = {
       // ✅ Redirect non-www → www (fixes canonical issues in GSC)
       {
         source: '/:path*',
-        has: [{ type: 'host', value: 'snipercoders.com' }],
-        destination: 'https://www.snipercoders.com/:path*',
+        has: [{ type: 'host', value: 'snipercoders.in' }],
+        destination: 'https://www.snipercoders.in/:path*',
         permanent: true,
       },
       // ✅ Fix 404 FAILED error in GSC

@@ -17,12 +17,12 @@ export const metadata: Metadata = {
     'best software company tamil nadu',
   ],
   alternates: {
-    canonical: 'https://snipercoders.com/services/best-software-agency-chennai',
+    canonical: 'https://snipercoders.in/services/best-software-agency-chennai',
   },
   openGraph: {
     title: 'Best Software Agency in Chennai | SniperCoders',
     description: 'Websites, apps & Tamil SEO for Chennai automotive, IT & retail businesses. Serving OMR, T. Nagar, Ambattur & all Chennai.',
-    url: 'https://snipercoders.com/services/best-software-agency-chennai',
+    url: 'https://snipercoders.in/services/best-software-agency-chennai',
     siteName: 'SniperCoders',
     locale: 'en_IN',
     type: 'website',

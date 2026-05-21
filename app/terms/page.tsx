@@ -824,7 +824,7 @@ const TermsOfService = () => {
           content="Read SniperCoders' Terms of Service. We are the best software agency in India providing website development, app development, and digital marketing services across Bangalore, Jammu, Delhi, Mumbai and more."
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.snipercoders.com/terms" />
+        <link rel="canonical" href="https://www.snipercoders.in/terms" />
       </Head>
 
       <div 
@@ -1192,7 +1192,7 @@ const TermsOfService = () => {
                   20. Changes To Terms Of Service
                 </motion.h2>
                 <p className="text-gray-300">
-                  We may update these Terms from time to time. The latest version will be available on our website at snipercoders.com.
+                  We may update these Terms from time to time. The latest version will be available on our website at snipercoders.in.
                 </p>
               </section>
 
@@ -1226,8 +1226,8 @@ const TermsOfService = () => {
                   </p>
                   <p className="text-gray-300">
                     <strong>Website:</strong>{' '}
-                    <a href="https://www.snipercoders.com" className="text-blue-400 hover:underline">
-                      www.snipercoders.com
+                    <a href="https://www.snipercoders.in" className="text-blue-400 hover:underline">
+                      www.snipercoders.in
                     </a>
                   </p>
                   <p className="text-gray-300 text-sm mt-2">

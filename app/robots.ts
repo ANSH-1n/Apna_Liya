@@ -19,6 +19,6 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     // ✅ Points to www sitemap
-    sitemap: 'https://www.snipercoders.com/sitemap.xml',
+    sitemap: 'https://www.snipercoders.in/sitemap.xml',
   }
 }

@@ -17,12 +17,12 @@ export const metadata: Metadata = {
     'website development baner kharadi viman nagar',
   ],
   alternates: {
-    canonical: 'https://snipercoders.com/services/best-software-agency-pune',
+    canonical: 'https://snipercoders.in/services/best-software-agency-pune',
   },
   openGraph: {
     title: 'Best Software Agency in Pune | SniperCoders',
     description: 'Websites, apps & Marathi SEO for Pune startups, manufacturers & colleges. Serving Hinjawadi, Baner, Kharadi & all Pune.',
-    url: 'https://snipercoders.com/services/best-software-agency-pune',
+    url: 'https://snipercoders.in/services/best-software-agency-pune',
     siteName: 'SniperCoders',
     locale: 'en_IN',
     type: 'website',

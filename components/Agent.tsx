@@ -304,7 +304,7 @@
 //       console.error("Error confirming meeting:", error);
 //       setError("Failed to confirm meeting. Please try again later.");
 //       setAiResponse(
-//         `There was an issue confirming your meeting. Please try again or contact support at support@snipercoders.com.`
+//         `There was an issue confirming your meeting. Please try again or contact support at support@snipercoders.in.`
 //       );
 //     } finally {
 //       setLoading(false);
@@ -855,7 +855,7 @@ We look forward to discussing your web development, app development, digital mar
       console.error("Error confirming meeting:", error);
       setError("Failed to confirm meeting. Please try again later.");
       setAiResponse(
-        `There was an issue confirming your meeting. Please try again or contact support at support@snipercoders.com.`
+        `There was an issue confirming your meeting. Please try again or contact support at snipercoders25@gmail.com.`
       );
     } finally {
       setLoading(false);

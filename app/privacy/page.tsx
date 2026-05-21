@@ -82,7 +82,7 @@
 //       title: "1. Introduction",
 //       content: (
 //         <div>
-//           <p>This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website (www.snipercoders.com), use our mobile applications, or engage with our services.</p>
+//           <p>This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website (www.snipercoders.in), use our mobile applications, or engage with our services.</p>
 //           <p>Please read this Privacy Policy carefully. By accessing or using our services, you acknowledge that you have read, understood, and agree to be bound by the terms of this Privacy Policy. If you do not agree with our policies and practices, please do not use our services.</p>
 //         </div>
 //       )
@@ -672,7 +672,7 @@ const PrivacyPolicy: React.FC = () => {
       content: (
         <div>
           {/* ✅ SEO: keyword-rich intro paragraph */}
-          <p>This Privacy Policy explains how <strong>SniperCoders</strong> — the best software and IT company in India — collects, uses, discloses, and safeguards your information when you visit our website (<a href="https://www.snipercoders.com" style={{color:'#8a2be2'}}>www.snipercoders.com</a>), use our mobile applications, or engage with our website development, app development, or digital marketing services.</p>
+          <p>This Privacy Policy explains how <strong>SniperCoders</strong> — the best software and IT company in India — collects, uses, discloses, and safeguards your information when you visit our website (<a href="https://www.snipercoders.in" style={{color:'#8a2be2'}}>www.snipercoders.in</a>), use our mobile applications, or engage with our website development, app development, or digital marketing services.</p>
           <p>We serve clients across Bangalore, Jammu, Kashmir, Delhi, Mumbai, Hyderabad, Pune, Chennai, Chandigarh, Udhampur, and Katra. Please read this Privacy Policy carefully. By accessing or using our services, you acknowledge that you have read, understood, and agree to be bound by the terms of this Privacy Policy.</p>
         </div>
       )
@@ -845,7 +845,7 @@ const PrivacyPolicy: React.FC = () => {
       title: "11. Changes to This Privacy Policy",
       content: (
         <div>
-          <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the &quot;Last Updated&quot; date. You are advised to review this Privacy Policy periodically for any changes. The latest version is always available at <a href="https://www.snipercoders.com/privacy" style={{color:'#8a2be2'}}>snipercoders.com/privacy</a>.</p>
+          <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the &quot;Last Updated&quot; date. You are advised to review this Privacy Policy periodically for any changes. The latest version is always available at <a href="https://www.snipercoders.in/privacy" style={{color:'#8a2be2'}}>snipercoders.in/privacy</a>.</p>
         </div>
       )
     },
@@ -869,7 +869,7 @@ const PrivacyPolicy: React.FC = () => {
             <p><strong>Email:</strong> <a href="mailto:snipercoders25@gmail.com">snipercoders25@gmail.com</a></p>
             <p><strong>Phone:</strong> <a href="tel:+917006377796" style={{color:'#8a2be2'}}>+91-7006377796</a></p>
             <p><strong>Location:</strong> Bangalore, Karnataka, India</p>
-            <p><strong>Website:</strong> <a href="https://www.snipercoders.com" style={{color:'#8a2be2'}}>www.snipercoders.com</a></p>
+            <p><strong>Website:</strong> <a href="https://www.snipercoders.in" style={{color:'#8a2be2'}}>www.snipercoders.in</a></p>
             <p style={{fontSize:'0.85rem', marginTop:'0.75rem', opacity:0.7}}>
               Serving clients across Bangalore, Delhi, Mumbai, Hyderabad, Pune, Chennai,
               Chandigarh, Jammu, Kashmir, Udhampur, and Katra.
@@ -903,7 +903,7 @@ const PrivacyPolicy: React.FC = () => {
           content="Read SniperCoders' Privacy Policy. Best software and IT company in India offering website development, app development, and digital marketing services in Bangalore, Jammu, Kashmir, Delhi, Mumbai and more."
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.snipercoders.com/privacy" />
+        <link rel="canonical" href="https://www.snipercoders.in/privacy" />
       </Head>
 
       <div className="privacy-policy-container">

@@ -559,7 +559,7 @@
 //                 <p className="mb-3 text-gray-300">
 //                   <strong>Email:</strong>{" "}
 //                   <a
-//                     href="mailto:support@snipercoders.com"
+//                     href="mailto:support@snipercoders.in"
 //                     className="text-blue-400 hover:text-blue-300 transition-colors"
 //                   >
 //                     snipercoders25@gmail.com
@@ -919,7 +919,7 @@ const RefundPolicy: React.FC = () => {
           content="Read SniperCoders' Refund Policy. Best software and IT company in India offering website development, app development, and digital marketing services in Bangalore, Jammu, Kashmir, Delhi, Mumbai and more."
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.snipercoders.com/refund" />
+        <link rel="canonical" href="https://www.snipercoders.in/refund" />
       </Head>
 
       <div
@@ -1269,8 +1269,8 @@ const RefundPolicy: React.FC = () => {
                   </p>
                   <p className="text-gray-300">
                     <strong>Website:</strong>{" "}
-                    <a href="https://www.snipercoders.com" className="text-blue-400 hover:underline">
-                      www.snipercoders.com
+                    <a href="https://www.snipercoders.in" className="text-blue-400 hover:underline">
+                      www.snipercoders.in
                     </a>
                   </p>
                   <p className="text-gray-300 text-sm mt-2">
@@ -1293,8 +1293,8 @@ const RefundPolicy: React.FC = () => {
                 <motion.p className="text-gray-300" variants={itemVariants}>
                   Subject to change without prior notice. Most recent version available on our
                   website at{" "}
-                  <a href="https://www.snipercoders.com/refund" className="text-blue-400 hover:underline">
-                    snipercoders.com/refund
+                  <a href="https://www.snipercoders.in/refund" className="text-blue-400 hover:underline">
+                    snipercoders.in/refund
                   </a>.
                 </motion.p>
               </section>

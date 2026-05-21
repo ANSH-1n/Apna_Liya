@@ -17,12 +17,12 @@ export const metadata: Metadata = {
     'software company jammu',
   ],
   alternates: {
-    canonical: 'https://snipercoders.com/services/best-software-agency-jammu',
+    canonical: 'https://snipercoders.in/services/best-software-agency-jammu',
   },
   openGraph: {
     title: 'Best Software Agency in Jammu | SniperCoders',
     description: 'Websites, apps & digital marketing for Jammu hotels, yatra operators, restaurants & businesses. Get found on Google.',
-    url: 'https://snipercoders.com/services/best-software-agency-jammu',
+    url: 'https://snipercoders.in/services/best-software-agency-jammu',
     siteName: 'SniperCoders',
     locale: 'en_IN',
     type: 'website',

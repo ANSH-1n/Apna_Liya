@@ -16,12 +16,12 @@ export const metadata: Metadata = {
     'IT agency near me bangalore',
   ],
   alternates: {
-    canonical: 'https://snipercoders.com/services/best-software-agency-bangalore',
+    canonical: 'https://snipercoders.in/services/best-software-agency-bangalore',
   },
   openGraph: {
     title: 'Best Software Agency in Bangalore | SniperCoders',
     description: 'Website development, mobile apps, custom software & digital marketing for Bangalore businesses. 30+ projects. 100% satisfaction.',
-    url: 'https://snipercoders.com/services/best-software-agency-bangalore',
+    url: 'https://snipercoders.in/services/best-software-agency-bangalore',
     siteName: 'SniperCoders',
     locale: 'en_IN',
     type: 'website',

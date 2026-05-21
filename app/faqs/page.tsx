@@ -976,7 +976,7 @@ const FAQsPage = () => {
       question: "How do I start a project with SniperCoders?",
       // ✅ SEO: company name + email
       answer:
-        "Starting a project with SniperCoders — the best software agency in India — is simple. Contact us through our website at snipercoders.com or email snipercoders25@gmail.com. Schedule an initial consultation, discuss your requirements, and we'll provide a proposal. Once approved, we begin development with clear milestones and deliverables.",
+        "Starting a project with SniperCoders — the best software agency in India — is simple. Contact us through our website at snipercoders.in or email snipercoders25@gmail.com. Schedule an initial consultation, discuss your requirements, and we'll provide a proposal. Once approved, we begin development with clear milestones and deliverables.",
       isOpen: false,
     },
     {
@@ -1001,7 +1001,7 @@ const FAQsPage = () => {
       question: "How can I contact SniperCoders?",
       // ✅ SEO: phone + email + website
       answer:
-        "You can reach SniperCoders — the best IT company in India — through the contact form at snipercoders.com, email us at snipercoders25@gmail.com, or call us at +91-7006377796. We serve clients across Bangalore, Jammu, Kashmir, Delhi, Mumbai, Hyderabad, Pune, Chennai, Chandigarh, Udhampur, and Katra. We typically respond within 24 hours.",
+        "You can reach SniperCoders — the best IT company in India — through the contact form at snipercoders.in, email us at snipercoders25@gmail.com, or call us at +91-7006377796. We serve clients across Bangalore, Jammu, Kashmir, Delhi, Mumbai, Hyderabad, Pune, Chennai, Chandigarh, Udhampur, and Katra. We typically respond within 24 hours.",
       isOpen: false,
     },
   ]);
@@ -1331,7 +1331,7 @@ const FAQsPage = () => {
           content="Frequently asked questions about SniperCoders — the best software and IT company in India. Learn about our website development, app development, digital marketing, pricing, and support services across Bangalore, Jammu, Kashmir, Delhi, Mumbai and more."
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.snipercoders.com/faqs" />
+        <link rel="canonical" href="https://www.snipercoders.in/faqs" />
       </Head>
 
       <div className="min-h-screen bg-gray-900 text-white relative overflow-hidden">

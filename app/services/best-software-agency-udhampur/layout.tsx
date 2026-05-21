@@ -16,12 +16,12 @@ export const metadata: Metadata = {
     'best IT company udhampur jk',
   ],
   alternates: {
-    canonical: 'https://snipercoders.com/services/best-software-agency-udhampur',
+    canonical: 'https://snipercoders.in/services/best-software-agency-udhampur',
   },
   openGraph: {
     title: 'Best Software Agency in Udhampur | SniperCoders',
     description: 'Professional websites, mobile apps & digital marketing for Udhampur businesses. Fast delivery. Affordable pricing.',
-    url: 'https://snipercoders.com/services/best-software-agency-udhampur',
+    url: 'https://snipercoders.in/services/best-software-agency-udhampur',
     siteName: 'SniperCoders',
     locale: 'en_IN',
     type: 'website',

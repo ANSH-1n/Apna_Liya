@@ -17,12 +17,12 @@ export const metadata: Metadata = {
     'best software agency delhi ncr',
   ],
   alternates: {
-    canonical: 'https://snipercoders.com/services/best-software-agency-delhi',
+    canonical: 'https://snipercoders.in/services/best-software-agency-delhi',
   },
   openGraph: {
     title: 'Best Software Agency in Delhi | SniperCoders',
     description: 'Enterprise websites, apps & aggressive digital marketing for Delhi NCR businesses. Serving Delhi, Noida, Gurugram, Faridabad & Ghaziabad.',
-    url: 'https://snipercoders.com/services/best-software-agency-delhi',
+    url: 'https://snipercoders.in/services/best-software-agency-delhi',
     siteName: 'SniperCoders',
     locale: 'en_IN',
     type: 'website',

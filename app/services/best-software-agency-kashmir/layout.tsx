@@ -17,12 +17,12 @@ export const metadata: Metadata = {
     'kashmir hotel website development',
   ],
   alternates: {
-    canonical: 'https://snipercoders.com/services/best-software-agency-kashmir',
+    canonical: 'https://snipercoders.in/services/best-software-agency-kashmir',
   },
   openGraph: {
     title: 'Best Software Agency in Kashmir | SniperCoders',
     description: 'Houseboat portals, handicraft eCommerce & global tourism SEO for Kashmir businesses. Reach international customers.',
-    url: 'https://snipercoders.com/services/best-software-agency-kashmir',
+    url: 'https://snipercoders.in/services/best-software-agency-kashmir',
     siteName: 'SniperCoders',
     locale: 'en_IN',
     type: 'website',

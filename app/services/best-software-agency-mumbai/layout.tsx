@@ -17,12 +17,12 @@ export const metadata: Metadata = {
     'best software agency thane navi mumbai',
   ],
   alternates: {
-    canonical: 'https://snipercoders.com/services/best-software-agency-mumbai',
+    canonical: 'https://snipercoders.in/services/best-software-agency-mumbai',
   },
   openGraph: {
     title: 'Best Software Agency in Mumbai | SniperCoders',
     description: 'Premium websites, fintech apps & digital marketing for Mumbai businesses. Serving Bandra, BKC, Andheri, Lower Parel & all MMR.',
-    url: 'https://snipercoders.com/services/best-software-agency-mumbai',
+    url: 'https://snipercoders.in/services/best-software-agency-mumbai',
     siteName: 'SniperCoders',
     locale: 'en_IN',
     type: 'website',

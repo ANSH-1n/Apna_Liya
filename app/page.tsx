@@ -44,8 +44,8 @@ export default function Home() {
             '@type': 'Organization',
             name: 'SniperCoders',
             description: 'Best Software and IT Company in India offering website development, mobile app development, and digital marketing services',
-            url: 'https://www.snipercoders.com',
-            logo: 'https://www.snipercoders.com/images/logo.png',
+            url: 'https://www.snipercoders.in',
+            logo: 'https://www.snipercoders.in/images/logo.png',
             address: {
               '@type': 'PostalAddress',
               addressLocality: 'Bangalore',
@@ -241,7 +241,7 @@ export default function Home() {
             <br />
             Phone: +91-7006377796
             <br />
-            Email: contact@snipercoders.com
+            Email: contact@snipercoders.in
           </address>
         </div>
       </div>

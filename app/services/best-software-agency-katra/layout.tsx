@@ -20,12 +20,12 @@ export const metadata: Metadata = {
     'katra business website development',
   ],
   alternates: {
-    canonical: 'https://snipercoders.com/services/best-software-agency-katra',
+    canonical: 'https://snipercoders.in/services/best-software-agency-katra',
   },
   openGraph: {
     title: 'Best Software Agency in Katra | SniperCoders',
     description: 'Professional websites, apps & digital marketing for Katra hotels, yatra operators, taxi services & all businesses. Reach pilgrims before they arrive in Katra.',
-    url: 'https://snipercoders.com/services/best-software-agency-katra',
+    url: 'https://snipercoders.in/services/best-software-agency-katra',
     siteName: 'SniperCoders',
     locale: 'en_IN',
     type: 'website',

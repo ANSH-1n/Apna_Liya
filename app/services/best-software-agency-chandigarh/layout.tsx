@@ -17,12 +17,12 @@ export const metadata: Metadata = {
     'website development panchkula mohali zirakpur',
   ],
   alternates: {
-    canonical: 'https://snipercoders.com/services/best-software-agency-chandigarh',
+    canonical: 'https://snipercoders.in/services/best-software-agency-chandigarh',
   },
   openGraph: {
     title: 'Best Software Agency in Chandigarh | SniperCoders',
     description: 'Websites, apps & Punjabi SEO for Chandigarh, Mohali & Panchkula businesses. Real estate, hospitality, education & all Tricity industries.',
-    url: 'https://snipercoders.com/services/best-software-agency-chandigarh',
+    url: 'https://snipercoders.in/services/best-software-agency-chandigarh',
     siteName: 'SniperCoders',
     locale: 'en_IN',
     type: 'website',
