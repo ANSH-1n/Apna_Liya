@@ -4,7 +4,7 @@ import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // ✅ FIX 1: Changed to www — was causing canonical issues in GSC
-  const baseUrl = 'https://www.snipercoders.com'
+  const baseUrl = 'https://www.snipercoders.in'
 
   // ✅ FIX 2: Added katra (was missing)
   const locationPages = [

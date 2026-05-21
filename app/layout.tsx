@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     'SniperCoders is the best software and IT company in India offering custom website development, mobile app development, digital marketing, SEO, and IT consulting services across Bangalore, Jammu, Kashmir, Delhi, Mumbai, Hyderabad, Pune, Chennai, Chandigarh, Udhampur, and Katra.',
 
   alternates: {
-    canonical: 'https://www.snipercoders.com',
+    canonical: 'https://www.snipercoders.in',
   },
 
   robots: {
@@ -50,14 +50,14 @@ export const metadata: Metadata = {
 
   openGraph: {
     type: 'website',
-    url: 'https://www.snipercoders.com',
+    url: 'https://www.snipercoders.in',
     title: 'SniperCoders - Best Software Agency in India',
     description:
       'Best software and IT company in India — custom website development, mobile app development, and digital marketing across Bangalore, Jammu, Kashmir, Delhi, Mumbai and more.',
     siteName: 'SniperCoders',
     images: [
       {
-        url: 'https://www.snipercoders.com/images/logo.ico',
+        url: 'https://www.snipercoders.in/images/logo.ico',
         width: 800,
         height: 600,
         alt: 'SniperCoders - Best Software Agency in India',
