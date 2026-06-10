@@ -361,14 +361,14 @@
 //         header {
 //           text-align: center;
 //           padding: 2rem 0;
-//           border-bottom: 1px solid rgba(138, 43, 226, 0.3);
+//           border-bottom: 1px solid rgba(103, 232, 249, 0.3);
 //           margin-bottom: 2rem;
 //         }
         
 //         h1 {
 //           font-size: 2.5rem;
 //           margin-bottom: 1rem;
-//           background: linear-gradient(45deg, #8a2be2, #4b0082);
+//           background: linear-gradient(45deg, #67e8f9, #ec4899);
 //           -webkit-background-clip: text;
 //           -webkit-text-fill-color: transparent;
 //         }
@@ -386,13 +386,13 @@
 //           background: rgba(26, 28, 42, 0.8);
 //           border-radius: 8px;
 //           padding: 1.5rem;
-//           border: 1px solid rgba(138, 43, 226, 0.3);
+//           border: 1px solid rgba(103, 232, 249, 0.3);
 //         }
         
 //         .sidebar h2 {
 //           font-size: 1.5rem;
 //           margin-bottom: 1.5rem;
-//           color: #8a2be2;
+//           color: #67e8f9;
 //         }
         
 //         .sidebar nav {
@@ -414,13 +414,13 @@
 //         }
         
 //         .sidebar button:hover {
-//           background: rgba(138, 43, 226, 0.1);
+//           background: rgba(103, 232, 249, 0.1);
 //           color: #fff;
 //         }
         
 //         .sidebar button.active {
-//           background: rgba(138, 43, 226, 0.2);
-//           color: #8a2be2;
+//           background: rgba(103, 232, 249, 0.16);
+//           color: #67e8f9;
 //           font-weight: 600;
 //         }
         
@@ -429,14 +429,14 @@
 //           background: rgba(26, 28, 42, 0.8);
 //           border-radius: 8px;
 //           padding: 2rem;
-//           border: 1px solid rgba(138, 43, 226, 0.3);
+//           border: 1px solid rgba(103, 232, 249, 0.3);
 //         }
         
 //         .main-content h2 {
 //           font-size: 1.8rem;
 //           margin-bottom: 1.5rem;
-//           color: #8a2be2;
-//           border-bottom: 1px solid rgba(138, 43, 226, 0.3);
+//           color: #67e8f9;
+//           border-bottom: 1px solid rgba(103, 232, 249, 0.3);
 //           padding-bottom: 0.75rem;
 //         }
         
@@ -461,14 +461,14 @@
 //         }
         
 //         .contact-info {
-//           background: rgba(138, 43, 226, 0.1);
+//           background: rgba(103, 232, 249, 0.1);
 //           border-radius: 8px;
 //           padding: 1.5rem;
 //           margin-top: 1rem;
 //         }
         
 //         .contact-info a {
-//           color: #8a2be2;
+//           color: #67e8f9;
 //           text-decoration: none;
 //         }
         
@@ -672,7 +672,7 @@ const PrivacyPolicy: React.FC = () => {
       content: (
         <div>
           {/* ✅ SEO: keyword-rich intro paragraph */}
-          <p>This Privacy Policy explains how <strong>SniperCoders</strong> — the best software and IT company in India — collects, uses, discloses, and safeguards your information when you visit our website (<a href="https://www.snipercoders.in" style={{color:'#8a2be2'}}>www.snipercoders.in</a>), use our mobile applications, or engage with our website development, app development, or digital marketing services.</p>
+          <p>This Privacy Policy explains how <strong>SniperCoders</strong> — the best software and IT company in India — collects, uses, discloses, and safeguards your information when you visit our website (<a href="https://www.snipercoders.in" style={{color:'#67e8f9'}}>www.snipercoders.in</a>), use our mobile applications, or engage with our website development, app development, or digital marketing services.</p>
           <p>We serve clients across Bangalore, Jammu, Kashmir, Delhi, Mumbai, Hyderabad, Pune, Chennai, Chandigarh, Udhampur, and Katra. Please read this Privacy Policy carefully. By accessing or using our services, you acknowledge that you have read, understood, and agree to be bound by the terms of this Privacy Policy.</p>
         </div>
       )
@@ -845,7 +845,7 @@ const PrivacyPolicy: React.FC = () => {
       title: "11. Changes to This Privacy Policy",
       content: (
         <div>
-          <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the &quot;Last Updated&quot; date. You are advised to review this Privacy Policy periodically for any changes. The latest version is always available at <a href="https://www.snipercoders.in/privacy" style={{color:'#8a2be2'}}>snipercoders.in/privacy</a>.</p>
+          <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the &quot;Last Updated&quot; date. You are advised to review this Privacy Policy periodically for any changes. The latest version is always available at <a href="https://www.snipercoders.in/privacy" style={{color:'#67e8f9'}}>snipercoders.in/privacy</a>.</p>
         </div>
       )
     },
@@ -867,9 +867,9 @@ const PrivacyPolicy: React.FC = () => {
           <div className="contact-info">
             <p><strong>Company:</strong> SniperCoders — Best Software and IT Company in India</p>
             <p><strong>Email:</strong> <a href="mailto:snipercoders25@gmail.com">snipercoders25@gmail.com</a></p>
-            <p><strong>Phone:</strong> <a href="tel:+917006377796" style={{color:'#8a2be2'}}>+91-7006377796</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+917006377796" style={{color:'#67e8f9'}}>+91-7006377796</a></p>
             <p><strong>Location:</strong> Bangalore, Karnataka, India</p>
-            <p><strong>Website:</strong> <a href="https://www.snipercoders.in" style={{color:'#8a2be2'}}>www.snipercoders.in</a></p>
+            <p><strong>Website:</strong> <a href="https://www.snipercoders.in" style={{color:'#67e8f9'}}>www.snipercoders.in</a></p>
             <p style={{fontSize:'0.85rem', marginTop:'0.75rem', opacity:0.7}}>
               Serving clients across Bangalore, Delhi, Mumbai, Hyderabad, Pune, Chennai,
               Chandigarh, Jammu, Kashmir, Udhampur, and Katra.
@@ -930,7 +930,7 @@ const PrivacyPolicy: React.FC = () => {
               <span style={{color:'#555'}}>›</span>
               <Link href="/services" style={{color:'#a8b2d1'}}>Services</Link>
               <span style={{color:'#555'}}>›</span>
-              <span style={{color:'#8a2be2'}}>Privacy Policy</span>
+              <span style={{color:'#67e8f9'}}>Privacy Policy</span>
             </nav>
           </header>
           
@@ -986,14 +986,14 @@ const PrivacyPolicy: React.FC = () => {
           header {
             text-align: center;
             padding: 2rem 0;
-            border-bottom: 1px solid rgba(138, 43, 226, 0.3);
+            border-bottom: 1px solid rgba(103, 232, 249, 0.3);
             margin-bottom: 2rem;
           }
           
           h1 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            background: linear-gradient(45deg, #8a2be2, #4b0082);
+            background: linear-gradient(45deg, #67e8f9, #ec4899);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
           }
@@ -1011,13 +1011,13 @@ const PrivacyPolicy: React.FC = () => {
             background: rgba(26, 28, 42, 0.8);
             border-radius: 8px;
             padding: 1.5rem;
-            border: 1px solid rgba(138, 43, 226, 0.3);
+            border: 1px solid rgba(103, 232, 249, 0.3);
           }
           
           .sidebar h2 {
             font-size: 1.5rem;
             margin-bottom: 1.5rem;
-            color: #8a2be2;
+            color: #67e8f9;
           }
           
           .sidebar nav {
@@ -1039,13 +1039,13 @@ const PrivacyPolicy: React.FC = () => {
           }
           
           .sidebar button:hover {
-            background: rgba(138, 43, 226, 0.1);
+            background: rgba(103, 232, 249, 0.1);
             color: #fff;
           }
           
           .sidebar button.active {
-            background: rgba(138, 43, 226, 0.2);
-            color: #8a2be2;
+            background: rgba(103, 232, 249, 0.16);
+            color: #67e8f9;
             font-weight: 600;
           }
           
@@ -1054,14 +1054,14 @@ const PrivacyPolicy: React.FC = () => {
             background: rgba(26, 28, 42, 0.8);
             border-radius: 8px;
             padding: 2rem;
-            border: 1px solid rgba(138, 43, 226, 0.3);
+            border: 1px solid rgba(103, 232, 249, 0.3);
           }
           
           .main-content h2 {
             font-size: 1.8rem;
             margin-bottom: 1.5rem;
-            color: #8a2be2;
-            border-bottom: 1px solid rgba(138, 43, 226, 0.3);
+            color: #67e8f9;
+            border-bottom: 1px solid rgba(103, 232, 249, 0.3);
             padding-bottom: 0.75rem;
           }
           
@@ -1086,7 +1086,7 @@ const PrivacyPolicy: React.FC = () => {
           }
           
           .contact-info {
-            background: rgba(138, 43, 226, 0.1);
+            background: rgba(103, 232, 249, 0.1);
             border-radius: 8px;
             padding: 1.5rem;
             margin-top: 1rem;
@@ -1096,7 +1096,7 @@ const PrivacyPolicy: React.FC = () => {
           }
           
           .contact-info a {
-            color: #8a2be2;
+            color: #67e8f9;
             text-decoration: none;
           }
           

@@ -169,12 +169,12 @@
 //   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
 //   return (
-//     <div className="min-h-screen bg-[#04080f] text-white font-sans overflow-x-hidden">
+//     <div className="min-h-screen bg-[#05070d] text-white font-sans overflow-x-hidden">
 
 //       {/* ── HERO ───────────────────────────────────────────────── */}
 //       <section
 //         className="relative min-h-[92vh] flex items-center justify-center overflow-hidden"
-//         style={{ background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(99,102,241,0.2) 0%, transparent 70%), radial-gradient(ellipse 60% 40% at 80% 80%, rgba(16,185,129,0.14) 0%, transparent 60%), #04080f" }}
+//         style={{ background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(34,211,238,0.2) 0%, transparent 70%), radial-gradient(ellipse 60% 40% at 80% 80%, rgba(236,72,153,0.14) 0%, transparent 60%), #05070d" }}
 //       >
 //         <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.8) 1px, transparent 1px)", backgroundSize: "48px 48px" }} />
 //         <div className="absolute top-24 left-10 w-72 h-72 rounded-full bg-indigo-600/15 blur-[100px] pointer-events-none" />
@@ -294,7 +294,7 @@
 //                 custom={i} initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp}
 //                 className="group relative bg-gray-900/60 border border-gray-800 hover:border-indigo-600/50 rounded-2xl p-7 transition-all duration-300 overflow-hidden"
 //               >
-//                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(99,102,241,0.08), transparent)" }} />
+//                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(103,232,249,0.08), transparent)" }} />
 //                 <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${svc.gradient} flex items-center justify-center mb-5 shadow-lg`}>{svc.icon}</div>
 //                 <h3 className="text-xl font-bold mb-3 text-white group-hover:text-indigo-300 transition-colors">{svc.title}</h3>
 //                 <p className="text-gray-400 text-sm leading-relaxed mb-2">{svc.desc}</p>
@@ -677,12 +677,12 @@ export default function PunePage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen bg-[#04080f] text-white font-sans overflow-x-hidden">
+    <div className="min-h-screen bg-[#05070d] text-white font-sans overflow-x-hidden">
 
       {/* ── HERO ───────────────────────────────────────────────── */}
       <section
         className="relative min-h-[92vh] flex items-center justify-center overflow-hidden"
-        style={{ background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(99,102,241,0.2) 0%, transparent 70%), radial-gradient(ellipse 60% 40% at 80% 80%, rgba(16,185,129,0.14) 0%, transparent 60%), #04080f" }}
+        style={{ background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(34,211,238,0.2) 0%, transparent 70%), radial-gradient(ellipse 60% 40% at 80% 80%, rgba(236,72,153,0.14) 0%, transparent 60%), #05070d" }}
       >
         <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.8) 1px, transparent 1px)", backgroundSize: "48px 48px" }} />
         <div className="absolute top-24 left-10 w-72 h-72 rounded-full bg-indigo-600/15 blur-[100px] pointer-events-none" />
@@ -802,7 +802,7 @@ export default function PunePage() {
                 custom={i} initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp}
                 className="group relative bg-gray-900/60 border border-gray-800 hover:border-indigo-600/50 rounded-2xl p-7 transition-all duration-300 overflow-hidden"
               >
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(99,102,241,0.08), transparent)" }} />
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(103,232,249,0.08), transparent)" }} />
                 <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${svc.gradient} flex items-center justify-center mb-5 shadow-lg`}>{svc.icon}</div>
                 <h3 className="text-xl font-bold mb-3 text-white group-hover:text-indigo-300 transition-colors">{svc.title}</h3>
                 <p className="text-gray-400 text-sm leading-relaxed mb-2">{svc.desc}</p>

@@ -10,6 +10,57 @@ import "aos/dist/aos.css";
 import { useRouter } from "next/navigation";
 import Footer from "@/components/Footer";
 
+const automationUseCases = [
+  {
+    client: "IronPixel",
+    service: "Calling Agent",
+    summary:
+      "An AI calling workflow for faster lead response, basic qualification, callback reminders, and cleaner handoff to the sales team.",
+    points: ["Lead qualification", "Callback reminders", "Sales handoff"],
+    delay: "100",
+  },
+  {
+    client: "Ride Adventure",
+    service: "WhatsApp Automation",
+    summary:
+      "A WhatsApp automation flow for enquiries, package details, quick replies, and booking follow-ups so interested customers get answers faster.",
+    points: ["Instant replies", "Trip enquiries", "Follow-up flow"],
+    delay: "200",
+  },
+  {
+    client: "TorkeHub",
+    service: "CRM Automation",
+    summary:
+      "A CRM-focused automation setup to organize leads, track pipeline activity, reduce manual updates, and keep business follow-ups visible.",
+    points: ["Lead tracking", "Pipeline visibility", "Task automation"],
+    delay: "300",
+  },
+];
+
+const clientTestimonials = [
+  {
+    quote:
+      "SniperCoders helped us structure an AI calling agent that makes lead handling faster and more organized for our team.",
+    name: "IronPixel",
+    title: "AI Calling Agent Implementation",
+    delay: "100",
+  },
+  {
+    quote:
+      "The WhatsApp automation flow made customer enquiries simpler, quicker, and easier to manage during active campaign periods.",
+    name: "Ride Adventure",
+    title: "WhatsApp Automation for Customer Enquiries",
+    delay: "200",
+  },
+  {
+    quote:
+      "For TorkeHub, SniperCoders built automation around CRM workflows so leads, follow-ups, and daily operations stay easier to track.",
+    name: "TorkeHub",
+    title: "CRM Automation & Workflow System",
+    delay: "300",
+  },
+];
+
 // Define component
 const AIAgentsLandingPage: React.FC = () => {
   const router = useRouter();
@@ -128,13 +179,14 @@ const AIAgentsLandingPage: React.FC = () => {
         <div className="container mx-auto px-4 md:px-10 flex flex-col lg:flex-row items-center">
           <div className="w-full lg:w-1/2 lg:pr-8" data-aos="fade-right">
             <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
-              AI Agents & Automation Solutions
+              AI Agents for Calls, WhatsApp & CRM
             </h1>
             <p className="text-xl md:text-2xl text-purple-300 font-semibold mb-4">
-              SniperCoders - Best Software and IT Company in India
+              Simple automation systems for growing businesses
             </p>
             <p className="text-lg md:text-xl mb-8 text-gray-300 leading-relaxed">
-              As the <span className="text-cyan-400 font-semibold">best app development agency near me in India</span>, we create custom-built AI agents that automate tasks, engage users, and boost efficiency. From <span className="text-purple-400 font-semibold">lead generation</span> to <span className="text-blue-400 font-semibold">customer support automation</span>, our intelligent AI solutions transform your business operations.
+              We build practical AI agents that help your team respond faster, follow up better,
+              and keep every lead organized. From <span className="text-cyan-400 font-semibold">AI calling agents</span> to <span className="text-purple-400 font-semibold">WhatsApp automation</span> and <span className="text-blue-400 font-semibold">CRM workflows</span>, SniperCoders keeps automation clear, useful, and easy to manage.
             </p>
             <div className="flex flex-wrap gap-4">
               <button
@@ -155,13 +207,13 @@ const AIAgentsLandingPage: React.FC = () => {
             {/* Keywords badges */}
             <div className="mt-6 flex flex-wrap gap-2">
               <span className="text-xs px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full border border-purple-500/30">
-                AI Automation
+                Calling Agents
               </span>
               <span className="text-xs px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full border border-blue-500/30">
-                Chatbot Development
+                WhatsApp Automation
               </span>
               <span className="text-xs px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full border border-cyan-500/30">
-                Process Automation
+                CRM Automation
               </span>
             </div>
           </div>
@@ -267,10 +319,10 @@ const AIAgentsLandingPage: React.FC = () => {
             className="text-4xl md:text-5xl font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500"
             data-aos="fade-up"
           >
-            AI-Powered Solutions by Best IT Company in India
+            Automation Services We Build
           </h2>
           <p className="text-center text-gray-300 mb-12 max-w-3xl mx-auto text-lg" data-aos="fade-up">
-            SniperCoders delivers <span className="text-purple-400 font-semibold">custom software development</span> and <span className="text-cyan-400 font-semibold">AI automation services</span> that transform your business operations and customer engagement.
+            SniperCoders delivers <span className="text-purple-400 font-semibold">calling agents</span>, <span className="text-cyan-400 font-semibold">WhatsApp automation</span>, and <span className="text-blue-400 font-semibold">CRM workflows</span> that make lead handling simpler.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -285,10 +337,10 @@ const AIAgentsLandingPage: React.FC = () => {
                 </svg>
               </div>
               <h3 className="text-xl font-bold mb-3 text-purple-300">
-                Agent Automation, Seamlessly Integrated
+                AI Calling Agents
               </h3>
               <p className="text-gray-300">
-                Engage your audience effortlessly with automated AI agent interactions across all your connected platforms, all within a unified inbox.
+                Qualify leads, answer basic questions, schedule callbacks, and pass important conversations to your team without losing context.
               </p>
             </div>
 
@@ -303,10 +355,10 @@ const AIAgentsLandingPage: React.FC = () => {
                 </svg>
               </div>
               <h3 className="text-xl font-bold mb-3 text-blue-300">
-                One-Click Cross-Platform Deployment
+                WhatsApp Automation
               </h3>
               <p className="text-gray-300">
-                Deploy your AI agents instantly across all platforms. Set up your agents once and let them work simultaneously across all your connected accounts.
+                Send instant replies, share service details, collect enquiry information, and follow up with customers through structured WhatsApp flows.
               </p>
             </div>
 
@@ -321,10 +373,10 @@ const AIAgentsLandingPage: React.FC = () => {
                 </svg>
               </div>
               <h3 className="text-xl font-bold mb-3 text-cyan-300">
-                Captivating Responses, AI-Crafted
+                CRM & Lead Workflow Automation
               </h3>
               <p className="text-gray-300">
-                Enhance your customer interactions with engaging and relevant responses generated by our advanced AI, tailored to your brand voice.
+                Keep leads, tasks, notes, and follow-ups organized so your sales and operations team can see what needs attention next.
               </p>
             </div>
 
@@ -339,12 +391,60 @@ const AIAgentsLandingPage: React.FC = () => {
                 </svg>
               </div>
               <h3 className="text-xl font-bold mb-3 text-pink-300">
-                AI-Powered Content Generation
+                Custom Business Automation
               </h3>
               <p className="text-gray-300">
-                Break writer&apos;s block and create compelling content effortlessly with our intelligent AI content generator tailored for your audience.
+                Connect your forms, inboxes, spreadsheets, CRM, and internal tools into simple automations that reduce repeated manual work.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Real Client Use Cases */}
+      <section className="relative z-10 py-20">
+        <div className="container mx-auto px-4 md:px-10">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300 mb-3" data-aos="fade-up">
+              Real Client Automations
+            </p>
+            <h2
+              className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500"
+              data-aos="fade-up"
+            >
+              Simple agents built for real business workflows
+            </h2>
+            <p className="text-gray-300 mt-5 text-lg" data-aos="fade-up">
+              We keep the systems focused: one clear problem, one useful automation, and a clean handoff to your team.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {automationUseCases.map(({ client, service, summary, points, delay }) => (
+              <div
+                key={client}
+                className="bg-white/10 backdrop-blur-sm p-6 rounded-lg shadow-lg border border-cyan-500/20"
+                data-aos="fade-up"
+                data-aos-delay={delay}
+              >
+                <div className="mb-5">
+                  <p className="text-sm text-gray-400">Client</p>
+                  <h3 className="text-2xl font-bold text-white">{client}</h3>
+                </div>
+                <div className="inline-flex rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-sm font-semibold text-cyan-300 mb-5">
+                  {service}
+                </div>
+                <p className="text-gray-300 leading-relaxed mb-6">{summary}</p>
+                <div className="space-y-2">
+                  {points.map((point) => (
+                    <div key={point} className="flex items-center gap-2 text-sm text-gray-300">
+                      <span className="h-2 w-2 rounded-full bg-cyan-300" />
+                      {point}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -575,32 +675,10 @@ const AIAgentsLandingPage: React.FC = () => {
             Client Success Stories
           </h2>
           <p className="text-center text-gray-300 mb-12" data-aos="fade-up">
-            What our clients say about working with the <span className="text-purple-400 font-semibold">best IT company in India</span>
+            Real automation work for calling agents, WhatsApp flows, and CRM systems.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                quote:
-                  "SniperCoders delivered custom AI workflows that fit perfectly into our systems. Their expertise in custom software development is unmatched.",
-                name: "Maya Tran",
-                title: "CTO at SynthEdge AI",
-                delay: "100",
-              },
-              {
-                quote:
-                  "From concept to deployment, SniperCoders transformed our vision into reality. Best app development agency we've worked with!",
-                name: "Liam Okoro",
-                title: "Founder at Convertly.io",
-                delay: "200",
-              },
-              {
-                quote:
-                  "The AI automation solutions saved our team 20+ hours weekly. Outstanding service from the best software company in India.",
-                name: "Sophia Mendes",
-                title: "COO at BrightForge",
-                delay: "300",
-              },
-            ].map(({ quote, name, title, delay }, index: number) => (
+            {clientTestimonials.map(({ quote, name, title, delay }, index: number) => (
               <div
                 key={index}
                 className="bg-white/10 backdrop-blur-sm p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 border border-purple-500/20"

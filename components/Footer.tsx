@@ -20,7 +20,7 @@ const textVariants = {
 
 export default function Footer() {
   return (
-    <footer className="relative z-20 bg-gradient-to-br from-gray-950 to-blue-950 backdrop-blur-lg border-t border-blue-500/20 text-white py-16 mt-20">
+    <footer className="relative z-20 bg-[#05070d] backdrop-blur-lg border-t border-white/10 text-white py-16 mt-20">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
 
@@ -33,34 +33,34 @@ export default function Footer() {
           >
             <div className="flex items-center mb-6">
               <div className="text-3xl font-extrabold">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 animate-gradient">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-fuchsia-400 animate-gradient">
                   SniperCoders
                 </span>
               </div>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed mb-4">
-              Best software and IT company in India, delivering innovative digital solutions for businesses and startups across Bangalore, Delhi, Mumbai, Hyderabad, Pune, Chennai, Chandigarh, Jammu & Kashmir. 30+ projects delivered with 100% customer satisfaction.
+              Creative growth agency for modern brands, helping founders, creators, startups, coaches, eCommerce teams, and agencies create sharper social content, reels, ads, and brand stories.
             </p>
             <div className="flex flex-wrap gap-2">
-              <div className="bg-blue-500/20 px-3 py-1 rounded-full text-xs text-blue-400">
+              <div className="bg-cyan-300/10 px-3 py-1 rounded-full text-xs text-cyan-300 border border-cyan-300/20">
                 30+ Projects
               </div>
-              <div className="bg-purple-500/20 px-3 py-1 rounded-full text-xs text-purple-400">
-                100% Satisfaction
+              <div className="bg-white/5 px-3 py-1 rounded-full text-xs text-slate-300 border border-white/10">
+                Global Creative
               </div>
             </div>
           </motion.div>
 
           {/* Our Services */}
           <motion.div variants={textVariants} initial="initial" animate="animate">
-            <h3 className="text-lg font-semibold mb-6 text-blue-400">Our Services</h3>
+            <h3 className="text-lg font-semibold mb-6 text-cyan-300">Growth Services</h3>
             <ul className="space-y-3">
               {[
-                { label: "Custom Software Development", href: "/services/custom-software-development" },
+                { label: "Social Media Growth", href: "/services/digital-marketing" },
+                { label: "Short-Form Video Editing", href: "/showcase/video-editing" },
+                { label: "Performance Creatives", href: "/showcase/video-editing" },
+                { label: "Content Strategy", href: "/services/digital-marketing" },
                 { label: "Website Development", href: "/services/web-development" },
-                { label: "Mobile App Development", href: "/services/mobile-development" },
-                { label: "Digital Marketing", href: "/services/digital-marketing" },
-                { label: "IT Consulting", href: "/services/it-consulting" },
               ].map((item, i) => (
                 <motion.li key={i} whileHover={{ x: 8 }} transition={{ duration: 0.3 }}>
                   <a
@@ -77,20 +77,17 @@ export default function Footer() {
 
           {/* We Serve — Location Pages */}
           <motion.div variants={textVariants} initial="initial" animate="animate">
-            <h3 className="text-lg font-semibold mb-6 text-blue-400">We Serve</h3>
+            <h3 className="text-lg font-semibold mb-6 text-cyan-300">We Serve</h3>
             <ul className="space-y-3">
               {[
+                { label: "International Startups", href: "/contact" },
+                { label: "Personal Brands", href: "/contact" },
+                { label: "Coaches and Creators", href: "/contact" },
+                { label: "SaaS Founders", href: "/contact" },
+                { label: "eCommerce Brands", href: "/contact" },
+                { label: "White-Label Agencies", href: "/contact" },
                 { label: "Software Agency in Bangalore", href: "/services/best-software-agency-bangalore" },
                 { label: "Software Agency in Delhi", href: "/services/best-software-agency-delhi" },
-                { label: "Software Agency in Mumbai", href: "/services/best-software-agency-mumbai" },
-                { label: "Software Agency in Hyderabad", href: "/services/best-software-agency-hyderabad" },
-                { label: "Software Agency in Pune", href: "/services/best-software-agency-pune" },
-                { label: "Software Agency in Chennai", href: "/services/best-software-agency-chennai" },
-                { label: "Software Agency in Chandigarh", href: "/services/best-software-agency-chandigarh" },
-                { label: "Software Agency in Jammu", href: "/services/best-software-agency-jammu" },
-                { label: "Software Agency in Kashmir", href: "/services/best-software-agency-kashmir" },
-                { label: "Software Agency in Udhampur", href: "/services/best-software-agency-udhampur" },
-                { label: "Software Agency in Katra", href: "/services/best-software-agency-katra" },
               ].map((item, i) => (
                 <motion.li key={i} whileHover={{ x: 8 }} transition={{ duration: 0.3 }}>
                   <a
@@ -107,7 +104,7 @@ export default function Footer() {
 
           {/* Useful Links */}
           <motion.div variants={textVariants} initial="initial" animate="animate">
-            <h3 className="text-lg font-semibold mb-6 text-blue-400">Useful Links</h3>
+            <h3 className="text-lg font-semibold mb-6 text-cyan-300">Useful Links</h3>
             <ul className="space-y-3">
               {[
                 { label: "Terms of Service", href: "/terms" },
@@ -131,7 +128,7 @@ export default function Footer() {
 
           {/* Get In Touch */}
           <motion.div variants={textVariants} initial="initial" animate="animate">
-            <h3 className="text-lg font-semibold mb-6 text-blue-400">Get In Touch</h3>
+            <h3 className="text-lg font-semibold mb-6 text-cyan-300">Get In Touch</h3>
             <ul className="space-y-3">
               {[
                 { label: "About Us", href: "/about" },
@@ -166,7 +163,7 @@ export default function Footer() {
               </a>
               <a
                 href="mailto:snipercoders25@gmail.com"
-                className="flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300 transition-colors"
+                className="flex items-center gap-2 text-sm text-cyan-300 hover:text-white transition-colors"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -180,16 +177,16 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <motion.div
-          className="mt-12 pt-10 border-t border-blue-500/20 text-center text-gray-400 text-sm"
+          className="mt-12 pt-10 border-t border-white/10 text-center text-gray-400 text-sm"
           variants={textVariants}
           initial="initial"
           animate="animate"
         >
           <p>
-            © {new Date().getFullYear()} SniperCoders — Best Software and IT Company in India. All rights reserved.
+            © {new Date().getFullYear()} SniperCoders - Creative Growth Agency for Modern Brands. All rights reserved.
           </p>
           <p className="mt-2 text-xs text-gray-500">
-            Best Software Agency in Bangalore | Delhi | Mumbai | Hyderabad | Pune | Chennai | Chandigarh | Jammu | Kashmir | Udhampur | Katra
+            Social Media Growth | Short-Form Video Editing | Content Strategy | Performance Creatives | Brand Storytelling
           </p>
         </motion.div>
       </div>

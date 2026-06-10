@@ -133,12 +133,12 @@
 //   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
 //   return (
-//     <div className="min-h-screen bg-[#030d14] text-white font-sans overflow-x-hidden">
+//     <div className="min-h-screen bg-[#05070d] text-white font-sans overflow-x-hidden">
 
 //       {/* ── HERO ───────────────────────────────────────────────── */}
 //       <section
 //         className="relative min-h-[92vh] flex items-center justify-center overflow-hidden"
-//         style={{ background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(6,182,212,0.2) 0%, transparent 70%), radial-gradient(ellipse 60% 40% at 80% 80%, rgba(99,102,241,0.14) 0%, transparent 60%), #030d14" }}
+//         style={{ background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(6,182,212,0.2) 0%, transparent 70%), radial-gradient(ellipse 60% 40% at 80% 80%, rgba(236,72,153,0.14) 0%, transparent 60%), #05070d" }}
 //       >
 //         <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.8) 1px, transparent 1px)", backgroundSize: "48px 48px" }} />
 //         <div className="absolute top-24 left-10 w-72 h-72 rounded-full bg-cyan-600/15 blur-[100px] pointer-events-none" />
@@ -612,12 +612,12 @@ export default function MumbaiPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen bg-[#030d14] text-white font-sans overflow-x-hidden">
+    <div className="min-h-screen bg-[#05070d] text-white font-sans overflow-x-hidden">
 
       {/* ── HERO ───────────────────────────────────────────────── */}
       <section
         className="relative min-h-[92vh] flex items-center justify-center overflow-hidden"
-        style={{ background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(6,182,212,0.2) 0%, transparent 70%), radial-gradient(ellipse 60% 40% at 80% 80%, rgba(99,102,241,0.14) 0%, transparent 60%), #030d14" }}
+        style={{ background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(6,182,212,0.2) 0%, transparent 70%), radial-gradient(ellipse 60% 40% at 80% 80%, rgba(236,72,153,0.14) 0%, transparent 60%), #05070d" }}
       >
         <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.8) 1px, transparent 1px)", backgroundSize: "48px 48px" }} />
         <div className="absolute top-24 left-10 w-72 h-72 rounded-full bg-cyan-600/15 blur-[100px] pointer-events-none" />

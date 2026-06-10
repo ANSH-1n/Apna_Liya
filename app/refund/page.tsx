@@ -186,7 +186,7 @@
 //     hover: {
 //       scale: 1.05,
 //       x: 8,
-//       color: "#93C5FD",
+//       color: "#67e8f9",
 //       transition: { duration: 0.3 },
 //     },
 //   };
@@ -677,7 +677,7 @@
 //                   {section.items.map((item, i) => (
 //                     <motion.li
 //                       key={i}
-//                       whileHover={{ x: 10, color: "#93C5FD" }}
+//                       whileHover={{ x: 10, color: "#67e8f9" }}
 //                       transition={{ duration: 0.3 }}
 //                     >
 //                       <a
@@ -904,7 +904,7 @@ const RefundPolicy: React.FC = () => {
     hover: {
       scale: 1.05,
       x: 8,
-      color: "#93C5FD",
+      color: "#67e8f9",
       transition: { duration: 0.3 },
     },
   };
@@ -1373,7 +1373,7 @@ const RefundPolicy: React.FC = () => {
                     {section.items.map((item, i) => (
                       <motion.li
                         key={i}
-                        whileHover={{ x: 10, color: "#93C5FD" }}
+                        whileHover={{ x: 10, color: "#67e8f9" }}
                         transition={{ duration: 0.3 }}
                       >
                         <a

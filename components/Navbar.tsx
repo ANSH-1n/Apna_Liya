@@ -135,18 +135,19 @@ export default function Navbar() {
   const navItems = [
     { name: 'Home', href: '/' },
     { name: 'Services', href: '/services', hasDropdown: true },
-    { name: 'Ai-Agents', href: '/agents' },
+    { name: 'Growth AI', href: '/agents' },
     { name: 'Showcase', href: '/showcase' },
     { name: 'About Us', href: '/about' },
     { name: 'Contact', href: '/contact' },
   ];
 
   const serviceItems = [
+    { name: 'Social Media Growth', href: '/services/digital-marketing' },
+    { name: 'Video Editing Showcase', href: '/showcase/video-editing' },
+    { name: 'Performance Creatives', href: '/showcase/video-editing' },
     { name: 'Web Development', href: '/services/web-development' },
     { name: 'Mobile App Development', href: '/services/mobile-development' },
-    { name: 'Digital Marketing', href: '/services/digital-marketing' },
     { name: 'Custom Software Development', href: '/services/custom-software-development' },
-    { name: 'IT Consulting & Digital Transformation', href: '/services/it-consulting' },
   ];
 
   const dropdownVariants = {

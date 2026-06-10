@@ -160,13 +160,13 @@
 //   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
 //   return (
-//     <div className="min-h-screen bg-[#040d18] text-white font-sans overflow-x-hidden">
+//     <div className="min-h-screen bg-[#05070d] text-white font-sans overflow-x-hidden">
 
 //       {/* ── HERO ───────────────────────────────────────────────── */}
 //       <section
 //         className="relative min-h-[92vh] flex items-center justify-center overflow-hidden"
 //         style={{
-//           background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(14,165,233,0.2) 0%, transparent 70%), radial-gradient(ellipse 60% 40% at 80% 80%, rgba(99,102,241,0.15) 0%, transparent 60%), #040d18"
+//           background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(14,165,233,0.2) 0%, transparent 70%), radial-gradient(ellipse 60% 40% at 80% 80%, rgba(236,72,153,0.14) 0%, transparent 60%), #05070d"
 //         }}
 //       >
 //         <div className="absolute inset-0 opacity-[0.04]"
@@ -673,13 +673,13 @@ export default function KashmirPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen bg-[#040d18] text-white font-sans overflow-x-hidden">
+    <div className="min-h-screen bg-[#05070d] text-white font-sans overflow-x-hidden">
 
       {/* ── HERO ───────────────────────────────────────────────── */}
       <section
         className="relative min-h-[92vh] flex items-center justify-center overflow-hidden"
         style={{
-          background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(14,165,233,0.2) 0%, transparent 70%), radial-gradient(ellipse 60% 40% at 80% 80%, rgba(99,102,241,0.15) 0%, transparent 60%), #040d18"
+          background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(14,165,233,0.2) 0%, transparent 70%), radial-gradient(ellipse 60% 40% at 80% 80%, rgba(236,72,153,0.14) 0%, transparent 60%), #05070d"
         }}
       >
         <div className="absolute inset-0 opacity-[0.04]"

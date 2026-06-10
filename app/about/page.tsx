@@ -135,7 +135,7 @@ export default function SniperCodersWebsite() {
     hover: {
       scale: 1.05,
       rotateY: 5,
-      boxShadow: "0 10px 20px rgba(59, 130, 246, 0.3)",
+      boxShadow: "0 10px 20px rgba(34, 211, 238, 0.28)",
       transition: {
         duration: 0.3,
       },
