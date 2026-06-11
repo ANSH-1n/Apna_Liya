@@ -1,18 +1,7 @@
+// showcase/video-editing/page.tsx
+
 import Footer from '@/components/Footer';
 import { Play } from 'lucide-react';
-import Link from 'next/link';
-
-// const videoCategories = [
-//   { label: 'All Video', value: 'all' },
-//   { label: 'Real Estate', value: 'real-estate' },
-//   { label: 'YouTube Podcast', value: 'youtube-podcast' },
-//   { label: 'Education', value: 'education' },
-//   { label: 'Influencer', value: 'influencer' },
-//   { label: 'Vehicle Accessories', value: 'vehicle-accessories' },
-//   { label: 'Fitness', value: 'fitness' },
-//   { label: 'Mobile Screen Guards', value: 'mobile-screen-guards' },
-//   { label: 'Gaming', value: 'gaming' },
-// ];
 
 const videoEditingProjects = [
   { category: 'Real Estate', categoryValue: 'real-estate', src: 'https://res.cloudinary.com/dzoxwk1jc/video/upload/v1781198635/Dubai_realstate_1_pcwu5o.mp4' },
@@ -34,6 +23,15 @@ const videoEditingProjects = [
   { category: 'Gaming', categoryValue: 'gaming', src: 'https://res.cloudinary.com/dzoxwk1jc/video/upload/v1781199263/Iron_pixel_3_w7t8vk.mp4' },
 ];
 
+// Define categories derived from the projects themselves — single source of truth
+const videoCategories = [
+  { label: 'All', value: 'all' },
+  ...Array.from(new Set(videoEditingProjects.map((p) => p.categoryValue))).map((val) => ({
+    label: videoEditingProjects.find((p) => p.categoryValue === val)!.category,
+    value: val,
+  })),
+];
+
 type VideoEditingShowcasePageProps = {
   searchParams?: Promise<{
     category?: string;
@@ -49,6 +47,7 @@ export default async function VideoEditingShowcasePage({
     categoryFromUrl && videoCategories.some((c) => c.value === categoryFromUrl)
       ? categoryFromUrl
       : 'all';
+
   const filteredVideoProjects =
     selectedVideoCategory === 'all'
       ? videoEditingProjects
@@ -72,7 +71,7 @@ export default async function VideoEditingShowcasePage({
           </div>
         </section>
 
-        {/* ── Filter Bar ── */}
+        {/* ── Filter Bar (commented out) ── */}
         {/* <section className="border-y border-white/10 bg-white/[0.03] px-4 py-4 sm:px-6 lg:px-8">
           <div className="mx-auto flex max-w-6xl gap-2 overflow-x-auto pb-1 sm:flex-wrap sm:justify-center sm:overflow-visible sm:pb-0">
             {videoCategories.map((category) => {
@@ -104,9 +103,7 @@ export default async function VideoEditingShowcasePage({
 
         {/* ── Video Grid ── */}
         <section className="px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
-          <div
-            className="mx-auto grid max-w-6xl grid-cols-1 gap-3 min-[480px]:grid-cols-2 sm:gap-4 md:grid-cols-3 lg:grid-cols-4"
-          >
+          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-3 min-[480px]:grid-cols-2 sm:gap-4 md:grid-cols-3 lg:grid-cols-4">
             {filteredVideoProjects.map((project) => (
               <article
                 key={project.src}
@@ -120,11 +117,9 @@ export default async function VideoEditingShowcasePage({
                     preload="metadata"
                     playsInline
                   />
-                  {/* Category badge */}
                   <div className="pointer-events-none absolute left-2 top-2 rounded-full border border-white/15 bg-black/50 px-2 py-1 text-[10px] font-medium text-white backdrop-blur sm:left-3 sm:top-3 sm:text-xs">
                     {project.category}
                   </div>
-                  {/* Play icon — decorative */}
                   <div className="pointer-events-none absolute bottom-2 right-2 flex h-7 w-7 items-center justify-center rounded-full bg-cyan-300 text-slate-950 sm:bottom-3 sm:right-3 sm:h-8 sm:w-8">
                     <Play className="h-3.5 w-3.5 fill-current sm:h-4 sm:w-4" />
                   </div>
