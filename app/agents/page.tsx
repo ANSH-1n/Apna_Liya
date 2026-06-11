@@ -115,7 +115,7 @@ const AIAgentsLandingPage: React.FC = () => {
 
     const particlesMaterial: THREE.PointsMaterial = new THREE.PointsMaterial({
       size: 0.015,
-      color: 0x8560ff,
+      color: 0x22d3ee,
       transparent: true,
       opacity: 0.7,
     });
@@ -166,7 +166,7 @@ const AIAgentsLandingPage: React.FC = () => {
 
   return (
   
-    <div className="relative bg-gradient-to-br from-[#0a0a2e] via-[#1a1a4a] to-[#0a0a2e] text-white min-h-screen overflow-x-hidden">
+    <div className="relative bg-[#05070d] text-white min-h-screen overflow-x-hidden">
         
       {/* Three.js Canvas for background effect */}
       <canvas
@@ -178,27 +178,27 @@ const AIAgentsLandingPage: React.FC = () => {
       <section className="relative z-10 pt-20 mt-8 pb-20">
         <div className="container mx-auto px-4 md:px-10 flex flex-col lg:flex-row items-center">
           <div className="w-full lg:w-1/2 lg:pr-8" data-aos="fade-right">
-            <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
+            <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-fuchsia-400">
               AI Agents for Calls, WhatsApp & CRM
             </h1>
-            <p className="text-xl md:text-2xl text-purple-300 font-semibold mb-4">
+            <p className="text-xl md:text-2xl text-cyan-200 font-semibold mb-4">
               Simple automation systems for growing businesses
             </p>
             <p className="text-lg md:text-xl mb-8 text-gray-300 leading-relaxed">
               We build practical AI agents that help your team respond faster, follow up better,
-              and keep every lead organized. From <span className="text-cyan-400 font-semibold">AI calling agents</span> to <span className="text-purple-400 font-semibold">WhatsApp automation</span> and <span className="text-blue-400 font-semibold">CRM workflows</span>, SniperCoders keeps automation clear, useful, and easy to manage.
+              and keep every lead organized. From <span className="text-cyan-400 font-semibold">AI calling agents</span> to <span className="text-cyan-300 font-semibold">WhatsApp automation</span> and <span className="text-cyan-300 font-semibold">CRM workflows</span>, SniperCoders keeps automation clear, useful, and easy to manage.
             </p>
             <div className="flex flex-wrap gap-4">
               <button
                 onClick={() => router.push("/contact")}
-                className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
               >
                 Get Started with AI Agents
               </button>
 
               <button
                 onClick={() => router.push("/showcase")}
-                className="border-2 border-purple-500 hover:bg-purple-800/30 text-white font-bold py-3 px-8 rounded-full transition duration-300"
+                className="border-2 border-cyan-300 hover:bg-cyan-300/10 text-white font-bold py-3 px-8 rounded-full transition duration-300"
               >
                 View Our Portfolio
               </button>
@@ -206,10 +206,10 @@ const AIAgentsLandingPage: React.FC = () => {
             
             {/* Keywords badges */}
             <div className="mt-6 flex flex-wrap gap-2">
-              <span className="text-xs px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full border border-purple-500/30">
+              <span className="text-xs px-3 py-1 bg-cyan-300/10 text-cyan-200 rounded-full border border-cyan-300/20">
                 Calling Agents
               </span>
-              <span className="text-xs px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full border border-blue-500/30">
+              <span className="text-xs px-3 py-1 bg-cyan-300/10 text-slate-300 rounded-full border border-white/10">
                 WhatsApp Automation
               </span>
               <span className="text-xs px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full border border-cyan-500/30">
@@ -218,14 +218,14 @@ const AIAgentsLandingPage: React.FC = () => {
             </div>
           </div>
           <div className="w-full lg:w-1/2 mt-10 lg:mt-0" data-aos="fade-left">
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 shadow-2xl border border-purple-500/30">
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 shadow-2xl border border-cyan-300/20">
               <div className="flex items-center mb-4">
                 <div className="text-xl font-bold">AI Automation Dashboard</div>
                 <div className="ml-auto flex items-center text-sm">
                   <span>1 connected channel</span>
                   <span className="mx-2">•</span>
                   <span>2 contacts</span>
-                  <span className="ml-2 text-blue-400 cursor-pointer hover:text-blue-300">
+                  <span className="ml-2 text-cyan-300 cursor-pointer hover:text-slate-300">
                     See Insights
                   </span>
                 </div>
@@ -243,7 +243,7 @@ const AIAgentsLandingPage: React.FC = () => {
                 <div className="flex justify-between items-center">
                   <div className="flex items-center gap-2">
                     <svg
-                      className="w-5 h-5 text-purple-400"
+                      className="w-5 h-5 text-cyan-300"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -258,7 +258,7 @@ const AIAgentsLandingPage: React.FC = () => {
                     </svg>
                     <span>Quick Actions</span>
                   </div>
-                  <span className="bg-gradient-to-r from-purple-600 to-blue-600 text-xs px-3 py-1 rounded-full">
+                  <span className="bg-gradient-to-r from-cyan-500 to-blue-600 text-xs px-3 py-1 rounded-full">
                     AUTOMATED
                   </span>
                 </div>
@@ -266,7 +266,7 @@ const AIAgentsLandingPage: React.FC = () => {
 
               <div>
                 <div className="flex items-center mb-3">
-                  <div className="w-6 h-6 flex items-center justify-center bg-gradient-to-br from-pink-500 to-purple-600 rounded-md mr-2">
+                  <div className="w-6 h-6 flex items-center justify-center bg-gradient-to-br from-cyan-500 to-fuchsia-500 rounded-md mr-2">
                     <svg
                       className="w-4 h-4"
                       fill="none"
@@ -290,11 +290,11 @@ const AIAgentsLandingPage: React.FC = () => {
 
                 <div className="grid grid-cols-4 gap-2 text-xs text-center">
                   <div className="bg-purple-500/10 p-2 rounded">
-                    <div className="font-bold mb-1 text-purple-400">Comments</div>
+                    <div className="font-bold mb-1 text-cyan-300">Comments</div>
                     <div>Out of 0</div>
                   </div>
                   <div className="bg-blue-500/10 p-2 rounded">
-                    <div className="font-bold mb-1 text-blue-400">Story Replies</div>
+                    <div className="font-bold mb-1 text-cyan-300">Story Replies</div>
                     <div>Out of 0</div>
                   </div>
                   <div className="bg-cyan-500/10 p-2 rounded">
@@ -313,30 +313,30 @@ const AIAgentsLandingPage: React.FC = () => {
       </section>
 
       {/* Features Section */}
-      <section className="relative z-10 py-20 bg-gradient-to-b from-[#0a0a2e]/0 to-[#1a1a4a]/30">
+      <section className="relative z-10 py-20 bg-gradient-to-b from-transparent to-white/[0.03]">
         <div className="container mx-auto px-4 md:px-10">
           <h2
-            className="text-4xl md:text-5xl font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500"
+            className="text-4xl md:text-5xl font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-fuchsia-400"
             data-aos="fade-up"
           >
             Automation Services We Build
           </h2>
           <p className="text-center text-gray-300 mb-12 max-w-3xl mx-auto text-lg" data-aos="fade-up">
-            SniperCoders delivers <span className="text-purple-400 font-semibold">calling agents</span>, <span className="text-cyan-400 font-semibold">WhatsApp automation</span>, and <span className="text-blue-400 font-semibold">CRM workflows</span> that make lead handling simpler.
+            SniperCoders delivers <span className="text-cyan-300 font-semibold">calling agents</span>, <span className="text-cyan-400 font-semibold">WhatsApp automation</span>, and <span className="text-cyan-300 font-semibold">CRM workflows</span> that make lead handling simpler.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div
-              className="bg-gradient-to-br from-purple-900/30 to-blue-900/30 backdrop-blur-sm p-6 rounded-lg shadow-lg hover:transform hover:scale-105 transition duration-300 border border-purple-500/30"
+              className="bg-gradient-to-br from-cyan-500/10 to-white/[0.04] backdrop-blur-sm p-6 rounded-lg shadow-lg hover:transform hover:scale-105 transition duration-300 border border-cyan-300/20"
               data-aos="fade-up"
               data-aos-delay="100"
             >
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-fuchsia-500 rounded-lg flex items-center justify-center mb-4">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold mb-3 text-purple-300">
+              <h3 className="text-xl font-bold mb-3 text-cyan-200">
                 AI Calling Agents
               </h3>
               <p className="text-gray-300">
@@ -345,16 +345,16 @@ const AIAgentsLandingPage: React.FC = () => {
             </div>
 
             <div
-              className="bg-gradient-to-br from-blue-900/30 to-cyan-900/30 backdrop-blur-sm p-6 rounded-lg shadow-lg hover:transform hover:scale-105 transition duration-300 border border-blue-500/30"
+              className="bg-gradient-to-br from-cyan-500/10 to-white/[0.04] backdrop-blur-sm p-6 rounded-lg shadow-lg hover:transform hover:scale-105 transition duration-300 border border-white/10"
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center mb-4">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold mb-3 text-blue-300">
+              <h3 className="text-xl font-bold mb-3 text-slate-300">
                 WhatsApp Automation
               </h3>
               <p className="text-gray-300">
@@ -381,11 +381,11 @@ const AIAgentsLandingPage: React.FC = () => {
             </div>
 
             <div
-              className="bg-gradient-to-br from-pink-900/30 to-purple-900/30 backdrop-blur-sm p-6 rounded-lg shadow-lg hover:transform hover:scale-105 transition duration-300 border border-pink-500/30"
+              className="bg-gradient-to-br from-fuchsia-500/10 to-white/[0.04] backdrop-blur-sm p-6 rounded-lg shadow-lg hover:transform hover:scale-105 transition duration-300 border border-pink-500/30"
               data-aos="fade-up"
               data-aos-delay="400"
             >
-              <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-500 rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-fuchsia-500 rounded-lg flex items-center justify-center mb-4">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                 </svg>
@@ -409,7 +409,7 @@ const AIAgentsLandingPage: React.FC = () => {
               Real Client Automations
             </p>
             <h2
-              className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500"
+              className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-fuchsia-400"
               data-aos="fade-up"
             >
               Simple agents built for real business workflows
@@ -452,14 +452,14 @@ const AIAgentsLandingPage: React.FC = () => {
       {/* Stats Section */}
       <section className="relative z-10 py-16">
         <div className="container mx-auto px-4 md:px-10">
-          <div className="bg-gradient-to-r from-purple-900/40 to-blue-900/40 backdrop-blur-md rounded-2xl p-8 border border-purple-500/30" data-aos="fade-up">
+          <div className="bg-gradient-to-r from-cyan-500/10 to-white/[0.04] backdrop-blur-md rounded-2xl p-8 border border-cyan-300/20" data-aos="fade-up">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
               <div>
-                <div className="text-4xl font-bold text-purple-400 mb-2">30+</div>
+                <div className="text-4xl font-bold text-cyan-300 mb-2">30+</div>
                 <div className="text-gray-400 text-sm">AI Projects Delivered</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-blue-400 mb-2">100%</div>
+                <div className="text-4xl font-bold text-cyan-300 mb-2">100%</div>
                 <div className="text-gray-400 text-sm">Client Satisfaction</div>
               </div>
               <div>
@@ -482,31 +482,31 @@ const AIAgentsLandingPage: React.FC = () => {
           {/* Benefit 1 */}
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="w-full lg:w-1/2" data-aos="fade-right">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-fuchsia-400">
                 Scale Your Social Presence
               </h2>
               <p className="text-xl mb-6 text-gray-300">
-                Effortlessly manage and grow your presence across multiple platforms with our <span className="text-purple-400 font-semibold">best-in-class AI automation solutions</span>.
+                Effortlessly manage and grow your presence across multiple platforms with our <span className="text-cyan-300 font-semibold">best-in-class AI automation solutions</span>.
               </p>
               <p className="text-gray-400 mb-6">
                 As the <span className="text-cyan-400 font-semibold">best website development company near me</span>, we integrate AI agents seamlessly into your existing digital ecosystem.
               </p>
               <button
                 onClick={() => router.push("/contact")}
-                className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300"
+                className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300"
               >
                 Get Started Now
               </button>
             </div>
             <div className="w-full lg:w-1/2" data-aos="fade-left">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 shadow-2xl border border-purple-500/20">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 shadow-2xl border border-cyan-300/20">
                 {/* Dashboard Preview */}
                 <div className="space-y-4">
-                  <div className="bg-purple-500/20 p-4 rounded-lg">
+                  <div className="bg-cyan-300/10 p-4 rounded-lg">
                     <p className="text-sm font-semibold">Multi-Platform Integration</p>
                     <p className="text-xs text-gray-300 mt-1">Connected: Instagram, Facebook, Twitter</p>
                   </div>
-                  <div className="bg-blue-500/20 p-4 rounded-lg">
+                  <div className="bg-cyan-300/10 p-4 rounded-lg">
                     <p className="text-sm font-semibold">Real-time Analytics</p>
                     <p className="text-xs text-gray-300 mt-1">Track engagement across all channels</p>
                   </div>
@@ -518,9 +518,9 @@ const AIAgentsLandingPage: React.FC = () => {
           {/* Benefit 2 */}
           <div className="flex flex-col-reverse lg:flex-row items-center gap-12">
             <div className="w-full lg:w-1/2" data-aos="fade-right">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 shadow-2xl border border-blue-500/20">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 shadow-2xl border border-white/10">
                 <div className="space-y-4">
-                  <div className="bg-blue-500/20 p-4 rounded-lg">
+                  <div className="bg-cyan-300/10 p-4 rounded-lg">
                     <p className="text-sm font-semibold">Automated Workflows</p>
                     <p className="text-xs text-gray-300 mt-1">Save 20+ hours per week</p>
                   </div>
@@ -536,14 +536,14 @@ const AIAgentsLandingPage: React.FC = () => {
                 Increase Efficiency
               </h2>
               <p className="text-xl mb-6 text-gray-300">
-                Streamline your AI agent workflow for maximum productivity with <span className="text-blue-400 font-semibold">custom software development</span> by SniperCoders.
+                Streamline your AI agent workflow for maximum productivity with <span className="text-cyan-300 font-semibold">custom software development</span> by SniperCoders.
               </p>
               <p className="text-gray-400 mb-6">
                 Our <span className="text-cyan-400 font-semibold">AI automation services</span> reduce manual work and boost your team&apos;s  efficiency by up to 5x.
               </p>
               <button
                 onClick={() => router.push("/contact")}
-                className="border-2 border-blue-500 hover:bg-blue-500/20 text-white font-bold py-3 px-8 rounded-full transition duration-300"
+                className="border-2 border-cyan-300 hover:bg-cyan-300/10 text-white font-bold py-3 px-8 rounded-full transition duration-300"
               >
                 Learn More
               </button>
@@ -560,7 +560,7 @@ const AIAgentsLandingPage: React.FC = () => {
                 Deliver consistent and engaging content across all your channels with <span className="text-cyan-400 font-semibold">AI-powered content generation</span>.
               </p>
               <p className="text-gray-400 mb-6">
-                Combine our <span className="text-purple-400 font-semibold">digital marketing services</span> with AI automation for unparalleled results.
+                Combine our <span className="text-cyan-300 font-semibold">digital marketing services</span> with AI automation for unparalleled results.
               </p>
               <button
                 onClick={() => router.push("/services/digital-marketing")}
@@ -589,25 +589,25 @@ const AIAgentsLandingPage: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="relative z-10 py-24 bg-gradient-to-b from-[#1a1a4a]/30 to-[#0a0a2e]/0">
+      <section className="relative z-10 py-24 bg-gradient-to-b from-white/[0.03] to-transparent">
         <div className="container mx-auto px-4 md:px-10">
-          <div className="bg-gradient-to-r from-purple-900/60 to-blue-900/60 backdrop-blur-md rounded-2xl p-8 md:p-12 border border-purple-500/30 text-center" data-aos="fade-up">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
+          <div className="bg-gradient-to-r from-cyan-500/10 to-white/[0.04] backdrop-blur-md rounded-2xl p-8 md:p-12 border border-cyan-300/20 text-center" data-aos="fade-up">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-fuchsia-400">
               Ready to Transform Your Business with AI?
             </h2>
             <p className="text-xl mb-8 max-w-3xl mx-auto text-gray-300">
-              Join <span className="text-purple-400 font-semibold">30+ successful businesses</span> that trust SniperCoders, the <span className="text-cyan-400 font-semibold">best software and IT company in India</span>, for their AI automation needs.
+              Join <span className="text-cyan-300 font-semibold">30+ successful businesses</span> that trust SniperCoders, the <span className="text-cyan-400 font-semibold">best software and IT company in India</span>, for their AI automation needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={() => router.push("/contact")}
-                className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-bold py-4 px-10 rounded-full transition duration-300 shadow-xl transform hover:scale-105"
+                className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-bold py-4 px-10 rounded-full transition duration-300 shadow-xl transform hover:scale-105"
               >
                 Schedule Free Consultation
               </button>
               <button
                 onClick={() => router.push("/showcase")}
-                className="border-2 border-purple-500 hover:bg-purple-500/20 text-white font-bold py-4 px-10 rounded-full transition duration-300"
+                className="border-2 border-cyan-300 hover:bg-cyan-300/10 text-white font-bold py-4 px-10 rounded-full transition duration-300"
               >
                 View Case Studies
               </button>
@@ -620,25 +620,25 @@ const AIAgentsLandingPage: React.FC = () => {
       <section className="relative z-10 py-24">
         <div className="container mx-auto px-4 md:px-10">
           <h2
-            className="text-4xl md:text-5xl font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500"
+            className="text-4xl md:text-5xl font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-fuchsia-400"
             data-aos="fade-up"
           >
             How SniperCoders Delivers AI Solutions
           </h2>
           <p className="text-center text-gray-300 mb-12 max-w-2xl mx-auto" data-aos="fade-up">
-            Our proven process for implementing <span className="text-purple-400 font-semibold">AI automation</span> and <span className="text-blue-400 font-semibold">custom software development</span>
+            Our proven process for implementing <span className="text-cyan-300 font-semibold">AI automation</span> and <span className="text-cyan-300 font-semibold">custom software development</span>
           </p>
           <ol className="space-y-6 max-w-3xl mx-auto">
-            <li className="text-lg bg-purple-900/20 backdrop-blur-sm p-6 rounded-lg border border-purple-500/30" data-aos="fade-up" data-aos-delay="100">
-              <span className="font-bold text-purple-400 text-xl">
+            <li className="text-lg bg-white/[0.04] backdrop-blur-sm p-6 rounded-lg border border-cyan-300/20" data-aos="fade-up" data-aos-delay="100">
+              <span className="font-bold text-cyan-300 text-xl">
                 1. Discovery & Strategy:
               </span>{" "}
               <p className="mt-2 text-gray-300">
                 We understand your brand, audience, and business goals to create a tailored AI strategy.
               </p>
             </li>
-            <li className="text-lg bg-blue-900/20 backdrop-blur-sm p-6 rounded-lg border border-blue-500/30" data-aos="fade-up" data-aos-delay="200">
-              <span className="font-bold text-blue-400 text-xl">
+            <li className="text-lg bg-white/[0.04] backdrop-blur-sm p-6 rounded-lg border border-white/10" data-aos="fade-up" data-aos-delay="200">
+              <span className="font-bold text-cyan-300 text-xl">
                 2. Custom Development:
               </span>{" "}
               <p className="mt-2 text-gray-300">
@@ -666,10 +666,10 @@ const AIAgentsLandingPage: React.FC = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="relative z-10 py-24 bg-gradient-to-b from-[#0a0a2e]/0 to-[#1a1a4a]/30">
+      <section className="relative z-10 py-24 bg-gradient-to-b from-transparent to-white/[0.03]">
         <div className="container mx-auto px-4 md:px-10">
           <h2
-            className="text-4xl md:text-5xl font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500"
+            className="text-4xl md:text-5xl font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-fuchsia-400"
             data-aos="fade-up"
           >
             Client Success Stories
@@ -681,18 +681,18 @@ const AIAgentsLandingPage: React.FC = () => {
             {clientTestimonials.map(({ quote, name, title, delay }, index: number) => (
               <div
                 key={index}
-                className="bg-white/10 backdrop-blur-sm p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 border border-purple-500/20"
+                className="bg-white/10 backdrop-blur-sm p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 border border-cyan-300/20"
                 data-aos="zoom-in"
                 data-aos-delay={delay}
               >
                 <div className="mb-4">
-                  <svg className="w-8 h-8 text-purple-400" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-8 h-8 text-cyan-300" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                   </svg>
                 </div>
                 <p className="text-lg italic mb-4 text-gray-300">{quote}</p>
-                <div className="border-t border-purple-500/30 pt-4">
-                  <p className="font-bold text-purple-300">{name}</p>
+                <div className="border-t border-cyan-300/20 pt-4">
+                  <p className="font-bold text-cyan-200">{name}</p>
                   <p className="text-sm text-gray-400">{title}</p>
                 </div>
               </div>

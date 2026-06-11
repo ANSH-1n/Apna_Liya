@@ -1,13 +1,9 @@
+'use client';
 
-
-
-
-//app/contact/page.tsx
-"use client";
-import React, { useState } from "react";
-import { AiOutlineWhatsApp } from "react-icons/ai";
-import Footer from "@/components/Footer";
-
+import Footer from '@/components/Footer';
+import { ArrowRight, Clock, Mail, MessageCircle, Phone, Send } from 'lucide-react';
+import type { ChangeEvent, FormEvent } from 'react';
+import { useState } from 'react';
 
 interface FormData {
   fullName: string;
@@ -17,338 +13,255 @@ interface FormData {
   service: string;
 }
 
+const services = [
+  'Short-Form Video Editing',
+  'Social Media Marketing',
+  'Meta Ads Creatives',
+  'Google Ads Creatives',
+  'Content Strategy',
+  'Brand Storytelling',
+  'Website or Landing Page',
+  'Monthly Creative Retainer',
+  'Other',
+];
 
-const ContactPage: React.FC = () => {
+const contactCards = [
+  {
+    icon: Mail,
+    title: 'Email',
+    value: 'snipercoders25@gmail.com',
+    copy: 'Best for briefs, references, and project details.',
+  },
+  {
+    icon: Phone,
+    title: 'Phone',
+    value: '+91 7006377796',
+    copy: 'For quick questions and discovery calls.',
+  },
+  {
+    icon: Clock,
+    title: 'Response',
+    value: '1-2 business hours',
+    copy: 'Send your niche, goal, and current content.',
+  },
+];
+
+export default function ContactPage() {
   const [formData, setFormData] = useState<FormData>({
-    fullName: "",
-    email: "",
-    phone: "",
-    message: "",
-    service: "",
+    fullName: '',
+    email: '',
+    phone: '',
+    message: '',
+    service: '',
   });
-
   const [loading, setLoading] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<string | null>(null);
 
-  const services = [
-    "Website Development",
-    "Custom Coded Website",
-    "Business Website",
-    "eCommerce Website Development",
-    "App Development",
-    "SEO Services",
-    "Google Ads",
-    "Meta Ads",
-    "Social Media Marketing",
-    "Content Creation",
-    "Video Editing",
-    "Other"
-  ];
-
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({ ...formData, [event.target.name]: event.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     setLoading(true);
 
-    const whatsappNumber = "916006254188"; // Replace with your WhatsApp number
-
+    const whatsappNumber = '917006377796';
     const whatsappMessage =
-      `*New Lead From SniperCoders Website*%0A%0A` +
-      `Name: ${formData.fullName}%0A` +
-      `Email: ${formData.email}%0A` +
-      `Phone: ${formData.phone}%0A` +
-      `Service Interested: ${formData.service}%0A%0A` +
-      `Message:%0A${formData.message}`;
+      `*New Growth Lead From SniperCoders Website*%0A%0A` +
+      `Name: ${encodeURIComponent(formData.fullName)}%0A` +
+      `Email: ${encodeURIComponent(formData.email)}%0A` +
+      `Phone: ${encodeURIComponent(formData.phone)}%0A` +
+      `Service Interested: ${encodeURIComponent(formData.service)}%0A%0A` +
+      `Message:%0A${encodeURIComponent(formData.message)}`;
 
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
-
-    // ================= META LEAD EVENT =================
-    if (typeof window !== "undefined") {
+    if (typeof window !== 'undefined') {
       const fbq = (window as { fbq?: (action: string, event: string) => void }).fbq;
       if (fbq) {
-        fbq("track", "Lead");
+        fbq('track', 'Lead');
       }
+      window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, '_blank');
     }
-    // ==================================================
 
-    window.open(whatsappUrl, "_blank");
-
-    setSubmitStatus("success");
-
+    setSubmitStatus('success');
     setFormData({
-      fullName: "",
-      email: "",
-      phone: "",
-      message: "",
-      service: "",
+      fullName: '',
+      email: '',
+      phone: '',
+      message: '',
+      service: '',
     });
-
     setLoading(false);
   };
 
   return (
     <>
-      {/* SEO Hidden Content */}
-      <div className="sr-only">
-        <h1>Contact SniperCoders - Best Website Development Company Near Me in India</h1>
-        <p>
-          Contact SniperCoders, the best software and IT company in India specializing in custom coded websites, 
-          business website development, eCommerce website development, and app development. We are the best 
-          website development company near me offering web design, app development agency services, content creation, 
-          video editing, SEO services, Google Ads, Meta Ads, and social media marketing in India.
-        </p>
-      </div>
+      <main className="min-h-screen overflow-hidden bg-[#05070d] text-white">
+        <section className="relative isolate px-4 pb-16 pt-24 sm:px-6 lg:px-8">
+          <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:56px_56px]" />
+          <div className="absolute inset-x-0 top-0 -z-10 h-96 bg-[radial-gradient(ellipse_at_top,rgba(34,211,238,0.22),transparent_58%)]" />
 
-      <div className="bg-gradient-to-b from-gray-900 via-purple-900/20 to-gray-900 text-white min-h-screen p-6 md:p-10">
-        {/* Header Section with SEO Keywords */}
-        <div className="max-w-6xl mx-auto mb-12">
-          <div className="text-center mb-8">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">
-              Contact Us
+          <div className="mx-auto max-w-5xl text-center">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-300">
+              Contact
+            </p>
+            <h1 className="text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
+              Tell us what you want your content and ads to do next.
             </h1>
-            <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-              Get in touch with <span className="text-cyan-400 font-semibold">India&apos;s best IT company</span> for 
-              <span className="text-purple-400 font-semibold"> custom website development</span>, 
-              <span className="text-cyan-400 font-semibold"> app development</span>, and 
-              <span className="text-purple-400 font-semibold"> digital marketing solutions</span>
+            <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
+              Share your niche, current content, offer, and growth goal. We will reply with the
+              clearest next step for video editing, social media, ad creatives, or a full creative sprint.
             </p>
           </div>
+        </section>
 
-          {/* Service Tags */}
-          <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-8">
-            {[
-              "Website Development Near Me",
-              "Custom Coded Websites",
-              "Business Websites",
-              "eCommerce Development",
-              "App Development Agency",
-              "SEO Services",
-              "Digital Marketing"
-            ].map((tag, index) => (
-              <span
-                key={index}
-                className="px-3 py-1 md:px-4 md:py-2 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-500/30 rounded-full text-xs md:text-sm text-gray-200 backdrop-blur-sm"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        {submitStatus && (
-          <div className="text-green-400 text-center mb-4 text-lg animate-pulse">
-            ✓ Redirecting to WhatsApp...
-          </div>
-        )}
-
-        {/* Contact Form */}
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-black/40 backdrop-blur-lg border border-cyan-500/20 rounded-2xl p-6 md:p-10 shadow-2xl">
-            <form onSubmit={handleSubmit} className="space-y-6" itemScope itemType="https://schema.org/ContactPage">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="fullName" className="block text-sm font-medium text-gray-300 mb-2">
-                    Full Name <span className="text-red-400">*</span>
-                  </label>
-                  <input
-                    id="fullName"
-                    name="fullName"
-                    required
-                    placeholder="Enter your full name"
-                    onChange={handleChange}
-                    value={formData.fullName}
-                    className="w-full p-4 rounded-lg bg-gray-800/50 border border-gray-700 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none transition-all text-white placeholder-gray-500"
-                    itemProp="name"
-                  />
+        <section className="px-4 pb-24 sm:px-6 lg:px-8">
+          <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+            <aside className="space-y-5">
+              <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-6">
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-300/10 text-cyan-300">
+                  <MessageCircle className="h-6 w-6" />
                 </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                    Email Address <span className="text-red-400">*</span>
-                  </label>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    placeholder="your.email@example.com"
-                    onChange={handleChange}
-                    value={formData.email}
-                    className="w-full p-4 rounded-lg bg-gray-800/50 border border-gray-700 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none transition-all text-white placeholder-gray-500"
-                    itemProp="email"
-                  />
-                </div>
+                <h2 className="text-2xl font-semibold">Start with a simple brief.</h2>
+                <p className="mt-4 leading-7 text-slate-300">
+                  The best message includes your brand link, target audience, current challenge,
+                  and whether you need one-off edits or a recurring content system.
+                </p>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
-                    Phone Number
-                  </label>
-                  <input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    placeholder="+91 XXXXX XXXXX"
-                    onChange={handleChange}
-                    value={formData.phone}
-                    className="w-full p-4 rounded-lg bg-gray-800/50 border border-gray-700 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none transition-all text-white placeholder-gray-500"
-                    itemProp="telephone"
-                  />
+              {contactCards.map((card) => {
+                const Icon = card.icon;
+                return (
+                  <div key={card.title} className="rounded-2xl border border-white/10 bg-white/[0.04] p-6">
+                    <div className="flex items-start gap-4">
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-cyan-300/10 text-cyan-300">
+                        <Icon className="h-5 w-5" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">
+                          {card.title}
+                        </p>
+                        <p className="mt-2 font-semibold text-white">{card.value}</p>
+                        <p className="mt-2 text-sm leading-6 text-slate-400">{card.copy}</p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </aside>
+
+            <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-6 shadow-2xl shadow-cyan-950/20 sm:p-8 lg:p-10">
+              {submitStatus ? (
+                <div className="mb-6 rounded-2xl border border-emerald-300/20 bg-emerald-300/10 px-4 py-3 text-sm font-medium text-emerald-100">
+                  Redirecting to WhatsApp. Your form has been cleared.
+                </div>
+              ) : null}
+
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid gap-6 md:grid-cols-2">
+                  <div>
+                    <label htmlFor="fullName" className="mb-2 block text-sm font-medium text-slate-300">
+                      Full name
+                    </label>
+                    <input
+                      id="fullName"
+                      name="fullName"
+                      required
+                      placeholder="Your name"
+                      onChange={handleChange}
+                      value={formData.fullName}
+                      className="w-full rounded-xl border border-white/10 bg-slate-950/70 p-4 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-300/60 focus:ring-2 focus:ring-cyan-300/15"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="email" className="mb-2 block text-sm font-medium text-slate-300">
+                      Email address
+                    </label>
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      required
+                      placeholder="you@brand.com"
+                      onChange={handleChange}
+                      value={formData.email}
+                      className="w-full rounded-xl border border-white/10 bg-slate-950/70 p-4 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-300/60 focus:ring-2 focus:ring-cyan-300/15"
+                    />
+                  </div>
                 </div>
 
-                <div>
-                  <label htmlFor="service" className="block text-sm font-medium text-gray-300 mb-2">
-                    Service Interested In <span className="text-red-400">*</span>
-                  </label>
-                  <select
-                    id="service"
-                    name="service"
-                    required
-                    onChange={handleChange}
-                    value={formData.service}
-                    className="w-full p-4 rounded-lg bg-gray-800/50 border border-gray-700 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none transition-all text-white appearance-none cursor-pointer"
-                  >
-                    <option value="" disabled>Select a service</option>
-                    {services.map((service, index) => (
-                      <option key={index} value={service} className="bg-gray-800">
-                        {service}
+                <div className="grid gap-6 md:grid-cols-2">
+                  <div>
+                    <label htmlFor="phone" className="mb-2 block text-sm font-medium text-slate-300">
+                      Phone or WhatsApp
+                    </label>
+                    <input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      placeholder="+91 XXXXX XXXXX"
+                      onChange={handleChange}
+                      value={formData.phone}
+                      className="w-full rounded-xl border border-white/10 bg-slate-950/70 p-4 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-300/60 focus:ring-2 focus:ring-cyan-300/15"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="service" className="mb-2 block text-sm font-medium text-slate-300">
+                      Service
+                    </label>
+                    <select
+                      id="service"
+                      name="service"
+                      required
+                      onChange={handleChange}
+                      value={formData.service}
+                      className="w-full rounded-xl border border-white/10 bg-slate-950/70 p-4 text-white outline-none transition focus:border-cyan-300/60 focus:ring-2 focus:ring-cyan-300/15"
+                    >
+                      <option value="" disabled>
+                        Select a service
                       </option>
-                    ))}
-                  </select>
+                      {services.map((service) => (
+                        <option key={service} value={service} className="bg-slate-950">
+                          {service}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
                 </div>
-              </div>
 
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                  Your Message <span className="text-red-400">*</span>
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  placeholder="Tell us about your project requirements..."
-                  onChange={handleChange}
-                  value={formData.message}
-                  className="w-full p-4 rounded-lg bg-gray-800/50 border border-gray-700 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none transition-all text-white placeholder-gray-500 resize-none"
-                  rows={6}
-                  itemProp="description"
-                />
-              </div>
+                <div>
+                  <label htmlFor="message" className="mb-2 block text-sm font-medium text-slate-300">
+                    Project details
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    required
+                    placeholder="Tell us about your brand, audience, offer, content goals, and timeline."
+                    onChange={handleChange}
+                    value={formData.message}
+                    rows={6}
+                    className="w-full resize-none rounded-xl border border-white/10 bg-slate-950/70 p-4 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-300/60 focus:ring-2 focus:ring-cyan-300/15"
+                  />
+                </div>
 
-              <button
-                type="submit"
-                disabled={loading}
-                className="w-full bg-gradient-to-r from-green-500 to-green-600 p-4 md:p-5 rounded-lg font-bold flex justify-center items-center gap-3 hover:from-green-600 hover:to-green-700 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-green-500/50 text-lg group"
-                aria-label="Send message via WhatsApp"
-              >
-                <AiOutlineWhatsApp size={26} className="group-hover:scale-110 transition-transform" />
-                {loading ? "Sending..." : "Send via WhatsApp"}
-              </button>
-
-              <p className="text-center text-gray-400 text-sm mt-4">
-                We typically respond within 1-2 business hours
-              </p>
-            </form>
-          </div>
-        </div>
-
-        {/* Additional Contact Information */}
-        <div className="max-w-6xl mx-auto mt-16 grid md:grid-cols-3 gap-8">
-          <div className="bg-black/40 backdrop-blur-lg border border-cyan-500/20 rounded-xl p-6 text-center hover:border-cyan-500/40 transition-all">
-            <div className="text-cyan-400 text-4xl mb-4">📧</div>
-            <h3 className="text-xl font-bold mb-2">Email Us</h3>
-            <p className="text-gray-300">snipercoders25@gmail.com</p>
-            <p className="text-sm text-gray-400 mt-2">Best IT company in India</p>
-          </div>
-
-          <div className="bg-black/40 backdrop-blur-lg border border-purple-500/20 rounded-xl p-6 text-center hover:border-purple-500/40 transition-all">
-            <div className="text-purple-400 text-4xl mb-4">📱</div>
-            <h3 className="text-xl font-bold mb-2">Call Us</h3>
-            <p className="text-gray-300">+91 7006377796</p>
-            <p className="text-sm text-gray-400 mt-2">Website development near me</p>
-          </div>
-
-          <div className="bg-black/40 backdrop-blur-lg border border-cyan-500/20 rounded-xl p-6 text-center hover:border-cyan-500/40 transition-all">
-            <div className="text-cyan-400 text-4xl mb-4">🕐</div>
-            <h3 className="text-xl font-bold mb-2">Business Hours</h3>
-            <p className="text-gray-300">Mon - Sat: 9AM - 6PM</p>
-            <p className="text-sm text-gray-400 mt-2">App development agency</p>
-          </div>
-        </div>
-
-        {/* SEO Rich Footer Section */}
-        <div className="max-w-6xl mx-auto mt-16 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 backdrop-blur-sm border border-cyan-500/20 rounded-2xl p-8 md:p-10">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">
-            Why Choose SniperCoders?
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6 text-gray-300">
-            <div>
-              <h3 className="text-xl font-semibold text-white mb-3 flex items-center gap-2">
-                <span className="text-cyan-400">✓</span> Best Website Development Company
-              </h3>
-              <p className="leading-relaxed">
-                As the <span className="text-cyan-400 font-semibold">best website development company near me in India</span>, 
-                we deliver <span className="text-purple-400 font-semibold">custom coded websites</span>, 
-                <span className="text-cyan-400 font-semibold"> business websites</span>, and 
-                <span className="text-purple-400 font-semibold"> eCommerce website development</span> solutions 
-                tailored to your business needs.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold text-white mb-3 flex items-center gap-2">
-                <span className="text-purple-400">✓</span> Complete Digital Solutions
-              </h3>
-              <p className="leading-relaxed">
-                Beyond being the <span className="text-cyan-400 font-semibold">best app development agency near me</span>, 
-                we offer comprehensive services including <span className="text-purple-400 font-semibold">SEO</span>, 
-                <span className="text-cyan-400 font-semibold"> Google Ads</span>, 
-                <span className="text-purple-400 font-semibold"> Meta Ads</span>, 
-                <span className="text-cyan-400 font-semibold"> social media marketing</span>, 
-                content creation, and video editing.
-              </p>
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-100 disabled:cursor-not-allowed disabled:opacity-60"
+                >
+                  {loading ? 'Opening WhatsApp...' : 'Send via WhatsApp'}
+                  {loading ? <ArrowRight className="h-4 w-4" /> : <Send className="h-4 w-4" />}
+                </button>
+              </form>
             </div>
           </div>
-          <div className="mt-8 text-center">
-            <p className="text-lg text-gray-300">
-              <span className="text-cyan-400 font-bold">30+ Projects Delivered</span> • 
-              <span className="text-purple-400 font-bold"> 100% Customer Satisfaction</span> • 
-              <span className="text-cyan-400 font-bold"> Best IT Company in India</span>
-            </p>
-          </div>
-        </div>
-      </div>
-
+        </section>
+      </main>
       <Footer />
-
-      <style jsx>{`
-        .sr-only {
-          position: absolute;
-          width: 1px;
-          height: 1px;
-          padding: 0;
-          margin: -1px;
-          overflow: hidden;
-          clip: rect(0, 0, 0, 0);
-          white-space: nowrap;
-          border-width: 0;
-        }
-
-        select {
-          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236ee7b7'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
-          background-repeat: no-repeat;
-          background-position: right 1rem center;
-          background-size: 1.5rem;
-          padding-right: 3rem;
-        }
-      `}</style>
     </>
   );
-};
-
-export default ContactPage;
+}
