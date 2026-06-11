@@ -49,7 +49,7 @@ const services = [
 const proof = [
   ['Fitness & wellness', 'Instagram management, reels, content planning, stories, polls, and enquiry-focused CTAs.'],
   ['Real estate edits', 'Premium vertical property edits with pacing, captions, music, and trust-building polish.'],
-  ['Performance creatives', 'Meta and Google ad assets designed to test hooks, benefits, objections, and offers quickly.'],
+  ['Paid ad creatives', 'Meta and Google ad assets designed to test hooks, benefits, objections, and offers quickly.'],
 ];
 
 const process = [
@@ -107,24 +107,27 @@ export default function Home() {
   return (
     <>
       <main className="min-h-screen overflow-hidden bg-[#05070d] text-white">
-        <section className="relative isolate px-4 pb-20 pt-24 sm:px-6 lg:px-8">
+        <section className="relative isolate px-4 pb-14 pt-14 sm:px-6 sm:pt-20 lg:px-8 lg:pb-20 lg:pt-24">
           <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:56px_56px]" />
           <div className="absolute inset-x-0 top-0 -z-10 h-96 bg-[radial-gradient(ellipse_at_top,rgba(34,211,238,0.22),transparent_58%)]" />
 
           <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
             <div className="max-w-4xl">
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm text-cyan-100">
+              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm text-cyan-100">
                 <BadgeCheck className="h-4 w-4 text-cyan-300" />
                 Creative growth for modern brands
               </div>
-              <h1 className="max-w-5xl text-5xl font-semibold leading-[1.02] text-white sm:text-6xl lg:text-7xl">
+              <h1 className="max-w-5xl text-[2.35rem] font-semibold leading-[1.02] text-white sm:text-6xl lg:text-7xl">
                 Video editing and social media marketing built to earn attention.
               </h1>
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
-                SniperCoders helps founders, creators, coaches, startups, and agencies turn
+              <p className="mt-5 max-w-2xl text-base leading-7 text-slate-300 sm:text-xl sm:leading-8">
+                SniperCoders helps founders, bike accessory brands, gaming cafe creators, coaches, startups, and agencies turn
                 ideas into premium reels, paid ad creatives, and content systems that build
                 trust before the sales call.
               </p>
+              <div className="mt-6 lg:hidden">
+                <HomeVideoSlider />
+              </div>
               <div className="mt-8">
                 <PrimaryCtas />
               </div>
@@ -138,7 +141,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="relative">
+            <div className="relative hidden lg:block">
               <HomeVideoSlider />
             </div>
           </div>

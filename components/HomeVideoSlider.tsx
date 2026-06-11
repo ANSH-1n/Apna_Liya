@@ -54,7 +54,7 @@ export default function HomeVideoSlider() {
             ref={videoRef}
             key={activeVideo}
             src={activeVideo}
-            className="aspect-[4/5] w-full object-cover opacity-90"
+            className="aspect-[16/10] w-full object-cover opacity-90 lg:aspect-[4/5]"
             autoPlay
             muted={isMuted}
             loop

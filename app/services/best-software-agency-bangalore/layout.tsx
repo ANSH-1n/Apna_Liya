@@ -4,23 +4,23 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Best Software Agency in Bangalore | SniperCoders',
-  description: 'SniperCoders is the best software agency in Bangalore. Website development, mobile apps, custom software & digital marketing for all Bangalore businesses. Free consultation today.',
+  description: 'SniperCoders is a software agency in Bangalore for video editing, digital marketing, SEO-ready websites, mobile apps, custom software, and AI automation.',
   keywords: [
     'best software agency in bangalore',
-    'best IT company in bangalore',
     'web development company bangalore',
     'mobile app development bangalore',
     'digital marketing agency bangalore',
+    'video editing agency bangalore',
     'software development company bangalore',
-    'best website development company bangalore',
-    'IT agency near me bangalore',
+    'custom software development bangalore',
+    'ai automation agency bangalore',
   ],
   alternates: {
     canonical: 'https://snipercoders.in/services/best-software-agency-bangalore',
   },
   openGraph: {
     title: 'Best Software Agency in Bangalore | SniperCoders',
-    description: 'Website development, mobile apps, custom software & digital marketing for Bangalore businesses. 30+ projects. 100% satisfaction.',
+    description: 'Video editing, digital marketing, websites, mobile apps, custom software, and AI automation for Bangalore businesses.',
     url: 'https://snipercoders.in/services/best-software-agency-bangalore',
     siteName: 'SniperCoders',
     locale: 'en_IN',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Best Software Agency in Bangalore | SniperCoders',
-    description: 'Website development, mobile apps & digital marketing for Bangalore businesses.',
+    description: 'Video editing, websites, apps, custom software, and marketing for Bangalore businesses.',
   },
 }
 

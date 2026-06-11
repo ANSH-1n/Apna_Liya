@@ -58,7 +58,6 @@ export default function Footer() {
               {[
                 { label: "Social Media Growth", href: "/services/digital-marketing" },
                 { label: "Short-Form Video Editing", href: "/showcase/video-editing" },
-                { label: "Performance Creatives", href: "/showcase/video-editing" },
                 { label: "Content Strategy", href: "/services/digital-marketing" },
                 { label: "Website Development", href: "/services/web-development" },
               ].map((item, i) => (
@@ -75,7 +74,7 @@ export default function Footer() {
             </ul>
           </motion.div>
 
-          {/* We Serve — Location Pages */}
+          {/* We Serve */}
           <motion.div variants={textVariants} initial="initial" animate="animate">
             <h3 className="text-lg font-semibold mb-6 text-cyan-300">We Serve</h3>
             <ul className="space-y-3">
@@ -183,10 +182,10 @@ export default function Footer() {
           animate="animate"
         >
           <p>
-            © {new Date().getFullYear()} SniperCoders - Creative Growth Agency for Modern Brands. All rights reserved.
+            Copyright {new Date().getFullYear()} SniperCoders - Creative Growth Agency for Modern Brands. All rights reserved.
           </p>
           <p className="mt-2 text-xs text-gray-500">
-            Social Media Growth | Short-Form Video Editing | Content Strategy | Performance Creatives | Brand Storytelling
+            Social Media Growth | Short-Form Video Editing | Content Strategy | Brand Storytelling
           </p>
         </motion.div>
       </div>

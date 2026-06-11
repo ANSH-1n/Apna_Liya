@@ -4,16 +4,16 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Best Software Agency in Delhi | SniperCoders',
-  description: 'SniperCoders is the best software agency in Delhi NCR. Enterprise websites, mobile apps, custom software & performance digital marketing for Delhi, Noida, Gurugram businesses.',
+  description: 'SniperCoders is a software agency in Delhi NCR for video editing, digital marketing, SEO-ready websites, mobile apps, custom software, and AI automation.',
   keywords: [
     'best software agency in delhi',
-    'best IT company in delhi',
     'web development company delhi',
     'mobile app development delhi',
     'digital marketing agency delhi ncr',
+    'video editing agency delhi',
     'software development company delhi',
-    'website development new delhi',
-    'IT company noida gurugram faridabad',
+    'custom software development delhi',
+    'ai automation agency delhi ncr',
     'best software agency delhi ncr',
   ],
   alternates: {
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Best Software Agency in Delhi | SniperCoders',
-    description: 'Enterprise websites, apps & aggressive digital marketing for Delhi NCR businesses. Serving Delhi, Noida, Gurugram, Faridabad & Ghaziabad.',
+    description: 'Video editing, digital marketing, websites, apps, custom software, and AI automation for Delhi NCR businesses.',
     url: 'https://snipercoders.in/services/best-software-agency-delhi',
     siteName: 'SniperCoders',
     locale: 'en_IN',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Best Software Agency in Delhi | SniperCoders',
-    description: 'Websites, apps & digital marketing for Delhi NCR businesses.',
+    description: 'Video editing, websites, apps, custom software, and marketing for Delhi NCR businesses.',
   },
 }
 

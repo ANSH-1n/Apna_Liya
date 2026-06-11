@@ -59,7 +59,7 @@ export default function AboutPage() {
                 A creative growth team for brands that want sharper attention.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-                We help founders, creators, coaches, startups, and agencies turn raw ideas into
+                We help founders, creators,bike accessory, gaming cafe,  coaches, startups, and agencies turn raw ideas into
                 premium videos, social content, paid ad creatives, and digital experiences that
                 make the next step easier for the audience.
               </p>
@@ -86,7 +86,7 @@ export default function AboutPage() {
             <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-3 shadow-2xl shadow-cyan-950/30">
               <div className="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-slate-950">
                 <Image
-                  src="/images/TeamWork.jpg"
+                  src="/images/About_section_banner.png"
                   alt="SniperCoders team collaboration"
                   width={900}
                   height={650}

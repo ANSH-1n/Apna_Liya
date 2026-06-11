@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: '%s | SniperCoders',
   },
   description:
-    'SniperCoders is a creative growth agency for modern brands, creators, startups, coaches, SaaS founders, and agencies. We deliver social media growth, short-form video editing, viral reels, content strategy, performance creatives, and brand storytelling.',
+    'SniperCoders is a creative growth agency for modern brands, creators, startups, coaches, SaaS founders, and agencies. We deliver social media growth, short-form video editing, viral reels, content strategy, and brand storytelling.',
   alternates: {
     canonical: 'https://www.snipercoders.in',
   },
@@ -36,7 +36,6 @@ export const metadata: Metadata = {
     'short form video editing agency',
     'viral reels editing',
     'content strategy agency',
-    'performance creative agency',
     'ad creative agency',
     'brand storytelling agency',
     'white label video editing',
@@ -47,7 +46,7 @@ export const metadata: Metadata = {
     url: 'https://www.snipercoders.in',
     title: 'SniperCoders - Creative Growth Agency for Modern Brands',
     description:
-      'Premium social media growth, short-form video editing, content strategy, performance creatives, and brand storytelling for international brands and creators.',
+      'Premium social media growth, short-form video editing, content strategy, and brand storytelling for international brands and creators.',
     siteName: 'SniperCoders',
     images: [
       {
@@ -62,7 +61,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'SniperCoders - Creative Growth Agency',
     description:
-      'Social media growth, reels editing, content strategy, performance creatives, and brand storytelling for modern brands.',
+      'Social media growth, reels editing, content strategy, and brand storytelling for modern brands.',
   },
   icons: {
     icon: [{ url: '/images/logo_sniper.ico', type: 'image/x-icon' }],

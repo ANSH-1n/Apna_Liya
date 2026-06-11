@@ -144,7 +144,6 @@ export default function Navbar() {
   const serviceItems = [
     { name: 'Social Media Growth', href: '/services/digital-marketing' },
     { name: 'Video Editing Showcase', href: '/showcase/video-editing' },
-    { name: 'Performance Creatives', href: '/showcase/video-editing' },
     { name: 'Web Development', href: '/services/web-development' },
     { name: 'Mobile App Development', href: '/services/mobile-development' },
     { name: 'Custom Software Development', href: '/services/custom-software-development' },
