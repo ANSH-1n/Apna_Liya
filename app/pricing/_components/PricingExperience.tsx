@@ -4,12 +4,14 @@
 
 import Footer from '@/components/Footer'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import {
   ArrowRight,
   BarChart3,
   CheckCircle2,
   ChevronDown,
   Clock3,
+  ExternalLink,
   Globe2,
   Headphones,
   MessageCircle,
@@ -42,15 +44,64 @@ type PricingExperienceProps = {
   page: PricingPageData
 }
 
+type SelectedPlanContext = {
+  service: string
+  packageName: string
+  planName: string
+  price: string
+}
+
+function getLeadSource(page: PricingPageData) {
+  if (page.slug === 'video-editing') {
+    return {
+      service: 'Video Editing',
+      page: 'Video Editing Pricing',
+    }
+  }
+
+  if (page.slug === 'social-media-marketing') {
+    return {
+      service: 'Social Media Marketing',
+      page: 'Social Media Pricing',
+    }
+  }
+
+  return {
+    service: 'Website & Software Development',
+    page: 'Website Pricing',
+  }
+}
+
+function formatPlanPrice(price: string, billing: string) {
+  return `${price}${billing.replace(/\s+/g, '')}`
+}
+
+function getPlanLeadMessage(selectedPlan: SelectedPlanContext) {
+  return encodeURIComponent(
+    `Hi Ansh,
+
+Thanks for contacting SniperCoders.
+
+I saw you're interested in:
+
+Service: ${selectedPlan.service}
+Package: ${selectedPlan.packageName}
+Plan: ${selectedPlan.planName} (${selectedPlan.price})`
+  )
+}
+
 export default function PricingExperience({ page }: PricingExperienceProps) {
   const [region, setRegion] = useState<PricingRegion>('international')
   const [openFaq, setOpenFaq] = useState(0)
   const [activePackageIndex, setActivePackageIndex] = useState(0)
+  const [selectedPlan, setSelectedPlan] = useState<SelectedPlanContext | null>(null)
   const activePackage = page.packageTiers?.[activePackageIndex]
   const activePlans = activePackage?.plans ?? page.plans
   const activeServices = activePackage?.services ?? page.services
+  const isVideoEditingPage = page.slug === 'video-editing'
   const isWebDevelopmentPage = page.slug === 'web-development'
   const isCustomSoftwareTab = activePackage?.id === 'custom-software'
+  const leadSource = getLeadSource(page)
 
   useEffect(() => {
     const savedRegion = window.localStorage.getItem('snipercoders-pricing-region')
@@ -61,15 +112,20 @@ export default function PricingExperience({ page }: PricingExperienceProps) {
 
   const updateRegion = (nextRegion: PricingRegion) => {
     setRegion(nextRegion)
+    setSelectedPlan(null)
     window.localStorage.setItem('snipercoders-pricing-region', nextRegion)
   }
 
   const ctaMessage = useMemo(
     () =>
       encodeURIComponent(
-        `Hello SniperCoders, I want to discuss ${page.serviceRequired} pricing for my project.`
+        `Hello SniperCoders!
+
+I am interested in your ${leadSource.service} services.
+
+Page: ${leadSource.page}`
       ),
-    [page.serviceRequired]
+    [leadSource.page, leadSource.service]
   )
 
   return (
@@ -138,6 +194,14 @@ export default function PricingExperience({ page }: PricingExperienceProps) {
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <a
                 href="#quote"
+                onClick={() =>
+                  setSelectedPlan({
+                    service: page.serviceRequired,
+                    packageName: activePackage?.title ?? 'Custom Package',
+                    planName: 'Custom Package',
+                    price: 'Custom Quote',
+                  })
+                }
                 className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-slate-950 transition hover:bg-cyan-100"
               >
                 Customize package
@@ -158,7 +222,10 @@ export default function PricingExperience({ page }: PricingExperienceProps) {
               <PackageToggle
                 tiers={page.packageTiers}
                 activeIndex={activePackageIndex}
-                onChange={setActivePackageIndex}
+                onChange={(index) => {
+                  setActivePackageIndex(index)
+                  setSelectedPlan(null)
+                }}
               />
               {activePackage && (
                 <div className="mt-5 grid gap-3 lg:grid-cols-[1fr_auto] lg:items-end">
@@ -185,71 +252,101 @@ export default function PricingExperience({ page }: PricingExperienceProps) {
           </section>
         )}
 
+        {isVideoEditingPage && <VideoEditingPortfolioPreview />}
+        {isWebDevelopmentPage && (
+          isCustomSoftwareTab ? <CustomSoftwarePortfolioPreview /> : <WebsitePortfolioPreview />
+        )}
+
         <section id="plans" className="px-4 py-16 sm:px-6 lg:px-8">
           {isCustomSoftwareTab ? (
-            <CustomSoftwareProjectForm />
+            <CustomSoftwareProjectForm page={page} />
           ) : region === 'india' ? (
-            <IndiaCustomOnly page={page} activePackageTitle={activePackage?.title} />
+            <IndiaCustomOnly
+              page={page}
+              activePackageTitle={activePackage?.title}
+              onCustomize={() =>
+                setSelectedPlan({
+                  service: page.serviceRequired,
+                  packageName: activePackage?.title ?? 'Custom India Package',
+                  planName: 'Custom India Package',
+                  price: 'Custom Quote',
+                })
+              }
+            />
           ) : (
             <div className="mx-auto grid max-w-7xl gap-5 lg:grid-cols-3">
               {activePlans.map((plan, index) => (
-                <motion.article
-                  key={`${activePackage?.id ?? 'default'}-${plan.name}`}
-                  initial={{ opacity: 0, y: 18 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-80px' }}
-                  transition={{ delay: index * 0.08 }}
-                  className={[
-                    'relative rounded-2xl border p-6 transition hover:-translate-y-1',
-                    plan.popular
-                      ? 'border-cyan-300/50 bg-cyan-300/[0.08] shadow-[0_0_40px_rgba(34,211,238,0.12)]'
-                      : 'border-white/10 bg-white/[0.04]',
-                  ].join(' ')}
-                >
-                  {plan.popular && (
-                    <div className="absolute right-5 top-5 inline-flex items-center gap-1 rounded-full bg-cyan-300 px-3 py-1 text-xs font-bold text-slate-950">
-                      <Star className="h-3.5 w-3.5 fill-current" />
-                      Most Popular
-                    </div>
-                  )}
-                  <h2 className="pr-28 text-2xl font-semibold">{plan.name}</h2>
-                  <p className="mt-2 min-h-12 text-sm leading-6 text-slate-300">{plan.subtitle}</p>
-                  <div className="mt-6 flex items-end gap-1">
-                    <span className="text-4xl font-semibold">{plan.internationalPrice}</span>
-                    <span className="pb-1 text-sm text-slate-400">{plan.billing}</span>
-                  </div>
-                  {plan.popular && <p className="mt-3 text-sm font-semibold text-cyan-200">Best value for consistent growth.</p>}
+                (() => {
+                  const planContext = {
+                    service: page.serviceRequired,
+                    packageName: activePackage?.title ?? page.title,
+                    planName: plan.name,
+                    price: formatPlanPrice(plan.internationalPrice, plan.billing),
+                  }
 
-                  <div className="mt-6 grid gap-3 text-sm text-slate-300">
-                    <PlanMeta icon={Clock3} label="Turnaround" value={plan.turnaround} />
-                    <PlanMeta icon={Sparkles} label="Revisions" value={plan.revisions} />
-                    <PlanMeta icon={Headphones} label="Support" value={plan.support} />
-                    <PlanMeta icon={BarChart3} label="Monthly Output" value={plan.monthlyDeliverables} />
-                  </div>
+                  return (
+                    <motion.article
+                      key={`${activePackage?.id ?? 'default'}-${plan.name}`}
+                      initial={{ opacity: 0, y: 18 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: '-80px' }}
+                      transition={{ delay: index * 0.08 }}
+                      className={[
+                        'relative rounded-2xl border p-6 transition hover:-translate-y-1',
+                        plan.popular
+                          ? 'border-cyan-300/50 bg-cyan-300/[0.08] shadow-[0_0_40px_rgba(34,211,238,0.12)]'
+                          : 'border-white/10 bg-white/[0.04]',
+                      ].join(' ')}
+                    >
+                      {plan.popular && (
+                        <div className="absolute right-5 top-5 inline-flex items-center gap-1 rounded-full bg-cyan-300 px-3 py-1 text-xs font-bold text-slate-950">
+                          <Star className="h-3.5 w-3.5 fill-current" />
+                          Most Popular
+                        </div>
+                      )}
+                      <h2 className="pr-28 text-2xl font-semibold">{plan.name}</h2>
+                      <p className="mt-2 min-h-12 text-sm leading-6 text-slate-300">{plan.subtitle}</p>
+                      <div className="mt-6 flex items-end gap-1">
+                        <span className="text-4xl font-semibold">{plan.internationalPrice}</span>
+                        <span className="pb-1 text-sm text-slate-400">{plan.billing}</span>
+                      </div>
+                      {plan.popular && <p className="mt-3 text-sm font-semibold text-cyan-200">Best value for consistent growth.</p>}
 
-                  <ul className="mt-6 space-y-3">
-                    {plan.deliverables.map((item) => (
-                      <li key={item} className="flex gap-3 text-sm leading-6 text-slate-300">
-                        <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-cyan-300" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                  {plan.note && <p className="mt-5 text-xs leading-6 text-slate-400">{plan.note}</p>}
+                      <div className="mt-6 grid gap-3 text-sm text-slate-300">
+                        <PlanMeta icon={Clock3} label="Turnaround" value={plan.turnaround} />
+                        <PlanMeta icon={Sparkles} label="Revisions" value={plan.revisions} />
+                        <PlanMeta icon={Headphones} label="Support" value={plan.support} />
+                        <PlanMeta icon={BarChart3} label="Monthly Output" value={plan.monthlyDeliverables} />
+                      </div>
 
-                  <a
-                    href="#quote"
-                    className={[
-                      'mt-7 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition',
-                      plan.popular
-                        ? 'bg-white text-slate-950 hover:bg-cyan-100'
-                        : 'border border-white/15 bg-white/5 text-white hover:border-cyan-300/60 hover:bg-cyan-300/10',
-                    ].join(' ')}
-                  >
-                    Request this plan
-                    <ArrowRight className="h-4 w-4" />
-                  </a>
-                </motion.article>
+                      <ul className="mt-6 space-y-3">
+                        {plan.deliverables.map((item) => (
+                          <li key={item} className="flex gap-3 text-sm leading-6 text-slate-300">
+                            <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-cyan-300" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                      {plan.note && <p className="mt-5 text-xs leading-6 text-slate-400">{plan.note}</p>}
+
+                      <a
+                        href={`https://wa.me/${whatsappNumber}?text=${getPlanLeadMessage(planContext)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setSelectedPlan(planContext)}
+                        className={[
+                          'mt-7 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition',
+                          plan.popular
+                            ? 'bg-white text-slate-950 hover:bg-cyan-100'
+                            : 'border border-white/15 bg-white/5 text-white hover:border-cyan-300/60 hover:bg-cyan-300/10',
+                        ].join(' ')}
+                      >
+                        Request this plan
+                        <ArrowRight className="h-4 w-4" />
+                      </a>
+                    </motion.article>
+                  )
+                })()
               ))}
             </div>
           )}
@@ -298,6 +395,7 @@ export default function PricingExperience({ page }: PricingExperienceProps) {
         <QuoteSection
           page={page}
           region={region}
+          selectedPlan={selectedPlan}
           onCustomSoftwareSelected={
             isWebDevelopmentPage
               ? () => {
@@ -409,9 +507,11 @@ function RegionToggle({ region, onChange }: { region: PricingRegion; onChange: (
 function IndiaCustomOnly({
   page,
   activePackageTitle,
+  onCustomize,
 }: {
   page: PricingPageData
   activePackageTitle?: string
+  onCustomize: () => void
 }) {
   return (
     <motion.div
@@ -437,6 +537,7 @@ function IndiaCustomOnly({
       <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
         <a
           href="#quote"
+          onClick={onCustomize}
           className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-100"
         >
           Customize package
@@ -444,7 +545,13 @@ function IndiaCustomOnly({
         </a>
         <a
           href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-            `Hello SniperCoders, I want a custom India package for ${page.serviceRequired}.`
+            `Hello SniperCoders!
+
+I am interested in your ${getLeadSource(page).service} services.
+
+Page: ${getLeadSource(page).page}
+
+Request: Custom package`
           )}`}
           target="_blank"
           rel="noopener noreferrer"
@@ -506,7 +613,156 @@ function PlanMeta({ icon: Icon, label, value }: { icon: typeof Clock3; label: st
   )
 }
 
-function CustomSoftwareProjectForm() {
+function WebsitePortfolioPreview() {
+  return (
+    <section className="px-4 pt-10 sm:px-6 lg:px-8">
+      <div className="mx-auto grid max-w-7xl gap-8 rounded-2xl border border-white/10 bg-white/[0.04] p-5 sm:p-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+        <div className="relative overflow-hidden rounded-xl border border-white/10 bg-slate-950">
+          <Image
+            src="/images/ride_adventure.png"
+            alt="Ride Adventure website portfolio preview by SniperCoders"
+            width={1200}
+            height={760}
+            className="aspect-[16/10] w-full object-cover"
+            priority={false}
+          />
+          <div className="absolute left-4 top-4 rounded-full border border-white/15 bg-black/45 px-3 py-1 text-xs font-medium text-white backdrop-blur">
+            Website Portfolio
+          </div>
+        </div>
+
+        <div>
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-300">
+            See The Work
+          </p>
+          <h2 className="text-3xl font-semibold leading-tight sm:text-4xl">
+            Explore Real Client Websites
+          </h2>
+          <p className="mt-5 leading-8 text-slate-300">
+            See the quality, responsiveness, UI/UX, and business-focused websites we&apos;ve built for clients.
+          </p>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            {['Real project previews', 'Responsive website builds', 'Conversion-focused sections', 'Current portfolio examples'].map((item) => (
+              <div key={item} className="flex items-center gap-2 text-sm text-slate-300">
+                <CheckCircle2 className="h-4 w-4 shrink-0 text-cyan-300" />
+                {item}
+              </div>
+            ))}
+          </div>
+          <a
+            href="/showcase/websites"
+            className="mt-7 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-100"
+          >
+            View Live Projects
+            <ExternalLink className="h-4 w-4" />
+          </a>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function CustomSoftwarePortfolioPreview() {
+  return (
+    <section className="px-4 pt-10 sm:px-6 lg:px-8">
+      <div className="mx-auto grid max-w-7xl gap-8 rounded-2xl border border-white/10 bg-white/[0.04] p-5 sm:p-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+        <div className="relative overflow-hidden rounded-xl border border-white/10 bg-slate-950">
+          <Image
+            src="/images/image.png"
+            alt="TorkeHub custom software portfolio preview by SniperCoders"
+            width={1200}
+            height={760}
+            className="aspect-[16/10] w-full object-cover"
+            priority={false}
+          />
+          <div className="absolute left-4 top-4 rounded-full border border-white/15 bg-black/45 px-3 py-1 text-xs font-medium text-white backdrop-blur">
+            Custom Software Portfolio
+          </div>
+        </div>
+
+        <div>
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-300">
+            See The System
+          </p>
+          <h2 className="text-3xl font-semibold leading-tight sm:text-4xl">
+            Explore TorkeHub Custom Software
+          </h2>
+          <p className="mt-5 leading-8 text-slate-300">
+            See how we design CRM-style dashboards, automation flows, clear interfaces, and business-focused software experiences.
+          </p>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            {['CRM interface design', 'Automation-focused workflows', 'Dashboard UX', 'Business software structure'].map((item) => (
+              <div key={item} className="flex items-center gap-2 text-sm text-slate-300">
+                <CheckCircle2 className="h-4 w-4 shrink-0 text-cyan-300" />
+                {item}
+              </div>
+            ))}
+          </div>
+          <a
+            href="https://www.torkehub.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-7 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-100"
+          >
+            View TorkeHub Project
+            <ExternalLink className="h-4 w-4" />
+          </a>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function VideoEditingPortfolioPreview() {
+  return (
+    <section className="px-4 pt-10 sm:px-6 lg:px-8">
+      <div className="mx-auto grid max-w-7xl gap-8 rounded-2xl border border-white/10 bg-white/[0.04] p-5 sm:p-6 lg:grid-cols-[0.75fr_1.25fr] lg:items-center">
+        <div className="relative overflow-hidden rounded-xl border border-white/10 bg-slate-950">
+          <video
+            src="https://res.cloudinary.com/dzoxwk1jc/video/upload/v1781198635/Dubai_realstate_1_pcwu5o.mp4"
+            className="aspect-[9/16] w-full object-cover"
+            controls
+            preload="metadata"
+            playsInline
+          />
+          <div className="pointer-events-none absolute left-4 top-4 rounded-full border border-white/15 bg-black/45 px-3 py-1 text-xs font-medium text-white backdrop-blur">
+            Real Estate Client Video
+          </div>
+        </div>
+
+        <div>
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-300">
+            See The Editing Quality
+          </p>
+          <h2 className="text-3xl font-semibold leading-tight sm:text-4xl">
+            Explore Real Estate Client Videos
+          </h2>
+          <p className="mt-5 leading-8 text-slate-300">
+            See the pacing, captions, property-focused storytelling, vertical formatting, and clean edits we create for real estate content.
+          </p>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            {['Real estate reels', 'Property walkthrough edits', 'Captions and pacing', 'Mobile-first vertical format'].map((item) => (
+              <div key={item} className="flex items-center gap-2 text-sm text-slate-300">
+                <CheckCircle2 className="h-4 w-4 shrink-0 text-cyan-300" />
+                {item}
+              </div>
+            ))}
+          </div>
+          <a
+            href="/showcase/video-editing?category=real-estate"
+            className="mt-7 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-100"
+          >
+            View Video Portfolio
+            <ExternalLink className="h-4 w-4" />
+          </a>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function CustomSoftwareProjectForm({ page }: { page: PricingPageData }) {
+  const leadSource = getLeadSource(page)
   const [form, setForm] = useState({
     name: '',
     company: '',
@@ -522,7 +778,13 @@ function CustomSoftwareProjectForm() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     const message = encodeURIComponent(
-      `New Custom Software Project Request
+      `Hello SniperCoders!
+
+I am interested in your ${leadSource.service} services.
+
+Page: ${leadSource.page}
+
+New Custom Software Project Request
 
 Full Name: ${form.name}
 Company: ${form.company}
@@ -623,12 +885,15 @@ ${form.description}`
 function QuoteSection({
   page,
   region,
+  selectedPlan,
   onCustomSoftwareSelected,
 }: {
   page: PricingPageData
   region: PricingRegion
+  selectedPlan: SelectedPlanContext | null
   onCustomSoftwareSelected?: () => void
 }) {
+  const leadSource = getLeadSource(page)
   const isWebDevelopmentPage = page.slug === 'web-development'
   const quoteBudgetOptions = useMemo(
     () =>
@@ -661,7 +926,13 @@ function QuoteSection({
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     const message = encodeURIComponent(
-      `New Custom Quote Request
+      `Hello SniperCoders!
+
+I am interested in your ${leadSource.service} services.
+
+Page: ${leadSource.page}
+
+New Custom Quote Request
 
 Name: ${form.name}
 Company: ${form.company}
@@ -669,6 +940,9 @@ Email: ${form.email}
 WhatsApp: ${form.whatsapp}
 
 Service Required: ${form.service}
+Selected Package: ${selectedPlan?.packageName ?? 'Not selected'}
+Selected Plan: ${selectedPlan?.planName ?? 'Custom / Not selected'}
+Selected Price: ${selectedPlan?.price ?? 'Not selected'}
 
 Budget: ${form.budget}
 
@@ -696,6 +970,18 @@ ${form.description}`
 
         <form onSubmit={handleSubmit} className="rounded-2xl border border-white/10 bg-slate-950 p-5 sm:p-6">
           <div className="grid gap-4 sm:grid-cols-2">
+            {selectedPlan && (
+              <div className="rounded-xl border border-cyan-300/20 bg-cyan-300/10 p-4 sm:col-span-2">
+                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-200">
+                  Selected Package
+                </p>
+                <div className="mt-3 grid gap-3 sm:grid-cols-3">
+                  <ReadOnlyInfo label="Service" value={selectedPlan.service} />
+                  <ReadOnlyInfo label="Package" value={selectedPlan.packageName} />
+                  <ReadOnlyInfo label="Plan" value={`${selectedPlan.planName} - ${selectedPlan.price}`} />
+                </div>
+              </div>
+            )}
             <Field label="Name" value={form.name} onChange={(value) => setForm({ ...form, name: value })} required />
             <Field label="Company Name" value={form.company} onChange={(value) => setForm({ ...form, company: value })} />
             <Field label="Email" type="email" value={form.email} onChange={(value) => setForm({ ...form, email: value })} required />
@@ -779,6 +1065,15 @@ function SelectField({
         ))}
       </select>
     </label>
+  )
+}
+
+function ReadOnlyInfo({ label, value }: { label: string; value: string }) {
+  return (
+    <div>
+      <div className="text-xs uppercase tracking-[0.18em] text-slate-400">{label}</div>
+      <div className="mt-1 text-sm font-semibold text-white">{value}</div>
+    </div>
   )
 }
 

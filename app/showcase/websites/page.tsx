@@ -19,6 +19,26 @@ const fadeUp = {
 
 const projects = [
   {
+    title: 'Moto Gears Pit Stop',
+    category: 'Automotive',
+    type: 'Motorcycle Gear Website',
+    image: '/images/image2.png',
+    icon: ShoppingBag,
+    summary: 'A product-focused website project for a motorcycle gear brand.',
+    deliverables: ['Website project', 'Product-focused UX', 'Brand presentation', 'Responsive structure'],
+    href: 'https://motogearspitstop.com/',
+  },
+  {
+    title: 'Ride Adventure',
+    category: 'Automotive',
+    type: 'Adventure Riding Website',
+    image: '/images/ride_adventure.png',
+    icon: ShoppingBag,
+    summary: 'A sharp adventure riding web presence built for product discovery, brand trust, and mobile-first browsing.',
+    deliverables: ['Adventure brand UX', 'Product discovery', 'Responsive website', 'Trust-focused layout'],
+    href: 'https://rideadventure.in/',
+  },
+  {
     title: 'Equinoxx Fitness',
     category: 'Fitness',
     type: 'Fitness Centre & Gym Website',
@@ -27,6 +47,16 @@ const projects = [
     summary: 'A bold, mobile-first website for a premium RT Nagar fitness centre.',
     deliverables: ['High-impact UI/UX', 'Membership pages', 'Lead capture forms', 'Local SEO structure'],
     href: 'https://equinoxxfitness.com/',
+  },
+  {
+    title: 'TorkeHub',
+    category: 'Custom Software',
+    type: 'CRM & Automation Platform',
+    image: '/images/image.png',
+    icon: Code2,
+    summary: 'A custom software interface for CRM automation and workflow clarity.',
+    deliverables: ['CRM UI/UX', 'Automation flows', 'Dashboard design', 'Custom software system'],
+    href: 'https://www.torkehub.com/',
   },
   {
     title: 'BRG Finery',
@@ -47,16 +77,6 @@ const projects = [
     summary: 'A clean Next.js retail experience for apparel, thrift, magazine, blog, and lookbook content.',
     deliverables: ['Next.js build', 'Razorpay setup', 'Free-shipping logic', 'Inventory admin'],
     href: 'https://the-retail-therapy.vercel.app/',
-  },
-  {
-    title: 'Moto Gears Pit Stop',
-    category: 'Automotive',
-    type: 'Motorcycle Gear Website',
-    image: '/images/image2.png',
-    icon: ShoppingBag,
-    summary: 'A product-focused website project for a motorcycle gear brand.',
-    deliverables: ['Website project', 'Product-focused UX', 'Brand presentation', 'Responsive structure'],
-    href: 'https://motogearspitstop.com/',
   },
   {
     title: 'Jai Mata Di Tour & Travels',
@@ -87,16 +107,6 @@ const projects = [
     summary: 'A Next.js travel platform for service pages, destination architecture, and booking flows.',
     deliverables: ['Next.js platform', 'Booking flow', 'Service pages', 'Destination architecture'],
     href: 'http://travelwithmanikanta.com/',
-  },
-  {
-    title: 'TorkeHub',
-    category: 'Custom Software',
-    type: 'CRM & Automation Platform',
-    image: '/images/image.png',
-    icon: Code2,
-    summary: 'A custom software interface for CRM automation and workflow clarity.',
-    deliverables: ['CRM UI/UX', 'Automation flows', 'Dashboard design', 'Custom software system'],
-    href: 'https://www.torkehub.com/',
   },
 ];
 
