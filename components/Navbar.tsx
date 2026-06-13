@@ -10,10 +10,13 @@ import * as THREE from 'three';
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isPricingOpen, setIsPricingOpen] = useState(false);
   const [openedByClick, setOpenedByClick] = useState(false);
+  const [pricingOpenedByClick, setPricingOpenedByClick] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const pricingDropdownRef = useRef<HTMLDivElement>(null);
   
   // Handle scroll effect for navbar
   useEffect(() => {
@@ -35,6 +38,10 @@ export default function Navbar() {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsServicesOpen(false);
         setOpenedByClick(false);
+      }
+      if (pricingDropdownRef.current && !pricingDropdownRef.current.contains(event.target as Node)) {
+        setIsPricingOpen(false);
+        setPricingOpenedByClick(false);
       }
     };
     
@@ -135,6 +142,7 @@ export default function Navbar() {
   const navItems = [
     { name: 'Home', href: '/' },
     { name: 'Services', href: '/services', hasDropdown: true },
+    { name: 'Pricing', href: '/pricing/video-editing', hasPricingDropdown: true },
     { name: 'Growth AI', href: '/agents' },
     { name: 'Showcase', href: '/showcase' },
     { name: 'About Us', href: '/about' },
@@ -149,6 +157,12 @@ export default function Navbar() {
     { name: 'Custom Software Development', href: '/services/custom-software-development' },
   ];
 
+  const pricingItems = [
+    { name: 'Video Editing', href: '/pricing/video-editing' },
+    { name: 'Social Media Marketing', href: '/pricing/social-media-marketing' },
+    { name: 'Website & Software Development', href: '/pricing/web-development' },
+  ];
+
   const dropdownVariants = {
     hidden: { opacity: 0, y: -10, transition: { duration: 0.3, ease: 'easeInOut' } },
     visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: 'easeInOut' } },
@@ -161,6 +175,12 @@ export default function Navbar() {
     setOpenedByClick(!isServicesOpen);
   };
 
+  const handlePricingArrowClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setIsPricingOpen(!isPricingOpen);
+    setPricingOpenedByClick(!isPricingOpen);
+  };
+
   const handleServiceHover = () => {
     setIsServicesOpen(true);
     setOpenedByClick(false);
@@ -169,6 +189,17 @@ export default function Navbar() {
   const handleServiceLeave = () => {
     if (!openedByClick) {
       setIsServicesOpen(false);
+    }
+  };
+
+  const handlePricingHover = () => {
+    setIsPricingOpen(true);
+    setPricingOpenedByClick(false);
+  };
+
+  const handlePricingLeave = () => {
+    if (!pricingOpenedByClick) {
+      setIsPricingOpen(false);
     }
   };
 
@@ -201,13 +232,23 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex space-x-6 items-center">
             {navItems.map((item) => (
-              <div key={item.name} className="relative" ref={item.hasDropdown ? dropdownRef : undefined}>
+              <div
+                key={item.name}
+                className="relative"
+                ref={item.hasDropdown ? dropdownRef : item.hasPricingDropdown ? pricingDropdownRef : undefined}
+              >
                 <div className="flex items-center group">
                   <Link
                     href={item.href}
                     className="uppercase px-3 py-2 text-white hover:text-teal-300 transition-all font-medium tracking-wide relative"
-                    onMouseEnter={() => item.hasDropdown && handleServiceHover()}
-                    onMouseLeave={() => item.hasDropdown && handleServiceLeave()}
+                    onMouseEnter={() => {
+                      if (item.hasDropdown) handleServiceHover();
+                      if (item.hasPricingDropdown) handlePricingHover();
+                    }}
+                    onMouseLeave={() => {
+                      if (item.hasDropdown) handleServiceLeave();
+                      if (item.hasPricingDropdown) handlePricingLeave();
+                    }}
                   >
                     {item.name}
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-teal-300 group-hover:w-full transition-all duration-300"></span>
@@ -224,6 +265,27 @@ export default function Navbar() {
                         viewBox="0 0 20 20"
                         fill="currentColor"
                         style={{ transform: isServicesOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s ease' }}
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </button>
+                  )}
+                  {item.hasPricingDropdown && (
+                    <button
+                      onClick={handlePricingArrowClick}
+                      className="text-white hover:text-teal-300 transition-all ml-1 focus:outline-none"
+                      aria-label="Toggle pricing dropdown"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        style={{ transform: isPricingOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s ease' }}
                       >
                         <path
                           fillRule="evenodd"
@@ -256,6 +318,35 @@ export default function Navbar() {
                             }}
                           >
                             <span className="relative z-10">{service.name}</span>
+                            <span className="absolute inset-0 w-0 bg-teal-800/40 group-hover:w-full transition-all duration-300 -z-0"></span>
+                          </Link>
+                        </div>
+                      ))}
+                    </motion.div>
+                  </AnimatePresence>
+                )}
+                {item.hasPricingDropdown && isPricingOpen && (
+                  <AnimatePresence>
+                    <motion.div
+                      variants={dropdownVariants}
+                      initial="hidden"
+                      animate="visible"
+                      exit="exit"
+                      className="absolute left-0 mt-2 w-72 rounded-lg shadow-xl py-2 z-30 bg-black/80 backdrop-blur-lg border border-teal-900/30"
+                      onMouseEnter={handlePricingHover}
+                      onMouseLeave={handlePricingLeave}
+                    >
+                      {pricingItems.map((pricing) => (
+                        <div key={pricing.name} className="relative group">
+                          <Link
+                            href={pricing.href}
+                            className="block px-4 py-3 text-white hover:bg-teal-900/50 transition-all relative overflow-hidden"
+                            onClick={() => {
+                              setIsPricingOpen(false);
+                              setPricingOpenedByClick(false);
+                            }}
+                          >
+                            <span className="relative z-10">{pricing.name}</span>
                             <span className="absolute inset-0 w-0 bg-teal-800/40 group-hover:w-full transition-all duration-300 -z-0"></span>
                           </Link>
                         </div>
@@ -304,7 +395,7 @@ export default function Navbar() {
                 <ul className="flex flex-col space-y-1">
                   {navItems.map((item) => (
                     <li key={item.name} className="border-b border-gray-800/50 last:border-0">
-                      {item.hasDropdown ? (
+                      {item.hasDropdown || item.hasPricingDropdown ? (
                         <>
                           <div className="flex justify-between items-center py-3">
                             <Link
@@ -317,7 +408,12 @@ export default function Navbar() {
                             <button
                               onClick={(e) => {
                                 e.preventDefault();
-                                setIsServicesOpen(!isServicesOpen);
+                                if (item.hasDropdown) {
+                                  setIsServicesOpen(!isServicesOpen);
+                                }
+                                if (item.hasPricingDropdown) {
+                                  setIsPricingOpen(!isPricingOpen);
+                                }
                               }}
                               className="text-white p-2 focus:outline-none"
                             >
@@ -326,7 +422,13 @@ export default function Navbar() {
                                 className="h-5 w-5"
                                 viewBox="0 0 20 20"
                                 fill="currentColor"
-                                style={{ transform: isServicesOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s ease' }}
+                                style={{
+                                  transform:
+                                    (item.hasDropdown && isServicesOpen) || (item.hasPricingDropdown && isPricingOpen)
+                                      ? 'rotate(180deg)'
+                                      : 'rotate(0deg)',
+                                  transition: 'transform 0.3s ease',
+                                }}
                               >
                                 <path
                                   fillRule="evenodd"
@@ -337,7 +439,7 @@ export default function Navbar() {
                             </button>
                           </div>
                           <AnimatePresence>
-                            {isServicesOpen && (
+                            {item.hasDropdown && isServicesOpen && (
                               <motion.div
                                 initial={{ opacity: 0, height: 0 }}
                                 animate={{ opacity: 1, height: 'auto' }}
@@ -355,6 +457,28 @@ export default function Navbar() {
                                     }}
                                   >
                                     {service.name}
+                                  </Link>
+                                ))}
+                              </motion.div>
+                            )}
+                            {item.hasPricingDropdown && isPricingOpen && (
+                              <motion.div
+                                initial={{ opacity: 0, height: 0 }}
+                                animate={{ opacity: 1, height: 'auto' }}
+                                exit={{ opacity: 0, height: 0 }}
+                                className="bg-teal-900/20 rounded-md mb-2"
+                              >
+                                {pricingItems.map((pricing) => (
+                                  <Link
+                                    key={pricing.name}
+                                    href={pricing.href}
+                                    className="block py-3 px-4 text-sm text-white hover:bg-teal-800/30 transition-all"
+                                    onClick={() => {
+                                      setIsOpen(false);
+                                      setIsPricingOpen(false);
+                                    }}
+                                  >
+                                    {pricing.name}
                                   </Link>
                                 ))}
                               </motion.div>
