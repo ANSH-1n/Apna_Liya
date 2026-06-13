@@ -1,4 +1,6 @@
 import Footer from '@/components/Footer';
+import RealClientResults from '@/app/pricing/_components/RealClientResults';
+import { socialMediaGrowthCaseStudies } from '@/app/pricing/pricing-data';
 import { ArrowRight, BarChart3, CheckCircle2, Megaphone, MessageSquareText, Search, Target } from 'lucide-react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -55,6 +57,12 @@ export default function DigitalMarketingPage() {
             </div>
           </div>
         </section>
+
+        <RealClientResults
+          caseStudies={socialMediaGrowthCaseStudies}
+          className="pb-12 pt-10"
+          ctaHref="/pricing/social-media-marketing#quote"
+        />
 
         <section className="px-4 pb-20 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2 lg:grid-cols-3">

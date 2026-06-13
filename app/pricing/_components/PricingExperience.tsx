@@ -5,6 +5,7 @@
 import Footer from '@/components/Footer'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import RealClientResults from './RealClientResults'
 import {
   ArrowRight,
   BarChart3,
@@ -18,6 +19,7 @@ import {
   ShieldCheck,
   Sparkles,
   Star,
+  XCircle,
   Zap,
 } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
@@ -38,6 +40,44 @@ const trustItems = [
   'AI + Human Workflow',
   'Transparent Communication',
   'Performance Driven',
+]
+
+const socialMediaProcessSteps = [
+  'You send us your raw videos, photos, products, offers, and business updates.',
+  'We edit reels, create graphics, write captions, design stories, and plan content.',
+  'We schedule posts, manage engagement, optimize content, and monitor performance.',
+  'You receive consistent content, stronger brand visibility, and more inbound inquiries.',
+]
+
+const socialMediaIncludedItems = [
+  'Client provides raw videos/photos',
+  'Professional reel editing',
+  'Content calendar planning',
+  'Caption writing',
+  'Story design',
+  'Feed post design',
+  'Post scheduling',
+  'Community management',
+  'Monthly reporting',
+  'Performance optimization',
+]
+
+const socialMediaNotIncludedItems = [
+  'On-site videography',
+  'Product photography',
+  'Influencer management',
+  'Ad spend',
+  'Paid promotion budget',
+]
+
+const adsCoverageItems = [
+  'Campaign setup',
+  'Audience research',
+  'Creative strategy',
+  'Lead generation funnel setup',
+  'Ad management',
+  'Weekly optimization',
+  'Reporting',
 ]
 
 type PricingExperienceProps = {
@@ -76,17 +116,176 @@ function formatPlanPrice(price: string, billing: string) {
   return `${price}${billing.replace(/\s+/g, '')}`
 }
 
-function getPlanLeadMessage(selectedPlan: SelectedPlanContext) {
-  return encodeURIComponent(
-    `Hi Ansh,
+function SocialMediaManagementProcess() {
+  return (
+    <section className="px-4 py-16 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          className="mb-10 max-w-3xl"
+        >
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-300">
+            Social Media Management
+          </p>
+          <h2 className="text-3xl font-semibold leading-tight sm:text-4xl">
+            How Our Social Media Management Works
+          </h2>
+          <p className="mt-4 leading-8 text-slate-300">
+            A clear monthly workflow from raw content to consistent posting, engagement, and performance improvement.
+          </p>
+        </motion.div>
 
-Thanks for contacting SniperCoders.
+        <div className="grid gap-4 lg:grid-cols-4">
+          {socialMediaProcessSteps.map((step, index) => (
+            <motion.article
+              key={step}
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ delay: index * 0.06 }}
+              className="relative rounded-2xl border border-white/10 bg-white/[0.04] p-5 transition hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-cyan-300/10"
+            >
+              <div className="mb-5 flex items-center justify-between gap-3">
+                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-300 text-sm font-bold text-slate-950">
+                  {index + 1}
+                </span>
+                {index < socialMediaProcessSteps.length - 1 && (
+                  <span className="hidden text-2xl font-semibold text-cyan-300/70 lg:block">&darr;</span>
+                )}
+              </div>
+              <h3 className="text-lg font-semibold text-white">Step {index + 1}</h3>
+              <p className="mt-3 text-sm leading-7 text-slate-300">{step}</p>
+            </motion.article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
 
-I saw you're interested in:
+function SocialMediaTransparencySection() {
+  return (
+    <section className="border-y border-white/10 bg-white/[0.03] px-4 py-16 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          className="mb-10 max-w-3xl"
+        >
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-300">
+            Transparent Scope
+          </p>
+          <h2 className="text-3xl font-semibold leading-tight sm:text-4xl">
+            What&apos;s Included In Our Social Media Management
+          </h2>
+          <p className="mt-4 leading-8 text-slate-300">
+            Clear expectations before you choose a plan: we manage strategy, editing, posting, engagement, and optimization while you provide the raw business content.
+          </p>
+        </motion.div>
 
-Service: ${selectedPlan.service}
-Package: ${selectedPlan.packageName}
-Plan: ${selectedPlan.planName} (${selectedPlan.price})`
+        <div className="grid gap-5 lg:grid-cols-2">
+          <ScopeCard title="Included" items={socialMediaIncludedItems} tone="included" />
+          <ScopeCard title="Not Included" items={socialMediaNotIncludedItems} tone="excluded" />
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function ScopeCard({ title, items, tone }: { title: string; items: string[]; tone: 'included' | 'excluded' }) {
+  const isIncluded = tone === 'included'
+
+  return (
+    <motion.article
+      initial={{ opacity: 0, y: 18 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-80px' }}
+      className={[
+        'rounded-2xl border p-6',
+        isIncluded
+          ? 'border-cyan-300/25 bg-cyan-300/10'
+          : 'border-white/10 bg-slate-950/80',
+      ].join(' ')}
+    >
+      <h3 className="text-2xl font-semibold text-white">{title}</h3>
+      <div className="mt-5 grid gap-3 sm:grid-cols-2">
+        {items.map((item) => (
+          <div key={item} className="flex gap-3 rounded-xl border border-white/10 bg-black/20 p-3 text-sm leading-6 text-slate-200">
+            {isIncluded ? (
+              <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-cyan-300" />
+            ) : (
+              <XCircle className="mt-1 h-4 w-4 shrink-0 text-slate-500" />
+            )}
+            {item}
+          </div>
+        ))}
+      </div>
+    </motion.article>
+  )
+}
+
+function AdsLeadGenerationNotice() {
+  return (
+    <section className="px-4 pt-12 sm:px-6 lg:px-8">
+      <motion.div
+        initial={{ opacity: 0, y: 18 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-80px' }}
+        className="mx-auto max-w-7xl rounded-2xl border border-cyan-300/25 bg-[linear-gradient(135deg,rgba(34,211,238,0.16),rgba(15,23,42,0.96)_48%,rgba(8,13,25,0.98))] p-6 sm:p-8"
+      >
+        <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div>
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-300">
+              Important
+            </p>
+            <h2 className="text-3xl font-semibold leading-tight text-white">
+              Ad spend is NOT included in any package.
+            </h2>
+            <p className="mt-4 leading-8 text-slate-300">
+              Advertising budget is paid directly by the client to Meta or Google. Our pricing covers the strategy, setup, management, optimization, and reporting work.
+            </p>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {adsCoverageItems.map((item) => (
+              <div key={item} className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.04] p-4 text-sm font-medium text-slate-200">
+                <CheckCircle2 className="h-4 w-4 shrink-0 text-cyan-300" />
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+      </motion.div>
+    </section>
+  )
+}
+
+function SocialMediaCustomProposalCta() {
+  return (
+    <section className="px-4 pb-16 sm:px-6 lg:px-8">
+      <motion.div
+        initial={{ opacity: 0, y: 18 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-80px' }}
+        className="mx-auto max-w-5xl rounded-2xl border border-white/10 bg-slate-950/80 p-6 text-center sm:p-8"
+      >
+        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-300">
+          Need Something Custom?
+        </p>
+        <p className="mx-auto mt-4 max-w-3xl leading-8 text-slate-300">
+          If your business requires a custom strategy, content volume, ad management, or account handling, request a personalized quote and we&apos;ll build a package specifically for your goals.
+        </p>
+        <a
+          href="#quote"
+          className="mt-6 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-100"
+        >
+          Get Custom Proposal
+          <ArrowRight className="h-4 w-4" />
+        </a>
+      </motion.div>
+    </section>
   )
 }
 
@@ -99,8 +298,10 @@ export default function PricingExperience({ page }: PricingExperienceProps) {
   const activePlans = activePackage?.plans ?? page.plans
   const activeServices = activePackage?.services ?? page.services
   const isVideoEditingPage = page.slug === 'video-editing'
+  const isSocialMediaPage = page.slug === 'social-media-marketing'
   const isWebDevelopmentPage = page.slug === 'web-development'
   const isCustomSoftwareTab = activePackage?.id === 'custom-software'
+  const isAdsLeadGenerationTab = activePackage?.id === 'ads-lead-generation'
   const leadSource = getLeadSource(page)
 
   useEffect(() => {
@@ -252,10 +453,16 @@ Page: ${leadSource.page}`
           </section>
         )}
 
+        {page.caseStudies && <RealClientResults caseStudies={page.caseStudies} className="pt-12" />}
+
         {isVideoEditingPage && <VideoEditingPortfolioPreview />}
         {isWebDevelopmentPage && (
           isCustomSoftwareTab ? <CustomSoftwarePortfolioPreview /> : <WebsitePortfolioPreview />
         )}
+
+        {isSocialMediaPage && <SocialMediaManagementProcess />}
+        {isSocialMediaPage && <SocialMediaTransparencySection />}
+        {isSocialMediaPage && isAdsLeadGenerationTab && <AdsLeadGenerationNotice />}
 
         <section id="plans" className="px-4 py-16 sm:px-6 lg:px-8">
           {isCustomSoftwareTab ? (
@@ -329,11 +536,12 @@ Page: ${leadSource.page}`
                       </ul>
                       {plan.note && <p className="mt-5 text-xs leading-6 text-slate-400">{plan.note}</p>}
 
-                      <a
-                        href={`https://wa.me/${whatsappNumber}?text=${getPlanLeadMessage(planContext)}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={() => setSelectedPlan(planContext)}
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setSelectedPlan(planContext)
+                          window.setTimeout(() => document.getElementById('quote')?.scrollIntoView({ behavior: 'smooth' }), 0)
+                        }}
                         className={[
                           'mt-7 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition',
                           plan.popular
@@ -343,7 +551,7 @@ Page: ${leadSource.page}`
                       >
                         Request this plan
                         <ArrowRight className="h-4 w-4" />
-                      </a>
+                      </button>
                     </motion.article>
                   )
                 })()
@@ -351,6 +559,8 @@ Page: ${leadSource.page}`
             </div>
           )}
         </section>
+
+        {isSocialMediaPage && <SocialMediaCustomProposalCta />}
 
         <section className="px-4 pb-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
@@ -775,7 +985,7 @@ function CustomSoftwareProjectForm({ page }: { page: PricingPageData }) {
     description: '',
   })
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     const message = encodeURIComponent(
       `Hello SniperCoders!
@@ -799,6 +1009,30 @@ Technical Document: ${form.hasSpec}
 Project Description:
 ${form.description}`
     )
+
+    try {
+      await fetch('/api/quote-requests', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: form.name,
+          companyName: form.company,
+          email: form.email,
+          whatsappNumber: form.whatsapp,
+          serviceRequired: leadSource.service,
+          selectedPackage: 'Custom Software Project',
+          selectedPlan: form.projectType,
+          selectedPrice: 'Custom Quote',
+          budget: form.budget,
+          projectDescription: form.description,
+          sourcePage: typeof window !== 'undefined' ? window.location.pathname : leadSource.page,
+          currentUrl: typeof window !== 'undefined' ? window.location.href : leadSource.page,
+          pricingPageUrl: typeof window !== 'undefined' ? window.location.pathname : leadSource.page,
+        }),
+      })
+    } catch (error) {
+      console.error('Lead save failed before WhatsApp open', error)
+    }
 
     window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank', 'noopener,noreferrer')
   }
@@ -923,7 +1157,13 @@ function QuoteSection({
     setForm((current) => ({ ...current, budget: quoteBudgetOptions[1], service: serviceOptions[0] }))
   }, [quoteBudgetOptions, serviceOptions])
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  useEffect(() => {
+    if (selectedPlan) {
+      setForm((current) => ({ ...current, service: selectedPlan.service }))
+    }
+  }, [selectedPlan])
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     const message = encodeURIComponent(
       `Hello SniperCoders!
@@ -949,6 +1189,30 @@ Budget: ${form.budget}
 Project Details:
 ${form.description}`
     )
+
+    try {
+      await fetch('/api/quote-requests', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: form.name,
+          companyName: form.company,
+          email: form.email,
+          whatsappNumber: form.whatsapp,
+          serviceRequired: form.service,
+          selectedPackage: selectedPlan?.packageName ?? 'Custom / Not selected',
+          selectedPlan: selectedPlan?.planName ?? 'Custom / Not selected',
+          selectedPrice: selectedPlan?.price ?? 'Not selected',
+          budget: form.budget,
+          projectDescription: form.description,
+          sourcePage: typeof window !== 'undefined' ? window.location.pathname : leadSource.page,
+          currentUrl: typeof window !== 'undefined' ? window.location.href : leadSource.page,
+          pricingPageUrl: typeof window !== 'undefined' ? window.location.pathname : leadSource.page,
+        }),
+      })
+    } catch (error) {
+      console.error('Lead save failed before WhatsApp open', error)
+    }
 
     window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank', 'noopener,noreferrer')
   }

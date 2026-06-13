@@ -30,6 +30,30 @@ export type PricingPackageTier = {
   plans: PricingPlan[]
 }
 
+export type ClientResultScreenshot = {
+  label: string
+  src: string
+  alt: string
+}
+
+export type ClientResultCaseStudy = {
+  clientName: string
+  industry: string
+  instagramUrl: string
+  managementDuration: string
+  beforeLeads: string
+  afterLeads: string
+  growth: string
+  screenshots: ClientResultScreenshot[]
+  services: string[]
+  resultsSummary: string
+  clientQuote?: {
+    text: string
+    attribution: string
+  }
+  trustIndicators?: string[]
+}
+
 export type PricingPageData = {
   slug: string
   title: string
@@ -39,6 +63,7 @@ export type PricingPageData = {
   services: string[]
   plans: PricingPlan[]
   packageTiers?: PricingPackageTier[]
+  caseStudies?: ClientResultCaseStudy[]
   faqs: { question: string; answer: string }[]
   serviceRequired: string
   seo: {
@@ -49,6 +74,55 @@ export type PricingPageData = {
 }
 
 const baseUrl = 'https://www.snipercoders.in'
+
+export const socialMediaGrowthCaseStudies: ClientResultCaseStudy[] = [
+  {
+    clientName: 'Ride Adventure',
+    industry: 'Bike parts and riding accessories retail',
+    instagramUrl: 'https://www.instagram.com/ride_adventure_/',
+    managementDuration: '7 Months',
+    beforeLeads: 'Less than 10 organic inquiries per month',
+    afterLeads: '40-50 organic inquiries per month',
+    growth: '5X',
+    screenshots: [
+      {
+        label: 'Instagram Profile Preview',
+        src: '/images/ride_adventure_insta_profil.png',
+        alt: 'Ride Adventure Instagram profile preview managed by SniperCoders',
+      },
+      {
+        label: 'Real Customer Inquiry #1',
+        src: '/images/ride_adventure_dm_1.jpeg',
+        alt: 'Ride Adventure organic Instagram inquiry preview one',
+      },
+      {
+        label: 'Real Customer Inquiry #2',
+        src: '/images/ride_adventure_dm_2.jpeg',
+        alt: 'Ride Adventure organic Instagram inquiry preview two',
+      },
+    ],
+    services: [
+      'Content Strategy',
+      'Content Calendar',
+      'Professional Reel Editing (Client Footage)',
+      'Social Media Management',
+      'Community Management',
+      'Growth Optimization',
+    ],
+    resultsSummary:
+      'Consistent content execution and platform optimization helped the client increase inbound inquiries from fewer than 10 per month to 40-50 organic inquiries monthly while strengthening brand visibility and audience engagement.',
+    clientQuote: {
+      text: 'We started receiving regular customer inquiries through Instagram after SniperCoders handled our content and account management.',
+      attribution: 'Ride Adventure',
+    },
+    trustIndicators: [
+      '7+ Months Management',
+      '5X Inquiry Growth',
+      'Consistent Organic Leads',
+      'Real Verified Client',
+    ],
+  },
+]
 
 const sharedFaqs = [
   {
@@ -361,7 +435,7 @@ export const pricingPages: Record<string, PricingPageData> = {
     title: 'Social Media Marketing Pricing',
     eyebrow: 'Monthly retainer pricing',
     description:
-      'Done-for-you social media management for founders, coaches, and brands in the US, UK, Australia, and beyond. Content creation, posting, paid ads, lead generation, and reporting — without the cost of hiring in-house.',
+      'Done-for-you social media management for founders, coaches, and brands in the US, UK, Australia, and beyond. Content editing, posting, paid ads, lead generation, and reporting - without the cost of hiring in-house.',
     audience: [
       'Founders',
       'Local Businesses',
@@ -383,10 +457,11 @@ export const pricingPages: Record<string, PricingPageData> = {
       'Meta Ads Management',
       'Google Ads Management',
       'Lead Generation Campaigns',
-      'Creative Production',
+      'Content Editing & Management',
       'Monthly Performance Reports',
     ],
     serviceRequired: 'Social Media Marketing',
+    caseStudies: socialMediaGrowthCaseStudies,
     plans: [
       {
         name: 'Starter',
@@ -395,8 +470,9 @@ export const pricingPages: Record<string, PricingPageData> = {
         indiaPrice: 'Rs.14,999',
         billing: '/ month',
         deliverables: [
+          'Client provides raw content',
           '12 static posts per month',
-          '4 reels per month',
+          '4 professionally edited reels from client footage per month',
           'Monthly content calendar',
           'Caption writing and hashtag research',
           'Scheduling and posting included',
@@ -414,8 +490,9 @@ export const pricingPages: Record<string, PricingPageData> = {
         indiaPrice: 'Rs.39,999',
         billing: '/ month',
         deliverables: [
+          'Client provides raw content',
           '20 posts per month',
-          '8 reels per month',
+          '8 professionally edited reels from client footage per month',
           'Meta Ads setup and management',
           'Google Ads direction',
           'Lead generation campaign setup',
@@ -435,8 +512,9 @@ export const pricingPages: Record<string, PricingPageData> = {
         indiaPrice: 'Rs.79,999',
         billing: '/ month',
         deliverables: [
+          'Client provides raw content',
           '30 posts per month',
-          '12 reels per month',
+          '12 professionally edited reels from client footage per month',
           'Meta and Google Ads full management',
           'Community management and DM handling',
           'Creative testing across ad sets',
@@ -461,6 +539,7 @@ export const pricingPages: Record<string, PricingPageData> = {
           'Instagram Management',
           'Facebook Management',
           'LinkedIn Content',
+          'Professional Reel Editing (Client Footage)',
           'Content Calendar',
           'Caption Writing',
           'Scheduling and Posting',
@@ -475,8 +554,9 @@ export const pricingPages: Record<string, PricingPageData> = {
             indiaPrice: 'Rs.14,999',
             billing: '/ month',
             deliverables: [
+              'Client provides raw content',
               '12 static posts per month',
-              '4 reels per month',
+              '4 professionally edited reels from client footage per month',
               'Monthly content calendar',
               'Caption writing and hashtag research',
               'Scheduling and posting included',
@@ -494,8 +574,9 @@ export const pricingPages: Record<string, PricingPageData> = {
             indiaPrice: 'Rs.39,999',
             billing: '/ month',
             deliverables: [
+              'Client provides raw content',
               '20 posts per month',
-              '8 reels per month',
+              '8 professionally edited reels from client footage per month',
               'Content strategy and calendar planning',
               'Caption writing and creative hooks',
               'Community management',
@@ -514,8 +595,9 @@ export const pricingPages: Record<string, PricingPageData> = {
             indiaPrice: 'Rs.79,999',
             billing: '/ month',
             deliverables: [
+              'Client provides raw content',
               '30 posts per month',
-              '12 reels per month',
+              '12 professionally edited reels from client footage per month',
               'Advanced content strategy',
               'Community management and DM handling',
               'Competitor benchmarking',
@@ -612,7 +694,7 @@ export const pricingPages: Record<string, PricingPageData> = {
       {
         question: 'How is the Organic plan different from the Ads plan?',
         answer:
-          'Organic covers content creation, posting, reels, captions, and community management with no ad spend required. The Ads plan covers paid Meta and Google campaigns, creative testing, and lead generation. You can run both together for maximum impact.',
+          'Organic covers content editing, posting, reels from client footage, captions, and community management with no ad spend required. The Ads plan covers paid Meta and Google campaigns, creative testing, and lead generation. You can run both together for maximum impact.',
       },
       {
         question: 'Is ad spend included in the price?',
@@ -639,7 +721,7 @@ export const pricingPages: Record<string, PricingPageData> = {
     seo: {
       title: 'Social Media Marketing Pricing | SniperCoders',
       description:
-        'Done-for-you social media management for founders, coaches, and brands in the US, UK, Australia, and beyond. Content creation, posting, paid ads, lead generation, and reporting without hiring in-house.',
+        'Done-for-you social media management for founders, coaches, and brands in the US, UK, Australia, and beyond. Content editing, posting, paid ads, lead generation, and reporting without hiring in-house.',
       keywords: [
         'social media marketing pricing',
         'Meta Ads management pricing',

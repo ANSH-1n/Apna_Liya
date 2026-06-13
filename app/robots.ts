@@ -14,6 +14,7 @@ export default function robots(): MetadataRoute.Robots {
           '/images/',
           '/videos/',
           '/api/',
+          '/snipercoders/admin/',
           '/_next/',
         ],
       },

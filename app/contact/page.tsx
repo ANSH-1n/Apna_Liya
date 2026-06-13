@@ -63,7 +63,7 @@ export default function ContactPage() {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setLoading(true);
 
@@ -75,6 +75,28 @@ export default function ContactPage() {
       `Phone: ${encodeURIComponent(formData.phone)}%0A` +
       `Service Interested: ${encodeURIComponent(formData.service)}%0A%0A` +
       `Message:%0A${encodeURIComponent(formData.message)}`;
+
+    try {
+      await fetch('/api/quote-requests', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.fullName,
+          email: formData.email,
+          whatsappNumber: formData.phone,
+          serviceRequired: formData.service,
+          selectedPackage: 'Contact Form',
+          selectedPlan: 'General Inquiry',
+          selectedPrice: 'Not selected',
+          projectDescription: formData.message,
+          sourcePage: typeof window !== 'undefined' ? window.location.pathname : '/contact',
+          currentUrl: typeof window !== 'undefined' ? window.location.href : '/contact',
+          pricingPageUrl: '',
+        }),
+      });
+    } catch (error) {
+      console.error('Lead save failed before WhatsApp open', error);
+    }
 
     if (typeof window !== 'undefined') {
       const fbq = (window as { fbq?: (action: string, event: string) => void }).fbq;
