@@ -168,7 +168,7 @@ export const pricingPages: Record<string, PricingPageData> = {
         title: 'Short-Form Content',
         description:
           'For reels, Instagram Shorts, YouTube Shorts, creator clips, and vertical videos under 60 seconds.',
-        costNote: 'Editor cost per video: Rs.1,500 to Rs.2,000',
+       
         services: [
           'Reels Editing',
           'Instagram Shorts',
