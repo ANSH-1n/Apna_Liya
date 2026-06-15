@@ -22,7 +22,8 @@ export default function AdminLogin() {
     setLoading(false)
 
     if (!response.ok) {
-      setError('Invalid password')
+      const data = (await response.json().catch(() => null)) as { message?: string } | null
+      setError(data?.message ?? 'Invalid password')
       return
     }
 

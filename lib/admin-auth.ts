@@ -4,14 +4,39 @@ import { createHmac, timingSafeEqual } from 'crypto'
 const cookieName = 'snipercoders_admin_session'
 const maxAgeSeconds = 60 * 60 * 8
 
+export class AdminAuthConfigError extends Error {
+  constructor() {
+    super('ADMIN_PASSWORD is not configured')
+    this.name = 'AdminAuthConfigError'
+  }
+}
+
+function normalizePassword(value: string) {
+  const trimmed = value.trim()
+  const first = trimmed.at(0)
+  const last = trimmed.at(-1)
+
+  if (trimmed.length >= 2 && ((first === '"' && last === '"') || (first === "'" && last === "'"))) {
+    return trimmed.slice(1, -1).trim()
+  }
+
+  return trimmed
+}
+
 function getAdminPassword() {
   const password = process.env.ADMIN_PASSWORD
 
   if (!password) {
-    throw new Error('ADMIN_PASSWORD is not configured')
+    throw new AdminAuthConfigError()
   }
 
-  return password
+  const normalizedPassword = normalizePassword(password)
+
+  if (!normalizedPassword) {
+    throw new AdminAuthConfigError()
+  }
+
+  return normalizedPassword
 }
 
 function signSession(value: string) {
@@ -65,7 +90,7 @@ export async function clearAdminSessionCookie() {
 
 export function isPasswordValid(password: string) {
   const configuredPassword = getAdminPassword()
-  const inputBuffer = Buffer.from(password)
+  const inputBuffer = Buffer.from(normalizePassword(password))
   const configuredBuffer = Buffer.from(configuredPassword)
 
   if (inputBuffer.length !== configuredBuffer.length) return false

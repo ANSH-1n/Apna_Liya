@@ -68,16 +68,7 @@ const projects = [
     deliverables: ['Custom catalogue', 'Payment integration', 'Mobile-first store', 'Admin workflow'],
     href: 'https://brgfinery.com/',
   },
-  {
-    title: 'The Retail Therapy',
-    category: 'Fashion & E-Commerce',
-    type: 'Lifestyle Retail Platform',
-    image: '/images/retail_therapy.png',
-    icon: ShoppingBag,
-    summary: 'A clean Next.js retail experience for apparel, thrift, magazine, blog, and lookbook content.',
-    deliverables: ['Next.js build', 'Razorpay setup', 'Free-shipping logic', 'Inventory admin'],
-    href: 'https://the-retail-therapy.vercel.app/',
-  },
+
   {
     title: 'Jai Mata Di Tour & Travels',
     category: 'Travel',
