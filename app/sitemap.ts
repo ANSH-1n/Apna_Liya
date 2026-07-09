@@ -1,3 +1,5 @@
+//app/sitemap.ts
+
 import { MetadataRoute } from 'next'
 
 const baseUrl = 'https://www.snipercoders.in'

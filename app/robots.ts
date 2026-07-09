@@ -6,10 +6,10 @@ import { MetadataRoute } from 'next'
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
+      // Allow all search engines
       {
         userAgent: '*',
         allow: '/',
-        // ✅ FIX: Block images folder — Google was trying to index logo.ico as a page
         disallow: [
           '/images/',
           '/videos/',
@@ -18,8 +18,32 @@ export default function robots(): MetadataRoute.Robots {
           '/_next/',
         ],
       },
+      // ⭐ CRITICAL: Explicitly allow AI crawlers
+      {
+        userAgent: 'GPTBot',
+        allow: '/',
+      },
+      {
+        userAgent: 'Google-Extended',
+        allow: '/',
+      },
+      {
+        userAgent: 'ClaudeBot',
+        allow: '/',
+      },
+      {
+        userAgent: 'ChatGPT-User',
+        allow: '/',
+      },
+      {
+        userAgent: 'Applebot',
+        allow: '/',
+      },
+      {
+        userAgent: 'FacebookBot',
+        allow: '/',
+      },
     ],
-    // ✅ Points to www sitemap
     sitemap: 'https://www.snipercoders.in/sitemap.xml',
   }
 }
