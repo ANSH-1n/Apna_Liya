@@ -1,5 +1,3 @@
-//app/agents/page.tsx
-
 "use client";
 
 import React, { useEffect, useRef } from "react";
@@ -9,6 +7,34 @@ import "aos/dist/aos.css";
 
 import { useRouter } from "next/navigation";
 import Footer from "@/components/Footer";
+
+// ✅ FAQ data for AI discovery
+const faqs = [
+  {
+    question: 'What is an AI calling agent?',
+    answer: 'An AI calling agent is an automated system that can handle outbound and inbound calls to qualify leads, answer basic questions, schedule callbacks, and pass important conversations to your sales team without losing context.'
+  },
+  {
+    question: 'How does WhatsApp automation work?',
+    answer: 'WhatsApp automation uses AI-powered workflows to send instant replies, share service details, collect enquiry information, and follow up with customers through structured WhatsApp flows. It helps you respond faster and manage more conversations simultaneously.'
+  },
+  {
+    question: 'What is CRM automation?',
+    answer: 'CRM automation involves setting up workflows that keep leads, tasks, notes, and follow-ups organized in your CRM system. It reduces manual data entry, ensures no lead falls through the cracks, and helps your team see what needs attention next.'
+  },
+  {
+    question: 'How much do AI automation services cost?',
+    answer: 'Our AI automation services are custom-priced based on the scope and complexity of your needs. We offer affordable solutions starting from $500/month for basic automation setups. Contact us for a free consultation and custom quote.'
+  },
+  {
+    question: 'How long does it take to implement AI automation?',
+    answer: 'Implementation timeline varies by complexity. Simple WhatsApp or calling agent setups can be deployed in 1-2 weeks, while more complex CRM and workflow automation may take 3-6 weeks. We work efficiently to minimize disruption to your operations.'
+  },
+  {
+    question: 'Can you integrate AI automation with my existing tools?',
+    answer: 'Yes! We can integrate AI automation with your existing CRM, email, calendar, and other business tools. Our solutions are designed to work seamlessly with your current workflow, not replace it.'
+  },
+];
 
 const automationUseCases = [
   {
@@ -178,15 +204,16 @@ const AIAgentsLandingPage: React.FC = () => {
       <section className="relative z-10 pt-20 mt-8 pb-20">
         <div className="container mx-auto px-4 md:px-10 flex flex-col lg:flex-row items-center">
           <div className="w-full lg:w-1/2 lg:pr-8" data-aos="fade-right">
+            {/* ✅ H1: Added keywords */}
             <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-fuchsia-400">
-              AI Agents for Calls, WhatsApp & CRM
+              AI Agents for Calls, WhatsApp & CRM — SniperCoders Automation
             </h1>
             <p className="text-xl md:text-2xl text-cyan-200 font-semibold mb-4">
               Simple automation systems for growing businesses
             </p>
             <p className="text-lg md:text-xl mb-8 text-gray-300 leading-relaxed">
-              We build practical AI agents that help your team respond faster, follow up better,
-              and keep every lead organized. From <span className="text-cyan-400 font-semibold">AI calling agents</span> to <span className="text-cyan-300 font-semibold">WhatsApp automation</span> and <span className="text-cyan-300 font-semibold">CRM workflows</span>, SniperCoders keeps automation clear, useful, and easy to manage.
+              <strong>SniperCoders</strong> builds practical AI agents that help your team respond faster, follow up better,
+              and keep every lead organized. From <span className="text-cyan-400 font-semibold">AI calling agents</span> to <span className="text-cyan-300 font-semibold">WhatsApp automation</span> and <span className="text-cyan-300 font-semibold">CRM workflows</span>, we keep automation clear, useful, and easy to manage.
             </p>
             <div className="flex flex-wrap gap-4">
               <button
@@ -697,6 +724,41 @@ const AIAgentsLandingPage: React.FC = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ✅ FAQ SECTION - Critical for AI discovery */}
+      <section className="relative z-10 py-24 bg-white/[0.02]">
+        <div className="container mx-auto px-4 md:px-10">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300 mb-3" data-aos="fade-up">
+                FAQ
+              </p>
+              <h2
+                className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-fuchsia-400"
+                data-aos="fade-up"
+              >
+                Frequently Asked Questions About AI Automation
+              </h2>
+              <p className="text-gray-300 mt-5 text-lg" data-aos="fade-up">
+                Find answers to common questions about our AI calling agents, WhatsApp automation, and CRM workflows.
+              </p>
+            </div>
+            <div className="space-y-4">
+              {faqs.map((faq, index) => (
+                <div
+                  key={index}
+                  className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-cyan-300/20 hover:border-cyan-300/40 transition"
+                  data-aos="fade-up"
+                  data-aos-delay={index * 100}
+                >
+                  <h3 className="text-lg font-semibold text-cyan-300">{faq.question}</h3>
+                  <p className="mt-2 text-gray-300 leading-relaxed">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
