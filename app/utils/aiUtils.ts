@@ -6,6 +6,8 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 // ============================================
 // PART 1: STATIC SITE DATA FOR AI DISCOVERY
 // ============================================
+// FILE PATH: app/utils/aiUtils.ts
+// Replace the contact section with your real details
 
 export const siteConfig = {
   name: 'SniperCoders',
@@ -34,8 +36,8 @@ export const siteConfig = {
     youtube: 'https://www.youtube.com/@snipercoders',
   },
   contact: {
-    email: 'info@snipercoders.in',
-    phone: '+91-XXXXXXXXXX', // ⚠️ REPLACE WITH YOUR ACTUAL PHONE NUMBER
+    email: 'snipercoders25@gmail.com',  // ✅ UPDATED
+    phone: '+91-7006377796',             // ✅ UPDATED
   },
   locationPages: [
     'bangalore',
