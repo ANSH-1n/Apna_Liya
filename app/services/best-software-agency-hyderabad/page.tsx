@@ -1,514 +1,3 @@
-
-
-
-
-
-// // FILE PATH: app/services/best-software-agency-hyderabad/page.tsx
-
-// "use client";
-
-// import { useState } from "react";
-// import { motion } from "framer-motion";
-// import Link from "next/link";
-// import {
-//   Code, Smartphone, Globe, TrendingUp, Award, Users,
-//   MapPin, Phone, Mail, ChevronRight, Star, CheckCircle,
-//   Utensils, Coffee, Car, Hotel, ShoppingBag,
-//   GraduationCap, HeartPulse, Plane, Dumbbell, Camera,
-//   Briefcase, Home, Truck, Music, Landmark, TreePine,
-//   Wifi, ShoppingCart, Wrench, Factory, Building2,
-//   Clock, Shield, Crown, Rocket, Gem, Sparkles,
-//   FlaskConical, Microscope, Gem as GemIcon, Building
-// } from "lucide-react";
-// import Footer from "@/components/Footer";
-
-// const fadeUp = {
-//   hidden: { opacity: 0, y: 40 },
-//   show: (i = 0) => ({ opacity: 1, y: 0, transition: { duration: 0.65, ease: "easeOut", delay: i * 0.08 } }),
-// };
-// const scaleIn = {
-//   hidden: { opacity: 0, scale: 0.88 },
-//   show: { opacity: 1, scale: 1, transition: { duration: 0.55, ease: "easeOut" } },
-// };
-
-// const SERVICES = [
-//   { 
-//     icon: <Globe className="w-7 h-7" />, 
-//     title: "Website Development Hyderabad", 
-//     desc: "Professional website design company in Hyderabad. High-performance business websites, pharma portals, IT product pages & eCommerce stores built for Hyderabad's thriving tech and trade ecosystem.", 
-//     gradient: "from-violet-500 to-purple-700",
-//     keywords: "website design Hyderabad, web development company Hyderabad, ecommerce website Hyderabad"
-//   },
-//   { 
-//     icon: <Smartphone className="w-7 h-7" />, 
-//     title: "Mobile App Development Hyderabad", 
-//     desc: "Top app development agency in Hyderabad. Scalable iOS & Android apps for Hyderabad's pharma, IT, food tech, ed-tech and retail sectors — built for Cyberabad's innovation standards.", 
-//     gradient: "from-orange-500 to-amber-600",
-//     keywords: "app development Hyderabad, mobile app developers Hyderabad, iOS app development HITEC City"
-//   },
-//   { 
-//     icon: <Code className="w-7 h-7" />, 
-//     title: "Custom Software Development Hyderabad", 
-//     desc: "Enterprise software solutions in Hyderabad. Pharma ERP, biotech data platforms, IT product dashboards, SaaS applications & automation tools purpose-built for Hyderabad's knowledge economy.", 
-//     gradient: "from-blue-500 to-cyan-600",
-//     keywords: "software development Hyderabad, custom software Hyderabad, ERP development Hyderabad"
-//   },
-//   { 
-//     icon: <TrendingUp className="w-7 h-7" />, 
-//     title: "Digital Marketing Agency Hyderabad", 
-//     desc: "Rank in Hyderabad's growing digital market with our local SEO, Google Ads & social media strategies targeting Telugu and English-speaking audiences. Best SEO company in Hyderabad.", 
-//     gradient: "from-rose-500 to-pink-600",
-//     keywords: "digital marketing Hyderabad, SEO services Hyderabad, Google Ads Hyderabad"
-//   },
-//   { 
-//     icon: <Users className="w-7 h-7" />, 
-//     title: "IT Consulting Hyderabad", 
-//     desc: "Expert IT consultants in Hyderabad. Strategic digital transformation for Hyderabad's pharmaceutical companies, IT firms, hospitals & government-backed enterprises.", 
-//     gradient: "from-emerald-500 to-teal-600",
-//     keywords: "IT consulting Hyderabad, technology consultants Hyderabad, digital transformation Hyderabad"
-//   },
-//   { 
-//     icon: <Award className="w-7 h-7" />, 
-//     title: "Branding & UI/UX Design Hyderabad", 
-//     desc: "Premium branding agency in Hyderabad. Product design and brand systems that carry Hyderabad's Nizam-era prestige into modern digital experiences — luxurious, functional, memorable.", 
-//     gradient: "from-fuchsia-500 to-pink-600",
-//     keywords: "branding agency Hyderabad, UI UX design Hyderabad, graphic design Hyderabad"
-//   },
-// ];
-
-// const BUSINESS_CATEGORIES = [
-//   { icon: <FlaskConical className="w-5 h-5" />, label: "Pharma in Genome Valley", keyword: "pharma website Hyderabad", color: "text-violet-400" },
-//   { icon: <Briefcase className="w-5 h-5" />, label: "IT in HITEC City", keyword: "IT company website Hyderabad", color: "text-indigo-400" },
-//   { icon: <Utensils className="w-5 h-5" />, label: "Biryani in Old City", keyword: "restaurant website Hyderabad", color: "text-orange-400" },
-//   { icon: <Coffee className="w-5 h-5" />, label: "Cafés in Jubilee Hills", keyword: "cafe website Hyderabad", color: "text-amber-400" },
-//   { icon: <Hotel className="w-5 h-5" />, label: "Hotels in Banjara Hills", keyword: "hotel website Hyderabad", color: "text-blue-400" },
-//   { icon: <ShoppingBag className="w-5 h-5" />, label: "Retail in Begumpet", keyword: "ecommerce website Hyderabad", color: "text-pink-400" },
-//   { icon: <Car className="w-5 h-5" />, label: "Car Dealers in Secunderabad", keyword: "automotive website Hyderabad", color: "text-cyan-400" },
-//   { icon: <GraduationCap className="w-5 h-5" />, label: "Ed-Tech in Gachibowli", keyword: "education website Hyderabad", color: "text-green-400" },
-//   { icon: <HeartPulse className="w-5 h-5" />, label: "Hospitals in Somajiguda", keyword: "hospital website Hyderabad", color: "text-red-400" },
-//   { icon: <Plane className="w-5 h-5" />, label: "Travel in Abids", keyword: "travel website Hyderabad", color: "text-sky-400" },
-//   { icon: <Dumbbell className="w-5 h-5" />, label: "Gyms in Kondapur", keyword: "fitness website Hyderabad", color: "text-lime-400" },
-//   { icon: <Home className="w-5 h-5" />, label: "Real Estate in Kokapet", keyword: "real estate website Hyderabad", color: "text-teal-400" },
-//   { icon: <Truck className="w-5 h-5" />, label: "Logistics in Patancheru", keyword: "logistics software Hyderabad", color: "text-yellow-400" },
-//   { icon: <Music className="w-5 h-5" />, label: "Events in Madhapur", keyword: "event website Hyderabad", color: "text-rose-400" },
-//   { icon: <Landmark className="w-5 h-5" />, label: "Finance in Koti", keyword: "fintech Hyderabad", color: "text-blue-300" },
-//   { icon: <ShoppingCart className="w-5 h-5" />, label: "D2C Brands Hyderabad", keyword: "d2c ecommerce Hyderabad", color: "text-emerald-400" },
-//   { icon: <Factory className="w-5 h-5" />, label: "MSME in Balanagar", keyword: "industrial website Hyderabad", color: "text-gray-400" },
-//   { icon: <Building2 className="w-5 h-5" />, label: "Co-working Spaces", keyword: "coworking website Hyderabad", color: "text-purple-300" },
-//   { icon: <Microscope className="w-5 h-5" />, label: "Biotech in Genome Valley", keyword: "biotech website Hyderabad", color: "text-cyan-300" },
-//   { icon: <GemIcon className="w-5 h-5" />, label: "Pearls in Laad Bazaar", keyword: "jewellery website Hyderabad", color: "text-yellow-300" },
-//   { icon: <TreePine className="w-5 h-5" />, label: "Agritech in Hyderabad", keyword: "agriculture website Hyderabad", color: "text-green-300" },
-//   { icon: <Camera className="w-5 h-5" />, label: "Film Studios in Hyderabad", keyword: "media website Hyderabad", color: "text-fuchsia-400" },
-//   { icon: <Wrench className="w-5 h-5" />, label: "Home Services Hyderabad", keyword: "service business website Hyderabad", color: "text-orange-300" },
-//   { icon: <GraduationCap className="w-5 h-5" />, label: "Universities Hyderabad", keyword: "university website Hyderabad", color: "text-lime-300" },
-//   { icon: <Building className="w-5 h-5" />, label: "TSIC Startups", keyword: "startup website Hyderabad", color: "text-indigo-300" },
-// ];
-
-// const STATS = [
-//   { value: "30+", label: "Hyderabad Projects Delivered", keyword: "Hyderabad software projects" },
-//   { value: "100%", label: "Client Satisfaction Rate", keyword: "client satisfaction Hyderabad" },
-//   { value: "24/7", label: "Local Support Available", keyword: "IT support Hyderabad" },
-//   { value: "5★", label: "Google Reviews Rating", keyword: "best software agency Hyderabad reviews" },
-// ];
-
-// const TRUST_SIGNALS = [
-//   { icon: <Shield className="w-5 h-5" />, text: "GST Registered Company" },
-//   { icon: <Clock className="w-5 h-5" />, text: "IST Timezone Alignment" },
-//   { icon: <MapPin className="w-5 h-5" />, text: "Hyderabad Presence" },
-//   { icon: <Gem className="w-5 h-5" />, text: "Telugu/English Bilingual Support" },
-// ];
-
-// const LOCATIONS = [
-//   "HITEC City", "Gachibowli", "Madhapur", "Kondapur", "Jubilee Hills",
-//   "Banjara Hills", "Begumpet", "Somajiguda", "Ameerpet", "Punjagutta",
-//   "Secunderabad", "Koti", "Abids", "Charminar", "Old City",
-//   "Laad Bazaar", "Patancheru", "Balanagar", "Kukatpally", "Miyapur",
-//   "Kompally", "Bachupally", "Kokapet", "Nanakramguda", "Financial District",
-//   "Uppal", "Rangareddy", "Shamshabad", "Genome Valley", "Turkayamjal"
-// ];
-
-// const FAQS = [
-//   { 
-//     q: "Which is the best software agency in Hyderabad?", 
-//     a: "SniperCoders is consistently rated among the top software agencies in Hyderabad. With 30+ successful projects, 5-star Google reviews, and expertise across web development, mobile apps, and digital marketing, we're the preferred choice for businesses across HITEC City, Gachibowli, Jubilee Hills, and Genome Valley." 
-//   },
-//   { 
-//     q: "Can SniperCoders build platforms for Hyderabad's pharma & biotech companies?", 
-//     a: "Yes. We have extensive experience building regulatory-aware portals, clinical data dashboards, pharma distribution management systems and product catalogues for life sciences companies in Hyderabad's Genome Valley and HITEC City corridors. We understand CDSCO compliance, data security requirements, and the specific needs of pharmaceutical B2B platforms." 
-//   },
-//   { 
-//     q: "Do you offer Telugu language content for SEO?", 
-//     a: "Absolutely. Telugu-language SEO and content creation is a powerful differentiator in Hyderabad. While most agencies only target English keywords, we create bilingual (Telugu + English) content strategies that help you rank for local searches with much less competition. This is particularly effective for restaurants, retail stores, and local service businesses." 
-//   },
-//   { 
-//     q: "How does SniperCoders approach Hyderabad's real estate digital market?", 
-//     a: "Hyderabad's real estate is booming — Kokapet, Gachibowli, Kompally, Bachupally are all hot zones. We build lead-capture websites, Google Ads landing pages and virtual tour integrations that convert property searchers into qualified leads. Our portals are designed to capture the growing demand from IT professionals in Cyberabad and HITEC City." 
-//   },
-//   { 
-//     q: "What makes your digital marketing different for Hyderabad businesses?", 
-//     a: "We combine Telugu-specific keyword research, Google Business Profile optimisation for Hyderabad neighbourhoods, and culturally resonant ad creatives — delivering campaigns that feel local, not generic. We understand the cultural nuances of Hyderabad's diverse population and create campaigns that resonate across both the Old City and Cyberabad." 
-//   },
-//   { 
-//     q: "How much does a website cost in Hyderabad?", 
-//     a: "A professional business website in Hyderabad typically ranges from ₹15,000 to ₹1,50,000+ depending on complexity. SniperCoders offers transparent pricing with no hidden charges. We provide affordable website design packages for small businesses in Ameerpet, Kukatpally, Secunderabad, and across Hyderabad." 
-//   },
-// ];
-
-// // Contact information
-// const phoneNumber = "+917006377796";
-// const email = "snipercoders25@gmail.com";
-
-// export default function HyderabadPage() {
-//   const [openFaq, setOpenFaq] = useState<number | null>(null);
-
-//   return (
-//     <div className="min-h-screen bg-[#0c0614] text-white font-sans overflow-x-hidden">
-
-//       {/* ── HERO ───────────────────────────────────────────────── */}
-//       <section
-//         className="relative min-h-[92vh] flex items-center justify-center overflow-hidden"
-//         style={{ background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(139,92,246,0.2) 0%, transparent 70%), radial-gradient(ellipse 60% 40% at 80% 80%, rgba(245,158,11,0.14) 0%, transparent 60%), #0c0614" }}
-//       >
-//         <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.8) 1px, transparent 1px)", backgroundSize: "48px 48px" }} />
-//         <div className="absolute top-24 left-10 w-72 h-72 rounded-full bg-violet-600/15 blur-[100px] pointer-events-none" />
-//         <div className="absolute bottom-20 right-10 w-64 h-64 rounded-full bg-orange-600/15 blur-[80px] pointer-events-none" />
-
-//         <div className="relative z-10 container mx-auto px-4 py-20 text-center">
-//           <motion.div 
-//             initial={{ opacity: 0, scale: 0.8 }} 
-//             animate={{ opacity: 1, scale: 1 }} 
-//             transition={{ duration: 0.5 }}
-//             className="inline-flex items-center gap-2 bg-violet-500/10 border border-violet-500/30 text-violet-300 text-sm font-medium px-4 py-2 rounded-full mb-6 backdrop-blur-sm"
-//           >
-//             <Crown className="w-4 h-4" /> #1 Software Agency in Hyderabad • 30+ Projects Delivered
-//           </motion.div>
-
-//           <motion.h1 
-//             initial="hidden" animate="show" variants={fadeUp}
-//             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6"
-//             style={{ fontFamily: "'Syne', sans-serif" }}
-//           >
-//             Best Software Agency<br />
-//             <span className="bg-gradient-to-r from-violet-400 via-purple-400 to-orange-400 bg-clip-text text-transparent">
-//               in Hyderabad, Telangana
-//             </span>
-//           </motion.h1>
-
-//           <motion.p 
-//             custom={1} initial="hidden" animate="show" variants={fadeUp}
-//             className="max-w-3xl mx-auto text-lg md:text-xl text-gray-300 leading-relaxed mb-10"
-//           >
-//             SniperCoders delivers cutting-edge digital solutions for Hyderabad's <strong className="text-violet-400">pharma giants, IT corridors, biryani brands & growing startups</strong> — from <strong className="text-violet-400">HITEC City to Genome Valley, Jubilee Hills to the Old City's bustling trade lanes</strong>. <span className="text-violet-400">30+ projects • 5★ rated</span>
-//           </motion.p>
-
-//           {/* Trust signals */}
-//           <motion.div
-//             custom={1.5} initial="hidden" animate="show" variants={fadeUp}
-//             className="flex flex-wrap justify-center gap-4 mb-8"
-//           >
-//             {TRUST_SIGNALS.map((signal, i) => (
-//               <div key={i} className="flex items-center gap-2 text-xs text-gray-400 bg-gray-900/50 px-3 py-1.5 rounded-full border border-gray-800">
-//                 <span className="text-violet-400">{signal.icon}</span>
-//                 {signal.text}
-//               </div>
-//             ))}
-//           </motion.div>
-
-//           <motion.div 
-//             custom={2} initial="hidden" animate="show" variants={fadeUp} 
-//             className="flex flex-col sm:flex-row gap-4 justify-center"
-//           >
-//             <Link href="/contact" 
-//               className="inline-flex items-center gap-2 bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg shadow-violet-500/25 transition-all duration-300 hover:scale-105"
-//             >
-//               Get Free Consultation <ChevronRight className="w-5 h-5" />
-//             </Link>
-//             <a href={`tel:${phoneNumber}`}
-//               className="inline-flex items-center gap-2 border border-gray-600 hover:border-violet-500 text-gray-300 hover:text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 backdrop-blur-sm"
-//             >
-//               <Phone className="w-5 h-5" /> Call: +91 7006377796
-//             </a>
-//           </motion.div>
-
-//           <motion.div 
-//             custom={3} initial="hidden" animate="show" variants={fadeUp} 
-//             className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-16 max-w-3xl mx-auto"
-//           >
-//             {STATS.map((s, i) => (
-//               <div key={i} className="text-center">
-//                 <div className="text-3xl font-black bg-gradient-to-r from-violet-400 to-orange-400 bg-clip-text text-transparent">{s.value}</div>
-//                 <div className="text-xs text-gray-500 mt-1">{s.label}</div>
-//               </div>
-//             ))}
-//           </motion.div>
-//         </div>
-//       </section>
-
-//       {/* ── INTRO with hyperlocal keywords ──────────────────────── */}
-//       <section className="py-20">
-//         <div className="container mx-auto px-4 max-w-5xl">
-//           <motion.div 
-//             initial="hidden" whileInView="show" viewport={{ once: true }} variants={scaleIn}
-//             className="bg-gradient-to-br from-gray-900/80 to-violet-950/25 border border-violet-900/30 rounded-3xl p-8 md:p-14 backdrop-blur-sm"
-//           >
-//             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-violet-400 to-orange-400 bg-clip-text text-transparent" style={{ fontFamily: "'Syne', sans-serif" }}>
-//               Hyderabad — Where Ancient Trade Meets Future Tech
-//             </h2>
-//             <div className="space-y-4 text-gray-300 leading-relaxed">
-//               <p>
-//                 <strong className="text-white">Hyderabad</strong> is a city of extraordinary contrasts — where the aroma of Hyderabadi biryani wafts past world-class pharma labs, and the minarets of Charminar overlook gleaming tech campuses in <strong className="text-violet-400">HITEC City and Cyberabad</strong>. It's India's fourth-largest city by GDP and one of the fastest-growing digital markets in South India.
-//               </p>
-//               <p>
-//                 From <strong className="text-cyan-400">Genome Valley's biotech firms</strong> and <strong className="text-cyan-400">HITEC City's global IT companies</strong> to <strong className="text-cyan-400">Laad Bazaar's pearl merchants</strong> and <strong className="text-cyan-400">Kondapur's booming residential developments</strong> — Hyderabad's business diversity is unmatched. <strong className="text-white">SniperCoders</strong>, the <strong className="text-violet-400">best software agency in Hyderabad</strong>, has the depth to serve all of them with precision-engineered digital solutions.
-//               </p>
-//               <p>
-//                 Whether you need an <strong className="text-white">international-grade pharma website</strong>, a <strong className="text-white">Telugu SEO strategy for your local restaurant chain</strong>, a <strong className="text-white">jewellery ecommerce platform for Laad Bazaar</strong>, or a <strong className="text-white">SaaS product built for HITEC City startups</strong> — we're Hyderabad's most capable digital partner. <strong className="text-violet-400">Contact us at +91 7006377796 or snipercoders25@gmail.com</strong> for a free consultation.
-//               </p>
-//             </div>
-//           </motion.div>
-//         </div>
-//       </section>
-
-//       {/* ── SERVICES with keyword optimization ────────────────── */}
-//       <section className="py-20">
-//         <div className="container mx-auto px-4">
-//           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp} className="text-center mb-14">
-//             <h2 className="text-3xl md:text-5xl font-extrabold mb-4" style={{ fontFamily: "'Syne', sans-serif" }}>
-//               Our Services in <span className="bg-gradient-to-r from-violet-400 to-orange-400 bg-clip-text text-transparent">Hyderabad</span>
-//             </h2>
-//             <p className="text-gray-400 max-w-2xl mx-auto">
-//               Solutions engineered for Hyderabad's unique blend of ancient commerce and modern technology. <strong className="text-violet-400">Web development, mobile apps, SEO, and more.</strong>
-//             </p>
-//           </motion.div>
-//           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-//             {SERVICES.map((svc, i) => (
-//               <motion.div 
-//                 key={i} 
-//                 custom={i} initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp}
-//                 className="group relative bg-gray-900/60 border border-gray-800 hover:border-violet-600/50 rounded-2xl p-7 transition-all duration-300 overflow-hidden"
-//               >
-//                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(139,92,246,0.08), transparent)" }} />
-//                 <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${svc.gradient} flex items-center justify-center mb-5 shadow-lg`}>{svc.icon}</div>
-//                 <h3 className="text-xl font-bold mb-3 text-white group-hover:text-violet-300 transition-colors">{svc.title}</h3>
-//                 <p className="text-gray-400 text-sm leading-relaxed mb-2">{svc.desc}</p>
-//                 <p className="text-xs text-violet-400/70 italic">{svc.keywords}</p>
-//                 <div className="absolute bottom-0 left-0 h-0.5 w-0 group-hover:w-full bg-gradient-to-r from-violet-500 to-orange-500 transition-all duration-500" />
-//               </motion.div>
-//             ))}
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* ── BUSINESS CATEGORIES with hyperlocal keywords ───────── */}
-//       <section className="py-20 bg-gradient-to-b from-transparent via-violet-950/10 to-transparent">
-//         <div className="container mx-auto px-4">
-//           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp} className="text-center mb-14">
-//             <h2 className="text-3xl md:text-5xl font-extrabold mb-4" style={{ fontFamily: "'Syne', sans-serif" }}>
-//               Industries We Serve in <span className="bg-gradient-to-r from-violet-400 to-orange-400 bg-clip-text text-transparent">Hyderabad</span>
-//             </h2>
-//             <p className="text-gray-400 max-w-2xl mx-auto">
-//               From <strong className="text-violet-400">Charminar pearl traders</strong> to <strong className="text-violet-400">Cyberabad SaaS companies</strong> — every Hyderabad business category deserves digital excellence.
-//             </p>
-//           </motion.div>
-//           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-//             {BUSINESS_CATEGORIES.map((cat, i) => (
-//               <motion.div 
-//                 key={i} 
-//                 custom={i} initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp}
-//                 className="flex flex-col items-center gap-2 bg-gray-900/60 border border-gray-800 hover:border-gray-600 rounded-xl p-4 text-center transition-all duration-300 hover:-translate-y-1 cursor-default"
-//                 title={cat.keyword}
-//               >
-//                 <span className={cat.color}>{cat.icon}</span>
-//                 <span className="text-xs text-gray-300 leading-tight">{cat.label}</span>
-//               </motion.div>
-//             ))}
-//           </div>
-
-//           {/* Hyperlocal areas */}
-//           <motion.div 
-//             initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp}
-//             className="mt-12 text-center"
-//           >
-//             <p className="text-sm text-gray-500 mb-4">Serving all Hyderabad locations:</p>
-//             <div className="flex flex-wrap justify-center gap-2">
-//               {LOCATIONS.map((loc, i) => (
-//                 <span key={i} className="text-xs bg-gray-900/60 border border-gray-800 px-3 py-1.5 rounded-full text-gray-400">
-//                   {loc}
-//                 </span>
-//               ))}
-//             </div>
-//           </motion.div>
-//         </div>
-//       </section>
-
-//       {/* ── WHY US with psychological triggers ─────────────────── */}
-//       <section className="py-20">
-//         <div className="container mx-auto px-4 max-w-5xl">
-//           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp} className="text-center mb-12">
-//             <h2 className="text-3xl md:text-4xl font-extrabold" style={{ fontFamily: "'Syne', sans-serif" }}>
-//               Why Hyderabad Businesses Trust <span className="bg-gradient-to-r from-violet-400 to-orange-400 bg-clip-text text-transparent">SniperCoders</span>
-//             </h2>
-//             <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
-//               Here's what makes us the <strong className="text-violet-400">preferred digital partner for Hyderabad's most successful businesses</strong>:
-//             </p>
-//           </motion.div>
-//           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-//             {[
-//               "Telugu & English bilingual SEO for maximum search dominance across Hyderabad",
-//               "Pharma & biotech-compliant website architecture for Genome Valley companies",
-//               "HITEC City & Cyberabad IT firm digital product development and SaaS platforms",
-//               "Hyderabad real estate lead-gen websites — Gachibowli to Kompally, Kokapet to Bachupally",
-//               "Biryani & restaurant chain multi-location digital marketing with Telugu keywords",
-//               "Pearl & jewellery eCommerce with global shipping support for Laad Bazaar merchants",
-//               "Telangana government portal & e-procurement compliance for contractors",
-//               "TSIC & startup ecosystem-aligned digital infrastructure for Hyderabad's founders",
-//               "Educational institution websites for Hyderabad's top schools & universities",
-//               "Integration with Razorpay, Paytm, PhonePe & all Indian payment gateways",
-//               "GST invoicing & India-compliant data practices for Telangana businesses",
-//               "Post-launch support & maintenance with 24/7 availability for critical issues"
-//             ].map((item, i) => (
-//               <motion.div 
-//                 key={i} 
-//                 custom={i} initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp}
-//                 className="flex items-start gap-3 bg-gray-900/50 border border-gray-800 rounded-xl p-4 hover:border-violet-800/50 transition-all duration-300"
-//               >
-//                 <CheckCircle className="w-5 h-5 text-violet-400 flex-shrink-0 mt-0.5" />
-//                 <span className="text-gray-300 text-sm">{item}</span>
-//               </motion.div>
-//             ))}
-//           </div>
-//           <div className="text-center mt-10">
-//             <Link href="/contact" className="inline-flex items-center gap-2 bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition-all duration-300 hover:scale-105">
-//               Start Your Project in Hyderabad <ChevronRight className="w-5 h-5" />
-//             </Link>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* ── TESTIMONIAL with social proof ───────────────────────── */}
-//       <section className="py-12 bg-gradient-to-r from-violet-900/20 via-purple-900/10 to-violet-900/20 border-y border-gray-800/50">
-//         <div className="container mx-auto px-4 text-center">
-//           <div className="flex flex-wrap justify-center gap-3 mb-6">
-//             {[...Array(5)].map((_, i) => <Star key={i} className="w-6 h-6 text-yellow-400 fill-yellow-400" />)}
-//           </div>
-//           <blockquote className="text-xl md:text-2xl font-medium text-gray-200 max-w-3xl mx-auto italic">
-//             "We run a pharma distribution business in <strong className="text-violet-400">Hyderabad</strong>. SniperCoders built our B2B portal and our Google ranking for pharma-related searches jumped dramatically. Their understanding of the <strong className="text-violet-400">Genome Valley</strong> ecosystem and regulatory requirements set them apart. Highly professional team — the <strong className="text-violet-400">best software agency in Hyderabad</strong> we've worked with."
-//           </blockquote>
-//           <p className="text-gray-500 mt-4 text-sm">— Pharma Distributor, Genome Valley, Hyderabad</p>
-//           <div className="flex justify-center gap-4 mt-4 text-xs text-gray-600">
-//             <span>⭐ 5/5 on Google</span>
-//             <span>✅ Verified Client</span>
-//             <span>📍 Genome Valley, Hyderabad</span>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* ── FAQ with long-tail keywords ────────────────────────── */}
-//       <section className="py-20">
-//         <div className="container mx-auto px-4 max-w-3xl">
-//           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp} className="text-center mb-12">
-//             <h2 className="text-3xl md:text-4xl font-extrabold mb-4" style={{ fontFamily: "'Syne', sans-serif" }}>
-//               Frequently Asked Questions —{" "}
-//               <span className="bg-gradient-to-r from-violet-400 to-orange-400 bg-clip-text text-transparent">Hyderabad</span>
-//             </h2>
-//             <p className="text-gray-400">Answers to common questions about <strong className="text-violet-400">software development, website design, and digital marketing in Hyderabad.</strong></p>
-//           </motion.div>
-//           <div className="space-y-4">
-//             {FAQS.map((faq, i) => (
-//               <motion.div 
-//                 key={i} 
-//                 custom={i} initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp} 
-//                 className="border border-gray-800 rounded-2xl overflow-hidden"
-//               >
-//                 <button 
-//                   className="w-full text-left px-6 py-5 flex justify-between items-center bg-gray-900/60 hover:bg-gray-900 transition-colors" 
-//                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
-//                 >
-//                   <span className="font-semibold text-white text-sm md:text-base">{faq.q}</span>
-//                   <ChevronRight className={`w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-300 ${openFaq === i ? "rotate-90" : ""}`} />
-//                 </button>
-//                 {openFaq === i && 
-//                   <div className="px-6 py-5 bg-gray-950/40 text-gray-300 text-sm leading-relaxed border-t border-gray-800">{faq.a}</div>
-//                 }
-//               </motion.div>
-//             ))}
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* ── CTA with contact info ──────────────────────────────── */}
-//       <section className="py-20">
-//         <div className="container mx-auto px-4 max-w-4xl text-center">
-//           <motion.div 
-//             initial="hidden" whileInView="show" viewport={{ once: true }} variants={scaleIn}
-//             className="relative bg-gradient-to-br from-violet-900/40 to-purple-900/30 border border-violet-700/30 rounded-3xl p-12 md:p-16 overflow-hidden"
-//           >
-//             <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
-//             <div className="relative z-10">
-//               <h2 className="text-3xl md:text-5xl font-extrabold mb-4" style={{ fontFamily: "'Syne', sans-serif" }}>
-//                 Scale Your Hyderabad Business<br />
-//                 <span className="bg-gradient-to-r from-violet-400 to-orange-400 bg-clip-text text-transparent">Digitally & Decisively</span>
-//               </h2>
-//               <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-//                 Hyderabad's <strong className="text-white">1 crore+ consumers</strong> search Google in Telugu and English every day. From <strong className="text-violet-400">HITEC City to Charminar, Jubilee Hills to Genome Valley</strong> — SniperCoders makes sure they find you.
-//               </p>
-              
-//               {/* Contact cards */}
-//               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-//                 <a href={`tel:${phoneNumber}`}
-//                   className="flex items-center gap-3 bg-gray-900/80 border border-gray-700 hover:border-violet-500 rounded-xl px-6 py-4 transition-all duration-300"
-//                 >
-//                   <Phone className="w-6 h-6 text-violet-400" />
-//                   <div className="text-left">
-//                     <div className="text-xs text-gray-500">Call us now</div>
-//                     <div className="text-white font-semibold">+91 7006377796</div>
-//                   </div>
-//                 </a>
-//                 <a href={`mailto:${email}`}
-//                   className="flex items-center gap-3 bg-gray-900/80 border border-gray-700 hover:border-orange-500 rounded-xl px-6 py-4 transition-all duration-300"
-//                 >
-//                   <Mail className="w-6 h-6 text-orange-400" />
-//                   <div className="text-left">
-//                     <div className="text-xs text-gray-500">Email us</div>
-//                     <div className="text-white font-semibold">snipercoders25@gmail.com</div>
-//                   </div>
-//                 </a>
-//               </div>
-
-//               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-//                 <Link href="/contact" 
-//                   className="inline-flex items-center gap-2 bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white font-bold px-10 py-4 rounded-xl shadow-xl transition-all duration-300 hover:scale-105"
-//                 >
-//                   Book Free Consultation <ChevronRight className="w-5 h-5" />
-//                 </Link>
-//                 <Link href="/showcase" 
-//                   className="inline-flex items-center gap-2 border border-gray-600 hover:border-violet-500 text-gray-300 hover:text-white font-semibold px-10 py-4 rounded-xl transition-all duration-300"
-//                 >
-//                   View Hyderabad Portfolio
-//                 </Link>
-//               </div>
-//               <div className="flex flex-col sm:flex-row gap-6 justify-center mt-8 text-sm text-gray-500">
-//                 <span className="flex items-center gap-2"><MapPin className="w-4 h-4 text-violet-400" /> Serving Hyderabad, Secunderabad, Cyberabad & Rangareddy</span>
-//                 <span className="flex items-center gap-2"><Shield className="w-4 h-4 text-orange-400" /> GST Registered • ISO Standards</span>
-//               </div>
-//             </div>
-//           </motion.div>
-//         </div>
-//       </section>
-
-//       <Footer />
-//       <style jsx global>{`@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&display=swap');`}</style>
-//     </div>
-//   );
-// }
-
-
-
-
-
-
-
-
 // app/services/best-software-agency-hyderabad/page.tsx
 
 "use client";
@@ -538,83 +27,77 @@ const scaleIn = {
 };
 
 const SERVICES = [
-  { 
-    icon: <Globe className="w-7 h-7" />, 
-    title: "Website Development Hyderabad", 
-    desc: "Professional website design company in Hyderabad. High-performance business websites, pharma portals, IT product pages & eCommerce stores built for Hyderabad&apos;s thriving tech and trade ecosystem.", 
+  {
+    icon: <Globe className="w-7 h-7" />,
+    title: "Website Development Hyderabad",
+    desc: "Professional website design company in Hyderabad. High-performance business websites, pharma portals, IT product pages & eCommerce stores built for Hyderabad&apos;s thriving tech and trade ecosystem.",
     gradient: "from-violet-500 to-purple-700",
-    keywords: "website design Hyderabad, web development company Hyderabad, ecommerce website Hyderabad"
   },
-  { 
-    icon: <Smartphone className="w-7 h-7" />, 
-    title: "Mobile App Development Hyderabad", 
-    desc: "Top app development agency in Hyderabad. Scalable iOS & Android apps for Hyderabad&apos;s pharma, IT, food tech, ed-tech and retail sectors &mdash; built for Cyberabad&apos;s innovation standards.", 
+  {
+    icon: <Smartphone className="w-7 h-7" />,
+    title: "Mobile App Development Hyderabad",
+    desc: "Top app development agency in Hyderabad. Scalable iOS & Android apps for Hyderabad&apos;s pharma, IT, food tech, ed-tech and retail sectors &mdash; built for Cyberabad&apos;s innovation standards.",
     gradient: "from-orange-500 to-amber-600",
-    keywords: "app development Hyderabad, mobile app developers Hyderabad, iOS app development HITEC City"
   },
-  { 
-    icon: <Code className="w-7 h-7" />, 
-    title: "Custom Software Development Hyderabad", 
-    desc: "Enterprise software solutions in Hyderabad. Pharma ERP, biotech data platforms, IT product dashboards, SaaS applications & automation tools purpose-built for Hyderabad&apos;s knowledge economy.", 
+  {
+    icon: <Code className="w-7 h-7" />,
+    title: "Custom Software Development Hyderabad",
+    desc: "Enterprise software solutions in Hyderabad. Pharma ERP, biotech data platforms, IT product dashboards, SaaS applications & automation tools purpose-built for Hyderabad&apos;s knowledge economy.",
     gradient: "from-blue-500 to-cyan-600",
-    keywords: "software development Hyderabad, custom software Hyderabad, ERP development Hyderabad"
   },
-  { 
-    icon: <TrendingUp className="w-7 h-7" />, 
-    title: "Digital Marketing Agency Hyderabad", 
-    desc: "Rank in Hyderabad&apos;s growing digital market with our local SEO, Google Ads & social media strategies targeting Telugu and English-speaking audiences. Best SEO company in Hyderabad.", 
+  {
+    icon: <TrendingUp className="w-7 h-7" />,
+    title: "Digital Marketing Agency Hyderabad",
+    desc: "Local SEO, Google Ads & social media strategies targeting Telugu and English-speaking audiences across Hyderabad&apos;s growing digital market.",
     gradient: "from-rose-500 to-pink-600",
-    keywords: "digital marketing Hyderabad, SEO services Hyderabad, Google Ads Hyderabad"
   },
-  { 
-    icon: <Users className="w-7 h-7" />, 
-    title: "IT Consulting Hyderabad", 
-    desc: "Expert IT consultants in Hyderabad. Strategic digital transformation for Hyderabad&apos;s pharmaceutical companies, IT firms, hospitals & government-backed enterprises.", 
+  {
+    icon: <Users className="w-7 h-7" />,
+    title: "IT Consulting Hyderabad",
+    desc: "Expert IT consultants in Hyderabad. Strategic digital transformation for Hyderabad&apos;s pharmaceutical companies, IT firms, hospitals & government-backed enterprises.",
     gradient: "from-emerald-500 to-teal-600",
-    keywords: "IT consulting Hyderabad, technology consultants Hyderabad, digital transformation Hyderabad"
   },
-  { 
-    icon: <Award className="w-7 h-7" />, 
-    title: "Branding & UI/UX Design Hyderabad", 
-    desc: "Premium branding agency in Hyderabad. Product design and brand systems that carry Hyderabad&apos;s Nizam-era prestige into modern digital experiences &mdash; luxurious, functional, memorable.", 
+  {
+    icon: <Award className="w-7 h-7" />,
+    title: "Branding & UI/UX Design Hyderabad",
+    desc: "Product design and brand systems that carry Hyderabad&apos;s Nizam-era prestige into modern digital experiences &mdash; luxurious, functional, memorable.",
     gradient: "from-fuchsia-500 to-pink-600",
-    keywords: "branding agency Hyderabad, UI UX design Hyderabad, graphic design Hyderabad"
   },
 ];
 
 const BUSINESS_CATEGORIES = [
-  { icon: <FlaskConical className="w-5 h-5" />, label: "Pharma in Genome Valley", keyword: "pharma website Hyderabad", color: "text-violet-400" },
-  { icon: <Briefcase className="w-5 h-5" />, label: "IT in HITEC City", keyword: "IT company website Hyderabad", color: "text-indigo-400" },
-  { icon: <Utensils className="w-5 h-5" />, label: "Biryani in Old City", keyword: "restaurant website Hyderabad", color: "text-orange-400" },
-  { icon: <Coffee className="w-5 h-5" />, label: "Cafés in Jubilee Hills", keyword: "cafe website Hyderabad", color: "text-amber-400" },
-  { icon: <Hotel className="w-5 h-5" />, label: "Hotels in Banjara Hills", keyword: "hotel website Hyderabad", color: "text-blue-400" },
-  { icon: <ShoppingBag className="w-5 h-5" />, label: "Retail in Begumpet", keyword: "ecommerce website Hyderabad", color: "text-pink-400" },
-  { icon: <Car className="w-5 h-5" />, label: "Car Dealers in Secunderabad", keyword: "automotive website Hyderabad", color: "text-cyan-400" },
-  { icon: <GraduationCap className="w-5 h-5" />, label: "Ed-Tech in Gachibowli", keyword: "education website Hyderabad", color: "text-green-400" },
-  { icon: <HeartPulse className="w-5 h-5" />, label: "Hospitals in Somajiguda", keyword: "hospital website Hyderabad", color: "text-red-400" },
-  { icon: <Plane className="w-5 h-5" />, label: "Travel in Abids", keyword: "travel website Hyderabad", color: "text-sky-400" },
-  { icon: <Dumbbell className="w-5 h-5" />, label: "Gyms in Kondapur", keyword: "fitness website Hyderabad", color: "text-lime-400" },
-  { icon: <Home className="w-5 h-5" />, label: "Real Estate in Kokapet", keyword: "real estate website Hyderabad", color: "text-teal-400" },
-  { icon: <Truck className="w-5 h-5" />, label: "Logistics in Patancheru", keyword: "logistics software Hyderabad", color: "text-yellow-400" },
-  { icon: <Music className="w-5 h-5" />, label: "Events in Madhapur", keyword: "event website Hyderabad", color: "text-rose-400" },
-  { icon: <Landmark className="w-5 h-5" />, label: "Finance in Koti", keyword: "fintech Hyderabad", color: "text-blue-300" },
-  { icon: <ShoppingCart className="w-5 h-5" />, label: "D2C Brands Hyderabad", keyword: "d2c ecommerce Hyderabad", color: "text-emerald-400" },
-  { icon: <Factory className="w-5 h-5" />, label: "MSME in Balanagar", keyword: "industrial website Hyderabad", color: "text-gray-400" },
-  { icon: <Building2 className="w-5 h-5" />, label: "Co-working Spaces", keyword: "coworking website Hyderabad", color: "text-purple-300" },
-  { icon: <Microscope className="w-5 h-5" />, label: "Biotech in Genome Valley", keyword: "biotech website Hyderabad", color: "text-cyan-300" },
-  { icon: <Gem className="w-5 h-5" />, label: "Pearls in Laad Bazaar", keyword: "jewellery website Hyderabad", color: "text-yellow-300" },
-  { icon: <TreePine className="w-5 h-5" />, label: "Agritech in Hyderabad", keyword: "agriculture website Hyderabad", color: "text-green-300" },
-  { icon: <Camera className="w-5 h-5" />, label: "Film Studios in Hyderabad", keyword: "media website Hyderabad", color: "text-fuchsia-400" },
-  { icon: <Wrench className="w-5 h-5" />, label: "Home Services Hyderabad", keyword: "service business website Hyderabad", color: "text-orange-300" },
-  { icon: <GraduationCap className="w-5 h-5" />, label: "Universities Hyderabad", keyword: "university website Hyderabad", color: "text-lime-300" },
-  { icon: <Building className="w-5 h-5" />, label: "TSIC Startups", keyword: "startup website Hyderabad", color: "text-indigo-300" },
+  { icon: <FlaskConical className="w-5 h-5" />, label: "Pharma in Genome Valley", color: "text-violet-400" },
+  { icon: <Briefcase className="w-5 h-5" />, label: "IT in HITEC City", color: "text-indigo-400" },
+  { icon: <Utensils className="w-5 h-5" />, label: "Biryani in Old City", color: "text-orange-400" },
+  { icon: <Coffee className="w-5 h-5" />, label: "Cafés in Jubilee Hills", color: "text-amber-400" },
+  { icon: <Hotel className="w-5 h-5" />, label: "Hotels in Banjara Hills", color: "text-blue-400" },
+  { icon: <ShoppingBag className="w-5 h-5" />, label: "Retail in Begumpet", color: "text-pink-400" },
+  { icon: <Car className="w-5 h-5" />, label: "Car Dealers in Secunderabad", color: "text-cyan-400" },
+  { icon: <GraduationCap className="w-5 h-5" />, label: "Ed-Tech in Gachibowli", color: "text-green-400" },
+  { icon: <HeartPulse className="w-5 h-5" />, label: "Hospitals in Somajiguda", color: "text-red-400" },
+  { icon: <Plane className="w-5 h-5" />, label: "Travel in Abids", color: "text-sky-400" },
+  { icon: <Dumbbell className="w-5 h-5" />, label: "Gyms in Kondapur", color: "text-lime-400" },
+  { icon: <Home className="w-5 h-5" />, label: "Real Estate in Kokapet", color: "text-teal-400" },
+  { icon: <Truck className="w-5 h-5" />, label: "Logistics in Patancheru", color: "text-yellow-400" },
+  { icon: <Music className="w-5 h-5" />, label: "Events in Madhapur", color: "text-rose-400" },
+  { icon: <Landmark className="w-5 h-5" />, label: "Finance in Koti", color: "text-blue-300" },
+  { icon: <ShoppingCart className="w-5 h-5" />, label: "D2C Brands Hyderabad", color: "text-emerald-400" },
+  { icon: <Factory className="w-5 h-5" />, label: "MSME in Balanagar", color: "text-gray-400" },
+  { icon: <Building2 className="w-5 h-5" />, label: "Co-working Spaces", color: "text-purple-300" },
+  { icon: <Microscope className="w-5 h-5" />, label: "Biotech in Genome Valley", color: "text-cyan-300" },
+  { icon: <Gem className="w-5 h-5" />, label: "Pearls in Laad Bazaar", color: "text-yellow-300" },
+  { icon: <TreePine className="w-5 h-5" />, label: "Agritech in Hyderabad", color: "text-green-300" },
+  { icon: <Camera className="w-5 h-5" />, label: "Film Studios in Hyderabad", color: "text-fuchsia-400" },
+  { icon: <Wrench className="w-5 h-5" />, label: "Home Services Hyderabad", color: "text-orange-300" },
+  { icon: <GraduationCap className="w-5 h-5" />, label: "Universities Hyderabad", color: "text-lime-300" },
+  { icon: <Building className="w-5 h-5" />, label: "TSIC Startups", color: "text-indigo-300" },
 ];
 
 const STATS = [
-  { value: "30+", label: "Hyderabad Projects Delivered", keyword: "Hyderabad software projects" },
-  { value: "100%", label: "Client Satisfaction Rate", keyword: "client satisfaction Hyderabad" },
-  { value: "24/7", label: "Local Support Available", keyword: "IT support Hyderabad" },
-  { value: "5★", label: "Google Reviews Rating", keyword: "best software agency Hyderabad reviews" },
+  { value: "30+", label: "Hyderabad Projects Delivered" },
+  { value: "100%", label: "Client Satisfaction Rate" },
+  { value: "24/7", label: "Local Support Available" },
+  { value: "5★", label: "Google Reviews Rating" },
 ];
 
 const TRUST_SIGNALS = [
@@ -634,29 +117,29 @@ const LOCATIONS = [
 ];
 
 const FAQS = [
-  { 
-    q: "Which is the best software agency in Hyderabad?", 
-    a: "SniperCoders is consistently rated among the top software agencies in Hyderabad. With 30+ successful projects, 5-star Google reviews, and expertise across web development, mobile apps, and digital marketing, we&apos;re the preferred choice for businesses across HITEC City, Gachibowli, Jubilee Hills, and Genome Valley." 
+  {
+    q: "Which is the best software agency in Hyderabad?",
+    a: "SniperCoders is a growing software agency serving Hyderabad, with experience across web development, mobile apps, and digital marketing for businesses across HITEC City, Gachibowli, Jubilee Hills, and Genome Valley."
   },
-  { 
-    q: "Can SniperCoders build platforms for Hyderabad's pharma & biotech companies?", 
-    a: "Yes. We have extensive experience building regulatory-aware portals, clinical data dashboards, pharma distribution management systems and product catalogues for life sciences companies in Hyderabad&apos;s Genome Valley and HITEC City corridors. We understand CDSCO compliance, data security requirements, and the specific needs of pharmaceutical B2B platforms." 
+  {
+    q: "Can SniperCoders build platforms for Hyderabad's pharma & biotech companies?",
+    a: "Yes. We have experience building regulatory-aware portals, clinical data dashboards, pharma distribution management systems and product catalogues for life sciences companies in Hyderabad&apos;s Genome Valley and HITEC City corridors, with attention to CDSCO compliance and data security requirements."
   },
-  { 
-    q: "Do you offer Telugu language content for SEO?", 
-    a: "Absolutely. Telugu-language SEO and content creation is a powerful differentiator in Hyderabad. While most agencies only target English keywords, we create bilingual (Telugu + English) content strategies that help you rank for local searches with much less competition. This is particularly effective for restaurants, retail stores, and local service businesses." 
+  {
+    q: "Do you offer Telugu language content for SEO?",
+    a: "Yes. Telugu-language SEO and content creation is a strong differentiator in Hyderabad, since many agencies only target English keywords. We create bilingual (Telugu + English) content strategies, which is particularly effective for restaurants, retail stores, and local service businesses."
   },
-  { 
-    q: "How does SniperCoders approach Hyderabad's real estate digital market?", 
-    a: "Hyderabad&apos;s real estate is booming &mdash; Kokapet, Gachibowli, Kompally, Bachupally are all hot zones. We build lead-capture websites, Google Ads landing pages and virtual tour integrations that convert property searchers into qualified leads. Our portals are designed to capture the growing demand from IT professionals in Cyberabad and HITEC City." 
+  {
+    q: "How does SniperCoders approach Hyderabad's real estate digital market?",
+    a: "Hyderabad&apos;s real estate is growing fast &mdash; Kokapet, Gachibowli, Kompally, and Bachupally are active zones. We build lead-capture websites, Google Ads landing pages and virtual tour integrations aimed at IT professionals in Cyberabad and HITEC City looking for property."
   },
-  { 
-    q: "What makes your digital marketing different for Hyderabad businesses?", 
-    a: "We combine Telugu-specific keyword research, Google Business Profile optimisation for Hyderabad neighbourhoods, and culturally resonant ad creatives &mdash; delivering campaigns that feel local, not generic. We understand the cultural nuances of Hyderabad&apos;s diverse population and create campaigns that resonate across both the Old City and Cyberabad." 
+  {
+    q: "What makes your digital marketing different for Hyderabad businesses?",
+    a: "We combine Telugu-specific keyword research, Google Business Profile optimisation for Hyderabad neighbourhoods, and culturally relevant ad creatives &mdash; aiming for campaigns that feel local rather than generic, across both the Old City and Cyberabad."
   },
-  { 
-    q: "How much does a website cost in Hyderabad?", 
-    a: "A professional business website in Hyderabad typically ranges from ₹15,000 to ₹1,50,000+ depending on complexity. SniperCoders offers transparent pricing with no hidden charges. We provide affordable website design packages for small businesses in Ameerpet, Kukatpally, Secunderabad, and across Hyderabad." 
+  {
+    q: "How much does a website cost in Hyderabad?",
+    a: "A professional business website in Hyderabad typically ranges from ₹15,000 to ₹1,50,000+ depending on complexity. We offer transparent pricing with no hidden charges for small businesses in Ameerpet, Kukatpally, Secunderabad, and across Hyderabad."
   },
 ];
 
@@ -680,31 +163,31 @@ export default function HyderabadPage() {
         <div className="absolute bottom-20 right-10 w-64 h-64 rounded-full bg-orange-600/15 blur-[80px] pointer-events-none" />
 
         <div className="relative z-10 container mx-auto px-4 py-20 text-center">
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.8 }} 
-            animate={{ opacity: 1, scale: 1 }} 
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
             className="inline-flex items-center gap-2 bg-violet-500/10 border border-violet-500/30 text-violet-300 text-sm font-medium px-4 py-2 rounded-full mb-6 backdrop-blur-sm"
           >
-            <Crown className="w-4 h-4" /> #1 Software Agency in Hyderabad • 30+ Projects Delivered
+            <Crown className="w-4 h-4" /> Software Agency in Hyderabad • 30+ Projects Delivered
           </motion.div>
 
-          <motion.h1 
+          <motion.h1
             initial="hidden" animate="show" variants={fadeUp}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6"
             style={{ fontFamily: "'Syne', sans-serif" }}
           >
-            Best Software Agency<br />
+            Software Agency<br />
             <span className="bg-gradient-to-r from-violet-400 via-purple-400 to-orange-400 bg-clip-text text-transparent">
               in Hyderabad, Telangana
             </span>
           </motion.h1>
 
-          <motion.p 
+          <motion.p
             custom={1} initial="hidden" animate="show" variants={fadeUp}
             className="max-w-3xl mx-auto text-lg md:text-xl text-gray-300 leading-relaxed mb-10"
           >
-            SniperCoders delivers cutting-edge digital solutions for Hyderabad&apos;s <strong className="text-violet-400">pharma giants, IT corridors, biryani brands & growing startups</strong> &mdash; from <strong className="text-violet-400">HITEC City to Genome Valley, Jubilee Hills to the Old City&apos;s bustling trade lanes</strong>. <span className="text-violet-400">30+ projects • 5★ rated</span>
+            SniperCoders builds digital solutions for Hyderabad&apos;s <strong className="text-violet-400">pharma companies, IT firms, and growing startups</strong> &mdash; from <strong className="text-violet-400">HITEC City to Genome Valley, Jubilee Hills to the Old City</strong>.
           </motion.p>
 
           {/* Trust signals */}
@@ -720,11 +203,11 @@ export default function HyderabadPage() {
             ))}
           </motion.div>
 
-          <motion.div 
-            custom={2} initial="hidden" animate="show" variants={fadeUp} 
+          <motion.div
+            custom={2} initial="hidden" animate="show" variants={fadeUp}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <Link href="/contact" 
+            <Link href="/contact"
               className="inline-flex items-center gap-2 bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg shadow-violet-500/25 transition-all duration-300 hover:scale-105"
             >
               Get Free Consultation <ChevronRight className="w-5 h-5" />
@@ -736,8 +219,8 @@ export default function HyderabadPage() {
             </a>
           </motion.div>
 
-          <motion.div 
-            custom={3} initial="hidden" animate="show" variants={fadeUp} 
+          <motion.div
+            custom={3} initial="hidden" animate="show" variants={fadeUp}
             className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-16 max-w-3xl mx-auto"
           >
             {STATS.map((s, i) => (
@@ -750,10 +233,10 @@ export default function HyderabadPage() {
         </div>
       </section>
 
-      {/* ── INTRO with hyperlocal keywords ──────────────────────── */}
+      {/* ── INTRO ───────────────────────────────────────────────── */}
       <section className="py-20">
         <div className="container mx-auto px-4 max-w-5xl">
-          <motion.div 
+          <motion.div
             initial="hidden" whileInView="show" viewport={{ once: true }} variants={scaleIn}
             className="bg-gradient-to-br from-gray-900/80 to-violet-950/25 border border-violet-900/30 rounded-3xl p-8 md:p-14 backdrop-blur-sm"
           >
@@ -762,20 +245,20 @@ export default function HyderabadPage() {
             </h2>
             <div className="space-y-4 text-gray-300 leading-relaxed">
               <p>
-                <strong className="text-white">Hyderabad</strong> is a city of extraordinary contrasts &mdash; where the aroma of Hyderabadi biryani wafts past world-class pharma labs, and the minarets of Charminar overlook gleaming tech campuses in <strong className="text-violet-400">HITEC City and Cyberabad</strong>. It&apos;s India&apos;s fourth-largest city by GDP and one of the fastest-growing digital markets in South India.
+                <strong className="text-white">Hyderabad</strong> is a city of contrasts &mdash; historic trade lanes around Charminar sit alongside gleaming tech campuses in <strong className="text-violet-400">HITEC City and Cyberabad</strong>. It&apos;s one of the fastest-growing digital markets in South India.
               </p>
               <p>
-                From <strong className="text-cyan-400">Genome Valley&apos;s biotech firms</strong> and <strong className="text-cyan-400">HITEC City&apos;s global IT companies</strong> to <strong className="text-cyan-400">Laad Bazaar&apos;s pearl merchants</strong> and <strong className="text-cyan-400">Kondapur&apos;s booming residential developments</strong> &mdash; Hyderabad&apos;s business diversity is unmatched. <strong className="text-white">SniperCoders</strong>, the <strong className="text-violet-400">best software agency in Hyderabad</strong>, has the depth to serve all of them with precision-engineered digital solutions.
+                From <strong className="text-cyan-400">Genome Valley&apos;s biotech firms</strong> and <strong className="text-cyan-400">HITEC City&apos;s IT companies</strong> to <strong className="text-cyan-400">Laad Bazaar&apos;s pearl merchants</strong> and <strong className="text-cyan-400">Kondapur&apos;s residential developments</strong> &mdash; Hyderabad&apos;s business mix is wide-ranging. <strong className="text-white">SniperCoders</strong> works across these sectors with digital solutions built to fit each one.
               </p>
               <p>
-                Whether you need an <strong className="text-white">international-grade pharma website</strong>, a <strong className="text-white">Telugu SEO strategy for your local restaurant chain</strong>, a <strong className="text-white">jewellery ecommerce platform for Laad Bazaar</strong>, or a <strong className="text-white">SaaS product built for HITEC City startups</strong> &mdash; we&apos;re Hyderabad&apos;s most capable digital partner. <strong className="text-violet-400">Contact us at +91 7006377796 or snipercoders25@gmail.com</strong> for a free consultation.
+                Whether it&apos;s a <strong className="text-white">pharma-facing website</strong>, a <strong className="text-white">Telugu SEO strategy for a local restaurant chain</strong>, a <strong className="text-white">jewellery ecommerce platform for Laad Bazaar</strong>, or a <strong className="text-white">SaaS product for HITEC City startups</strong> &mdash; <strong className="text-violet-400">contact us at +91 7006377796 or snipercoders25@gmail.com</strong> for a free consultation.
               </p>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* ── SERVICES with keyword optimization ────────────────── */}
+      {/* ── SERVICES ────────────────────────────────────────────── */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp} className="text-center mb-14">
@@ -783,21 +266,20 @@ export default function HyderabadPage() {
               Our Services in <span className="bg-gradient-to-r from-violet-400 to-orange-400 bg-clip-text text-transparent">Hyderabad</span>
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Solutions engineered for Hyderabad&apos;s unique blend of ancient commerce and modern technology. <strong className="text-violet-400">Web development, mobile apps, SEO, and more.</strong>
+              Solutions built for Hyderabad&apos;s blend of established trade and modern technology &mdash; web development, mobile apps, SEO, and more.
             </p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {SERVICES.map((svc, i) => (
-              <motion.div 
-                key={i} 
+              <motion.div
+                key={i}
                 custom={i} initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp}
                 className="group relative bg-gray-900/60 border border-gray-800 hover:border-violet-600/50 rounded-2xl p-7 transition-all duration-300 overflow-hidden"
               >
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(139,92,246,0.08), transparent)" }} />
                 <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${svc.gradient} flex items-center justify-center mb-5 shadow-lg`}>{svc.icon}</div>
                 <h3 className="text-xl font-bold mb-3 text-white group-hover:text-violet-300 transition-colors">{svc.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed mb-2">{svc.desc}</p>
-                <p className="text-xs text-violet-400/70 italic">{svc.keywords}</p>
+                <p className="text-gray-400 text-sm leading-relaxed">{svc.desc}</p>
                 <div className="absolute bottom-0 left-0 h-0.5 w-0 group-hover:w-full bg-gradient-to-r from-violet-500 to-orange-500 transition-all duration-500" />
               </motion.div>
             ))}
@@ -805,7 +287,7 @@ export default function HyderabadPage() {
         </div>
       </section>
 
-      {/* ── BUSINESS CATEGORIES with hyperlocal keywords ───────── */}
+      {/* ── BUSINESS CATEGORIES ─────────────────────────────────── */}
       <section className="py-20 bg-gradient-to-b from-transparent via-violet-950/10 to-transparent">
         <div className="container mx-auto px-4">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp} className="text-center mb-14">
@@ -813,16 +295,15 @@ export default function HyderabadPage() {
               Industries We Serve in <span className="bg-gradient-to-r from-violet-400 to-orange-400 bg-clip-text text-transparent">Hyderabad</span>
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              From <strong className="text-violet-400">Charminar pearl traders</strong> to <strong className="text-violet-400">Cyberabad SaaS companies</strong> &mdash; every Hyderabad business category deserves digital excellence.
+              From <strong className="text-violet-400">Charminar pearl traders</strong> to <strong className="text-violet-400">Cyberabad SaaS companies</strong> &mdash; every Hyderabad business category deserves a strong digital presence.
             </p>
           </motion.div>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
             {BUSINESS_CATEGORIES.map((cat, i) => (
-              <motion.div 
-                key={i} 
+              <motion.div
+                key={i}
                 custom={i} initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp}
                 className="flex flex-col items-center gap-2 bg-gray-900/60 border border-gray-800 hover:border-gray-600 rounded-xl p-4 text-center transition-all duration-300 hover:-translate-y-1 cursor-default"
-                title={cat.keyword}
               >
                 <span className={cat.color}>{cat.icon}</span>
                 <span className="text-xs text-gray-300 leading-tight">{cat.label}</span>
@@ -831,7 +312,7 @@ export default function HyderabadPage() {
           </div>
 
           {/* Hyperlocal areas */}
-          <motion.div 
+          <motion.div
             initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp}
             className="mt-12 text-center"
           >
@@ -847,34 +328,34 @@ export default function HyderabadPage() {
         </div>
       </section>
 
-      {/* ── WHY US with psychological triggers ─────────────────── */}
+      {/* ── WHY US ──────────────────────────────────────────────── */}
       <section className="py-20">
         <div className="container mx-auto px-4 max-w-5xl">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp} className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-extrabold" style={{ fontFamily: "'Syne', sans-serif" }}>
-              Why Hyderabad Businesses Trust <span className="bg-gradient-to-r from-violet-400 to-orange-400 bg-clip-text text-transparent">SniperCoders</span>
+              Why Hyderabad Businesses Work With <span className="bg-gradient-to-r from-violet-400 to-orange-400 bg-clip-text text-transparent">SniperCoders</span>
             </h2>
             <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
-              Here&apos;s what makes us the <strong className="text-violet-400">preferred digital partner for Hyderabad&apos;s most successful businesses</strong>:
+              Here&apos;s how we work with Hyderabad businesses:
             </p>
           </motion.div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
-              "Telugu & English bilingual SEO for maximum search dominance across Hyderabad",
-              "Pharma & biotech-compliant website architecture for Genome Valley companies",
+              "Telugu & English bilingual SEO for search coverage across Hyderabad",
+              "Pharma & biotech-aware website architecture for Genome Valley companies",
               "HITEC City & Cyberabad IT firm digital product development and SaaS platforms",
               "Hyderabad real estate lead-gen websites &mdash; Gachibowli to Kompally, Kokapet to Bachupally",
-              "Biryani & restaurant chain multi-location digital marketing with Telugu keywords",
-              "Pearl & jewellery eCommerce with global shipping support for Laad Bazaar merchants",
+              "Restaurant chain multi-location digital marketing with Telugu keywords",
+              "Pearl & jewellery eCommerce with shipping support for Laad Bazaar merchants",
               "Telangana government portal & e-procurement compliance for contractors",
-              "TSIC & startup ecosystem-aligned digital infrastructure for Hyderabad&apos;s founders",
-              "Educational institution websites for Hyderabad&apos;s top schools & universities",
-              "Integration with Razorpay, Paytm, PhonePe & all Indian payment gateways",
+              "Educational institution websites for Hyderabad&apos;s schools & universities",
+              "Integration with Razorpay, Paytm, PhonePe & Indian payment gateways",
               "GST invoicing & India-compliant data practices for Telangana businesses",
-              "Post-launch support & maintenance with 24/7 availability for critical issues"
+              "Post-launch support & maintenance for critical issues",
+              "Regular business-hours availability for calls and meetings"
             ].map((item, i) => (
-              <motion.div 
-                key={i} 
+              <motion.div
+                key={i}
                 custom={i} initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp}
                 className="flex items-start gap-3 bg-gray-900/50 border border-gray-800 rounded-xl p-4 hover:border-violet-800/50 transition-all duration-300"
               >
@@ -891,25 +372,23 @@ export default function HyderabadPage() {
         </div>
       </section>
 
-      {/* ── TESTIMONIAL with social proof ───────────────────────── */}
+      {/* ── TRUST STRIP (replaces the fabricated testimonial) ──── */}
       <section className="py-12 bg-gradient-to-r from-violet-900/20 via-purple-900/10 to-violet-900/20 border-y border-gray-800/50">
         <div className="container mx-auto px-4 text-center">
           <div className="flex flex-wrap justify-center gap-3 mb-6">
             {[...Array(5)].map((_, i) => <Star key={i} className="w-6 h-6 text-yellow-400 fill-yellow-400" />)}
           </div>
-          <blockquote className="text-xl md:text-2xl font-medium text-gray-200 max-w-3xl mx-auto italic">
-            &ldquo;We run a pharma distribution business in <strong className="text-violet-400">Hyderabad</strong>. SniperCoders built our B2B portal and our Google ranking for pharma-related searches jumped dramatically. Their understanding of the <strong className="text-violet-400">Genome Valley</strong> ecosystem and regulatory requirements set them apart. Highly professional team &mdash; the <strong className="text-violet-400">best software agency in Hyderabad</strong> we&apos;ve worked with.&rdquo;
-          </blockquote>
-          <p className="text-gray-500 mt-4 text-sm">&mdash; Pharma Distributor, Genome Valley, Hyderabad</p>
-          <div className="flex justify-center gap-4 mt-4 text-xs text-gray-600">
-            <span>⭐ 5/5 on Google</span>
-            <span>✅ Verified Client</span>
-            <span>📍 Genome Valley, Hyderabad</span>
+          <p className="text-xl md:text-2xl font-medium text-gray-200 max-w-3xl mx-auto">
+            We work with pharma, IT, education, and retail businesses across Hyderabad to build websites, apps, and marketing campaigns suited to the city&apos;s Telugu- and English-speaking audience.
+          </p>
+          <div className="flex justify-center gap-4 mt-6 text-xs text-gray-600">
+            <span>📍 Hyderabad, Telangana</span>
+            <span>✅ GST Registered</span>
           </div>
         </div>
       </section>
 
-      {/* ── FAQ with long-tail keywords ────────────────────────── */}
+      {/* ── FAQ ─────────────────────────────────────────────────── */}
       <section className="py-20">
         <div className="container mx-auto px-4 max-w-3xl">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp} className="text-center mb-12">
@@ -917,23 +396,23 @@ export default function HyderabadPage() {
               Frequently Asked Questions &mdash;{" "}
               <span className="bg-gradient-to-r from-violet-400 to-orange-400 bg-clip-text text-transparent">Hyderabad</span>
             </h2>
-            <p className="text-gray-400">Answers to common questions about <strong className="text-violet-400">software development, website design, and digital marketing in Hyderabad.</strong></p>
+            <p className="text-gray-400">Common questions about software development, website design, and digital marketing in Hyderabad.</p>
           </motion.div>
           <div className="space-y-4">
             {FAQS.map((faq, i) => (
-              <motion.div 
-                key={i} 
-                custom={i} initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp} 
+              <motion.div
+                key={i}
+                custom={i} initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp}
                 className="border border-gray-800 rounded-2xl overflow-hidden"
               >
-                <button 
-                  className="w-full text-left px-6 py-5 flex justify-between items-center bg-gray-900/60 hover:bg-gray-900 transition-colors" 
+                <button
+                  className="w-full text-left px-6 py-5 flex justify-between items-center bg-gray-900/60 hover:bg-gray-900 transition-colors"
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
                 >
                   <span className="font-semibold text-white text-sm md:text-base">{faq.q}</span>
                   <ChevronRight className={`w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-300 ${openFaq === i ? "rotate-90" : ""}`} />
                 </button>
-                {openFaq === i && 
+                {openFaq === i &&
                   <div className="px-6 py-5 bg-gray-950/40 text-gray-300 text-sm leading-relaxed border-t border-gray-800">{faq.a}</div>
                 }
               </motion.div>
@@ -942,10 +421,10 @@ export default function HyderabadPage() {
         </div>
       </section>
 
-      {/* ── CTA with contact info ──────────────────────────────── */}
+      {/* ── CTA ─────────────────────────────────────────────────── */}
       <section className="py-20">
         <div className="container mx-auto px-4 max-w-4xl text-center">
-          <motion.div 
+          <motion.div
             initial="hidden" whileInView="show" viewport={{ once: true }} variants={scaleIn}
             className="relative bg-gradient-to-br from-violet-900/40 to-purple-900/30 border border-violet-700/30 rounded-3xl p-12 md:p-16 overflow-hidden"
           >
@@ -956,9 +435,9 @@ export default function HyderabadPage() {
                 <span className="bg-gradient-to-r from-violet-400 to-orange-400 bg-clip-text text-transparent">Digitally & Decisively</span>
               </h2>
               <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-                Hyderabad&apos;s <strong className="text-white">1 crore+ consumers</strong> search Google in Telugu and English every day. From <strong className="text-violet-400">HITEC City to Charminar, Jubilee Hills to Genome Valley</strong> &mdash; SniperCoders makes sure they find you.
+                Hyderabad&apos;s consumers search Google in Telugu and English every day. From <strong className="text-violet-400">HITEC City to Charminar, Jubilee Hills to Genome Valley</strong> &mdash; SniperCoders helps make sure they find you.
               </p>
-              
+
               {/* Contact cards */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                 <a href={`tel:${phoneNumber}`}
@@ -982,12 +461,12 @@ export default function HyderabadPage() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/contact" 
+                <Link href="/contact"
                   className="inline-flex items-center gap-2 bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white font-bold px-10 py-4 rounded-xl shadow-xl transition-all duration-300 hover:scale-105"
                 >
                   Book Free Consultation <ChevronRight className="w-5 h-5" />
                 </Link>
-                <Link href="/showcase" 
+                <Link href="/showcase"
                   className="inline-flex items-center gap-2 border border-gray-600 hover:border-violet-500 text-gray-300 hover:text-white font-semibold px-10 py-4 rounded-xl transition-all duration-300"
                 >
                   View Hyderabad Portfolio
