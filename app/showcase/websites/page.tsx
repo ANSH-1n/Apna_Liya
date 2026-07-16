@@ -1,5 +1,3 @@
-
-
 'use client';
 
 import Footer from '@/components/Footer';
@@ -13,6 +11,7 @@ import {
   Plane,
   ShoppingBag,
 } from 'lucide-react';
+import Link from 'next/link';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 22 },
@@ -103,10 +102,61 @@ const projects = [
   },
 ];
 
+// ✅ FAQ data for AI discovery
+const faqs = [
+  {
+    question: 'What types of websites has SniperCoders built?',
+    answer: 'SniperCoders has built responsive business websites, e-commerce platforms, travel booking sites, portfolio pages, custom software dashboards, and fitness centre websites for clients across various industries including fitness, real estate, travel, automotive, and education.'
+  },
+  {
+    question: 'How much does a website cost?',
+    answer: 'Website costs vary based on complexity, features, and design requirements. Our website packages start at $500 for simple landing pages and go up to $5,000+ for custom e-commerce and software platforms. Contact us for a custom quote tailored to your needs.'
+  },
+  {
+    question: 'How long does website development take?',
+    answer: 'Website development typically takes 2-6 weeks depending on complexity. Simple landing pages can be completed in 1-2 weeks, while custom e-commerce or software platforms may take 4-8 weeks.'
+  },
+  {
+    question: 'Do you offer website maintenance?',
+    answer: 'Yes, we offer ongoing website maintenance, updates, security monitoring, and performance optimization to ensure your site remains secure, fast, and up-to-date.'
+  },
+  {
+    question: 'What industries do you have experience in?',
+    answer: 'We have experience working with clients in real estate, fitness, education, travel, automotive accessories, e-commerce, and professional services. Our portfolio reflects a diverse range of projects.'
+  },
+  {
+    question: 'Can you build a custom software platform?',
+    answer: 'Yes! We specialize in custom software development including CRM systems, automation platforms, dashboards, and internal business tools. TorkeHub is one example of our custom software work.'
+  },
+];
+
+function SectionHeader({
+  eyebrow,
+  title,
+  copy,
+}: {
+  eyebrow: string;
+  title: string;
+  copy?: string;
+}) {
+  return (
+    <div className="mx-auto mb-10 max-w-3xl text-center">
+      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-300">
+        {eyebrow}
+      </p>
+      <h2 className="text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-5xl">
+        {title}
+      </h2>
+      {copy ? <p className="mt-5 text-base leading-8 text-slate-300">{copy}</p> : null}
+    </div>
+  );
+}
+
 export default function WebsiteShowcasePage() {
   return (
     <>
       <main className="min-h-screen overflow-hidden bg-[#05070d] text-white">
+        {/* ✅ AI-FRIENDLY HERO SECTION */}
         <section className="relative isolate px-4 pb-14 pt-24 sm:px-6 sm:pb-16 lg:px-8">
           <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:54px_54px]" />
           <div className="absolute inset-x-0 top-0 -z-10 h-96 bg-[radial-gradient(ellipse_at_top,rgba(34,211,238,0.23),transparent_60%)]" />
@@ -114,13 +164,25 @@ export default function WebsiteShowcasePage() {
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-300">
               Website Showcase
             </p>
+            {/* ✅ H1: Added keywords */}
             <h1 className="text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
-              Website and software projects built as conversion assets.
+              Website and Software Projects — SniperCoders Web Development Portfolio
             </h1>
+            <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
+              <strong>SniperCoders</strong> web development portfolio featuring e-commerce, 
+              travel, fitness, automotive, and custom software projects. Each website is built 
+              as a conversion asset with modern UI/UX and responsive design.
+            </p>
           </div>
         </section>
 
+        {/* ✅ PROJECTS SECTION */}
         <section className="px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+          <SectionHeader
+            eyebrow="Portfolio"
+            title="Websites and Custom Software Built for Real Business Growth"
+            copy="Explore our web development projects including e-commerce stores, travel platforms, fitness websites, and custom software solutions."
+          />
           <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-2">
             {projects.map((project, index) => {
               const Icon = project.icon;
@@ -178,6 +240,64 @@ export default function WebsiteShowcasePage() {
                 </motion.article>
               );
             })}
+          </div>
+        </section>
+
+        {/* ✅ FAQ SECTION - Critical for AI discovery */}
+        <section className="border-y border-white/10 bg-white/[0.03] px-4 py-20 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-4xl">
+            <SectionHeader
+              eyebrow="FAQ"
+              title="Frequently Asked Questions About SniperCoders Web Development"
+              copy="Find answers to common questions about our website development, custom software, and project process."
+            />
+            <div className="space-y-4">
+              {faqs.map((faq, index) => (
+                <div
+                  key={index}
+                  className="rounded-xl border border-white/10 bg-white/[0.04] p-6 hover:border-cyan-300/30 transition"
+                >
+                  <h3 className="text-lg font-semibold text-cyan-300">{faq.question}</h3>
+                  <p className="mt-2 text-slate-300 leading-relaxed">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ✅ FINAL CTA SECTION */}
+        <section className="px-4 pb-24 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-5xl rounded-[2rem] border border-cyan-300/20 bg-[linear-gradient(135deg,rgba(14,165,233,0.2),rgba(15,23,42,0.96)_42%,rgba(236,72,153,0.16))] p-8 sm:p-12">
+            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+              <div>
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-200">
+                  Ready to Build Your Website?
+                </p>
+                <h2 className="text-3xl font-semibold leading-tight sm:text-5xl">
+                  Let SniperCoders Build a Website That Converts
+                </h2>
+                <p className="mt-5 max-w-2xl leading-8 text-slate-200">
+                  Whether you need an e-commerce store, a travel platform, a fitness website, 
+                  or a custom software solution, we can help you bring your vision to life.
+                </p>
+              </div>
+              <div className="flex flex-col gap-3">
+                <a
+                  href="https://wa.me/917006377796?text=Hello%20SniperCoders%2C%20I%20want%20to%20discuss%20a%20website%20project."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-100"
+                >
+                  Discuss Your Website Project
+                </a>
+                <Link
+                  href="/contact"
+                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition hover:border-cyan-300/60 hover:bg-cyan-300/10"
+                >
+                  Contact SniperCoders
+                </Link>
+              </div>
+            </div>
           </div>
         </section>
       </main>

@@ -1,4 +1,4 @@
-
+//app/next.config.ts
 
 import type { NextConfig } from "next";
 
@@ -38,6 +38,29 @@ const nextConfig: NextConfig = {
       {
         source: '/Testimonials.html',
         destination: '/showcase',
+        permanent: true,
+      },
+      // ✅ Consolidate thin/low-volume location pages into the
+      // locations hub page instead of leaving them as standalone
+      // near-duplicate pages (avoids doorway-page pattern in GSC)
+      {
+        source: '/services/best-software-agency-jammu',
+        destination: '/services/locations',
+        permanent: true,
+      },
+      {
+        source: '/services/best-software-agency-kashmir',
+        destination: '/services/locations',
+        permanent: true,
+      },
+      {
+        source: '/services/best-software-agency-katra',
+        destination: '/services/locations',
+        permanent: true,
+      },
+      {
+        source: '/services/best-software-agency-udhampur',
+        destination: '/services/locations',
         permanent: true,
       },
     ];

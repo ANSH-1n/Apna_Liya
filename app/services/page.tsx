@@ -1,3 +1,238 @@
+// //app/services/page.tsx
+
+
+// import Footer from '@/components/Footer';
+// import {
+//   ArrowRight,
+//   Bot,
+//   CheckCircle2,
+//   Clapperboard,
+//   Globe2,
+//   Megaphone,
+//   PenTool,
+//   Target,
+// } from 'lucide-react';
+// import type { Metadata } from 'next';
+// import Link from 'next/link';
+
+// export const metadata: Metadata = {
+//   title: 'Services | Video Editing, Social Media Marketing & Digital Growth',
+//   description:
+//     'SniperCoders offers short-form video editing, social media marketing, Meta Ads creatives, Google Ads creatives, content strategy, websites, landing pages, and AI automation for growing brands.',
+//   keywords: [
+//     'video editing services',
+//     'short-form video editing',
+//     'social media marketing',
+//     'Meta Ads creatives',
+//     'Google Ads creatives',
+//     'content strategy',
+//     'website development',
+//     'landing page development',
+//     'AI automation',
+//     'SniperCoders services',
+//   ],
+// };
+
+// const services = [
+//   {
+//     title: 'Short-Form Video Editing',
+//     href: '/showcase/video-editing',
+//     icon: Clapperboard,
+//     description:
+//       'Premium reels, shorts, captions, pacing, hooks, sound design, and retention-focused edits for brands, creators, coaches, real estate, fitness, education, and product-led businesses.',
+//     includes: ['Instagram Reels', 'YouTube Shorts', 'Ad-ready edits'],
+//   },
+//   {
+//     title: 'Social Media Marketing',
+//     href: '/contact',
+//     icon: Megaphone,
+//     description:
+//       'Content planning, posting direction, captions, calendar structure, story ideas, and campaign thinking for brands that need a consistent online presence.',
+//     includes: ['Content calendars', 'Caption direction', 'Growth strategy'],
+//   },
+//   {
+//     title: 'Meta & Google Ads Creatives',
+//     href: '/contact',
+//     icon: Target,
+//     description:
+//       'Static ads, video ads, UGC-style concepts, thumbnails, hooks, offer creatives, and testing variants for paid campaigns.',
+//     includes: ['Meta creatives', 'Google ad assets', 'Creative variants'],
+//   },
+//   {
+//     title: 'Content Strategy & Brand Storytelling',
+//     href: '/contact',
+//     icon: PenTool,
+//     description:
+//       'Clear messaging, content pillars, founder-led stories, campaign ideas, and creative direction that makes your brand easier to understand and remember.',
+//     includes: ['Messaging', 'Content pillars', 'Campaign ideas'],
+//   },
+//   {
+//     title: 'Websites & Landing Pages',
+//     href: '/showcase/websites',
+//     icon: Globe2,
+//     description:
+//       'Modern websites, landing pages, portfolio pages, business sites, and conversion-focused pages that support your marketing and sales flow.',
+//     includes: ['Business websites', 'Landing pages', 'Portfolio pages'],
+//   },
+//   {
+//     title: 'AI Agents & Automation',
+//     href: '/agents',
+//     icon: Bot,
+//     description:
+//       'Practical AI agents and automations for lead capture, support, workflows, and repetitive business tasks.',
+//     includes: ['AI chat agents', 'Workflow automation', 'Lead support'],
+//   },
+// ];
+
+// const reasons = [
+//   'Focused on video, social media, paid creatives, and conversion.',
+//   'Clean creative direction with practical business thinking.',
+//   'Experience across content, websites, marketing, and automation.',
+//   'Simple communication and a clear sprint-based workflow.',
+// ];
+
+// export default function ServicesPage() {
+//   return (
+//     <>
+//       <main className="min-h-screen overflow-hidden bg-[#05070d] text-white">
+//         <section className="relative isolate px-4 pb-14 pt-24 sm:px-6 sm:pb-16 lg:px-8 lg:pt-28">
+//           <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:56px_56px]" />
+//           <div className="absolute inset-x-0 top-0 -z-10 h-96 bg-[radial-gradient(ellipse_at_top,rgba(34,211,238,0.22),transparent_58%)]" />
+
+//           <div className="mx-auto max-w-5xl text-center">
+//             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-300">
+//               Services
+//             </p>
+//             <h1 className="text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
+//               Creative growth services for brands that need sharper content.
+//             </h1>
+//             <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-300 sm:text-lg">
+//               SniperCoders helps founders, creators, coaches, startups, agencies, and growing
+//               businesses with video editing, social media marketing, ad creatives, content strategy,
+//               websites, landing pages, and AI automation.
+//             </p>
+//             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+//               <Link
+//                 href="/contact"
+//                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-100"
+//               >
+//                 Discuss a project
+//                 <ArrowRight className="h-4 w-4" />
+//               </Link>
+//               <Link
+//                 href="/showcase"
+//                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:border-cyan-300/60 hover:bg-cyan-300/10"
+//               >
+//                 View showcase
+//               </Link>
+//             </div>
+//           </div>
+//         </section>
+
+//         <section className="px-4 pb-20 sm:px-6 lg:px-8">
+//           <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2 lg:grid-cols-3">
+//             {services.map((service) => {
+//               const Icon = service.icon;
+//               return (
+//                 <Link
+//                   key={service.title}
+//                   href={service.href}
+//                   className="group rounded-2xl border border-white/10 bg-white/[0.04] p-6 transition hover:-translate-y-1 hover:border-cyan-300/40"
+//                 >
+//                   <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-300/10 text-cyan-300">
+//                     <Icon className="h-6 w-6" />
+//                   </div>
+//                   <h2 className="text-2xl font-semibold text-white">{service.title}</h2>
+//                   <p className="mt-4 leading-7 text-slate-300">{service.description}</p>
+//                   <div className="mt-5 flex flex-wrap gap-2">
+//                     {service.includes.map((item) => (
+//                       <span
+//                         key={item}
+//                         className="rounded-full border border-white/10 bg-slate-950/60 px-3 py-1 text-xs font-medium text-slate-300"
+//                       >
+//                         {item}
+//                       </span>
+//                     ))}
+//                   </div>
+//                   <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-cyan-300 transition group-hover:text-white">
+//                     Learn more
+//                     <ArrowRight className="h-4 w-4" />
+//                   </span>
+//                 </Link>
+//               );
+//             })}
+//           </div>
+//         </section>
+
+//         <section className="border-y border-white/10 bg-white/[0.03] px-4 py-16 sm:px-6 lg:px-8">
+//           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+//             <div>
+//               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-300">
+//                 Why SniperCoders
+//               </p>
+//               <h2 className="text-3xl font-semibold leading-tight sm:text-4xl">
+//                 Simple services, clear execution, better creative output.
+//               </h2>
+//               <p className="mt-5 leading-8 text-slate-300">
+//                 We keep the work practical: understand the offer, create stronger assets, test better
+//                 angles, and make every page, post, reel, and ad easier for the audience to trust.
+//               </p>
+//             </div>
+//             <div className="grid gap-4 sm:grid-cols-2">
+//               {reasons.map((reason) => (
+//                 <div key={reason} className="flex gap-4 rounded-2xl border border-white/10 bg-slate-950 p-5">
+//                   <CheckCircle2 className="mt-1 h-6 w-6 shrink-0 text-cyan-300" />
+//                   <p className="leading-7 text-slate-300">{reason}</p>
+//                 </div>
+//               ))}
+//             </div>
+//           </div>
+//         </section>
+
+//         <section className="px-4 py-20 sm:px-6 lg:px-8">
+//           <div className="mx-auto max-w-7xl rounded-[2rem] border border-cyan-300/20 bg-[linear-gradient(135deg,rgba(14,165,233,0.2),rgba(15,23,42,0.96)_42%,rgba(236,72,153,0.16))] p-8 sm:p-12">
+//             <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+//               <div>
+//                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-200">
+//                   Start Here
+//                 </p>
+//                 <h2 className="text-3xl font-semibold leading-tight sm:text-5xl">
+//                   Need video edits, social content, ads, or a landing page?
+//                 </h2>
+//                 <p className="mt-5 max-w-2xl leading-8 text-slate-200">
+//                   Send your niche, current content, and goal. We will suggest the service mix that
+//                   fits your next growth sprint.
+//                 </p>
+//               </div>
+//               <Link
+//                 href="/contact"
+//                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-100"
+//               >
+//                 Contact SniperCoders
+//                 <ArrowRight className="h-4 w-4" />
+//               </Link>
+//             </div>
+//           </div>
+//         </section>
+//       </main>
+//       <Footer />
+//     </>
+//   );
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+// app/services/page.tsx
 import Footer from '@/components/Footer';
 import {
   ArrowRight,
@@ -8,6 +243,7 @@ import {
   Megaphone,
   PenTool,
   Target,
+  MessageCircle,
 } from 'lucide-react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -38,14 +274,42 @@ const services = [
     description:
       'Premium reels, shorts, captions, pacing, hooks, sound design, and retention-focused edits for brands, creators, coaches, real estate, fitness, education, and product-led businesses.',
     includes: ['Instagram Reels', 'YouTube Shorts', 'Ad-ready edits'],
+    faqs: [
+      {
+        question: 'What is short-form video editing?',
+        answer: 'Short-form video editing focuses on creating engaging content for platforms like Instagram Reels, YouTube Shorts, and TikTok. We edit raw footage into compelling 15-60 second videos optimized for mobile viewing and maximum retention.'
+      },
+      {
+        question: 'What types of videos do you edit?',
+        answer: 'We edit all types of short-form content including product showcases, educational content, brand storytelling, real estate tours, fitness content, and lifestyle videos.'
+      },
+      {
+        question: 'How much does video editing cost?',
+        answer: 'Our video editing packages start at $500/month for basic editing and scale based on volume and complexity. Contact us for a custom quote tailored to your content needs.'
+      },
+    ],
   },
   {
     title: 'Social Media Marketing',
-    href: '/contact',
+    href: '/pricing/social-media-marketing',
     icon: Megaphone,
     description:
       'Content planning, posting direction, captions, calendar structure, story ideas, and campaign thinking for brands that need a consistent online presence.',
     includes: ['Content calendars', 'Caption direction', 'Growth strategy'],
+    faqs: [
+      {
+        question: 'What is social media marketing?',
+        answer: 'Social media marketing involves creating and sharing content on social media platforms to achieve marketing and branding goals. Our service includes strategy, content creation, posting, engagement, and analytics.'
+      },
+      {
+        question: 'Which platforms do you manage?',
+        answer: 'We primarily manage Instagram, LinkedIn, Facebook, and YouTube. We can also support TikTok and X (Twitter) based on your target audience.'
+      },
+      {
+        question: 'How long does it take to see results?',
+        answer: 'Most clients see initial engagement growth within 30 days, with significant audience growth and lead generation typically visible within 60-90 days of consistent strategy execution.'
+      },
+    ],
   },
   {
     title: 'Meta & Google Ads Creatives',
@@ -54,6 +318,20 @@ const services = [
     description:
       'Static ads, video ads, UGC-style concepts, thumbnails, hooks, offer creatives, and testing variants for paid campaigns.',
     includes: ['Meta creatives', 'Google ad assets', 'Creative variants'],
+    faqs: [
+      {
+        question: 'What is ad creative production?',
+        answer: 'Ad creative production involves creating visual and video assets specifically designed for paid advertising campaigns on platforms like Meta (Facebook/Instagram) and Google.'
+      },
+      {
+        question: 'What types of ad creatives do you produce?',
+        answer: 'We produce video ads, static images, carousel ads, UGC-style content, offer visuals, and thumbnails for both Meta and Google Ads platforms.'
+      },
+      {
+        question: 'How many ad creatives do you provide?',
+        answer: 'Our ad creative packages typically include 4-8 creative variants per month, allowing you to test different hooks, visuals, and offers to optimize campaign performance.'
+      },
+    ],
   },
   {
     title: 'Content Strategy & Brand Storytelling',
@@ -62,6 +340,20 @@ const services = [
     description:
       'Clear messaging, content pillars, founder-led stories, campaign ideas, and creative direction that makes your brand easier to understand and remember.',
     includes: ['Messaging', 'Content pillars', 'Campaign ideas'],
+    faqs: [
+      {
+        question: 'What is brand storytelling?',
+        answer: 'Brand storytelling is the art of using narrative to connect with your audience on an emotional level. It involves creating a consistent brand voice, visual identity, and messaging that resonates with your target market.'
+      },
+      {
+        question: 'Why is brand storytelling important?',
+        answer: 'Brand storytelling helps customers remember your brand, builds trust, and creates an emotional connection that goes beyond product features, leading to stronger customer loyalty and higher conversion rates.'
+      },
+      {
+        question: 'How does content strategy help my business?',
+        answer: 'Content strategy provides a framework for consistent, targeted content creation. It ensures your messaging aligns with your business goals, speaks to your ideal audience, and builds authority in your niche.'
+      },
+    ],
   },
   {
     title: 'Websites & Landing Pages',
@@ -70,6 +362,20 @@ const services = [
     description:
       'Modern websites, landing pages, portfolio pages, business sites, and conversion-focused pages that support your marketing and sales flow.',
     includes: ['Business websites', 'Landing pages', 'Portfolio pages'],
+    faqs: [
+      {
+        question: 'What type of websites do you build?',
+        answer: 'We build modern, responsive websites including business websites, landing pages, portfolio pages, and e-commerce sites. All our websites are optimized for user experience and conversion.'
+      },
+      {
+        question: 'How long does website development take?',
+        answer: 'Website development typically takes 2-6 weeks depending on complexity. Landing pages and simple sites can be completed in 1-2 weeks.'
+      },
+      {
+        question: 'Do you offer website maintenance?',
+        answer: 'Yes, we offer ongoing website maintenance, updates, and performance optimization to ensure your site remains secure, fast, and up-to-date.'
+      },
+    ],
   },
   {
     title: 'AI Agents & Automation',
@@ -78,6 +384,20 @@ const services = [
     description:
       'Practical AI agents and automations for lead capture, support, workflows, and repetitive business tasks.',
     includes: ['AI chat agents', 'Workflow automation', 'Lead support'],
+    faqs: [
+      {
+        question: 'What are AI agents?',
+        answer: 'AI agents are automated systems that can handle tasks like customer support, lead qualification, appointment scheduling, and data processing. They help businesses save time and improve response times.'
+      },
+      {
+        question: 'How can AI automation help my business?',
+        answer: 'AI automation can handle repetitive tasks, qualify leads 24/7, provide instant customer support, and streamline internal workflows, allowing your team to focus on high-value strategic work.'
+      },
+      {
+        question: 'How long does it take to implement an AI agent?',
+        answer: 'AI agent implementation typically takes 1-4 weeks depending on complexity. Simple chatbots can be deployed in days, while complex workflow automation may take longer.'
+      },
+    ],
   },
 ];
 
@@ -88,10 +408,56 @@ const reasons = [
   'Simple communication and a clear sprint-based workflow.',
 ];
 
+// ✅ NEW: General FAQs for the services page
+const generalFaqs = [
+  {
+    question: 'What services does SniperCoders offer?',
+    answer: 'SniperCoders offers short-form video editing, social media marketing, Meta & Google ad creative production, brand storytelling, website development, landing pages, and AI automation. We help brands grow through creative and strategic digital solutions.'
+  },
+  {
+    question: 'How much do your services cost?',
+    answer: 'Our service pricing varies based on scope, volume, and complexity. We offer packages starting at $500/month for video editing and social media management. Contact us for a custom quote tailored to your specific needs.'
+  },
+  {
+    question: 'How do I get started with SniperCoders?',
+    answer: 'Simply contact us via WhatsApp or book a growth call. We will discuss your goals, current content, and growth objectives, then create a customized strategy and service package for your brand.'
+  },
+  {
+    question: 'What types of clients do you work with?',
+    answer: 'We work with founders, creators, coaches, startups, agencies, and growing businesses across industries including real estate, fitness, education, e-commerce, and professional services.'
+  },
+];
+
+function SectionHeader({
+  eyebrow,
+  title,
+  copy,
+}: {
+  eyebrow: string;
+  title: string;
+  copy?: string;
+}) {
+  return (
+    <div className="mx-auto mb-10 max-w-3xl text-center">
+      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-300">
+        {eyebrow}
+      </p>
+      <h2 className="text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-5xl">
+        {title}
+      </h2>
+      {copy ? <p className="mt-5 text-base leading-8 text-slate-300">{copy}</p> : null}
+    </div>
+  );
+}
+
+const whatsappHref =
+  'https://wa.me/917006377796?text=Hello%20SniperCoders%2C%20I%20want%20to%20discuss%20your%20services%20for%20my%20brand.';
+
 export default function ServicesPage() {
   return (
     <>
       <main className="min-h-screen overflow-hidden bg-[#05070d] text-white">
+        {/* ✅ AI-FRIENDLY HERO SECTION */}
         <section className="relative isolate px-4 pb-14 pt-24 sm:px-6 sm:pb-16 lg:px-8 lg:pt-28">
           <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:56px_56px]" />
           <div className="absolute inset-x-0 top-0 -z-10 h-96 bg-[radial-gradient(ellipse_at_top,rgba(34,211,238,0.22),transparent_58%)]" />
@@ -100,22 +466,25 @@ export default function ServicesPage() {
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-300">
               Services
             </p>
+            {/* ✅ H1: Added keywords "Video Editing, Social Media Marketing, and Digital Growth" */}
             <h1 className="text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
-              Creative growth services for brands that need sharper content.
+              Video Editing, Social Media Marketing, and Digital Growth Services
             </h1>
             <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-300 sm:text-lg">
-              SniperCoders helps founders, creators, coaches, startups, agencies, and growing
+              <strong>SniperCoders</strong> helps founders, creators, coaches, startups, agencies, and growing
               businesses with video editing, social media marketing, ad creatives, content strategy,
-              websites, landing pages, and AI automation.
+              websites, landing pages, and AI automation. Based in Bangalore, India, we serve clients worldwide.
             </p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-              <Link
-                href="/contact"
+              <a
+                href={whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-100"
               >
-                Discuss a project
-                <ArrowRight className="h-4 w-4" />
-              </Link>
+                <MessageCircle className="h-4 w-4" />
+                Start on WhatsApp
+              </a>
               <Link
                 href="/showcase"
                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:border-cyan-300/60 hover:bg-cyan-300/10"
@@ -126,15 +495,15 @@ export default function ServicesPage() {
           </div>
         </section>
 
+        {/* ✅ SERVICES SECTION - Each service now has a proper h2 */}
         <section className="px-4 pb-20 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => {
               const Icon = service.icon;
               return (
-                <Link
+                <div
                   key={service.title}
-                  href={service.href}
-                  className="group rounded-2xl border border-white/10 bg-white/[0.04] p-6 transition hover:-translate-y-1 hover:border-cyan-300/40"
+                  className="rounded-2xl border border-white/10 bg-white/[0.04] p-6 transition hover:-translate-y-1 hover:border-cyan-300/40"
                 >
                   <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-300/10 text-cyan-300">
                     <Icon className="h-6 w-6" />
@@ -151,16 +520,46 @@ export default function ServicesPage() {
                       </span>
                     ))}
                   </div>
-                  <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-cyan-300 transition group-hover:text-white">
-                    Learn more
-                    <ArrowRight className="h-4 w-4" />
-                  </span>
-                </Link>
+                  <div className="mt-4 flex flex-wrap gap-3">
+                    <Link
+                      href={service.href}
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-300 transition hover:text-white"
+                    >
+                      Learn more
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                    <a
+                      href={whatsappHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-slate-400 transition hover:text-white"
+                    >
+                      <MessageCircle className="h-4 w-4" />
+                      Discuss on WhatsApp
+                    </a>
+                  </div>
+
+                  {/* ✅ NEW: FAQ Section for each service */}
+                  <div className="mt-6 border-t border-white/10 pt-6">
+                    <h3 className="text-sm font-semibold text-cyan-300 uppercase tracking-wider mb-3">
+                      Frequently Asked Questions
+                    </h3>
+                    <div className="space-y-3">
+                      {service.faqs.slice(0, 2).map((faq, index) => (
+                        <div key={index} className="border border-white/5 rounded-lg p-3 bg-white/[0.02]">
+                          <p className="font-semibold text-white text-sm">{faq.question}</p>
+                          <p className="mt-1 text-sm text-slate-400 leading-relaxed">{faq.answer}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               );
             })}
           </div>
         </section>
 
+        {/* ✅ WHY SNIPERCODERS SECTION */}
         <section className="border-y border-white/10 bg-white/[0.03] px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
             <div>
@@ -186,7 +585,30 @@ export default function ServicesPage() {
           </div>
         </section>
 
+        {/* ✅ NEW: GENERAL FAQ SECTION - Critical for AI discovery */}
         <section className="px-4 py-20 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-4xl">
+            <SectionHeader
+              eyebrow="FAQ"
+              title="Frequently Asked Questions About SniperCoders Services"
+              copy="Find answers to common questions about our video editing, social media marketing, and brand growth services."
+            />
+            <div className="space-y-4">
+              {generalFaqs.map((faq, index) => (
+                <div
+                  key={index}
+                  className="rounded-xl border border-white/10 bg-white/[0.04] p-6 hover:border-cyan-300/30 transition"
+                >
+                  <h3 className="text-lg font-semibold text-cyan-300">{faq.question}</h3>
+                  <p className="mt-2 text-slate-300 leading-relaxed">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ✅ FINAL CTA SECTION */}
+        <section className="px-4 pb-24 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl rounded-[2rem] border border-cyan-300/20 bg-[linear-gradient(135deg,rgba(14,165,233,0.2),rgba(15,23,42,0.96)_42%,rgba(236,72,153,0.16))] p-8 sm:p-12">
             <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
               <div>
@@ -194,20 +616,31 @@ export default function ServicesPage() {
                   Start Here
                 </p>
                 <h2 className="text-3xl font-semibold leading-tight sm:text-5xl">
-                  Need video edits, social content, ads, or a landing page?
+                  Need Video Edits, Social Content, Ads, or a Landing Page?
                 </h2>
                 <p className="mt-5 max-w-2xl leading-8 text-slate-200">
                   Send your niche, current content, and goal. We will suggest the service mix that
                   fits your next growth sprint.
                 </p>
               </div>
-              <Link
-                href="/contact"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-100"
-              >
-                Contact SniperCoders
-                <ArrowRight className="h-4 w-4" />
-              </Link>
+              <div className="flex flex-col gap-3">
+                <a
+                  href={whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-100"
+                >
+                  <MessageCircle className="h-4 w-4" />
+                  Start on WhatsApp
+                </a>
+                <Link
+                  href="/contact"
+                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition hover:border-cyan-300/60 hover:bg-cyan-300/10"
+                >
+                  Book a Growth Call
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
             </div>
           </div>
         </section>

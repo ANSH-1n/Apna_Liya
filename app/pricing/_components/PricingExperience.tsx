@@ -1,10 +1,14 @@
-// //app/pricing/_components/PricingExperience.tsx
+// // //app/pricing/_components/PricingExperience.tsx
+
+
+
 
 // 'use client'
 
 // import Footer from '@/components/Footer'
 // import { motion } from 'framer-motion'
 // import Image from 'next/image'
+// import Link from 'next/link' // ✅ ADDED: Import Link component
 // import RealClientResults from './RealClientResults'
 // import {
 //   ArrowRight,
@@ -859,13 +863,13 @@
 //               </div>
 //             ))}
 //           </div>
-//           <a
+//           <Link
 //             href="/showcase/websites"
 //             className="mt-7 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-100"
 //           >
 //             View Live Projects
 //             <ExternalLink className="h-4 w-4" />
-//           </a>
+//           </Link>
 //         </div>
 //       </div>
 //     </section>
@@ -958,13 +962,7 @@
 //               </div>
 //             ))}
 //           </div>
-//           <a
-//             href="/showcase/video-editing?category=real-estate"
-//             className="mt-7 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-100"
-//           >
-//             View Video Portfolio
-//             <ExternalLink className="h-4 w-4" />
-//           </a>
+//           <Link href="/showcase/video-editing/">View Our Video Editing</Link>
 //         </div>
 //       </div>
 //     </section>
@@ -1381,21 +1379,12 @@
 
 
 
-
-
-
-
-
-
-
-
-
 'use client'
 
 import Footer from '@/components/Footer'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import Link from 'next/link' // ✅ ADDED: Import Link component
+import Link from 'next/link'
 import RealClientResults from './RealClientResults'
 import {
   ArrowRight,
@@ -1469,6 +1458,34 @@ const adsCoverageItems = [
   'Ad management',
   'Weekly optimization',
   'Reporting',
+]
+
+// ✅ NEW: AI-friendly FAQs for Social Media Marketing
+const socialMediaFaqs = [
+  {
+    question: 'What is included in your social media marketing packages?',
+    answer: 'Our social media marketing packages include content creation, posting, community engagement, analytics reporting, and performance optimization. We handle everything from strategy to execution.'
+  },
+  {
+    question: 'How much does social media marketing cost?',
+    answer: 'Our social media marketing packages start at $500/month for the Starter plan and go up to $2,500/month for the Executive plan. We also offer custom pricing for Indian clients.'
+  },
+  {
+    question: 'How long does it take to see results from social media marketing?',
+    answer: 'Most clients see initial engagement growth within 30 days, with significant audience growth and lead generation typically visible within 60-90 days of consistent strategy execution.'
+  },
+  {
+    question: 'Which social media platforms do you manage?',
+    answer: 'We primarily manage Instagram, LinkedIn, Facebook, and YouTube. We can also support TikTok and X (Twitter) based on your target audience and business goals.'
+  },
+  {
+    question: 'Do you create content for social media?',
+    answer: 'Yes, we create all types of social media content including reels, graphics, carousels, stories, and captions. You provide the raw content, and we handle the editing, design, and posting.'
+  },
+  {
+    question: 'Can I get a custom social media package?',
+    answer: 'Absolutely! We offer custom packages for Indian clients and businesses with specific requirements. Contact us via WhatsApp to discuss your needs and get a tailored quote.'
+  },
 ]
 
 type PricingExperienceProps = {
@@ -1676,6 +1693,38 @@ function SocialMediaCustomProposalCta() {
           <ArrowRight className="h-4 w-4" />
         </a>
       </motion.div>
+    </section>
+  )
+}
+
+// ✅ NEW: AI-Friendly FAQ Section
+function SocialMediaFAQSection() {
+  return (
+    <section className="px-4 py-20 sm:px-6 lg:px-8 bg-white/[0.02]">
+      <div className="mx-auto max-w-4xl">
+        <div className="mb-10 text-center">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-300">
+            FAQ
+          </p>
+          <h2 className="text-3xl font-semibold leading-tight text-white sm:text-4xl">
+            Frequently Asked Questions About Social Media Marketing
+          </h2>
+          <p className="mt-4 text-base leading-8 text-slate-300">
+            Find answers to common questions about our social media marketing services, pricing, and process.
+          </p>
+        </div>
+        <div className="space-y-4">
+          {socialMediaFaqs.map((faq, index) => (
+            <div
+              key={index}
+              className="rounded-xl border border-white/10 bg-white/[0.04] p-6 hover:border-cyan-300/30 transition"
+            >
+              <h3 className="text-lg font-semibold text-cyan-300">{faq.question}</h3>
+              <p className="mt-2 text-slate-300 leading-relaxed">{faq.answer}</p>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   )
 }
@@ -1992,6 +2041,9 @@ Page: ${leadSource.page}`
             </div>
           </div>
         </section>
+
+        {/* ✅ NEW: AI-Friendly FAQ Section */}
+        {isSocialMediaPage && <SocialMediaFAQSection />}
 
         <QuoteSection
           page={page}
