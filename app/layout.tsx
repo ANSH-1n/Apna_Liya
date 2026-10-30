@@ -106,9 +106,10 @@ export default function RootLayout({
 
       <body className={`${poppins.className} transition-all duration-300`}>
         <ThemeProvider>
+          <a href="#main-content" className="sr-only z-[10000] rounded bg-cyan-300 px-4 py-3 font-semibold text-slate-950 focus:not-sr-only focus:fixed focus:left-4 focus:top-4">Skip to content</a>
           <Navbar />
 
-          <main className="pt-20">{children}</main>
+          <main id="main-content" className="pt-20">{children}</main>
 
           <a
             href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`}

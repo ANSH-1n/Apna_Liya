@@ -1,0 +1,101 @@
+{
+  "path": "/bangalore/areas",
+  "cluster": "hub",
+  "title": "Social Media Marketing by Bangalore Area",
+  "description": "How buyers in Bangalore's main business and residential areas behave on social media, and how we plan content for each district. Get an audit.",
+  "h1": "Social Media Marketing by Bangalore Area",
+  "intro": "A district page is useful only if it tells you something you could not have guessed. These notes describe how people in each part of Bangalore tend to find, judge and contact businesses online, and what that means for the way a brand should show up there. They are written from the viewpoint of a business that serves the area, not one that merely lives in it.",
+  "sections": [
+    {
+      "h2": "How to use these area pages",
+      "paragraphs": [
+        "Start with where your customers are, not where your office is. A clinic in HSR Layout may draw patients from three neighbourhoods, while a software company in Whitefield may sell to buyers who have never visited the corridor. Where the two differ, plan for the customer's area first.",
+        "Business districts and residential districts also behave differently. In the office-heavy areas, engagement peaks around commutes and lunch breaks, and content has to work on a phone held in one hand. In residential neighbourhoods, decisions are often made together at home in the evening, and the message has to make sense to more than one person in the room.",
+        "If you serve the whole city, treat these pages as a reference rather than a menu. Most premium businesses are better served by an industry plan with a few area-specific tweaks than by a separate strategy for every district."
+      ]
+    },
+    {
+      "h2": "When an area page is the wrong starting point",
+      "paragraphs": [
+        "If your buyers choose you for what you do rather than where you are, begin with the industry pages instead. A cosmetic surgeon, a software company and a jeweller have more in common with their sector peers across the city than with the other businesses on their street. Area pages earn their place when location itself is part of the purchase: a showroom visit, a clinic appointment, a restaurant reservation, a school admission."
+      ]
+    }
+  ],
+  "children": [
+    {
+      "path": "/bangalore/areas/indiranagar",
+      "title": "Indiranagar",
+      "blurb": "Café, boutique and start-up energy along 100 Feet Road and CMH Road. Notes on reaching lifestyle-led buyers who judge a brand by its feed."
+    },
+    {
+      "path": "/bangalore/areas/koramangala",
+      "title": "Koramangala",
+      "blurb": "Bangalore's start-up heartland. How to reach founders, product teams and the venture-adjacent crowd without sounding like everyone else."
+    },
+    {
+      "path": "/bangalore/areas/mg-road-lavelle-road",
+      "title": "MG Road / Lavelle Road",
+      "blurb": "The central business belt around UB City and the old cantonment hotels. Planning for luxury retail, hospitality and corporate buyers."
+    },
+    {
+      "path": "/bangalore/areas/whitefield",
+      "title": "Whitefield",
+      "blurb": "A technology corridor with large residential communities. How office-hour and evening audiences behave differently across the same neighbourhood."
+    },
+    {
+      "path": "/bangalore/areas/hsr-layout",
+      "title": "HSR Layout",
+      "blurb": "Start-ups, clinics and young families in one dense layout. Where local services and tech-sector buyers overlap."
+    },
+    {
+      "path": "/bangalore/areas/jayanagar",
+      "title": "Jayanagar",
+      "blurb": "Established retail streets, family-run jewellers and busy clinics. Reaching trust-driven buyers who ask relatives before they ask the internet."
+    },
+    {
+      "path": "/bangalore/areas/sadashivanagar",
+      "title": "Sadashivanagar",
+      "blurb": "One of the city's most exclusive residential addresses. Discreet, high-end social media for private clients and premium services."
+    },
+    {
+      "path": "/bangalore/areas/malleshwaram",
+      "title": "Malleshwaram",
+      "blurb": "Old Bangalore with deep traditions in silk, jewellery and weddings. Content that respects heritage while speaking to younger buyers."
+    },
+    {
+      "path": "/bangalore/areas/richmond-road",
+      "title": "Richmond Road / Residency Road",
+      "blurb": "Hotels, hospitals and offices close to the centre. Planning for hospitality and healthcare brands that serve both residents and visitors."
+    },
+    {
+      "path": "/bangalore/areas/cunningham-road",
+      "title": "Cunningham Road / Vasanth Nagar",
+      "blurb": "Boutique offices, premium restaurants and professional firms. Reaching senior decision-makers who value restraint over noise."
+    },
+    {
+      "path": "/bangalore/areas/sarjapur-road",
+      "title": "Sarjapur Road",
+      "blurb": "Fast-growing residential communities, schools and developers. How family decision-making shapes content for this corridor."
+    },
+    {
+      "path": "/bangalore/areas/bellandur-outer-ring-road",
+      "title": "Bellandur / Outer Ring Road",
+      "blurb": "A belt of tech parks and apartment clusters. Mobile-first, commute-aware planning for B2B and consumer brands."
+    },
+    {
+      "path": "/bangalore/areas/hebbal",
+      "title": "Hebbal",
+      "blurb": "The northern gateway near the airport road, with new developments and automotive showrooms. Reaching buyers moving north."
+    },
+    {
+      "path": "/bangalore/areas/electronic-city",
+      "title": "Electronic City",
+      "blurb": "Industrial and technology campuses at the southern edge. Content for B2B, clean-tech and education brands serving this corridor."
+    },
+    {
+      "path": "/bangalore/areas/jp-nagar",
+      "title": "JP Nagar",
+      "blurb": "Residential and service-led, with salons, clinics and family businesses. Practical social media for neighbourhood trust and repeat visits."
+    }
+  ]
+}

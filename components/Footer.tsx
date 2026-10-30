@@ -301,34 +301,43 @@ export default function Footer() {
             <p className="text-gray-300 text-sm leading-relaxed mb-4">
               Creative growth agency for modern brands, helping founders, creators, startups, coaches, eCommerce teams, and agencies create sharper social content, reels, ads, and brand stories.
             </p>
-            <div className="flex flex-wrap gap-2">
-              <div className="bg-cyan-300/10 px-3 py-1 rounded-full text-xs text-cyan-300 border border-cyan-300/20">
-                30+ Projects
-              </div>
-              <div className="bg-white/5 px-3 py-1 rounded-full text-xs text-slate-300 border border-white/10">
-                Global Creative
-              </div>
-            </div>
           </motion.div>
 
           {/* Our Services */}
           <motion.div variants={textVariants} initial="initial" animate="animate">
-            <h3 className="text-lg font-semibold mb-6 text-cyan-300">Growth Services</h3>
+            <h3 className="text-lg font-semibold mb-6 text-cyan-300">Creative Growth</h3>
             <ul className="space-y-3">
               {[
-                { label: "Social Media Growth", href: "/services/digital-marketing" },
-                { label: "Short-Form Video Editing", href: "/showcase/video-editing" },
-                { label: "Web Development", href: "/services/web-development" },
-                { label: "Mobile App Development", href: "/services/mobile-development" },
-                { label: "Custom Software Development", href: "/services/custom-software-development" },
-                { label: "IT Consulting", href: "/services/it-consulting" },
-                { label: "App Development", href: "/services/app-development" },
+                { label: "Social Media Management", href: "/services/digital-marketing" },
+                { label: "Video Editing Showcase", href: "/showcase/video-editing" },
+                { label: "Meta & Google Ad Creatives", href: "/services/digital-marketing" },
+                { label: "Brand Storytelling", href: "/showcase/video-editing" },
               ].map((item, i) => (
                 <motion.li key={i} whileHover={{ x: 8 }} transition={{ duration: 0.3 }}>
                   <a
                     href={item.href}
                     className="text-gray-300 hover:text-cyan-400 transition-colors text-sm flex items-center group"
                   >
+                    <ChevronRight className="w-4 h-4 mr-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    {item.label}
+                  </a>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
+
+          <motion.div variants={textVariants} initial="initial" animate="animate">
+            <h3 className="text-lg font-semibold mb-6 text-cyan-300">Technology Services</h3>
+            <ul className="space-y-3">
+              {[
+                { label: "Website Development", href: "/services/web-development" },
+                { label: "Mobile App Development", href: "/services/mobile-development" },
+                { label: "Custom Software Development", href: "/services/custom-software-development" },
+                { label: "IT Consulting", href: "/services/it-consulting" },
+                { label: "App Development", href: "/services/app-development" },
+              ].map((item) => (
+                <motion.li key={item.label} whileHover={{ x: 8 }} transition={{ duration: 0.3 }}>
+                  <a href={item.href} className="text-gray-300 hover:text-cyan-400 transition-colors text-sm flex items-center group">
                     <ChevronRight className="w-4 h-4 mr-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                     {item.label}
                   </a>
@@ -381,7 +390,7 @@ export default function Footer() {
 
           {/* We Serve - Locations Part 1 */}
           <motion.div variants={textVariants} initial="initial" animate="animate">
-            <h3 className="text-lg font-semibold mb-6 text-cyan-300">Software Agency Near You</h3>
+            <h3 className="text-lg font-semibold mb-6 text-cyan-300">Technology Services by Location</h3>
             <ul className="space-y-3">
               {[
                 { label: "Bangalore", href: "/services/best-software-agency-bangalore" },
@@ -395,7 +404,7 @@ export default function Footer() {
                     className="text-gray-300 hover:text-cyan-400 transition-colors text-sm flex items-center group"
                   >
                     <ChevronRight className="w-4 h-4 mr-1 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    Software Agency in {item.label}
+                    {item.label}
                   </a>
                 </motion.li>
               ))}
@@ -404,12 +413,12 @@ export default function Footer() {
 
           {/* We Serve - Locations Part 2 */}
           <motion.div variants={textVariants} initial="initial" animate="animate">
-            <h3 className="text-lg font-semibold mb-6 text-cyan-300 lg:invisible lg:h-0 lg:mb-0">More Locations</h3>
+            <h3 className="text-lg font-semibold mb-6 text-cyan-300 lg:invisible lg:h-0 lg:mb-0">More Technology Locations</h3>
             <ul className="space-y-3">
               {[
-                { label: "Software Agency in Hyderabad", href: "/services/best-software-agency-hyderabad" },
-                { label: "Software Agency in Mumbai", href: "/services/best-software-agency-mumbai" },
-                { label: "Software Agency in Pune", href: "/services/best-software-agency-pune" },
+                { label: "Hyderabad", href: "/services/best-software-agency-hyderabad" },
+                { label: "Mumbai", href: "/services/best-software-agency-mumbai" },
+                { label: "Pune", href: "/services/best-software-agency-pune" },
                 { label: "All Locations →", href: "/services/locations" },
               ].map((item, i) => (
                 <motion.li key={i} whileHover={{ x: 8 }} transition={{ duration: 0.3 }}>

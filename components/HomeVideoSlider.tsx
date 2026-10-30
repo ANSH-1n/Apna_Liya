@@ -70,7 +70,7 @@ export default function HomeVideoSlider() {
                   Real estate edits
                 </p>
                 <p className="mt-2 max-w-xs text-lg font-semibold text-white">
-                  Property videos cut for trust, pace, and inquiry intent.
+                  Property videos edited for clear presentation, engaging pacing, captions, and mobile-first viewing.
                 </p>
               </div>
               <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-cyan-300 text-slate-950">

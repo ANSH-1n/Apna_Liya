@@ -1,0 +1,85 @@
+{
+  "path": "/bangalore/industries/b2b-saas",
+  "cluster": "industry",
+  "title": "Social Media Marketing for B2B SaaS in Bangalore",
+  "description": "A practical social media approach for Bangalore B2B SaaS teams: explain the product, support long buying journeys and align content with sales.",
+  "h1": "Social Media Marketing for B2B SaaS in Bangalore",
+  "intro": "B2B SaaS buyers rarely move from first impression to a signed agreement after seeing one post. They compare approaches, involve colleagues, ask technical and commercial questions, and look for evidence that a product can fit the way their team works. Social media should help that evaluation along. For a Bangalore software company, a useful plan gives the product a clear explanation, gives subject-matter experts a credible voice, and gives sales a set of relevant resources to continue the conversation.",
+  "sections": [
+    {
+      "h2": "How a software buying group evaluates a product",
+      "paragraphs": [
+        "A buying group can include the person who feels the operational problem, a team lead who compares possible workflows, a technical reviewer who asks about integration and security, and a budget owner who wants to understand the commercial case. Their questions overlap, but they are not interchangeable. A product overview may help someone recognise a problem; a workflow demonstration may help a practitioner picture a change; implementation and security explanations may help other reviewers determine whether to continue.",
+        "Social content can make these stages easier to navigate, but it does not replace a product trial, a sales conversation, technical documentation or procurement review. The job is to make the next useful question easier to ask. Avoid treating every reader as a ready-to-buy lead. A thoughtful post might help a product manager explain a workflow internally, while a later demonstration helps the team decide whether a deeper evaluation is worthwhile.",
+        "Before choosing a channel or calendar, map the actual path from problem recognition to evaluation. Ask the sales and customer teams what prospects misunderstand, which alternatives they compare, what proof they request and what causes an evaluation to stall. Those conversations provide better editorial prompts than a list of trending software topics."
+      ]
+    },
+    {
+      "h2": "Content pillars that help buyers assess fit",
+      "paragraphs": ["A useful SaaS content programme answers a different question in each recurring theme. The themes below are starting points; the product, customer and sales context should determine which ones deserve attention.", "Explain the problem in the language customers use. Describe the work before introducing the product, and distinguish a recurring operational issue from a situation the software is not designed to solve. This helps a reader recognise fit without implying that every team needs another tool."],
+      "bullets": [
+        "Product in context: show a workflow from the user’s point of view, explain the decision behind a feature, and clarify what the product does not do.",
+        "Implementation and adoption: describe onboarding responsibilities, change management, integrations and the questions teams should resolve before rollout.",
+        "Expert perspective: invite product, engineering, implementation and customer-facing colleagues to explain trade-offs in their own area of knowledge.",
+        "Customer education: turn recurring support questions into explainers, terminology guides and useful ways to evaluate a process.",
+        "Category understanding: compare approaches fairly, explain when a manual process may be enough, and avoid unsupported superiority claims.",
+        "Commercial clarity: help buyers understand the evaluation path, the stakeholders to involve and the information to prepare for a demonstration."
+      ]
+    },
+    {
+      "h2": "An illustrative 30-day editorial sequence",
+      "paragraphs": ["This example is a planning sequence, not a promised posting volume. Adapt the formats to the team’s capacity, the product’s release calendar and the quality of source material. A smaller number of complete, well-reviewed pieces is more useful than a calendar that the team cannot sustain."],
+      "bullets": [
+        "Days 1–7 — Clarify the problem: publish a plain-language point of view on a workflow challenge, then invite a product or operations specialist to explain how teams commonly frame it.",
+        "Days 8–14 — Make the product legible: share a short product walkthrough with narration, captions and a clear note about the workflow shown. Link to a fuller explainer for readers who want more detail.",
+        "Days 15–21 — Address evaluation questions: publish an implementation or integration explainer, followed by a founder or product-lead response to a genuine objection raised in sales conversations.",
+        "Days 22–30 — Support the next step: offer a buyer checklist for evaluating fit, share a customer education resource that has appropriate approval, and ask sales which questions remain unanswered."
+      ]
+    },
+    {
+      "h2": "Channel roles and the handoff to sales",
+      "paragraphs": [
+        "LinkedIn can carry leadership perspectives, product explanations, hiring context and professional discussion. A company page can provide a consistent source of updates, while a founder or subject-matter expert can bring a distinct point of view. Personal profiles should remain authentic to the person writing; copying the same company caption onto every employee account makes participation feel mechanical.",
+        "YouTube or another owned video library can hold deeper walkthroughs, implementation explainers and recorded product conversations. Short clips can introduce a single idea from a longer piece, but they should remain understandable on their own. A short excerpt that requires hidden context may attract attention without helping a buyer evaluate the product.",
+        "Paid distribution can be considered when the audience, content and follow-up path are clear. Choose a destination that matches the promise of the creative. A post about a complex workflow should not send every visitor to a generic contact form without explaining what happens next. Track the enquiry through the company’s own analytics and CRM where appropriate, and agree who follows up and how quickly. Do not claim that an ad caused a sale unless the available measurement supports that conclusion."
+      ]
+    },
+    {
+      "h2": "Funnel signals and reporting that support decisions",
+      "paragraphs": [
+        "At the awareness stage, review whether the intended audience is encountering and understanding the topic. At the consideration stage, look at meaningful actions such as visits to product explanations, completion of a relevant video, requests for technical material or questions from the buying group. At the evaluation stage, work with sales to review whether social-influenced conversations are relevant and what information helped them progress. These are different signals and should not be blended into a single engagement score.",
+        "The report should separate platform activity from business records. Social platforms can show interactions and referral behaviour; the CRM may show whether a conversation became a qualified opportunity. Attribution is rarely perfect, especially when a buyer sees content on one device and later contacts sales through another path. State the tracking limitations and use the information to make a better next decision rather than presenting a causal claim the data cannot support.",
+        "A useful review asks which buyer question the content addressed, whether the intended audience responded, what sales or product teams heard afterwards, and what should change in the next cycle. If the team cannot act on the signal, it may not be worth tracking. Follower totals and broad reach can provide context, but neither establishes product fit or revenue impact by itself."
+      ]
+    },
+    {
+      "h2": "A working process for the product and marketing teams",
+      "paragraphs": [
+        "The audit should include a discussion with marketing and sales, and where possible a product or implementation specialist. Together, identify priority audiences, recurring objections, available product material, release constraints and the people who can approve technical statements. Agree which topics require a deeper review and which can be handled through a normal editorial approval.",
+        "For each piece, a brief can record its audience, question, intended action, source owner, format, destination and approval path. Product screenshots should reflect the current interface and be cleared for public use. Roadmap details, customer names, security descriptions and performance statements need the right internal approval before publication. Keep a correction process for content that becomes outdated after a release.",
+        "After the audit, the custom plan sets a realistic channel mix and scope around the team's capacity. It can include editorial planning, content development, creative production, paid distribution where appropriate, publishing coordination and reporting. The exact work is agreed in writing; there is no fixed package or assumed posting quota."
+      ]
+    },
+    {
+      "h2": "Common mistakes in SaaS social media",
+      "paragraphs": ["Most avoidable problems come from describing the product before understanding the buyer’s evaluation. These checks help keep the programme credible."],
+      "bullets": [
+        "Feature announcements with no explanation of the user problem or the conditions where the feature is useful.",
+        "Vague claims about productivity, savings, security or market leadership without evidence and clear qualification.",
+        "Product demonstrations that skip the setup, workflow and limitations a technical evaluator needs to understand.",
+        "Founder posts that sound like company advertising rather than a real perspective informed by product work.",
+        "Campaign reporting that counts form fills without reviewing whether the resulting conversations fit the product."
+      ]
+    },
+    {
+      "h2": "What a custom plan can cover",
+      "paragraphs": ["The scope depends on the product, the people available to contribute, the sales cycle and the channels already in use. The plan can define the audience and editorial themes, select formats, set an approval path for technical claims, and agree how activity will be reviewed with sales. It can also specify what the agency needs from product and customer teams, how updates are communicated, and which actions remain with the client. We use a free audit to understand these conditions before writing a proposal. The plan is custom-built after that conversation; we do not publish a fixed package or assume that every SaaS team needs the same mix of services."]
+    }
+  ],
+  "faqs": [
+    { "q": "Should a B2B SaaS company focus on the founder’s profile or its company page?", "a": "They have different roles. The company page can maintain a reliable home for product and business updates, while a founder or subject-matter expert can share a personal point of view. Choose contributors who have the time and genuine expertise to participate; avoid copying identical posts across profiles." },
+    { "q": "How can social media support a long software sales cycle?", "a": "Use content to answer the questions that arise during evaluation, such as workflow fit, implementation, integration and internal adoption. Coordinate with sales so useful resources reach the right stakeholders, and review whether the resulting conversations are relevant rather than treating every interaction as a sales-ready lead." },
+    { "q": "Can you create product and technical content without access to our engineers?", "a": "We can develop briefs and editorial direction, but accurate technical material needs a knowledgeable source and an approval path. The audit identifies who can explain and review product details so the published content stays current and precise." },
+    { "q": "How do you measure social media for a SaaS business?", "a": "We agree signals around the objective and available tracking. This may include relevant audience actions, visits to product resources and social-influenced conversations recorded by sales. Platform engagement alone cannot prove that content caused an opportunity or sale." }
+  ]
+}

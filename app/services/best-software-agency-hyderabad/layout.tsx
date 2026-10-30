@@ -3,8 +3,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Best Software Agency in Hyderabad | SniperCoders',
-  description: 'SniperCoders is the best software agency in Hyderabad. Website development, mobile apps, pharma software & Telugu SEO digital marketing for HITEC City, Cyberabad & all Hyderabad businesses.',
+  title: 'Digital Marketing & Software Agency in Hyderabad | SniperCoders',
+  description: 'Grow your Hyderabad business with social media marketing, Reels and video editing, website development, SEO, branding, and digital growth solutions from SniperCoders.',
   keywords: [
     'best software agency in hyderabad',
     'best IT company in hyderabad',
@@ -15,13 +15,18 @@ export const metadata: Metadata = {
     'software company hitec city cyberabad',
     'telugu seo digital marketing hyderabad',
     'best website development hyderabad',
+    'social media marketing agency in hyderabad',
+    'video editing agency in hyderabad',
+    'reels editing services hyderabad',
+    'creative agency in hyderabad',
+    'AI video creation services',
   ],
   alternates: {
     canonical: 'https://snipercoders.in/services/best-software-agency-hyderabad',
   },
   openGraph: {
-    title: 'Best Software Agency in Hyderabad | SniperCoders',
-    description: 'Websites, apps & Telugu SEO for Hyderabad pharma, IT & real estate businesses. Serving HITEC City, Cyberabad & all of Hyderabad.',
+    title: 'Digital Marketing & Software Agency in Hyderabad | SniperCoders',
+    description: 'Social media, Reels and video editing, websites, SEO, branding, and digital growth solutions for Hyderabad businesses.',
     url: 'https://snipercoders.in/services/best-software-agency-hyderabad',
     siteName: 'SniperCoders',
     locale: 'en_IN',
@@ -29,8 +34,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Best Software Agency in Hyderabad | SniperCoders',
-    description: 'Websites, apps & digital marketing for Hyderabad businesses.',
+    title: 'Digital Marketing & Software Agency in Hyderabad | SniperCoders',
+    description: 'Social media, video editing, website development, SEO, branding, and digital growth solutions for Hyderabad businesses.',
   },
 }
 

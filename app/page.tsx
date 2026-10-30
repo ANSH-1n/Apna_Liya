@@ -5,7 +5,6 @@ import HomeVideoSlider from '@/components/HomeVideoSlider';
 import {
   ArrowRight,
   BadgeCheck,
-  BarChart3,
   CheckCircle2,
   Clapperboard,
   MessageCircle,
@@ -16,20 +15,20 @@ import {
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Social Media Marketing & Video Editing Agency',
+  title: { absolute: 'Video Editing & Social Media Marketing Agency | SniperCoders' },
   description:
-    'SniperCoders helps businesses grow through social media marketing, short-form video editing, Meta and Google Ads creatives, website development, AI-powered videos, SEO, Google Business Profile optimization, and website management.',
+    'SniperCoders helps brands grow with short-form video editing, social media management, and Meta & Google ad creatives. Explore our services and get a custom quote.',
 
   alternates: {
-    canonical: '/',
+    canonical: 'https://www.snipercoders.in/',
   },
 
   openGraph: {
     type: 'website',
     url: 'https://www.snipercoders.in/',
-    title: 'SniperCoders | Social Media Marketing & Video Editing',
+    title: 'Video Editing & Social Media Marketing Agency | SniperCoders',
     description:
-      'Grow your business with social media marketing, professional video editing, AI-powered content, ad creatives, and website development.',
+      'Short-form video editing, social media management, and Meta & Google ad creatives for growing brands. Explore our services and get a custom quote.',
     siteName: 'SniperCoders',
     images: [
       {
@@ -41,65 +40,51 @@ export const metadata: Metadata = {
 
   twitter: {
     card: 'summary_large_image',
-    title: 'SniperCoders | Social Media Marketing & Video Editing',
+    title: 'Video Editing & Social Media Marketing Agency | SniperCoders',
     description:
-      'Social media marketing, video editing, AI videos, website development, and digital marketing solutions for growing businesses.',
+      'Short-form video editing, social media management, and Meta & Google ad creatives for growing brands.',
   },
 };
 
 const whatsappHref =
   'https://wa.me/917006377796?text=Hello%20SniperCoders%2C%20I%20want%20to%20discuss%20video%20editing%2C%20social%20media%20marketing%2C%20Meta%20Ads%2C%20and%20Google%20Ads%20for%20my%20brand.';
 
-const stats = [
-  { value: '30+', label: 'creative, web, and ad projects delivered' },
-  { value: '7-day', label: 'content sprint available for fast-moving brands' },
-  { value: '3x', label: 'hook and angle testing before scale' },
-  { value: 'Global', label: 'workflow for founders, creators, and agencies' },
-];
-
 const services = [
   {
     icon: Clapperboard,
     title: 'Short-Form Video Editing',
-    copy: 'Reels, Shorts, captions, pacing, hooks, sound design, and retention-led edits built for modern feeds.',
+    copy: 'Reels and YouTube Shorts with cuts, captions, hooks, pacing, sound design, and vertical exports shaped around your content and audience.',
+    href: '/pricing/video-editing',
+    linkLabel: 'Explore video editing pricing',
   },
   {
     icon: Target,
     title: 'Social Media Marketing',
-    copy: 'Content pillars, calendars, caption direction, posting rhythm, and audience-led creative testing.',
+    copy: 'Content planning, calendars, captions, creative direction, scheduling, community management, and reporting based on the selected package.',
+    href: '/pricing/social-media-marketing',
+    linkLabel: 'View social media packages',
   },
   {
     icon: Wand2,
     title: 'Meta & Google Ad Creative',
-    copy: 'Video ads, static creatives, UGC-style concepts, offer visuals, thumbnails, and variants for paid learning.',
+    copy: 'Video and static ad creatives, offer-led visuals, thumbnails, and creative variations for campaign testing. Ad spend and campaign management are scoped separately.',
+    href: '/services/digital-marketing',
+    linkLabel: 'Explore digital marketing',
   },
   {
     icon: Sparkles,
     title: 'Brand Storytelling',
-    copy: 'Founder narratives, campaign ideas, visual language, and messaging that makes the brand easier to remember.',
+    copy: 'Founder stories, campaign concepts, brand messaging, and visual direction to help people understand and remember your business.',
+    href: '/contact',
+    linkLabel: 'Discuss your creative brief',
   },
-];
-
-const proof = [
-  [
-    'Fitness & wellness',
-    'Instagram management, reels, content planning, stories, polls, and enquiry-focused CTAs.',
-  ],
-  [
-    'Real estate edits',
-    'Premium vertical property edits with pacing, captions, music, and trust-building polish.',
-  ],
-  [
-    'Paid ad creatives',
-    'Meta and Google ad assets designed to test hooks, benefits, objections, and offers quickly.',
-  ],
 ];
 
 const process = [
   [
     '01',
     'Position',
-    'Clarify the audience, offer, content pillars, buying triggers, and the promise that deserves attention.',
+    'Clarify your audience, offer, content priorities, and the message you want people to remember.',
   ],
   [
     '02',
@@ -108,8 +93,8 @@ const process = [
   ],
   [
     '03',
-    'Optimize',
-    'Review retention, saves, replies, clicks, CTR, and lead quality so the next batch gets sharper.',
+    'Review & Improve',
+    'Review available performance signals and feedback. Where available, these may include retention, saves, replies, clicks, CTR, and lead quality.',
   ],
 ];
 
@@ -117,32 +102,52 @@ const faqs = [
   {
     question: 'What services does SniperCoders offer?',
     answer:
-      'SniperCoders offers short-form video editing, social media marketing, Meta & Google Ad creative production, and brand storytelling. We help founders, creators, and agencies turn ideas into premium reels, paid ad creatives, and content systems that build trust and drive conversions.',
+      'SniperCoders focuses on short-form video editing, social media management, Meta and Google ad creatives, and brand storytelling. Other technology services are available on their dedicated service pages.',
   },
   {
     question: 'What is SniperCoders?',
     answer:
-      'SniperCoders is a creative growth agency founded in 2024 in Bangalore, India. We specialize in video editing, social media marketing, and ad creative production for modern brands. Our focus is on creating content that earns attention and drives measurable results.',
+      'SniperCoders is a creative growth agency offering video editing, social media management, ad creative production, and brand storytelling for modern brands.',
   },
   {
     question: 'Who does SniperCoders work with?',
     answer:
-      'We work with founders, bike accessory brands, gaming cafe creators, coaches, startups, and agencies. Our services are designed for brands that need premium video content, social media systems, and ad creatives that convert.',
+      'We work with founders, creators, coaches, startups, agencies, and businesses that need video content, social media execution, or ad creatives. Fit depends on each project’s requirements.',
   },
   {
     question: 'What is included in your video editing services?',
     answer:
-      'Our video editing services include reel and short-form editing, captions, pacing, hooks, sound design, and retention-led edits. We specialize in vertical content for Instagram, YouTube Shorts, and other social platforms.',
+      'Depending on the selected service, editing can include cuts, captions, hooks, pacing, music, sound design, and platform-ready exports. Exact deliverables are confirmed before work starts.',
   },
   {
     question: 'How does SniperCoders help with social media marketing?',
     answer:
-      'We provide content pillars, calendars, caption direction, posting rhythm, and audience-led creative testing. Our social media marketing services are designed to build consistent brand visibility and engagement.',
+      'Social media packages may include content planning, captions, creative assets, scheduling, posting, community management, and reporting. Deliverables vary by plan.',
+  },
+  {
+    question: 'Which social media platforms do you manage?',
+    answer:
+      'Organic plan options list Instagram, Facebook, and LinkedIn content. Paid campaign support is available for Meta and Google Ads based on the selected package and agreed scope.',
   },
   {
     question: 'What types of ad creatives do you produce?',
     answer:
-      'We produce video ads, static creatives, UGC-style concepts, offer visuals, thumbnails, and variants for paid learning. Our ad creative services support both Meta (Facebook/Instagram) and Google Ads platforms.',
+      'We can produce video and static ad creatives for Meta and Google campaigns. Advertising spend and campaign management should be confirmed separately in the proposal.',
+  },
+  {
+    question: 'Is advertising spend included in the monthly management fee?',
+    answer:
+      'No. Ad spend is paid directly to Meta or Google. The management fee covers the services and deliverables listed for the selected plan.',
+  },
+  {
+    question: 'How much do your services cost?',
+    answer:
+      'Pricing depends on the service, content volume, complexity, and support required. Visit the pricing pages or contact us for a proposal based on your needs.',
+  },
+  {
+    question: 'How do I get started?',
+    answer:
+      'Send us your business niche, the service you need, your timeline, and your goal on WhatsApp. We can discuss the scope and next steps.',
   },
 ];
 
@@ -210,19 +215,20 @@ export default function Home() {
             <div className="max-w-4xl">
               <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm text-cyan-100">
                 <BadgeCheck className="h-4 w-4 text-cyan-300" />
-                Creative growth for modern brands
+                CREATIVE GROWTH FOR MODERN BRANDS
               </div>
 
               <h1 className="max-w-5xl text-[2.35rem] font-semibold leading-[1.02] text-white sm:text-6xl lg:text-7xl">
-                Video Editing and Social Media Marketing Agency
+                Video Editing, Social Media Marketing &amp; Ad Creatives
               </h1>
 
               <p className="mt-5 max-w-2xl text-base leading-7 text-slate-300 sm:text-xl sm:leading-8">
-                <strong>SniperCoders</strong> is a creative growth agency based
-                in Bangalore, India. We help founders, bike accessory brands,
-                gaming cafe creators, coaches, startups, and agencies turn
-                ideas into premium reels, paid ad creatives, and content
-                systems that build trust before the sales call.
+                <strong>SniperCoders</strong> helps founders, creators, startups,
+                and growing brands turn raw footage and ideas into polished
+                short-form videos, consistent social content, and advertising
+                creatives. We combine creative direction, content execution,
+                and performance-minded iteration to help your brand communicate
+                clearly.
               </p>
 
               <div className="mt-6 lg:hidden">
@@ -233,21 +239,6 @@ export default function Home() {
                 <PrimaryCtas />
               </div>
 
-              <div className="mt-10 grid max-w-2xl grid-cols-2 gap-3 sm:grid-cols-4">
-                {stats.map((stat) => (
-                  <div
-                    key={stat.label}
-                    className="border-l border-white/15 pl-4"
-                  >
-                    <p className="text-2xl font-semibold text-white">
-                      {stat.value}
-                    </p>
-                    <p className="mt-1 text-xs leading-5 text-slate-400">
-                      {stat.label}
-                    </p>
-                  </div>
-                ))}
-              </div>
             </div>
 
             <div className="relative hidden lg:block">
@@ -278,7 +269,7 @@ export default function Home() {
           <SectionHeader
             eyebrow="Core Offers"
             title="Video Editing, Social Media Marketing, and Ad Creative Services"
-            copy="Every service supports one commercial goal: make the right audience remember you, trust you, click, and take the next step."
+            copy="Choose the creative support that fits your needs, or combine services to keep your brand message consistent across social and paid channels."
           />
 
           <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2 lg:grid-cols-4">
@@ -299,6 +290,10 @@ export default function Home() {
                   <p className="mt-4 leading-7 text-slate-300">
                     {service.copy}
                   </p>
+                  <Link href={service.href} className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-cyan-200 hover:text-white">
+                    {service.linkLabel}
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
                 </article>
               );
             })}
@@ -308,23 +303,16 @@ export default function Home() {
         {/* PROOF / WORK SECTION */}
         <section className="bg-white/[0.03] px-4 py-24 sm:px-6 lg:px-8">
           <SectionHeader
-            eyebrow="Proof"
-            title="Creative Work That Drives Results — Case Studies"
+            eyebrow="Featured Work"
+            title="Creative Work Built for the Feed"
+            copy="Explore real examples of Reels, short-form edits, property videos, and ad creatives. Portfolio samples are labeled by service, with client details shared where permitted."
           />
 
-          <div className="mx-auto grid max-w-7xl gap-5 lg:grid-cols-3">
-            {proof.map(([title, copy]) => (
-              <article
-                key={title}
-                className="rounded-2xl border border-white/10 bg-slate-950 p-7"
-              >
-                <BarChart3 className="h-7 w-7 text-cyan-300" />
-
-                <h3 className="mt-6 text-2xl font-semibold">{title}</h3>
-
-                <p className="mt-4 leading-7 text-slate-300">{copy}</p>
-              </article>
-            ))}
+          <div className="mx-auto max-w-5xl rounded-2xl border border-white/10 bg-slate-950 p-7 sm:p-9">
+            <h3 className="text-2xl font-semibold">Real estate videos edited for clear property presentation</h3>
+            <p className="mt-4 max-w-3xl leading-7 text-slate-300">
+              See property edits shaped with engaging pacing, captions, and mobile-first viewing in the featured video examples above. Case study metrics are shared only when documented and approved for publication.
+            </p>
           </div>
 
           <div className="mt-10 flex justify-center">
@@ -332,7 +320,7 @@ export default function Home() {
               href="/showcase/video-editing"
               className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-cyan-300/40 bg-cyan-300/10 px-6 py-3 text-sm font-semibold text-cyan-100 transition hover:bg-cyan-300/20"
             >
-              View video showcase
+              View the video showcase
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -342,7 +330,7 @@ export default function Home() {
         <section className="px-4 py-24 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Process"
-            title="Our 3-Step Process for Video and Social Media Marketing"
+            title="How It Works"
           />
 
           <div className="mx-auto grid max-w-7xl gap-5 lg:grid-cols-3">
@@ -397,22 +385,28 @@ export default function Home() {
             <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
               <div>
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-200">
-                  Ready for the next sprint?
+                  Ready for Your Next Content Project?
                 </p>
 
                 <h2 className="max-w-3xl text-3xl font-semibold leading-tight text-white sm:text-5xl">
-                  Let SniperCoders Turn Your Brand Into the Account Your Market
-                  Keeps Seeing
+                  Tell Us About Your Brand and Content Goals
                 </h2>
 
                 <p className="mt-5 max-w-2xl leading-8 text-slate-200">
-                  Send your niche, current content, and growth goal. We will
-                  suggest a clear creative path for better videos, stronger ad
-                  assets, and more qualified inquiries.
+                  Tell us about your brand, the content you have, and what you
+                  want to improve. We will help identify a practical creative
+                  direction for better videos, clearer brand messaging, and
+                  more focused ad assets.
                 </p>
               </div>
 
-              <PrimaryCtas />
+              <div className="flex flex-col items-start lg:items-end">
+                <PrimaryCtas />
+                <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm text-slate-200">
+                  <a href="tel:+917006377796" className="hover:text-cyan-200">+91 70063 77796</a>
+                  <a href="mailto:snipercoders25@gmail.com" className="hover:text-cyan-200">snipercoders25@gmail.com</a>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -422,3 +416,4 @@ export default function Home() {
     </>
   );
 }
+

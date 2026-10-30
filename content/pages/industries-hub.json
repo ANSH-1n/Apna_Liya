@@ -1,0 +1,125 @@
+{
+  "path": "/bangalore/industries",
+  "cluster": "hub",
+  "title": "Social Media Marketing by Industry in Bangalore",
+  "description": "Social media marketing plans for premium and considered-purchase industries in Bangalore, from real estate and healthcare to B2B software. Get an audit.",
+  "h1": "Social Media Marketing by Industry in Bangalore",
+  "intro": "Premium buyers do not search for an agency by neighbourhood. They search for someone who understands their sector, their regulators, their customers' worries and the way a sale really happens. That is why our deepest planning work is organised by industry. Each page below explains how buyers in that sector research and decide, what content earns their trust and what a responsible plan should avoid.",
+  "sections": [
+    {
+      "h2": "How the industries are grouped",
+      "paragraphs": [
+        "Some sectors sell to families over months, such as luxury homes, weddings and private education. Some sell to a clinician's patients, who arrive anxious and need calm, accurate information. Some sell to businesses, where a committee must be persuaded and the buying journey runs through LinkedIn and a sales team. Others sell an experience, where the quality of the visuals is the first test. The plan for each group differs in channel, tone and the way results are measured.",
+        "Regulated sectors, including healthcare, finance, education and real estate, add a further layer. We build review and approval steps into the workflow and phrase compliance notes as prompts to check current rules with your advisers, because regulations change and we are not your legal counsel."
+      ]
+    },
+    {
+      "h2": "If your industry is not listed",
+      "paragraphs": [
+        "The list covers sectors where we have the clearest point of view. If you serve a considered-purchase market that is not here, the free audit will show whether our approach fits. We would rather decline than stretch a generic plan across a sector we do not understand."
+      ]
+    }
+  ],
+  "children": [
+    {
+      "path": "/bangalore/industries/luxury-real-estate",
+      "title": "Luxury Real Estate",
+      "blurb": "Long, family-led purchases where trust is built over months. Walkthroughs, launch phases and NRI buyers."
+    },
+    {
+      "path": "/bangalore/industries/commercial-real-estate",
+      "title": "Commercial Real Estate",
+      "blurb": "Leasing and sales to businesses, not households. LinkedIn-first plans that reach occupiers and investors."
+    },
+    {
+      "path": "/bangalore/industries/interior-designers-architects",
+      "title": "Interior Designers & Architects",
+      "blurb": "Portfolio businesses where the work sells the work. Photography direction, project stories and enquiry handling."
+    },
+    {
+      "path": "/bangalore/industries/hospitals",
+      "title": "Hospitals",
+      "blurb": "Clinician-reviewed education and calm, accurate communication for anxious patients and their families."
+    },
+    {
+      "path": "/bangalore/industries/cosmetic-surgeons",
+      "title": "Cosmetic Surgeons",
+      "blurb": "A regulated, privacy-sensitive field where restraint builds more trust than reach. Compliant content planning."
+    },
+    {
+      "path": "/bangalore/industries/dermatology-clinics",
+      "title": "Dermatology Clinics",
+      "blurb": "Education-first content that answers skin concerns responsibly, with clear rules on claims and imagery."
+    },
+    {
+      "path": "/bangalore/industries/ivf-clinics",
+      "title": "IVF & Fertility Clinics",
+      "blurb": "Sensitive audiences who need empathy and clarity. Tone, consent and information that supports real decisions."
+    },
+    {
+      "path": "/bangalore/industries/dental-clinics",
+      "title": "Dental Clinics",
+      "blurb": "Neighbourhood practices competing on trust. Patient education, team introductions and appointment-focused campaigns."
+    },
+    {
+      "path": "/bangalore/industries/jewellers",
+      "title": "Jewellers",
+      "blurb": "Festival, bridal and gifting seasons with trust in craftsmanship at the centre. Catalogue-led and WhatsApp-led plans."
+    },
+    {
+      "path": "/bangalore/industries/luxury-car-dealers",
+      "title": "Luxury Car Dealers",
+      "blurb": "Showroom visits and test drives as the goal. Video-first content and paid campaigns built around launches."
+    },
+    {
+      "path": "/bangalore/industries/salons-and-spas",
+      "title": "Premium Salons & Spas",
+      "blurb": "Appointment businesses where the experience is the product. Reels, team spotlights and repeat-visit nurturing."
+    },
+    {
+      "path": "/bangalore/industries/hotels-and-resorts",
+      "title": "Hotels & Resorts",
+      "blurb": "Weekend getaways, events and corporate stays. Visual storytelling and direct-booking enquiry planning."
+    },
+    {
+      "path": "/bangalore/industries/fine-dining-restaurants",
+      "title": "Fine-Dining Restaurants",
+      "blurb": "Reservation-led businesses where menus change and moments matter. Short video, creators and event promotion."
+    },
+    {
+      "path": "/bangalore/industries/wedding-planners",
+      "title": "Wedding Planners",
+      "blurb": "Referral-heavy work that is judged on taste. Portfolio storytelling and enquiry follow-up through WhatsApp."
+    },
+    {
+      "path": "/bangalore/industries/private-schools-colleges",
+      "title": "Private Schools & Colleges",
+      "blurb": "Parents and students deciding over a long admissions cycle. Trust, transparency and admissions-season planning."
+    },
+    {
+      "path": "/bangalore/industries/d2c-fashion-brands",
+      "title": "D2C Fashion Brands",
+      "blurb": "Direct-to-consumer labels building a recognisable look. Creative testing, creators and retention-minded content."
+    },
+    {
+      "path": "/bangalore/industries/b2b-saas",
+      "title": "B2B SaaS",
+      "blurb": "Buying committees and long evaluation cycles. Founder-led LinkedIn, demo-focused campaigns and sales-aligned reporting."
+    },
+    {
+      "path": "/bangalore/industries/fintech",
+      "title": "Fintech",
+      "blurb": "Trust-first communication in a heavily regulated space. Education content and compliance-aware campaigns."
+    },
+    {
+      "path": "/bangalore/industries/ev-clean-tech",
+      "title": "EV & Clean-Tech",
+      "blurb": "Explaining new technology to cautious buyers. Education, credibility and B2B plus consumer paths."
+    },
+    {
+      "path": "/bangalore/industries/law-ca-firms",
+      "title": "Law & CA Firms",
+      "blurb": "Professional services selling expertise. Partner-led LinkedIn presence and clear, careful communication."
+    }
+  ]
+}

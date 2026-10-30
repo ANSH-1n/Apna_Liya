@@ -40,6 +40,11 @@ const nextConfig: NextConfig = {
         destination: '/showcase',
         permanent: true,
       },
+      {
+        source: '/services/best-software-agency-bangalore',
+        destination: '/social-media-marketing-agency-bangalore',
+        permanent: true,
+      },
       // ✅ Consolidate thin/low-volume location pages into the
       // locations hub page instead of leaving them as standalone
       // near-duplicate pages (avoids doorway-page pattern in GSC)

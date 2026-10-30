@@ -1820,6 +1820,12 @@ Page: ${leadSource.page}`
               </a>
             </div>
 
+            {isVideoEditingPage && (
+              <p className="mx-auto mt-5 max-w-2xl text-sm leading-6 text-slate-400">
+                Select International or India above to compare the applicable monthly plans. Need a different scope? Request a custom quote.
+              </p>
+            )}
+
             <div className="mx-auto mt-8 flex max-w-4xl flex-wrap justify-center gap-2">
               {page.audience.map((item) => (
                 <span key={item} className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-medium text-slate-300">
@@ -1907,7 +1913,7 @@ Page: ${leadSource.page}`
         <section id="plans" className="px-4 py-16 sm:px-6 lg:px-8">
           {isCustomSoftwareTab ? (
             <CustomSoftwareProjectForm page={page} />
-          ) : region === 'india' ? (
+          ) : region === 'india' && !isVideoEditingPage && !isSocialMediaPage ? (
             <IndiaCustomOnly
               page={page}
               activePackageTitle={activePackage?.title}
@@ -1920,6 +1926,18 @@ Page: ${leadSource.page}`
                 })
               }
             />
+          ) : isVideoEditingPage && activePackage?.id === 'long-form' ? (
+            <LongFormQuoteCard
+              onRequest={() => {
+                setSelectedPlan({
+                  service: page.serviceRequired,
+                  packageName: activePackage.title,
+                  planName: 'Custom Quote',
+                  price: 'Based on project scope',
+                })
+                window.setTimeout(() => document.getElementById('quote')?.scrollIntoView({ behavior: 'smooth' }), 0)
+              }}
+            />
           ) : (
             <div className="mx-auto grid max-w-7xl gap-5 lg:grid-cols-3">
               {activePlans.map((plan, index) => (
@@ -1928,7 +1946,7 @@ Page: ${leadSource.page}`
                     service: page.serviceRequired,
                     packageName: activePackage?.title ?? page.title,
                     planName: plan.name,
-                    price: formatPlanPrice(plan.internationalPrice, plan.billing),
+                    price: formatPlanPrice(region === 'india' ? plan.indiaPrice : plan.internationalPrice, plan.billing),
                   }
 
                   return (
@@ -1954,7 +1972,7 @@ Page: ${leadSource.page}`
                       <h2 className="pr-28 text-2xl font-semibold">{plan.name}</h2>
                       <p className="mt-2 min-h-12 text-sm leading-6 text-slate-300">{plan.subtitle}</p>
                       <div className="mt-6 flex items-end gap-1">
-                        <span className="text-4xl font-semibold">{plan.internationalPrice}</span>
+                        <span className="text-4xl font-semibold">{region === 'india' ? plan.indiaPrice : plan.internationalPrice}</span>
                         <span className="pb-1 text-sm text-slate-400">{plan.billing}</span>
                       </div>
                       {plan.popular && <p className="mt-3 text-sm font-semibold text-cyan-200">Best value for consistent growth.</p>}
@@ -2017,6 +2035,8 @@ Page: ${leadSource.page}`
             </div>
           </div>
         </section>
+
+        {isVideoEditingPage && <VideoEditingDetails />}
 
         <section className="px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr]">
@@ -2127,6 +2147,80 @@ Page: ${leadSource.page}`
       </main>
       <Footer />
     </>
+  )
+}
+
+function VideoEditingDetails() {
+  return (
+    <section className="border-y border-white/10 bg-white/[0.03] px-4 py-16 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl space-y-14">
+        <div className="grid gap-8 lg:grid-cols-2">
+          <article className="rounded-2xl border border-white/10 bg-slate-950/70 p-6 sm:p-8">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-cyan-300">Short-form editing</p>
+            <h2 className="text-2xl font-semibold text-white sm:text-3xl">Reels and YouTube Shorts</h2>
+            <p className="mt-4 leading-7 text-slate-300">
+              Short-form editing is suited to vertical videos under 60 seconds. Depending on the selected plan, work can include clean cuts, captions, hook-focused openings, music and sound effects, pacing, motion graphics, and platform-ready exports.
+            </p>
+          </article>
+          <article className="rounded-2xl border border-white/10 bg-slate-950/70 p-6 sm:p-8">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-cyan-300">Long-form editing</p>
+            <h2 className="text-2xl font-semibold text-white sm:text-3xl">YouTube, podcasts and webinars</h2>
+            <p className="mt-4 leading-7 text-slate-300">
+              Long-form projects can include removing unwanted pauses, shaping a clear narrative, audio cleanup, captions and titles, B-roll, graphics, and final exports. Scope and pricing depend on the finished duration, footage length, complexity, and delivery schedule.
+            </p>
+          </article>
+        </div>
+
+        <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+          <div>
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-cyan-300">Editing for property listings</p>
+            <h2 className="text-2xl font-semibold text-white sm:text-3xl">Real estate video editing</h2>
+            <p className="mt-4 leading-7 text-slate-300">
+              Property walkthroughs, listing videos, promotional Reels, and mobile-first vertical videos can highlight key features with clear pacing, purposeful transitions, and captions where appropriate.
+            </p>
+            <Link href="/showcase/video-editing/" className="mt-5 inline-flex items-center gap-2 font-semibold text-cyan-200 hover:text-white">
+              Explore our video editing portfolio <ExternalLink className="h-4 w-4" />
+            </Link>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-slate-950/70 p-6">
+            <h3 className="text-xl font-semibold text-white">What affects the price?</h3>
+            <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-300">
+              {[
+                'Video format, finished duration, and footage length',
+                'Monthly video volume and editing complexity',
+                'Captions, motion graphics, and sound design',
+                'Revision requirements and turnaround schedule',
+              ].map((item) => (
+                <li key={item} className="flex gap-3"><CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-cyan-300" />{item}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <p className="rounded-xl border border-cyan-300/20 bg-cyan-300/[0.06] px-5 py-4 text-sm leading-6 text-slate-300">
+          Turnaround times are stated in business days per batch. Final schedules depend on footage availability, project requirements, and the agreed scope. The plan cards above list the included monthly output, revisions, and support.
+        </p>
+      </div>
+    </section>
+  )
+}
+
+function LongFormQuoteCard({ onRequest }: { onRequest: () => void }) {
+  return (
+    <div className="mx-auto max-w-4xl rounded-2xl border border-cyan-300/25 bg-cyan-300/[0.06] p-7 text-center sm:p-10">
+      <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-300">Custom project quote</p>
+      <h2 className="mt-3 text-3xl font-semibold text-white">Long-form editing is scoped to your footage</h2>
+      <p className="mx-auto mt-4 max-w-2xl leading-7 text-slate-300">
+        YouTube videos, podcasts, webinars, and talking-head edits vary in duration and complexity. Share your footage length, expected output, editing needs, and timeline to receive a tailored quote.
+      </p>
+      <button
+        type="button"
+        onClick={onRequest}
+        className="mt-6 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-100"
+      >
+        Get a long-form editing quote <ArrowRight className="h-4 w-4" />
+      </button>
+    </div>
   )
 }
 
@@ -2566,12 +2660,16 @@ function QuoteSection({
 }) {
   const leadSource = getLeadSource(page)
   const isWebDevelopmentPage = page.slug === 'web-development'
+  const isVideoEditingPage = page.slug === 'video-editing'
+  const isSocialMediaPage = page.slug === 'social-media-marketing'
   const quoteBudgetOptions = useMemo(
     () =>
       isWebDevelopmentPage
         ? ['Under $1,000', '$1,000 - $3,000', '$3,000 - $8,000', '$8,000 - $20,000', '$20,000+']
+        : (isVideoEditingPage || isSocialMediaPage) && region === 'india'
+          ? ['Under Rs.10,000', 'Rs.10,000 - Rs.25,000', 'Rs.25,000 - Rs.50,000', 'Rs.50,000 - Rs.1,00,000', 'Rs.1,00,000+', 'Not sure yet']
         : budgetOptions[region],
-    [isWebDevelopmentPage, region]
+    [isWebDevelopmentPage, isVideoEditingPage, isSocialMediaPage, region]
   )
   const serviceOptions = useMemo(
     () =>

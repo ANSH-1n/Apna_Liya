@@ -1,0 +1,88 @@
+{
+  "path": "/bangalore/services",
+  "cluster": "hub",
+  "title": "Social Media Marketing Services in Bangalore",
+  "description": "Instagram, LinkedIn, Meta ads, YouTube, WhatsApp and content services for Bangalore businesses, planned around a custom strategy. Get an audit.",
+  "h1": "Social Media Marketing Services in Bangalore",
+  "intro": "A service list can mislead because the same label hides very different work. A Meta advertising service can mean a thoughtfully built funnel or a boosted post. A content service can mean strategy or simply volume. The pages below describe what each of our services includes, who it suits, what you receive and how we report on it, so you can judge the substance behind the name.",
+  "sections": [
+    {
+      "h2": "How services combine in a plan",
+      "paragraphs": [
+        "Few clients need every service. A boutique hotel may need short video, creator partnerships and a handful of well-built campaigns. A B2B software company may need a LinkedIn programme, founder voice and demo-focused advertising. We choose from the list after the audit and drop what does not earn its place.",
+        "Services also depend on each other. Paid campaigns lean on content that already works. WhatsApp follow-up only helps if the enquiries arriving are the right ones. Reporting is only as good as the tracking behind it. When we recommend a service, we also say what has to be in place for it to work."
+      ]
+    },
+    {
+      "h2": "What every service shares",
+      "paragraphs": [
+        "Whichever service you choose, you can expect a named contact, a content or campaign plan you can read in advance, approval before anything sensitive goes live, and monthly reporting in plain language. Your accounts stay in your name."
+      ]
+    },
+    {
+      "h2": "Organic and paid: how we decide",
+      "paragraphs": [
+        "Organic content builds the credibility that paid campaigns borrow. If a buyer clicks an advertisement and finds an abandoned profile, the click is wasted. For that reason we usually strengthen the organic presence first, then add paid media where there is a clear audience and a clear way to measure the outcome.",
+        "Some businesses never need paid social at all. A neighbourhood salon with strong word of mouth may do better with excellent Reels and fast replies. A software company with a narrow buyer list may do better with sponsored LinkedIn content aimed at named roles. We tell you which situation you are in."
+      ]
+    },
+    {
+      "h2": "What to prepare before a conversation",
+      "paragraphs": [
+        "You do not need a brief. It helps to know who your best customers are, how they usually first hear about you, what questions they ask before buying and who in your team can approve content. If you already have analytics access for your profiles and website, share it in the audit and we will use it. If you do not, setting it up becomes the first piece of work."
+      ]
+    }
+  ],
+  "children": [
+    {
+      "path": "/bangalore/services/instagram-marketing",
+      "title": "Instagram Marketing",
+      "blurb": "Grid, Reels, Stories and profile design for businesses that win on visual trust."
+    },
+    {
+      "path": "/bangalore/services/linkedin-lead-generation",
+      "title": "LinkedIn Lead Generation",
+      "blurb": "Organic and paid programmes that reach decision-makers and move them into real conversations."
+    },
+    {
+      "path": "/bangalore/services/meta-ads",
+      "title": "Meta Ads",
+      "blurb": "Facebook and Instagram campaigns with tracking, audience design and creative testing."
+    },
+    {
+      "path": "/bangalore/services/influencer-marketing",
+      "title": "Influencer Marketing",
+      "blurb": "Creator selection, briefing, disclosure and measurement that goes beyond reach."
+    },
+    {
+      "path": "/bangalore/services/reels-short-video",
+      "title": "Reels & Short Video",
+      "blurb": "Short-form video planned around buying questions, not trends alone."
+    },
+    {
+      "path": "/bangalore/services/youtube-marketing",
+      "title": "YouTube Marketing",
+      "blurb": "Explainers and walkthroughs that keep working long after they are published."
+    },
+    {
+      "path": "/bangalore/services/whatsapp-marketing",
+      "title": "WhatsApp Marketing",
+      "blurb": "Consent-based follow-up journeys that turn an ad or post into a conversation."
+    },
+    {
+      "path": "/bangalore/services/social-media-management",
+      "title": "Social Media Management",
+      "blurb": "Day-to-day publishing, replies and reporting handled by one accountable team."
+    },
+    {
+      "path": "/bangalore/services/social-media-content",
+      "title": "Social Media Content",
+      "blurb": "Planning, scripting and production direction for content that serves a specific buyer."
+    },
+    {
+      "path": "/bangalore/services/personal-branding-founders",
+      "title": "Personal Branding for Founders",
+      "blurb": "Founder and leadership voice on LinkedIn and beyond, built on a real point of view."
+    }
+  ]
+}

@@ -4,10 +4,10 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Web Development Services | SniperCoders',
+  title: { absolute: 'Website Development Services & Pricing | SniperCoders' },
   description:
-    'SniperCoders builds modern websites, landing pages, business websites, portfolio pages, and eCommerce experiences with clean UX, speed, SEO structure, and conversion-focused content.',
-  keywords: ['web development services', 'website development', 'landing page development', 'business website', 'eCommerce website', 'SEO website', 'SniperCoders'],
+    'Website development for business websites, landing pages, portfolios, and eCommerce stores. Compare project scope, India pricing, and delivery timelines with SniperCoders.',
+  keywords: ['web development services', 'website development', 'landing page development', 'business website', 'eCommerce website', 'SEO website', 'website development cost in India', 'business website design cost in Bangalore', 'website development company in Bangalore', 'SniperCoders'],
 };
 
 const websiteTypes = [
@@ -82,6 +82,43 @@ export default function WebDevelopmentPage() {
                 <p className="mt-3 leading-7 text-slate-300">{copy}</p>
               </article>
             ))}
+          </div>
+        </section>
+
+        <section className="px-4 py-16 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <div className="mb-9 max-w-3xl">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-300">Scope, price and timing</p>
+              <h2 className="text-3xl font-semibold sm:text-4xl">Website development plans and delivery windows</h2>
+              <p className="mt-4 leading-8 text-slate-300">
+                Current India website plans list a Starter build at Rs.24,999 with a 10–14 business-day timeline, Growth at Rs.79,999 with a 3–5-week timeline, and Scale at Rs.1,49,999 with a 5–8-week timeline. Final timing depends on the agreed scope and receiving content and feedback on schedule.
+              </p>
+              <p className="mt-3 leading-7 text-slate-400">
+                Hosting, domains, servers, payment gateway fees, and third-party subscriptions are separate. Custom software is scoped individually.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Link href="/pricing/web-development" className="inline-flex min-h-11 items-center gap-2 rounded-full bg-white px-5 py-2 text-sm font-semibold text-slate-950 hover:bg-cyan-100">
+                  View website development pricing <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Link href="/showcase/websites" className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/15 px-5 py-2 text-sm font-semibold text-white hover:border-cyan-300/60">
+                  See website examples <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+
+            <div className="grid gap-5 md:grid-cols-2">
+              {[
+                ['What should a business website include?', 'A useful business site makes its services or products clear, answers common questions, provides accurate contact details, and gives visitors a clear next step. Page count and features are agreed during scoping.'],
+                ['How much does a business website cost in India?', 'SniperCoders’ listed India website plans are Rs.24,999 for Starter, Rs.79,999 for Growth, and Rs.1,49,999 for Scale. Custom software is quoted after requirements are reviewed.'],
+                ['How long does it take to build a website?', 'Current plan windows are 10–14 business days for Starter, 3–5 weeks for Growth, and 5–8 weeks for Scale. The final schedule depends on project scope, content, and review timing.'],
+                ['What affects the project price?', 'Page count, CMS or eCommerce features, integrations, design requirements, content readiness, and third-party services affect scope. Hosting, domains, servers, and external subscription fees are billed separately.'],
+              ].map(([question, answer]) => (
+                <article key={question} className="rounded-2xl border border-white/10 bg-white/[0.04] p-6">
+                  <h3 className="text-lg font-semibold text-white">{question}</h3>
+                  <p className="mt-3 leading-7 text-slate-300">{answer}</p>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 

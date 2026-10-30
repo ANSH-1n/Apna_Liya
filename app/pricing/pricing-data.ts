@@ -143,25 +143,27 @@ const sharedFaqs = [
   {
     question: 'Can I request a custom package?',
     answer:
-      'Yes. Use the quote form and share your goals, budget, and timeline. We will send a tailored scope within 24 hours.',
+      'Yes. Use the quote form to share your goals, budget, timeline, platforms, and required deliverables. We will review the details and confirm the next steps and proposal timeline.',
   },
 ]
 
 export const pricingPages: Record<string, PricingPageData> = {
   'video-editing': {
     slug: 'video-editing',
-    title: 'Video Editing Pricing',
-    eyebrow: 'Pricing for creators and brands',
+    title: 'Video Editing Pricing for Creators, Brands & Businesses',
+    eyebrow: 'Reels, Shorts and video editing plans',
     description:
-      'Short-form and long-form editing packages for creators, coaches, podcast hosts, real estate professionals, fitness brands, and agencies. Fast turnaround, professional output, no fluff.',
+      'Looking for video editing charges that fit your content goals and budget? SniperCoders edits Reels, YouTube Shorts, podcast episodes, and long-form videos for creators, coaches, brands, and businesses. Compare monthly plans or request a custom quote.',
     audience: [
+      'Content Creators',
       'Podcast Hosts',
       'Coaches',
       'Creators',
       'Fitness Brands',
       'Real Estate Professionals',
       'Personal Brands',
-      'Agencies',
+      'Startups and Businesses',
+      'Marketing Agencies',
     ],
     services: [
       'Reels Editing',
@@ -390,42 +392,73 @@ export const pricingPages: Record<string, PricingPageData> = {
     ],
     faqs: [
       {
-        question: 'What is the difference between short-form and long-form packages?',
+        question: 'What are video editing charges in India?',
         answer:
-          'Short-form covers reels, Instagram Shorts, and YouTube Shorts under 60 seconds. Long-form covers YouTube videos, podcast episode edits, webinars, and talking head videos over 5 minutes.',
+          'Video editing charges depend on duration, complexity, captions, motion graphics, revisions, turnaround, and monthly output. Use the India pricing option to compare the listed monthly packages or request a custom proposal.',
       },
       {
-        question: 'What formats do you edit?',
+        question: 'How much does video editing cost per Reel?',
         answer:
-          'We edit reels, YouTube Shorts, TikToks, podcast clips, talking heads, real estate walkthroughs, fitness transformations, and long-form content repurposed into clips.',
+          'The effective per-Reel cost depends on the monthly plan and number of videos included. Compare each plan’s output, revision limit, turnaround, and deliverables as well as its monthly price.',
       },
       {
-        question: 'Do you provide source files?',
+        question: 'What is included in a monthly video editing package?',
         answer:
-          'Source files are available on Growth and Scale plans when requested before the project begins.',
+          'Depending on the plan, inclusions can include short-form editing, captions, hook-focused openings, music, pacing, vertical formatting, motion graphics, and platform-ready exports. Each plan lists its exact deliverables.',
       },
       {
-        question: 'How do I send raw footage?',
+        question: 'What is the difference between short-form and long-form editing?',
         answer:
-          'You share raw files via Google Drive or WeTransfer. We download, edit, and return finished files to the same folder.',
+          'Short-form covers Reels, YouTube Shorts, and similar videos under 60 seconds. Long-form covers YouTube videos, podcasts, webinars, and talking-head videos over five minutes; its scope is based on project requirements.',
       },
       {
-        question: 'Can you match a specific editing style?',
+        question: 'Do you offer unlimited video editing subscriptions?',
         answer:
-          'Yes. Share reference videos before we start and we will match the style, pacing, and tone.',
+          'The listed plans have a fixed monthly video output. Contact us to discuss a custom volume, deliverables, turnaround, and limits.',
+      },
+      {
+        question: 'How long does video editing take?',
+        answer:
+          'Short-form turnaround is 3–5 business days per batch for Starter, 2–4 for Growth, and 1–3 for Scale. Final schedules depend on footage availability, requirements, and the agreed scope.',
+      },
+      {
+        question: 'How many revisions are included?',
+        answer:
+          'Starter includes one revision per video, Growth includes two, and Scale includes three. Requests outside the agreed scope should be discussed separately.',
+      },
+      {
+        question: 'How do I send my raw footage?',
+        answer:
+          'The listed packages support delivery through Google Drive. Confirm the file-sharing workflow and folder setup with our team before editing begins.',
+      },
+      {
+        question: 'Can you match a particular editing style?',
+        answer:
+          'Share reference videos and describe the style you want. We will review them and confirm whether the approach fits the plan and project scope.',
+      },
+      {
+        question: 'Do you provide source or project files?',
+        answer:
+          'Source and editable project files are not listed as standard inclusions. Please confirm availability and any applicable charges before placing an order.',
       },
       ...sharedFaqs,
     ],
     seo: {
-      title: 'Video Editing Pricing | SniperCoders',
+      title: 'Video Editing Charges in India & Pricing Plans | SniperCoders',
       description:
-        'Affordable video editing packages for reels, podcast clips, shorts, real estate videos, fitness content, captions, thumbnails, and motion graphics. International and India pricing available.',
+        'Compare video editing charges and monthly packages for Reels, YouTube Shorts, podcasts, captions, hooks, motion graphics, and long-form content. India and international pricing available.',
       keywords: [
         'video editing pricing',
         'reels editing package',
         'podcast clip editing',
         'short form video editing agency',
         'SniperCoders pricing',
+        'video editing charges in India',
+        'video editing price list in India',
+        'monthly video editing packages',
+        'Reels editing prices',
+        'YouTube Shorts editing services',
+        'international video editing services',
       ],
     },
   },
@@ -435,7 +468,7 @@ export const pricingPages: Record<string, PricingPageData> = {
     title: 'Social Media Marketing Pricing',
     eyebrow: 'Monthly retainer pricing',
     description:
-      'Done-for-you social media management for founders, coaches, and brands in the US, UK, Australia, and beyond. Content editing, posting, paid ads, lead generation, and reporting - without the cost of hiring in-house.',
+      'Compare monthly social media management and paid ads plans for founders, coaches, local businesses, and growing brands. Review deliverables and regional pricing or request a custom scope.',
     audience: [
       'Founders',
       'Local Businesses',
@@ -716,18 +749,52 @@ export const pricingPages: Record<string, PricingPageData> = {
         answer:
           'Pauses can be discussed before the next billing cycle depending on the campaign calendar and active ad sets.',
       },
+      {
+        question: 'How much does social media marketing cost in India?',
+        answer:
+          'India plans start at Rs.14,999 per month for Organic Management and Rs.24,999 per month for Ads + Lead Generation. The final choice depends on deliverables and scope; the plan cards show the listed prices and inclusions.',
+      },
+      {
+        question: 'What is included in social media management?',
+        answer:
+          'Plans can include content calendars, captions, posts, edited Reels from client-provided footage, scheduling, posting, community management, and reporting. Check the selected plan for exact quantities and inclusions.',
+      },
+      {
+        question: 'Which social media platforms do you manage?',
+        answer:
+          'Organic plans cover Instagram, Facebook, and LinkedIn content as listed in the plan. The Ads + Lead Generation tier covers Meta Ads and Google Ads. Confirm the platforms and scope for your project before work starts.',
+      },
+      {
+        question: 'How long does it take to see results from social media marketing?',
+        answer:
+          'There is no fixed timeline or guaranteed outcome. Results depend on your starting point, audience, offer, content consistency, campaign budget, and market. We review available performance signals and feedback as work progresses.',
+      },
+      {
+        question: 'Can I combine social media management with paid ads?',
+        answer:
+          'The page has separate Organic Management and Ads + Lead Generation plan groups. If you need both, contact us so the combined deliverables, campaign-management scope, and ad budget can be confirmed in one proposal.',
+      },
+      {
+        question: 'How do you measure campaign performance?',
+        answer:
+          'Reports depend on the selected plan and available platform data. They may include reach, engagement, follower activity, clicks, enquiries, campaign performance, and lead quality where it is tracked.',
+      },
       ...sharedFaqs,
     ],
     seo: {
       title: 'Social Media Marketing Pricing | SniperCoders',
       description:
-        'Done-for-you social media management for founders, coaches, and brands in the US, UK, Australia, and beyond. Content editing, posting, paid ads, lead generation, and reporting without hiring in-house.',
+        'Compare social media management and paid ads plans with India and international pricing, monthly deliverables, content support, and campaign reporting.',
       keywords: [
         'social media marketing pricing',
         'Meta Ads management pricing',
         'Instagram management package',
         'social media agency pricing',
         'SniperCoders SMM',
+        'social media management pricing in India',
+        'social media marketing packages for small businesses',
+        'what is included in social media management',
+        'does social media marketing include ad spend',
       ],
     },
   },

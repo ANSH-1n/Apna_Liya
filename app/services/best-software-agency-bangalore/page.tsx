@@ -18,13 +18,15 @@ import Link from "next/link";
 const services = [
   {
     title: "Video Editing & Reels",
-    copy: "Clean short-form videos, ad creatives, hooks, captions, and social edits for Bangalore founders, coaches, real estate teams, and local brands.",
+    copy: "Short-form videos, Reels, captions, hooks, pacing, sound design, and vertical exports for founders, creators, property teams, and local brands.",
     icon: Clapperboard,
+    href: "/pricing/video-editing",
   },
   {
     title: "Social Media Marketing",
-    copy: "Content calendars, campaign planning, Instagram growth, Meta ads, and Google ads focused on qualified leads instead of empty reach.",
+    copy: "Content calendars, captions, platform-specific creative, scheduling, and Meta or Google Ads support based on the selected plan.",
     icon: Megaphone,
+    href: "/pricing/social-media-marketing",
   },
   {
     title: "Website Development",
@@ -49,18 +51,17 @@ const services = [
 ];
 
 const reasons = [
-  "Local SEO-friendly pages for Bangalore searches",
-  "Content and software under one creative growth team",
-  "Fast communication and simple project planning",
-  "Mobile-first design for Indian customers",
-  "Clear deliverables before development starts",
-  "Post-launch support for updates and improvements",
+  "Creative and technology projects scoped to your requirements",
+  "Deliverables and responsibilities agreed before work starts",
+  "Remote-friendly collaboration for content and digital projects",
+  "Mobile-first website design",
+  "Post-launch support according to the selected plan",
 ];
 
 const process = [
-  "We understand your offer, audience, and Bangalore market.",
-  "We plan the content, design, technology, and lead flow.",
-  "We build, test, launch, and improve based on real response.",
+  "We discuss your offer, audience, priorities, and local context.",
+  "We agree on the content, design, technology, and deliverables.",
+  "We produce, review, and refine work using feedback and available data.",
 ];
 
 export default function BangaloreSoftwareAgencyPage() {
@@ -73,18 +74,19 @@ export default function BangaloreSoftwareAgencyPage() {
         <div className="mx-auto max-w-5xl text-center">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/25 bg-cyan-300/10 px-4 py-2 text-sm font-semibold text-cyan-200">
             <MapPin className="h-4 w-4" />
-            Software agency for Bangalore brands
+            Creative growth for Bangalore brands
           </div>
           <h1 className="text-4xl font-black leading-tight tracking-normal sm:text-5xl lg:text-7xl">
-            Best Software Agency in{" "}
+            Social Media Marketing & Video Editing for{" "}
             <span className="bg-gradient-to-r from-cyan-300 via-sky-300 to-fuchsia-400 bg-clip-text text-transparent">
               Bangalore
             </span>
           </h1>
           <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-slate-300 sm:text-lg">
-            SniperCoders helps Bangalore startups, local businesses, creators,
-            and service brands grow with video editing, social media marketing,
-            websites, mobile apps, custom software, and useful AI automation.
+            SniperCoders helps Bangalore founders, creators, startups, and
+            growing businesses with short-form video editing, social media
+            management, and Meta and Google ad creatives. We also offer website
+            development and other technology services on dedicated pages.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <Link
@@ -110,12 +112,13 @@ export default function BangaloreSoftwareAgencyPage() {
               What We Build
             </p>
             <h2 className="mt-3 text-3xl font-black sm:text-4xl">
-              Digital work made simple for Bangalore businesses
+              Creative services for Bangalore businesses
             </h2>
             <p className="mt-4 text-slate-300">
-              Whether you need better Instagram content, a sharper landing page,
-              a booking app, or a custom dashboard, we keep the strategy clear
-              and build around measurable business outcomes.
+              Choose video editing, social media execution, or ad creatives
+              based on your current priorities. Our workflow can be arranged
+              remotely; confirm any in-person production needs and availability
+              before booking.
             </p>
           </div>
 
@@ -134,6 +137,11 @@ export default function BangaloreSoftwareAgencyPage() {
                   <p className="mt-3 text-sm leading-7 text-slate-300">
                     {service.copy}
                   </p>
+                  {service.href && (
+                    <Link href={service.href} className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-cyan-200 hover:text-white">
+                      View service packages <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  )}
                 </article>
               );
             })}
@@ -197,14 +205,43 @@ export default function BangaloreSoftwareAgencyPage() {
         </div>
       </section>
 
+      <section className="border-y border-white/10 bg-white/[0.03] px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300">Bangalore service FAQs</p>
+          <h2 className="mt-3 text-3xl font-black sm:text-4xl">Common questions about creative services in Bangalore</h2>
+          <div className="mt-8 space-y-5">
+            <article>
+              <h3 className="text-lg font-bold">Do you offer social media marketing for small businesses in Bangalore?</h3>
+              <p className="mt-2 leading-7 text-slate-300">Yes. Plans can include content planning, captions, creative assets, scheduling, community management, and reporting. Deliverables depend on the selected plan. View the <Link className="text-cyan-200 underline" href="/pricing/social-media-marketing">social media marketing packages</Link> for plan details.</p>
+            </article>
+            <article>
+              <h3 className="text-lg font-bold">How much does social media marketing cost in Bangalore?</h3>
+              <p className="mt-2 leading-7 text-slate-300">Our listed India plans start at Rs.14,999 per month for Organic Management and Rs.24,999 per month for Ads + Lead Generation. The selected plan, deliverables, and any custom requirements determine the scope.</p>
+            </article>
+            <article>
+              <h3 className="text-lg font-bold">Do you edit Reels from raw footage?</h3>
+              <p className="mt-2 leading-7 text-slate-300">Yes. Video editing plans cover short-form formats such as Reels and YouTube Shorts. The client supplies footage; monthly volume, length, revisions, and turnaround are listed on the <Link className="text-cyan-200 underline" href="/pricing/video-editing">video editing pricing page</Link>.</p>
+            </article>
+            <article>
+              <h3 className="text-lg font-bold">Is advertising spend included in the management fee?</h3>
+              <p className="mt-2 leading-7 text-slate-300">No. Ad spend is paid directly to Meta or Google. The management plan covers the services and deliverables listed for that tier.</p>
+            </article>
+            <article>
+              <h3 className="text-lg font-bold">Are services in-person or remote?</h3>
+              <p className="mt-2 leading-7 text-slate-300">Content and digital projects can be coordinated remotely. Confirm any on-site filming or in-person production requirements and availability with us before booking.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section className="px-4 py-16 text-center sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
           <h2 className="text-3xl font-black sm:text-4xl">
-            Need a software agency in Bangalore?
+            Need creative content or digital marketing in Bangalore?
           </h2>
           <p className="mt-4 text-slate-300">
-            Tell us what you want to build or promote. We will suggest a simple
-            plan for content, website, app, or software based on your goal.
+            Tell us your business niche, the service you need, your timeline,
+            and your goal. We will discuss the scope and next steps with you.
           </p>
           <Link
             href="/contact"

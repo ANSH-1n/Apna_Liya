@@ -2,6 +2,7 @@
 // This file contains BOTH static site data AND the Gemini API function
 
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import { pages, SITE_URL } from '@/lib/pages';
 
 // ============================================
 // PART 1: STATIC SITE DATA FOR AI DISCOVERY
@@ -25,11 +26,6 @@ export const siteConfig = {
     'Custom Software Development',
     'Mobile Development',
   ],
-  stats: {
-    brandsServed: '50+',
-    engagementIncrease: '40%',
-    projectsCompleted: '100+',
-  },
   socialLinks: {
     instagram: 'https://www.instagram.com/snipercoders/',
     linkedin: 'https://www.linkedin.com/company/snipercoders/',
@@ -58,7 +54,7 @@ export const siteConfig = {
 export function generateAIDescription(): string {
   return `
 ${siteConfig.name} is a ${siteConfig.description}
-Based in ${siteConfig.location}, we have served ${siteConfig.stats.brandsServed} brands with a ${siteConfig.stats.engagementIncrease} average engagement increase.
+Based in ${siteConfig.location}, the team works across social media marketing, video editing and web development.
 
 Our core services include:
 ${siteConfig.services.map(s => `- ${s}`).join('\n')}
@@ -141,11 +137,6 @@ ${siteConfig.founded}
 ## Services
 ${siteConfig.services.join(', ')}
 
-## Stats
-- Brands Served: ${siteConfig.stats.brandsServed}
-- Average Engagement Increase: ${siteConfig.stats.engagementIncrease}
-- Projects Completed: ${siteConfig.stats.projectsCompleted}
-
 ## Contact
 - Email: ${siteConfig.contact.email}
 - Phone: ${siteConfig.contact.phone}
@@ -212,13 +203,11 @@ ${siteConfig.description}
 - API development
 - Legacy system modernization
 
-## Why Choose ${siteConfig.name}
+## Approach
 
-- ${siteConfig.stats.brandsServed} brands served
-- ${siteConfig.stats.engagementIncrease} average engagement increase
-- Data-driven strategies
-- Transparent reporting
-- Results-focused approach
+- Strategy and content planning shaped around the business context
+- Clear collaboration and reporting responsibilities
+- Custom scope discussed after an initial audit
 
 ## Contact
 
@@ -226,6 +215,9 @@ Email: ${siteConfig.contact.email}
 Phone: ${siteConfig.contact.phone}
 Website: ${siteConfig.url}
 Location: ${siteConfig.location}
+
+## Indexable website pages
+${pages.filter(page => page.indexable).map(page => `- ${SITE_URL}${page.path === '/' ? '' : page.path}`).join('\n')}
 `
 }
 

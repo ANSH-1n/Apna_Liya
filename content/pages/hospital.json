@@ -1,0 +1,100 @@
+{
+  "path": "/bangalore/industries/hospitals",
+  "cluster": "industry",
+  "title": "Social Media Marketing for Hospitals in Bangalore",
+  "description": "Clinician-reviewed social media planning for Bangalore hospitals: patient education, doctor introductions, compliant campaigns and appointment pathways.",
+  "h1": "Social Media Marketing for Hospitals in Bangalore",
+  "intro": "People come to a hospital's social media at some of the most anxious moments of their lives. They want to know whether the doctors are qualified, whether the facilities are right for their condition, and whether anyone there will treat them with patience. A hospital feed full of festival greetings and stock photographs answers none of that. Our plans start from the patient's worry and build content that is calm, accurate and reviewed by the clinicians whose names are on it.",
+  "sections": [
+    {
+      "h2": "How patients and families come to a hospital online",
+      "paragraphs": [
+        "Rarely is the patient the only decision-maker. A daughter researching treatment for a parent, a spouse comparing hospitals, or a family arranging care from another city will look at the profile, the doctor pages and the reviews, often on a phone late in the evening. They are looking for signs of competence and care: clear explanations, a visible team and consistent, unhurried communication.",
+        "Referral still matters enormously in healthcare. A general practitioner's recommendation or a friend's experience often triggers the search, and social media is where that person confirms the choice. The aim is therefore not to persuade strangers with excitement but to give referred patients enough reassurance to take the next step."
+      ]
+    },
+    {
+      "h2": "Content that helps instead of sells",
+      "paragraphs": [
+        "Healthcare content works when it is useful and restrained. We organise it into a small set of recurring formats."
+      ],
+      "bullets": [
+        "Doctor introductions: who they are, what they treat, how they like to explain a procedure and how to book, filmed in a natural, unscripted way.",
+        "Condition explainers in plain language, drafted with the treating specialist and reviewed before publication.",
+        "What to expect: how a first appointment, a scan or an admission works, step by step, so that fear of the unknown reduces.",
+        "Facility and process walk-throughs that show where patients and families go, where they wait and who they will meet.",
+        "Awareness days and preventive health messages that are accurate, locally relevant and free of fear tactics.",
+        "Frequently asked questions answered by the people on the ward or in the outpatient department."
+      ]
+    },
+    {
+      "h2": "A clinician-in-the-loop workflow",
+      "paragraphs": [
+        "Every healthcare client gets a review chain agreed before the first post. A draft goes from our team to a named clinical reviewer, then to the marketing or administrative owner, then live. Anything that mentions a treatment, a result or a risk needs the clinician's explicit sign-off. We keep a log of who approved what and when, which protects both the hospital and the team.",
+        "Patient stories are handled with particular care. They require written consent, must never expose identifying detail beyond what the patient chooses, and are not used where they could imply a guaranteed outcome."
+      ]
+    },
+    {
+      "h2": "Channels and how we use them",
+      "paragraphs": [
+        "YouTube carries the longer explainers and doctor conversations, and these often continue to attract patients well beyond the original upload. Instagram handles short educational clips and a human view of the team. Facebook remains relevant for older audiences and families. Paid campaigns on Meta can support appointment drives for specific services, but we design them conservatively, with ad content that follows the same review chain as organic posts.",
+        "Messaging matters as much as publishing. When someone sends a question, the answer should be quick, accurate and respectful of privacy, with a clear route to a phone call or an appointment. We help set up response guidelines and escalation rules so that staff know what can be answered publicly and what must move to a private conversation."
+      ]
+    },
+    {
+      "h2": "Measuring what matters in healthcare",
+      "paragraphs": [
+        "We track appointment requests that arrive via social media, calls and messages from profiles, visits to doctor and department pages, and the number of questions that staff no longer have to answer repeatedly because the content did it first. Reach alone is not a goal. A modest audience of genuine prospective patients is worth far more than a large one drawn by trending clips."
+      ]
+    },
+    {
+      "h2": "Advertising rules and sensitivities",
+      "paragraphs": [
+        "Medical advertising in India is subject to professional conduct rules for doctors, laws on misleading medical claims and the self-regulatory code of the advertising standards body. Patient privacy obligations apply to images and stories. We do not use before-and-after claims, guaranteed outcomes or comparative statements about other hospitals. Please have your compliance or legal adviser confirm the current requirements, as they change and vary by service. [VERIFY WITH CLIENT COUNSEL]"
+      ]
+    },
+    {
+      "h2": "Mistakes we see in hospital social media",
+      "paragraphs": [
+        "The most common problems come from treating a hospital like a consumer brand."
+      ],
+      "bullets": [
+        "Posting generic health tips that could have come from any hospital, which gives no reason to choose yours.",
+        "Using stock images of smiling patients that no visitor believes.",
+        "Hiding the doctors, when the doctor is the reason most patients choose a hospital.",
+        "Leaving questions unanswered or answered by someone who is not clinically qualified.",
+        "Publishing content that has not been reviewed, then having to take it down when a clinician objects."
+      ]
+    },
+    {
+      "h2": "What the first ninety days look like",
+      "paragraphs": [
+        "The first month covers the audit, the clinical review chain and the consent process. The second month brings the first doctor introductions and a series of explainers on the services the hospital most wants to highlight. In the third month we look at what patients actually asked and did, adjust the topics, and decide whether an appointment campaign for a particular department makes sense. Because healthcare moves carefully, we would rather publish fewer, better-reviewed pieces in the first quarter than rush volume."
+      ]
+    },
+    {
+      "h2": "What a custom plan includes for a hospital",
+      "paragraphs": [
+        "Scope depends on the number of departments and doctors you want represented, the channels you use, the amount of video you can support, and your internal review process. A typical plan covers a content strategy per specialty, a recurring doctor-video programme, an approvals and consent workflow, response guidelines for messages, optional appointment campaigns, and monthly reporting. The exact scope is written down after the free audit."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Can you make content about specific treatments?",
+      "a": "Yes, with sign-off from the treating specialist and within current advertising rules. We focus on explaining what the treatment involves and who it may suit, not on promises about results."
+    },
+    {
+      "q": "Do you handle comments and messages from patients?",
+      "a": "We can manage replies using guidelines agreed with you, and we escalate anything clinical or private to your team immediately."
+    },
+    {
+      "q": "How do you avoid breaching patient privacy?",
+      "a": "No patient image or story is used without written consent, and we never publish identifying details beyond what the patient has chosen to share."
+    },
+    {
+      "q": "Can social media bring in appointments for a specific department?",
+      "a": "It can support them, usually through a mix of education content and a carefully designed campaign with a clear booking route. We report on appointment requests rather than clicks."
+    }
+  ]
+}

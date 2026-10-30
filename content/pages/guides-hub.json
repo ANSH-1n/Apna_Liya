@@ -1,0 +1,22 @@
+{
+  "path": "/bangalore/guides",
+  "cluster": "hub",
+  "title": "Social Media Marketing Guides for Bangalore Businesses",
+  "description": "Practical guides on choosing an agency, building a custom plan, measuring results and deciding between an agency and an in-house team. Get an audit.",
+  "h1": "Social Media Marketing Guides for Bangalore Businesses",
+  "intro": "These guides are for the moment before you hire anyone. They explain how to judge an agency, how a custom plan is put together, how to read a report without being dazzled by it, and when it makes more sense to build a team of your own. They are written to be useful even if you never speak to us.",
+  "sections": [
+    { "h2": "Where to start", "paragraphs": ["If you are comparing agencies, read the guide on choosing one first, then the one on custom plans so you know what a serious proposal contains. If you already work with an agency and doubt the results, begin with the guide on reporting and return on investment. If you are deciding between hiring and outsourcing, the agency-versus-in-house guide sets out the trade-offs honestly, including the cases where we are not the answer.", "Each guide ends with a checklist you can print or share with your team."] },
+    { "h2": "How we keep them honest", "paragraphs": ["The guides contain no invented statistics and no promises. Where something depends on your circumstances, we say so. They are reviewed when our practice changes, and the review date is shown on each page."] },
+    { "h2": "Who these guides are for", "paragraphs": ["The guides are written for owners, marketing heads and founders who will sign off on the decision, not for specialists. Where we use a term from the trade, we explain it. Where a choice depends on how your business sells, we describe the two or three common situations and let you place yourself in one of them.", "They are also useful as briefing material. Several clients have shared the agency checklist with their leadership team before choosing a partner, which is exactly what it is for."] },
+    { "h2": "What you will not find here", "paragraphs": ["You will not find league tables of agencies or scripted success stories. How much work a business needs depends on its channels, its sector and its team, so the guides explain the variables that shape a proposal and leave the specifics to a conversation about your actual situation."] },
+    { "h2": "How often they are reviewed", "paragraphs": ["Platforms change their features and rules often, and Indian advertising guidance evolves too. We review each guide on a regular schedule and update the visible review date only when the content genuinely changes. If you spot something that no longer matches what you see on a platform, tell us and we will check it."] }
+  ],
+  "children": [
+    { "path": "/bangalore/guides/custom-strategy-plan", "title": "Custom Social Media Marketing Plans", "blurb": "How a custom plan is scoped, what goes into it and why we do not sell fixed packages." },
+    { "path": "/bangalore/guides/roi-and-reporting", "title": "Social Media ROI and Reporting", "blurb": "What to measure, how to trace enquiries and what a useful monthly report looks like." },
+    { "path": "/bangalore/guides/how-to-choose-agency", "title": "How to Choose a Social Media Agency", "blurb": "A checklist for comparing agencies, including the questions that expose weak ones." },
+    { "path": "/bangalore/guides/agency-vs-in-house", "title": "Agency vs In-House Team", "blurb": "When to hire internally, when to use an agency and when a hybrid makes sense." },
+    { "path": "/bangalore/guides/luxury-premium-brand-agency", "title": "Luxury and Premium Brand Social Media", "blurb": "Restraint, craft and consistency: what premium brands should expect from an agency." }
+  ]
+}
