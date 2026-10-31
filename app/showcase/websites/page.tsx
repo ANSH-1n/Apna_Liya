@@ -20,6 +20,36 @@ const fadeUp = {
 
 const projects = [
   {
+    title: 'Bright Beam Energy',
+    category: 'Renewable Energy',
+    type: 'Energy Website',
+    image: '/images/bright_beam_energy_.png',
+    icon: Code2,
+    summary: 'A clean web presence for Bright Beam Energy and its renewable energy solutions.',
+    deliverables: ['Energy brand website', 'Service presentation', 'Responsive experience', 'Project enquiry path'],
+    href: 'https://www.brightbeamenergy.in/',
+  },
+  {
+    title: 'Plan My Trip',
+    category: 'Travel',
+    type: 'Travel Planning Website',
+    image: '/images/plan_my_trip_.png',
+    icon: Plane,
+    summary: 'A travel planning website for Vaishno Devi yatras, Kashmir tours, and Himachal holidays.',
+    deliverables: ['Destination discovery', 'Trip planning flows', 'Travel packages', 'Enquiry paths'],
+    href: 'https://www.planmytrip.live/',
+  },
+  {
+    title: "The Corps d'Elite",
+    category: 'Professional Services',
+    type: 'Business Website',
+    image: '/images/corps_delite.png',
+    icon: Code2,
+    summary: 'A polished web presence for The Corps d’Elite.',
+    deliverables: ['Brand presentation', 'Service information', 'Responsive experience', 'Contact path'],
+    href: 'https://thecorpsdelite.com/',
+  },
+  {
     title: 'Moto Gears Pit Stop',
     category: 'Automotive',
     type: 'Motorcycle Gear Website',
@@ -197,14 +227,14 @@ export default function WebsiteShowcasePage() {
                   className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04]"
                 >
                   <div className="relative h-56 overflow-hidden bg-slate-950 sm:h-64">
-                    <Image
+                    {project.image ? <Image
                       src={project.image}
                       alt={`${project.title} case study by SniperCoders`}
                       fill
                       sizes="(max-width: 1024px) 100vw, 50vw"
                       className="object-cover"
                       priority={index < 2}
-                    />
+                    /> : <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_75%_20%,rgba(34,211,238,.2),transparent_40%),linear-gradient(135deg,#0e1725,#05070d)]" aria-hidden="true" />}
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/25 to-transparent" />
                     <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between gap-3">
                       <span className="rounded-full border border-white/15 bg-black/35 px-3 py-1 text-xs font-medium text-white backdrop-blur">

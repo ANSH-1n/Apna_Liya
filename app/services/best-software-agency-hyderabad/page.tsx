@@ -6,13 +6,13 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import {
-  Code, Smartphone, Globe, TrendingUp, Award, Users,
-  MapPin, Phone, Mail, ChevronRight, Star, CheckCircle,
+  Code, Globe, TrendingUp, Award, Users,
+  MapPin, Phone, Mail, ChevronRight, CheckCircle,
   Utensils, Coffee, Car, Hotel, ShoppingBag,
   GraduationCap, HeartPulse, Plane, Dumbbell, Camera,
   Briefcase, Home, Truck, Music, Landmark, TreePine,
   ShoppingCart, Wrench, Factory, Building2,
-  Clock, Shield, Crown, Gem,
+  Shield, Crown, Gem,
   FlaskConical, Microscope, Building, Sparkles
 } from "lucide-react";
 import Footer from "@/components/Footer";

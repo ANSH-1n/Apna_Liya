@@ -81,8 +81,6 @@ const serviceIndustry: Record<string,string[]> = {
   'whatsapp-marketing': ['hospitals','wedding-planners','dental-clinics'], 'social-media-management': ['commercial-real-estate','hospitals','b2b-saas'],
   'social-media-content': ['interior-designers-architects','luxury-real-estate','ev-clean-tech'], 'personal-branding-founders': ['b2b-saas','fintech','ev-clean-tech'],
 };
-const areaPaths = groups.area.map(slug => `/bangalore/areas/${slug}`);
-const industryPaths = groups.industry.map(slug => `/bangalore/industries/${slug}`);
 const servicePaths = groups.service.map(slug => `/bangalore/services/${slug}`);
 const guidePaths = groups.guide.map(slug => `/bangalore/guides/${slug}`);
 for (const page of entries) {
@@ -101,7 +99,8 @@ for (const page of entries) {
   }
   if (page.cluster === 'guide') {
     const siblings = guidePaths.filter(target => target !== page.path).slice(0,3);
-    page.related = [...siblings, servicePaths[groups.guide.indexOf(slug) % servicePaths.length], servicePaths[(groups.guide.indexOf(slug) + 1) % servicePaths.length]];
+    const guideIndex = guidePaths.indexOf(page.path);
+    page.related = [...siblings, servicePaths[guideIndex % servicePaths.length], servicePaths[(guideIndex + 1) % servicePaths.length]];
   }
 }
 

@@ -42,7 +42,6 @@ export default async function TopicPage({ params }: Props) {
   ];
   const faqItems = page.copy?.faqs?.map(item => ({ question: item.q, answer: item.a })) ?? defaultFaqs;
   const crumbItems = [{ name: 'Home', path: '/' }, { name: 'Bangalore', path: pillar }, ...(page.hub && page.path !== page.hub ? [{ name: page.hub.split('/').at(-1)!.replace(/-/g, ' '), path: page.hub }] : []), { name: page.copy?.title ?? page.label, path: page.path }];
-  const related = page.related.filter(item => item !== page.path).slice(0, 6);
   const schemas: object[] = [organization(), breadcrumbs(crumbItems), faqSchema(faqItems)];
   if (['area', 'industry', 'service'].includes(page.cluster)) schemas.push(serviceSchema(page.heading, page.description, page.path));
   if (page.cluster === 'guide') schemas.push(articleSchema({ title: page.heading, description: page.description, url: page.path, datePublished: page.updatedAt, dateModified: page.updatedAt }));
