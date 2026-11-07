@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import { ArrowRight, Clock, Mail, MessageCircle, Phone, Send } from 'lucide-react';
 import type { ChangeEvent, FormEvent } from 'react';
 import { useState } from 'react';
+import { trackLeadCreated } from '@/components/OpenAIAdsTracking';
 
 interface FormData {
   fullName: string;
@@ -127,7 +128,7 @@ export default function ContactPage() {
       `Message:%0A${encodeURIComponent(formData.message)}`;
 
     try {
-      await fetch('/api/quote-requests', {
+      const response = await fetch('/api/quote-requests', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -144,15 +145,12 @@ export default function ContactPage() {
           pricingPageUrl: '',
         }),
       });
+      if (response.ok) trackLeadCreated();
     } catch (error) {
       console.error('Lead save failed before WhatsApp open', error);
     }
 
     if (typeof window !== 'undefined') {
-      const fbq = (window as { fbq?: (action: string, event: string) => void }).fbq;
-      if (fbq) {
-        fbq('track', 'Lead');
-      }
       window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, '_blank');
     }
 

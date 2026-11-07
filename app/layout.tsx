@@ -3,7 +3,9 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import { GoogleTagManager } from '@next/third-parties/google';
+import Script from 'next/script';
 import { ThemeProvider } from '../context/ThemeContext';
+import OpenAIAdsTracking from '../components/OpenAIAdsTracking';
 import Navbar from '../components/Navbar';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -92,6 +94,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <Script
+          id="openai-ads-pixel"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `!function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f)}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");oaiq("init",{pixelId:"QkqER4t1kScwa1x6gKFncZ",debug:true});`,
+          }}
+        />
         <link
           rel="icon"
           href="/images/logo_sniper.ico"
@@ -106,6 +115,7 @@ export default function RootLayout({
 
       <body className={`${poppins.className} transition-all duration-300`}>
         <ThemeProvider>
+          <OpenAIAdsTracking />
           <a href="#main-content" className="sr-only z-[10000] rounded bg-cyan-300 px-4 py-3 font-semibold text-slate-950 focus:not-sr-only focus:fixed focus:left-4 focus:top-4">Skip to content</a>
           <Navbar />
 

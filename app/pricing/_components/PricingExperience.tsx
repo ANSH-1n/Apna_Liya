@@ -1403,6 +1403,7 @@ import {
   Zap,
 } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
+import { trackLeadCreated } from '@/components/OpenAIAdsTracking'
 import type { PricingPageData, PricingRegion } from '../pricing-data'
 
 const whatsappNumber = '917006377796'
@@ -2542,7 +2543,7 @@ ${form.description}`
     )
 
     try {
-      await fetch('/api/quote-requests', {
+      const response = await fetch('/api/quote-requests', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -2561,6 +2562,7 @@ ${form.description}`
           pricingPageUrl: typeof window !== 'undefined' ? window.location.pathname : leadSource.page,
         }),
       })
+      if (response.ok) trackLeadCreated()
     } catch (error) {
       console.error('Lead save failed before WhatsApp open', error)
     }
@@ -2726,7 +2728,7 @@ ${form.description}`
     )
 
     try {
-      await fetch('/api/quote-requests', {
+      const response = await fetch('/api/quote-requests', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -2745,6 +2747,7 @@ ${form.description}`
           pricingPageUrl: typeof window !== 'undefined' ? window.location.pathname : leadSource.page,
         }),
       })
+      if (response.ok) trackLeadCreated()
     } catch (error) {
       console.error('Lead save failed before WhatsApp open', error)
     }
