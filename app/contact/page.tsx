@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 import { ArrowRight, Clock, Mail, MessageCircle, Phone, Send } from 'lucide-react';
 import type { ChangeEvent, FormEvent } from 'react';
 import { useState } from 'react';
-import { trackLeadCreated } from '@/components/OpenAIAdsTracking';
+import { beginLeadSubmission } from '@/components/OpenAIAdsTracking';
 
 interface FormData {
   fullName: string;
@@ -116,6 +116,8 @@ export default function ContactPage() {
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const finishLeadTracking = beginLeadSubmission(event.currentTarget);
+    if (!finishLeadTracking) return;
     setLoading(true);
 
     const whatsappNumber = '917006377796';
@@ -145,8 +147,9 @@ export default function ContactPage() {
           pricingPageUrl: '',
         }),
       });
-      if (response.ok) trackLeadCreated();
+      finishLeadTracking(response.ok);
     } catch (error) {
+      finishLeadTracking(false);
       console.error('Lead save failed before WhatsApp open', error);
     }
 

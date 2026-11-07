@@ -12,7 +12,23 @@ declare global {
 }
 
 export function trackLeadCreated() {
-  window.oaiq?.('measure', 'lead_created', { type: 'customer_action' });
+  if (typeof window === 'undefined' || typeof window.oaiq !== 'function') return;
+  window.oaiq('measure', 'lead_created', { type: 'customer_action' });
+}
+
+const pendingLeadForms = new WeakSet<HTMLFormElement>();
+
+export function beginLeadSubmission(form: HTMLFormElement): ((successful: boolean) => void) | null {
+  if (pendingLeadForms.has(form)) return null;
+  pendingLeadForms.add(form);
+
+  let completed = false;
+  return (successful) => {
+    if (completed) return;
+    completed = true;
+    pendingLeadForms.delete(form);
+    if (successful) trackLeadCreated();
+  };
 }
 
 export default function OpenAIAdsTracking() {
@@ -27,24 +43,6 @@ export default function OpenAIAdsTracking() {
       contents: [{ id: pathname, name: pathname, content_type: 'page' }],
     });
   }, [pathname]);
-
-  useEffect(() => {
-    const trackContactClick = (event: MouseEvent) => {
-      const target = event.target;
-      if (!(target instanceof Element)) return;
-      const link = target.closest('a[href]');
-      if (!(link instanceof HTMLAnchorElement)) return;
-
-      const href = link.getAttribute('href')?.trim() ?? '';
-      if (!/^tel:/i.test(href) && !/^https?:\/\/(?:wa\.me|api\.whatsapp\.com|web\.whatsapp\.com)(?:\/|$)/i.test(href)) return;
-
-      // The standard "contact" name is not supported. OpenAI documents lead_created for users who request contact.
-      trackLeadCreated();
-    };
-
-    document.addEventListener('click', trackContactClick);
-    return () => document.removeEventListener('click', trackContactClick);
-  }, []);
 
   return null;
 }

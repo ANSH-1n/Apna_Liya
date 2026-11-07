@@ -1403,7 +1403,7 @@ import {
   Zap,
 } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
-import { trackLeadCreated } from '@/components/OpenAIAdsTracking'
+import { beginLeadSubmission } from '@/components/OpenAIAdsTracking'
 import type { PricingPageData, PricingRegion } from '../pricing-data'
 
 const whatsappNumber = '917006377796'
@@ -2519,6 +2519,8 @@ function CustomSoftwareProjectForm({ page }: { page: PricingPageData }) {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
+    const finishLeadTracking = beginLeadSubmission(event.currentTarget)
+    if (!finishLeadTracking) return
     const message = encodeURIComponent(
       `Hello SniperCoders!
 
@@ -2562,8 +2564,9 @@ ${form.description}`
           pricingPageUrl: typeof window !== 'undefined' ? window.location.pathname : leadSource.page,
         }),
       })
-      if (response.ok) trackLeadCreated()
+      finishLeadTracking(response.ok)
     } catch (error) {
+      finishLeadTracking(false)
       console.error('Lead save failed before WhatsApp open', error)
     }
 
@@ -2702,6 +2705,8 @@ function QuoteSection({
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
+    const finishLeadTracking = beginLeadSubmission(event.currentTarget)
+    if (!finishLeadTracking) return
     const message = encodeURIComponent(
       `Hello SniperCoders!
 
@@ -2747,8 +2752,9 @@ ${form.description}`
           pricingPageUrl: typeof window !== 'undefined' ? window.location.pathname : leadSource.page,
         }),
       })
-      if (response.ok) trackLeadCreated()
+      finishLeadTracking(response.ok)
     } catch (error) {
+      finishLeadTracking(false)
       console.error('Lead save failed before WhatsApp open', error)
     }
 
